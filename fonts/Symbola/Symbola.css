@@ -1,0 +1,6 @@
+@font-face {
+	font-family: 'Symbola';
+	src: url('Symbola.ttf') format('truetype'),
+		 url('Symbola.otf') format('opentype'),
+		 url('Symbola.woff') format('woff');
+}
