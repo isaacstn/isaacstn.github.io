@@ -1,0 +1,242 @@
+body {
+	hyphens:auto;
+	hyphenate-after:3;
+	hyphenate-before:3;
+	-moz-hyphens:auto;
+	-moz-hyphenate-after:3;
+	-moz-hyphenate-before:3;
+	-webkit-hyphens:auto;
+	-webkit-hyphenate-after:3;
+	-webkit-hyphenate-before:3;
+	width:680px;
+	margin:auto;
+	font-family:'CMU Serif','王漢宗細明體繁','HanWangMingLight';
+	font-size:13pt;
+	counter-reset:page 1 num ult llt urm lrm cjk note;
+	text-align:justify;
+	text-justify:inter-ideograph;
+}
+@page {
+	size:B5;
+	margin:2cm 2cm;
+	@bottom-center {
+		counter-increment:page;
+		content:counter(page);
+	}
+}
+h1 {
+	counter-reset:section;
+	font-family:'CMU serif','HanWangMingHeavy';
+	font-size:700%;
+	font-weight:normal;
+	margin:0 0 -10px -10px;
+}
+h2:before {
+	counter-reset:subsection;
+	counter-increment:section;
+	content: counter(section,trad-chinese-formal) "、";
+}
+h2 {
+	counter-reset:subsection;
+	margin:1em 0;
+	font-size:170%;
+	font-weight:bold;
+	font-family:'CMU serif','HanWangMingHeavy';
+}
+h2:first-of-type {
+	margin-top:1.5em;
+}
+h3:before {
+	counter-increment:subsection;
+	content: counter(subsection,cjk-decimal) "、";
+}
+h3 {
+	margin:1em 0;
+	font-size:140%;
+	font-family:'CMU serif','HanWangMingHeavy';
+	counter-reset:subsubsec;
+}
+h4:before {
+	counter-increment:subsubsec;
+	content: counter(subsubsec,upper-roman) ". ";
+}
+h4 {
+	margin:1em 0;
+	font-size:120%;
+	font-family:'CMU serif','HanWangMingHeavy';
+	counter-reset:subsubsubsec;
+}
+h5:before {
+	counter-increment:subsubsubsec;
+	content: counter(subsubsubsec) ". ";
+}
+h5 {
+	margin:1em 0;
+	font-size:100%;
+	font-family:'CMU serif','HanWangMingHeavy';
+}
+div {
+	line-height:1.5em;
+}
+div em {
+	font-family: 'CMU serif','HanWangMingHeavy';
+	font-style: normal;
+}
+blockquote {
+	margin:1em 2em;
+}
+table {
+	margin:2em auto;
+	width:95%;
+	border-collapse:collapse;
+	table-layout:fixed;
+}
+table, th, td {
+	border:1px solid black;
+	padding-left:1em;
+	padding-right:1em;
+	text-align:left;
+}
+th {
+	text-align:center;
+}
+li {
+	list-style:none;
+	position:relative;
+	left:2em;
+	margin-right:2em;
+}
+ol,ul {
+	margin:1em 0 1em 1em;
+	padding:0;
+}
+ol.reset, ul.reset {
+	counter-reset:num ult llt urm lrm cjk;
+}
+ol.list, ul.list {
+	margin:0;
+}
+ul.non > li {
+	left:0em;
+}
+ol.num > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:num;
+	content:"(" counter(num) ")";
+}
+ol.prf > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:num;
+	content:"(" counter(num) ")";
+}
+ol.prf > li:last-child {
+	position:relative;
+	left:3em;
+	margin-right:3em;
+}
+ol.prf > li:last-child:before {
+	position:absolute;
+	left:-3em;
+	counter-increment:none;
+	content:"(Con)";
+}
+ol.ult > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:ult;
+	content:"(" counter(ult,upper-latin) ")";
+}
+ol.llt > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:llt;
+	content:"(" counter(llt,lower-latin) ")";
+}
+ol.urm > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:urm;
+	content:"(" counter(urm,upper-roman) ")";
+}
+ol.lrm > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:lrm;
+	content:"(" counter(lrm,lower-roman) ")";
+}
+ol.cjk > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:cjk;
+	content:counter(cjk,cjk-decimal) "、";
+}
+iframe {
+	margin:1em auto;
+	display:block;
+}
+.note {
+	position:relative;
+}
+.note:before {
+	counter-increment:note;
+	content:"[" counter(note) "]";
+	vertical-align:super;
+	font-size:70%;
+	cursor:pointer;
+	color:#d00;
+}
+.note:hover > span.box {
+	visibility:visible;
+	opacity:1;
+}
+.box {
+	width:18em;
+	padding:1em;
+	border-radius: 9px;
+	background-color:#ccc;
+	box-shadow:10px 10px 5px #888;
+	position:absolute;
+	visibility:hidden;
+	opacity:0;
+	transition:visibility 0.25s, opacity 0.25s linear;
+	font-size:80%;
+	line-height:1.5em;
+	color:#000;
+	cursor:text;
+	z-index:99999;
+}
+.quote {
+	font-family:'CMU Serif','FangSong';
+}
+#ref {
+	page-break-before:always;
+	hyphens:none;
+	-moz-hyphens:none;
+	text-align:left;
+}
+#ref h2:before {
+	content:none;
+}
+#ref h3:before {
+	content:none;
+}
+#ref h4:before {
+	content:none;
+}
+#ref p {
+	text-indent:-2em;
+	margin-left:2em;
+}
+#ref span {
+	font-family:'CMU Serif','FangSong';	
+}
+.fnt {
+	float:footnote;
+	font-size:80%;
+	line-height:1.5em;
+	text-indent:0em;
+	margin-top:0.5em;
+	margin-left:1.2em;
+}

@@ -1,0 +1,131 @@
+body {
+	hyphens:auto;
+	hyphenate-after:3;
+	hyphenate-before:3;
+	width:14.6cm;
+	margin:auto;
+	font-family:'CMU serif','HanWangYenLight';
+	font-size:10pt;
+	counter-reset:page 1 num ult llt urm lrm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	prince-text-justify:prince-cjk;
+}
+@page {
+	size:B5;
+	margin:2cm 1.5cm;
+	@bottom-center {
+		counter-increment:page;
+		content:counter(page);
+	}
+}
+h1 {
+	counter-reset:section;
+	font-family:'CMU serif','HanWangMingHeavy';
+	font-size:700%;
+	font-weight:normal;
+	margin:0 0 -10px -10px;
+}
+h2:before {
+	counter-reset:subsection;
+	counter-increment:section;
+	content: counter(section,cjk-decimal) "、";
+}
+h2 {
+	counter-reset:subsection;
+	margin:1.5em 0 0.1em 0;
+	font-size:150%;
+	font-weight:bold;
+	font-family:'CMU serif','HanWangMingHeavy';
+}
+h3:before {
+	counter-increment:subsection;
+	content: "(" counter(subsection,upper-roman) ") ";
+}
+h3 {
+	margin:1.5em 0 0.1em 0;
+	font-size:100%;
+	font-family:'CMU serif','HanWangMingHeavy';
+	counter-reset:subsubsec;
+}
+h4:before {
+	counter-increment:subsubsec;
+	content: "(" counter(subsection,upper-roman) "." counter(subsubsec) ") ";
+}
+h4 {
+	font-size:100%;
+	font-family:'CMU serif','HanWangMingHeavy';
+}
+div {
+	line-height:1.5em;
+}
+div > div {
+	margin-left:1em;
+}
+div em {
+	font-family: 'CMU serif','HanWangYenHeavy';
+	font-style: normal;
+}
+li {
+	list-style:none;
+	position:relative;
+	left:2em;
+	margin-right:2em;
+}
+ol,ul {
+	margin:1em 0 1em 1em;
+	padding:0;
+}
+ol.reset, ul.reset {
+	counter-reset:num ult llt urm lrm;
+}
+ul.non > li {
+	left:0em;
+}
+ol.num > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:num;
+	content:"(" counter(num) ")";
+}
+ol.prf > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:num;
+	content:"(" counter(num) ")";
+}
+ol.prf > li:last-child {
+	position:relative;
+	left:3em;
+	margin-right:3em;
+}
+ol.prf > li:last-child:before {
+	position:absolute;
+	left:-3em;
+	counter-increment:none;
+	content:"(Con)";
+}
+ol.ult > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:ult;
+	content:"(" counter(ult,upper-latin) ")";
+}
+ol.llt > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:llt;
+	content:"(" counter(llt,lower-latin) ")";
+}
+ol.urm > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:urm;
+	content:"(" counter(urm,upper-roman) ")";
+}
+ol.lrm > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:lrm;
+	content:"(" counter(lrm,lower-roman) ")";
+}
