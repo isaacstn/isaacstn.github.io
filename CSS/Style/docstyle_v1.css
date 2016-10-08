@@ -1,0 +1,253 @@
+body {
+	hyphens:auto;
+	hyphenate-after:2;
+	hyphenate-before:2;
+	width:15cm;
+	margin: auto;
+	font-family:'CMU Serif',,新細明體,MingLiU;
+	font-size:normal;
+	counter-reset:section prf;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	prince-text-justify:prince-cjk;
+}
+@page {
+	size:A4;
+	margin:4cm 3cm;
+	@footnote{
+		float:bottom;
+	}
+}
+@page front-matter {
+	@bottom-center {
+		line-height:auto;
+		counter-increment:page;
+		content:counter(page, lower-roman);
+	}
+}
+@page main {
+	@bottom-center {
+		line-height:auto;
+		counter-increment:page;
+		content:counter(page);
+	}
+}
+h1, h2, h3, h4, h5 {
+	font-family:'CMU serif','DFNMingXBold-B5';
+}
+h1 {
+	text-align:center;
+	font-size:2.4em;
+	padding:0.5em 0em 0.5em 0em;
+}
+h1#ref {
+	text-align:left;
+	padding:0;
+}
+h2:before {
+	counter-increment:section;
+	content: counter(section) ". ";
+}
+h2 {
+	counter-reset:subsection;
+	margin:1em auto 0 auto;
+	font-size:150%;
+}
+h2#abstract:before {
+	content:none;
+}
+h2#abstract {
+	text-align:center;
+}
+h3:before {
+	counter-increment:subsection;
+	content: counter(section) "." counter(subsection) ". ";
+}
+h3 {
+	counter-reset:portion;
+	margin-bottom:-0.5em;
+	padding-top:0.5em;
+	font-size:125%;
+}
+h4:before {
+	counter-increment:portion;
+	content:counter(section) "." counter(subsection) "." counter(portion) ". ";
+}
+h4 {
+	margin-bottom:-0.5em;
+	font-size:100%;
+}
+p {
+	text-indent:2em;
+}
+p:nth-of-type(1) {
+	text-indent:0;
+}
+math.isaac {
+	font-family:'CMU math','STIXGeneral',Serif;
+	margin-top:0.5em;
+	display:block;
+}
+math.isaac mi {
+	font:italic;
+	mathvariant:italic;
+}
+math.isaac mfrac {
+	font-size:1.3em;
+}
+ol.quiz p {
+	text-indent:0;
+}
+ol,ul {
+	margin:0;
+	padding:0;
+	counter-reset:quiz num urm ult lrm llt;
+}
+li:before {
+	position:absolute;
+	left:-2em;
+}
+li {
+	list-style:none;
+	position:relative;
+	left:2em;
+	margin-right:2em;
+	margin-top:1em;
+}
+ol.quiz > li:before {
+	counter-increment:quiz;
+	content:counter(quiz) ".";
+	left:-1.5em;
+}
+ol.quiz > li {
+	margin-top:1.5em;
+}
+ol.prf {
+	margin-left:1em;
+	margin-top:1em;
+}
+ol.prf > li:before {
+	counter-increment:prf;
+	content:"P" counter(prf) ". ";
+	font-style:italic;
+}
+ol.prf > li:last-child:before {
+	counter-increment:none;
+	content:"C. ";
+}
+ol.num > li:before {
+	counter-increment:num;
+	content:"(" counter(num) ")";
+}
+ol.urm > li:before {
+	counter-increment:urm;
+	content:"(" counter(urm,upper-roman) ")";
+}
+ol.ult > li:before {
+	counter-increment:ult;
+	content:"(" counter(ult,upper-latin) ")";
+}
+ol.lrm > li:before {
+	counter-increment:lrm;
+	content:"(" counter(lrm,lower-roman) ")";
+}
+ol.llt > li:before {
+	counter-increment:llt;
+	content:"(" counter(llt,lower-latin) ")";
+}
+ol.list > li, ol.prf > li {
+	margin-top:0;
+}
+ul.induction > li:before {
+	position:absolute;
+	left:-2.5em;
+}
+ul.induction > li:nth-child(1):before {
+	content:"B.C.";
+}
+ul.induction > li:nth-child(2):before {
+	content:"I.H.";
+}
+ul.induction > li:nth-child(3):before {
+	content:"I.C.";
+}
+ul.induction > li {
+	left:2.5em;
+	margin-right:2.5em;
+}
+table.prf {
+	width:100%;
+	counter-reset:tprf;
+}
+table.prf tr {
+	height:1.1em;
+}
+table.prf td:nth-child(1):before {
+	position:absolute;
+	left:-1.5em;
+	counter-increment:tprf;
+	content:counter(tprf)". ";
+}
+table.prf td:nth-child(1) {
+	position:relative;
+	left:1.5em;
+}
+table.prf td {
+	vertical-align:middle;
+}
+div.inblock {
+	display:inline-block;
+}
+div#bonus {
+	margin-bottom:-0.5em;
+	font-weight:bold;
+	page-break-before:always;
+}
+#ref p {
+	text-indent:-2em;
+	margin-left:2em;
+}
+em {
+	font-style:normal;
+	font-weight:bold;
+}
+blockquote {
+	margin:1em 0 1em 2em;
+	text-indent:0;
+	font-family:'CMU Serif','FangSong';
+}
+.part {
+	counter-reset:page 1;
+}
+.break {
+	page-break-before:always;
+	page-break-after:avoid;
+}
+.fnt {
+	float:footnote;
+	font-family:'CMU Serif',新細明體,MingLiU;
+	font-size:80%;
+	line-height:1em;
+	text-indent:0em;
+	margin:0.5em 0em 0 1.2em;
+}
+.quote {
+	font-family:'CMU Serif','FangSong';
+}
+.kai {
+	font-family:'標楷體','DFKai-SB';
+	font-size:110%;
+}
+.song {
+	font-family:'FangSong';
+	font-size:110%;
+}
+#front {
+	page:front-matter;
+}
+#main {
+	page:main;
+}
+#ref {
+	page:main;
+}
