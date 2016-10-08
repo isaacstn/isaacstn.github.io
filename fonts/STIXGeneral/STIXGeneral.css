@@ -1,0 +1,32 @@
+@font-face {
+	font-family: 'STIXGeneral';
+	src: url('STIXGeneral.ttf') format('truetype'),
+		 url('STIXGeneral.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+/* STIXGeneral Normal */
+@font-face {
+	font-family: 'STIXGeneral';
+	src: url('STIXGeneralB.ttf') format('truetype'),
+		 url('STIXGeneralB.ttf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
+/* STIXGeneral Bold */
+@font-face {
+	font-family: 'STIXGeneral';
+	src: url('STIXGeneralBI.ttf') format('truetype'),
+		 url('STIXGeneralBI.ttf') format('opentype');
+	font-weight: bold;
+	font-style: italic;
+}
+/* STIXGeneral Bold Italic */
+@font-face {
+	font-family: 'STIXGeneral';
+	src: url('STIXGeneralI.ttf') format('truetype'),
+		 url('STIXGeneralI.ttf') format('opentype');
+	font-weight: normal;
+	font-style: italic;
+}
+/* STIXGeneral Italic */
