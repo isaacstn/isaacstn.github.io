@@ -1,10 +1,8 @@
 @font-face {
 	font-family: 'CMU Serif';
-	src: url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunrm.eot');
-	src: url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunrm.eot?#iefix') format('embedded-opentype'),
-		 url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunrm.woff') format('woff'),
-		 url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunrm.ttf') format('truetype'),
-		 url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunrm.svg#cmunrm') format('svg');
+	src: url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunrm.woff') format('woff'),
+		url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunrm.ttf') format('truetype'),
+		url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunrm.svg#cmunrm') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -12,11 +10,9 @@
 
 @font-face {
 	font-family: 'CMU Serif';
-	src: url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbx.eot');
-	src: url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbx.eot?#iefix') format('embedded-opentype'),
-		 url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbx.woff') format('woff'),
-		 url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbx.ttf') format('truetype'),
-		 url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbx.svg#cmunbx') format('svg');
+	src: url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbx.woff') format('woff'),
+		url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbx.ttf') format('truetype'),
+		url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbx.svg#cmunbx') format('svg');
 	font-weight: bold;
 	font-style: normal;
 }
@@ -24,11 +20,9 @@
 
 @font-face {
 	font-family: 'CMU Serif';
-	src: url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunti.eot');
-	src: url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunti.eot?#iefix') format('embedded-opentype'),
-		 url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunti.woff') format('woff'),
-		 url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunti.ttf') format('truetype'),
-		 url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunti.svg#cmunti') format('svg');
+	src: url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunti.woff') format('woff'),
+		url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunti.ttf') format('truetype'),
+		url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunti.svg#cmunti') format('svg');
 	font-weight: normal;
 	font-style: italic;
 }
@@ -36,11 +30,9 @@
 
 @font-face {
 	font-family: 'CMU Serif';
-	src: url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbi.eot');
-	src: url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbi.eot?#iefix') format('embedded-opentype'),
-		 url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbi.woff') format('woff'),
-		 url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbi.ttf') format('truetype'),
-		 url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbi.svg#cmunbi') format('svg');
+	src: url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbi.woff') format('woff'),
+		url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbi.ttf') format('truetype'),
+		url('https://isaacstn.github.io/fonts/Computer-Modern/serif/cmunbi.svg#cmunbi') format('svg');
 	font-weight: bold;
 	font-style: italic;
 }
