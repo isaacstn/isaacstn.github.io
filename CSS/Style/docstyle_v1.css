@@ -31,11 +31,11 @@ body {
 		margin-top: 0.5em;
 		border-top: 1px solid #000;
 		padding-top: 0.5em;
-		max-height: 1cm;
+		max-height: 1cm
 	}
 }
 h1, h2, h3, h4, h5 {
-	font:normal 900 'CMU serif','DFNMingXBold-B5';
+	font:normal bold 'CMU serif','cwTeXMing';
 }
 h1 {
 	text-align:center;
