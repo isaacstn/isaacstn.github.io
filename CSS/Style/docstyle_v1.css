@@ -4,8 +4,7 @@ body {
 	hyphenate-before:2;
 	width:15cm;
 	margin: auto;
-	font-family:'CMU Serif',,新細明體,MingLiU;
-	font-size:normal;
+	font:normal normal 12pt 'CMU Serif',cwTeXMing;
 	counter-reset:section prf;
 	text-align:justify;
 	text-justify:inter-ideograph;
@@ -33,7 +32,7 @@ body {
 	}
 }
 h1, h2, h3, h4, h5 {
-	font-family:'CMU serif','DFNMingXBold-B5';
+	font:normal 900 'CMU serif','DFNMingXBold-B5';
 }
 h1 {
 	text-align:center;
@@ -232,14 +231,14 @@ blockquote {
 	margin:0.5em 0em 0 1.2em;
 }
 .quote {
-	font-family:'CMU Serif','FangSong';
+	font-family:'CMU Serif','cwTeXFangSong';
 }
 .kai {
 	font-family:'標楷體','DFKai-SB';
 	font-size:110%;
 }
 .song {
-	font-family:'FangSong';
+	font-family:'cwTeXFangSong';
 	font-size:110%;
 }
 #front {
