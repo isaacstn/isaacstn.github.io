@@ -13,6 +13,12 @@ body {
 @page {
 	size:A4;
 	margin:4cm 3cm;
+	@footnotes{
+		margin-top: 0.5em;
+		border-top: 1px solid #000;
+		padding-top: 0.5em;
+		max-height: 30%;
+	}
 }
 @page front-matter {
 	@bottom-center {
@@ -26,11 +32,6 @@ body {
 		line-height:auto;
 		counter-increment:page;
 		content:counter(page);
-	}
-	@footnote{
-		margin-top: 1em;
-		border-top: 1px solid #000;
-		padding-top: 1em;
 	}
 }
 h1, h2, h3, h4, h5 {
