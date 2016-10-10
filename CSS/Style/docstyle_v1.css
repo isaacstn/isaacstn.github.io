@@ -26,6 +26,7 @@ body {
 		line-height:auto;
 		counter-increment:page;
 		content:counter(page, lower-roman);
+		vertical-align:top 30%;
 	}
 }
 @page main {
