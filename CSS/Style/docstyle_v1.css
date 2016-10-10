@@ -14,7 +14,10 @@ body {
 	size:A4;
 	margin:4cm 3cm;
 	@footnote{
-		float:bottom;
+		margin-top: 0.5em;
+		border-top: thin solid;
+		padding-top: 0.5em;
+		border-clip: 4em;
 	}
 }
 @page front-matter {
@@ -224,8 +227,7 @@ blockquote {
 }
 .fnt {
 	float:footnote;
-	font-family:'CMU Serif',新細明體,MingLiU;
-	font-size:80%;
+	font:normal normal 80% 'CMU Serif','cwTeXMing';
 	line-height:1em;
 	text-indent:0em;
 	margin:0.5em 0em 0 1.2em;
