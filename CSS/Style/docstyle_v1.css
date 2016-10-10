@@ -15,9 +15,8 @@ body {
 	margin:4cm 3cm;
 	@footnote{
 		margin-top: 0.5em;
-		border-top: thin solid;
+		border-top: 1px solid #000;
 		padding-top: 0.5em;
-		border-clip: 4em;
 	}
 }
 @page front-matter {
