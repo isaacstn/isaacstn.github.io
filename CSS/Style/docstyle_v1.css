@@ -13,11 +13,6 @@ body {
 @page {
 	size:A4;
 	margin:4cm 3cm;
-	@footnote{
-		margin-top: 0.5em;
-		border-top: 1px solid #000;
-		padding-top: 0.5em;
-	}
 }
 @page front-matter {
 	@bottom-center {
@@ -31,6 +26,12 @@ body {
 		line-height:auto;
 		counter-increment:page;
 		content:counter(page);
+	}
+	@footnote{
+		margin-top: 0.5em;
+		border-top: 1px solid #000;
+		padding-top: 0.5em;
+		max-height: 1cm;
 	}
 }
 h1, h2, h3, h4, h5 {
@@ -215,7 +216,7 @@ em {
 blockquote {
 	margin:1em 0 1em 2em;
 	text-indent:0;
-	font-family:'CMU Serif','FangSong';
+	font-family:'CMU Serif','cwTeXFangSong';
 }
 .part {
 	counter-reset:page 1;
