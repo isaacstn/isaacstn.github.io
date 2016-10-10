@@ -16,8 +16,9 @@ body {
 	@footnotes{
 		margin-top: 0.5em;
 		border-top: 1px solid #000;
+		border-clip: 4em;
 		padding-top: 0.5em;
-		max-height: 30%;
+		max-height: 25%;
 	}
 }
 @page front-matter {
