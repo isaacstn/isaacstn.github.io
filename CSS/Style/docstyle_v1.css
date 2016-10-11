@@ -9,6 +9,7 @@ body {
 	text-align:justify;
 	text-justify:inter-ideograph;
 	prince-text-justify:prince-cjk;
+	counter-reset:num urm ult lrm llt prf;
 }
 @page {
 	size:A4;
@@ -106,7 +107,10 @@ ol.quiz p {
 ol,ul {
 	margin:1em 0 1em 2em;
 	padding:0;
-	counter-reset:quiz num urm ult lrm llt;
+	counter-reset:quiz;
+}
+ol.local {
+	counter-reset:num urm ult lrm llt prf;
 }
 li:before {
 	position:absolute;
