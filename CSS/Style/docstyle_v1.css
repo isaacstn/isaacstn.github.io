@@ -160,7 +160,7 @@ ol.llt > li:before {
 	counter-increment:llt;
 	content:"(" counter(llt,lower-latin) ")";
 }
-ol.list > li, ol.prf > li {
+ol.tight > li, ol.prf > li {
 	margin-top:0;
 }
 ul.induction > li:before {
