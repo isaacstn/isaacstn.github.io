@@ -119,6 +119,9 @@ li {
 	margin-right:2em;
 	margin-top:1em;
 }
+li:first-child {
+	margin-top:0;
+}
 ol.quiz > li:before {
 	counter-increment:quiz;
 	content:counter(quiz) ".";
