@@ -5,11 +5,10 @@ body {
 	width:15cm;
 	margin: auto;
 	font:normal normal 12pt 'CMU Serif',cwTeXMing;
-	counter-reset:section prf;
+	counter-reset:num urm ult lrm llt section prf;
 	text-align:justify;
 	text-justify:inter-ideograph;
 	prince-text-justify:prince-cjk;
-	counter-reset:num urm ult lrm llt prf;
 }
 @page {
 	size:A4;
