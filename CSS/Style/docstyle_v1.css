@@ -104,7 +104,7 @@ ol.quiz p {
 	text-indent:0;
 }
 ol,ul {
-	margin:0;
+	margin:1em 2em 1em 0;
 	padding:0;
 	counter-reset:quiz num urm ult lrm llt;
 }
