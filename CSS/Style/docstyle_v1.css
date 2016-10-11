@@ -117,7 +117,7 @@ li {
 	position:relative;
 	left:4em;
 	margin-right:4em;
-	margin-top:1em;
+	padding-top:1em;
 }
 ol.quiz > li:before {
 	counter-increment:quiz;
@@ -125,11 +125,7 @@ ol.quiz > li:before {
 	left:-1.5em;
 }
 ol.quiz > li {
-	margin-top:1.5em;
-}
-ol.prf {
-	margin-left:1em;
-	margin-top:1em;
+	padding-top:1.5em;
 }
 ol.prf > li:before {
 	counter-increment:prf;
@@ -161,7 +157,7 @@ ol.llt > li:before {
 	content:"(" counter(llt,lower-latin) ")";
 }
 ol.tight > li, ol.prf > li {
-	margin-top:0;
+	padding-top:0;
 }
 ul.induction > li:before {
 	position:absolute;
