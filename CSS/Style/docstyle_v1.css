@@ -104,8 +104,8 @@ ol.quiz p {
 	text-indent:0;
 }
 ol,ul {
-	margin:0;
-	padding:1em 0 1em 0;
+	margin:1em 0 1em 2em;
+	padding:0;
 	counter-reset:quiz num urm ult lrm llt;
 }
 li:before {
@@ -115,8 +115,8 @@ li:before {
 li {
 	list-style:none;
 	position:relative;
-	left:4em;
-	margin-right:4em;
+	left:2em;
+	margin-right:2em;
 	padding-top:1em;
 }
 ol.quiz > li:before {
