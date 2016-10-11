@@ -109,8 +109,23 @@ ol,ul {
 	padding:0;
 	counter-reset:quiz;
 }
-ol.local {
+ol.num.local {
 	counter-reset:num urm ult lrm llt prf;
+}
+ol.urm.local {
+	counter-reset:urm;
+}
+ol.ult.local {
+	counter-reset:ult;
+}
+ol.lrm.local {
+	counter-reset:lrm;
+}
+ol.llt.local {
+	counter-reset:llt;
+}
+ol.prf.local {
+	counter-reset:prf;
 }
 li:before {
 	position:absolute;
