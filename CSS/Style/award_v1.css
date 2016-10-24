@@ -2,7 +2,7 @@ body {
 	hyphens:auto;
 	hyphenate-after:2;
 	hyphenate-before:2;
-	width:15cm;
+	width:10cm;
 	margin: auto;
 	font:normal normal 18pt 'CMU Serif',cwTeXKai;
 	text-align:justify;
@@ -11,7 +11,7 @@ body {
 }
 @page {
 	size:A4;
-	margin:5cm 5cm 5cm 5cm;
+	margin:5cm;
 	@bottom-center {
 	}
 }
