@@ -1,0 +1,29 @@
+body {
+	hyphens:auto;
+	hyphenate-after:2;
+	hyphenate-before:2;
+	width:15cm;
+	margin: auto;
+	font:normal normal 18pt 'CMU Serif',cwTeXKai;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	prince-text-justify:prince-cjk;
+}
+@page {
+	size:A4;
+	margin:5cm;
+	@bottom-center {
+	}
+}
+h1 {
+	font:normal bold 2.4em 'CMU serif','cwTeXKai';
+	text-align:center;
+	padding:0.5em 0;
+}
+h2 {
+  font:normal bold 1.5em 'CMU serif','cwTeXKai';
+  text-align:left;
+}
+p {
+	text-indent:2em;
+}
