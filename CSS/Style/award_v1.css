@@ -24,3 +24,14 @@ h2 {
 	font:normal bold 1.5em 'CMU serif','cwTeXKai';
 	text-align:left;
 }
+#main {
+	height:100%;
+	display:table;
+	border-collapse:collapse;
+}
+#foot {
+	height:1px;
+	display:table-row;
+	vertical-align:bottom;
+	text-align:center;
+}
