@@ -3,7 +3,6 @@ body {
 	hyphenate-after:2;
 	hyphenate-before:2;
 	width:11cm;
-	height:19.7cm;
 	margin: auto;
 	font:normal normal 18pt 'CMU Serif',cwTeXKai;
 	text-align:justify;
@@ -12,8 +11,11 @@ body {
 }
 @page {
 	size:A4;
-	margin:5cm;
+	margin:5cm 5cm 6cm 5cm;
 	@bottom-center {
+		vertical-align:top;
+		text-align:center;
+		font-weight:bold;
 	}
 }
 h1 {
@@ -24,16 +26,4 @@ h1 {
 h2 {
 	font:normal bold 1.5em 'CMU serif','cwTeXKai';
 	text-align:left;
-}
-#main {
-	height:100%;
-	display:table;
-	border-collapse:collapse;
-}
-#foot {
-	height:1px;
-	display:table-row;
-	vertical-align:bottom;
-	text-align:center;
-	font-weight:bold;
 }
