@@ -11,7 +11,7 @@ body {
 }
 @page {
 	size:A4;
-	margin:5cm;
+	margin:5cm 5cm 5cm 5cm;
 	@bottom-center {
 	}
 }
