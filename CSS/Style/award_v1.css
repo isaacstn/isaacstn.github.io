@@ -15,7 +15,7 @@ body {
 	@bottom-center {
 		vertical-align:top;
 		text-align:center;
-		font-weight:bold;
+		font:normal bold 18pt 'CMU Serif','cwTeXKai';
 	}
 }
 h1 {
