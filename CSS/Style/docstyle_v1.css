@@ -183,19 +183,19 @@ ol.numd > li:before {
 }
 ol.urmd > li:before {
 	counter-increment:urmd;
-	content:counter(urmd) ". ";
+	content:counter(urmd,upper-roman) ". ";
 }
 ol.ultd > li:before {
 	counter-increment:ultd;
-	content:counter(ultd) ". ";
+	content:counter(ultd,upper-latin) ". ";
 }
 ol.lrmd > li:before {
 	counter-increment:lrmd;
-	content:counter(lrmd) ". ";
+	content:counter(lrmd,lower-roman) ". ";
 }
 ol.lltd > li:before {
 	counter-increment:lltd;
-	content:counter(lltd) ". ";
+	content:counter(lltd,lower-latin) ". ";
 }
 ol.tight > li, ol.prf > li {
 	margin-top:0;
