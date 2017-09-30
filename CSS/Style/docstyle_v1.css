@@ -5,7 +5,7 @@ body {
 	width:15cm;
 	margin: auto;
 	font:normal normal 12pt 'CMU Serif',cwTeXMing;
-	counter-reset:num urm ult lrm llt section prf;
+	counter-reset:num urm ult lrm llt numd urmd ultd lrmd lltd section prf;
 	text-align:justify;
 	text-justify:inter-ideograph;
 	prince-text-justify:prince-cjk;
@@ -109,7 +109,7 @@ ol,ul {
 	counter-reset:quiz;
 }
 ol.num.local {
-	counter-reset:num urm ult lrm llt prf;
+	counter-reset:num;
 }
 ol.urm.local {
 	counter-reset:urm;
@@ -176,6 +176,26 @@ ol.lrm > li:before {
 ol.llt > li:before {
 	counter-increment:llt;
 	content:"(" counter(llt,lower-latin) ")";
+}
+ol.numd > li:before {
+	counter-increment:numd;
+	content:counter(numd) ". ";
+}
+ol.urmd > li:before {
+	counter-increment:urmd;
+	content:counter(urmd) ". ";
+}
+ol.ultd > li:before {
+	counter-increment:ultd;
+	content:counter(ultd) ". ";
+}
+ol.lrmd > li:before {
+	counter-increment:lrmd;
+	content:counter(lrmd) ". ";
+}
+ol.lltd > li:before {
+	counter-increment:lltd;
+	content:counter(lltd) ". ";
 }
 ol.tight > li, ol.prf > li {
 	margin-top:0;
