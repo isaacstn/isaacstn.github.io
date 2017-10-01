@@ -2,22 +2,22 @@
 	Firefox's MathML layout, which seems better than http://www.w3.org/TR/mathml-for-css/ */
 
 /* Cambria [Math]'s line height currently (2/11) is large in most non-Microsoft browsers: */
-fmath, .fm-math		{ font-family: 'CMU Serif', Symbola, STIXGeneral, 'Cambria',
+fmath, .fm-math		{ font-family: 'CMU math', Symbola, STIXGeneral, 'Cambria',
 						/* Cambria, 'Cambria Math', */ Times, 'Lucida Sans Unicode',
 						OpenSymbol, 'Standard Symbols L', serif, sans-serif, 'Droid Sans Fallback'; line-height: 1; }
 fmath mo, .fm-mo, .ma-sans-serif
 /* some (crossbrowsertesting/browsershots) IE7s require no line break before
 	'Lucida Sans Unicode': */
-{ font-family: 'CMU Serif', Symbola, STIXGeneral, 'Cambria', /* Cambria, 'Cambria Math', */ 'Lucida Sans Unicode',
+{ font-family: 'CMU math', Symbola, STIXGeneral, 'Cambria', /* Cambria, 'Cambria Math', */ 'Lucida Sans Unicode',
 						'Arial Unicode MS', 'Lucida Grande', Times,
 						OpenSymbol, 'Standard Symbols L', sans-serif, 'Droid Sans Fallback'; }
 .fm-mo-Luc	/* avoid extra space at character tops, especially when stretched */
-{ font-family: 'CMU Serif', Symbola, STIXGeneral, /* Cambria, 'Cambria Math', */ 'Lucida Sans Unicode',
+{ font-family: 'CMU math', Symbola, STIXGeneral, /* Cambria, 'Cambria Math', */ 'Lucida Sans Unicode',
 						'Lucida Grande', 'Arial Unicode MS', Times,
 						OpenSymbol, 'Standard Symbols L', sans-serif, 'Droid Sans Fallback'; }
 * html fmath, * html .fm-math, * html fmath mo, * html .fm-mo, * html .IE6-LSU
-					{ font-family: 'CMU Serif', Symbola, STIXGeneral, 'Lucida Sans Unicode', 'Droid Sans Fallback' !important }	/* IE <=6 only */
-mo.fm-radic			{ font-family: 'CMU Serif', Symbola, STIXGeneral, 'Lucida Sans Unicode', 'Lucida Grande',
+					{ font-family: 'CMU math', Symbola, STIXGeneral, 'Lucida Sans Unicode', 'Droid Sans Fallback' !important }	/* IE <=6 only */
+mo.fm-radic			{ font-family: 'CMU math', Symbola, STIXGeneral, 'Lucida Sans Unicode', 'Lucida Grande',
 						Verdana, sans-serif, 'Droid Sans Fallback' !important; }
 .ma-script			{ font-family:
 						'Felipa', 'England Hand DB', 'Embassy BT', 'Amazone BT', 'Bank Script D',
