@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'GenJyuu';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://isaacstn.github.io/fonts/NotoSerifTC/GenJyuuGothicX-Normal.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GenJyuu';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://isaacstn.github.io/fonts/NotoSerifTC/GenJyuuGothicX-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GenJyuu';
+  font-style: normal;
+  font-weight: 900;
+  src: url('https://isaacstn.github.io/fonts/NotoSerifTC/GenJyuuGothicX-Heavy.ttf') format('truetype');
+}
