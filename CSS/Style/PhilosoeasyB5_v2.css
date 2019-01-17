@@ -42,7 +42,7 @@ h2 {
 	margin:1em 0;
 	font-size:170%;
 	font-family:'CMU Serif','Noto Serif TC';
-	font-weight:bold;
+	font-weight:700;
 }
 h2:first-of-type {
 	margin-top:1.5em;
@@ -55,7 +55,7 @@ h3 {
 	margin:1em 0;
 	font-size:130%;
 	font-family:'CMU Serif','Noto Serif TC';
-	font-weight:bold;
+	font-weight:700;
 	counter-reset:subsubsec;
 }
 h4:before {
@@ -66,13 +66,13 @@ h4 {
 	margin:1em 0;
 	font-size:100%;
 	font-family:'CMU Serif','Noto Serif TC';
-	font-weight:bold;
+	font-weight:700;
 }
 div {
 	line-height:1.5em;
 }
 div em {
-	font-weight:bold;
+	font-weight:700;
 	font-style:normal;
 }
 blockquote {
