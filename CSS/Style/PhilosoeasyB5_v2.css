@@ -29,7 +29,7 @@ h1 {
 	counter-reset:section;
 	font-family:'CMU Serif','Noto Serif TC';
 	font-size:700%;
-	font-weight:heavy;
+	font-weight:900;
 	margin:0 0 -10px -10px;
 }
 h2:before {
