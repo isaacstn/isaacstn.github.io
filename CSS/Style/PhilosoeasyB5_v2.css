@@ -10,7 +10,8 @@ body {
 	-webkit-hyphenate-before:3;
 	width:13.6cm;
 	margin:auto;
-	font-family:'CMU serif','HanWangYenLight';
+	font-family:'CMU serif','Rounded';
+	font-weight:300
 	font-size:10pt;
 	counter-reset:page 1 num ult llt urm lrm cjk note;
 	text-align:justify;
@@ -27,7 +28,7 @@ body {
 }
 h1 {
 	counter-reset:section;
-	font-family:'CMU serif','HanWangMingHeavy';
+	font-family:'CMU serif','Noto Serif TC';
 	font-size:700%;
 	font-weight:normal;
 	margin:0 0 -10px -10px;
@@ -42,7 +43,7 @@ h2 {
 	margin:1em 0;
 	font-size:170%;
 	font-weight:bold;
-	font-family:'CMU serif','HanWangMingHeavy';
+	font-family:'CMU serif','Noto Serif TC';
 }
 h2:first-of-type {
 	margin-top:1.5em;
@@ -54,7 +55,7 @@ h3:before {
 h3 {
 	margin:1em 0;
 	font-size:130%;
-	font-family:'CMU serif','HanWangMingHeavy';
+	font-family:'CMU serif','Noto Serif TC';
 	counter-reset:subsubsec;
 }
 h4:before {
@@ -64,13 +65,14 @@ h4:before {
 h4 {
 	margin:1em 0;
 	font-size:100%;
-	font-family:'CMU serif','HanWangMingHeavy';
+	font-family:'CMU serif','Noto Serif TC';
 }
 div {
 	line-height:1.5em;
 }
 div em {
-	font-family: 'CMU serif','HanWangYenHeavy';
+	font-family: 'CMU serif','Rounded';
+	font-weight: 900;
 	font-style: normal;
 }
 blockquote {
