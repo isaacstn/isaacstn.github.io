@@ -2,19 +2,19 @@
   font-family: 'Noto Serif TC';
   font-style: normal;
   font-weight: 400;
-  src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Regular.otf') format('truetype');
+  src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Regular.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'Noto Serif TC';
   font-style: normal;
   font-weight: 700;
-  src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Bold.otf') format('truetype');
+  src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Bold.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'Noto Serif TC';
   font-style: normal;
   font-weight: 900;
-  src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Black.otf') format('truetype');
+  src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Black.otf') format('opentype');
 }
