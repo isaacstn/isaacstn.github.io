@@ -11,6 +11,7 @@ body {
 	width:13.6cm;
 	margin:auto;
 	font-family:'CMU Serif','GenJyuu';
+	font-weight:200;
 	font-size:10pt;
 	counter-reset:page 1 num ult llt urm lrm cjk note;
 	text-align:justify;
@@ -71,9 +72,8 @@ h4 {
 div {
 	line-height:1.5em;
 }
-div em {
-	font-weight:700;
-	font-style:normal;
+div b {
+	font-weight:500;
 }
 blockquote {
 	margin:1em 2em;
