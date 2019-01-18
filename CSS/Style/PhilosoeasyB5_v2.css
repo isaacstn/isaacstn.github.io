@@ -18,10 +18,10 @@ body {
 	text-justify:inter-ideograph;
 	prince-text-justify:prince-cjk;
 }
-@page {
+@page:nth-of-type(n+1) {
 	size:B5;
 	margin:2cm 2cm;
-	@bottom-center {
+	@bottom-right {
 		counter-increment:page;
 		content:counter(page);
 	}
