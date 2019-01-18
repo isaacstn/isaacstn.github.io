@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Felipa';
+  src: url('https://isaacstn.github.io/fonts/FelipaFraktur/Felipa-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Unifraktur';
+  src: url('https://isaacstn.github.io/fonts/FelipaFraktur/UnifrakturMaguntia.ttf') format('truetype');
+}
