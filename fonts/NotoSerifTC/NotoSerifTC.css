@@ -4,13 +4,13 @@
   src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Extralight.otf') format('opentype');
 }
 
-//
+/*
 @font-face {
   font-family: 'Noto Serif TC';
   font-weight: 300;
   src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Light.otf') format('opentype');
 }
-//
+*/
 
 @font-face {
   font-family: 'Noto Serif TC';
@@ -24,13 +24,13 @@
   src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Medium.otf') format('opentype');
 }
 
-//
+/*
 @font-face {
   font-family: 'Noto Serif TC';
   font-weight: 600;
   src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-SemiBold.otf') format('opentype');
 }
-//
+*/
 
 @font-face {
   font-family: 'Noto Serif TC';
