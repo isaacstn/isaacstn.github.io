@@ -31,7 +31,7 @@ body {
 		content:none;
 	}
 }
-@page:right {
+@page:left {
 	@top-left {
 		content:"2019冬天簡單哲學營";
 	}
