@@ -6,6 +6,12 @@
 
 @font-face {
   font-family: 'GenJyuu';
+  font-weight: 200;
+  src: url('https://isaacstn.github.io/fonts/GenJyuu/GenJyuuGothicX-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GenJyuu';
   font-weight: 400;
   src: url('https://isaacstn.github.io/fonts/GenJyuu/GenJyuuGothicX-Regular.ttf') format('truetype');
 }
