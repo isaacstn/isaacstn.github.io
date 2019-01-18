@@ -18,13 +18,36 @@ body {
 	text-justify:inter-ideograph;
 	prince-text-justify:prince-cjk;
 }
-@page:nth-of-type(n+1) {
+@page {
 	size:B5;
 	margin:2cm 2cm;
 	@bottom-right {
 		counter-increment:page;
+	}
+}
+@page:first {
+	@top-right {
+		content:none;
+	}
+	@bottom-right {
+		content:none;
+	}
+}
+@page:right {
+	@top-right {
+		content:"簡單哲學實驗室";
+	}
+	@bottom-right {
 		content:counter(page);
 	}
+}
+@page:left {
+	@top-left: {
+		content:"2019冬天簡單哲學營";
+	}
+	@bottom-left: {
+		content:counter(page);
+	}	
 }
 h1 {
 	counter-reset:section;
