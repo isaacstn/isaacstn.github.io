@@ -32,20 +32,20 @@ body {
 	}
 }
 @page:right {
+	@top-left {
+		content:"2019冬天簡單哲學營";
+	}
+	@bottom-left {
+		content:counter(page);
+	}
+}
+@page:right {
 	@top-right {
 		content:"簡單哲學實驗室";
 	}
 	@bottom-right {
 		content:counter(page);
 	}
-}
-@page:left {
-	@top-left: {
-		content:"2019冬天簡單哲學營";
-	}
-	@bottom-left: {
-		content:counter(page);
-	}	
 }
 h1 {
 	counter-reset:section;
