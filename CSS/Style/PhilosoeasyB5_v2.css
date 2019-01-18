@@ -21,9 +21,7 @@ body {
 @page {
 	size:B5;
 	margin:2cm 2cm;
-	@bottom-right {
-		counter-increment:page;
-	}
+	counter-increment:page;
 }
 @page:first {
 	@top-right {
