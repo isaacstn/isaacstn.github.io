@@ -1,0 +1,462 @@
+body {
+	hyphens:auto;
+	hyphenate-after:3;
+	hyphenate-before:3;
+	-moz-hyphens:auto;
+	-moz-hyphenate-after:3;
+	-moz-hyphenate-before:3;
+	-webkit-hyphens:auto;
+	-webkit-hyphenate-after:3;
+	-webkit-hyphenate-before:3;
+	width:14.6cm;
+	margin:auto;
+	counter-reset:page 1 num ult llt urm lrm cjk note;
+	font-family:'Gen Jyuu GothicX', GenJyuu, 'Noto Sans CJK TC', 'Noto Sans TC', STIXGeneral, 'CMU Serif', sans-serif;
+	font-weight:200;
+	font-size:11pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	prince-text-justify:prince-cjk;
+}
+@page {
+	size:B5;
+	margin:2cm 1.5cm;
+	counter-increment:page;
+	font-family:'Gen Jyuu GothicX', GenJyuu, sans-serif;
+	font-size:10pt;
+	font-weight:300;
+}
+@page:first {
+	@top-right {
+		content:none;
+	}
+	@bottom-right {
+		content:none;
+	}
+}
+@page:left {
+	@bottom-left {
+		content:counter(page);
+	}
+}
+@page:right {
+	@top-right {
+		content:"簡單哲學實驗室";
+	}
+	@bottom-right {
+		content:counter(page);
+	}
+}
+
+/* text-title */
+
+h1 {
+	counter-reset:section num ult llt urm lrm cjk;
+	font-family:'CMU Serif','Noto Serif TC';
+	font-size:35pt;
+	font-weight:700;
+	margin:0 0 -10px -10px;
+	page-break-before:always;
+}
+h2:before {
+	counter-reset:subsection;
+	counter-increment:section;
+	content: counter(section,cjk-decimal) "、";
+}
+h2 {
+	counter-reset:subsection;
+	margin:1em 0;
+	font-size:18pt;
+	font-family:'CMU Serif','Noto Serif TC';
+	font-weight:700;
+}
+h3:before {
+	counter-increment:subsection;
+	content: counter(subsection) ". ";
+}
+h3 {
+	margin:1em 0;
+	font-size:14pt;
+	font-family:'CMU Serif','Noto Serif TC';
+	font-weight:700;
+	counter-reset:subsubsec;
+}
+h4 {
+	margin:1em 0;
+	font-size:12pt;
+	font-family:'CMU Serif','Noto Serif TC';
+	font-weight:700;
+}
+h1, h2, h3, h4 {
+	font-family:'Noto Sans CJK TC', 'Noto Sans TC', sans-serif;
+	font-weight:400;
+}
+h1 span {
+	font-family:'Gen Jyuu GothicX', GenJyuu, sans-serif;
+	font-size:11pt;
+	font-weight:200;
+}
+h1 span:before {
+	content:"／";
+}
+h2.first, h3.first, h4.first {
+	margin-top:1.5em;
+}
+
+/* text-title end */
+
+/* text-general */
+
+div {
+	line-height:1.5em;
+}
+div b {
+	font-weight:500;
+}
+blockquote {
+	margin:1em 2em;
+}
+table {
+	border-collapse:collapse;
+	margin:auto;
+	table-layout:fixed;
+}
+li {
+	list-style:none;
+	position:relative;
+	left:1em;
+	margin-right:2em;
+}
+ol,ul {
+	margin:1em 0 1em 1em;
+	padding:0;
+}
+ul ul, ul ol, ol ul, ol ol {
+	margin-top:0;
+}
+ol.reset, ul.reset {
+	counter-reset:num ult llt urm lrm cjk;
+}
+ol.list, ul.list {
+	margin:0;
+}
+ul.non > li {
+	left:0em;
+}
+ul.disc > li {
+	list-style:disc;
+	left:1.2em;
+	margin-top:0;
+}
+ul.disc ul.disc > li {
+	list-style:circle;
+	left:0.3em;
+	margin-top:0;
+}
+ul.disc ul.disc ul.disc > li {
+	list-style:square;
+	left:0.3em;
+	margin-top:0;
+}
+ul.disc  ul.disc {
+	margin-top:0;
+	margin-bottom:0;
+}
+ul.disc > li.mtop {
+	margin-top:1em;
+}
+ol.num > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:num;
+	content:"(" counter(num) ")";
+}
+ol.prf > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:num;
+	content:"(" counter(num) ")";
+}
+ol.prf > li:last-child {
+	position:relative;
+	left:3em;
+	margin-right:3em;
+}
+ol.prf > li:last-child:before {
+	position:absolute;
+	left:-3em;
+	counter-increment:none;
+	content:"(Con)";
+}
+ol.ult > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:ult;
+	content:"(" counter(ult,upper-latin) ")";
+}
+ol.llt > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:llt;
+	content:"(" counter(llt,lower-latin) ")";
+}
+ol.urm > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:urm;
+	content:"(" counter(urm,upper-roman) ")";
+}
+ol.lrm > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:lrm;
+	content:"(" counter(lrm,lower-roman) ")";
+}
+ol.cjk > li:before {
+	position:absolute;
+	left:-2em;
+	counter-increment:cjk;
+	content:counter(cjk,cjk-decimal) "、";
+}
+span.note:before {
+	counter-increment:note;
+	content:"[" counter(note) "]";
+	vertical-align:super;
+	font-size:70%;
+	cursor:pointer;
+	color:#d00;
+}
+.pbrkb {
+	page-break-before:always;
+}
+h2.ref:before {
+	content:none;
+}
+.ref p {
+	text-indent:-2em;
+	margin-left:2em;
+}
+
+/* text-general end */
+
+/* schedule */
+
+div.schedule {
+	width:14.1cm;
+	height:12cm;
+	margin:auto;
+	margin-top:8.5cm;
+}
+div.day {
+	float:left;
+	width:4.7cm;
+}
+.schedule table {
+	margin:auto;
+	table-layout:auto;
+	width:90%;
+	border:none;
+}
+.schedule th, .schedule td {
+	padding:0.3em 0.5em;
+	vertical-align:top;
+	border:none;
+	line-height:1.5em;
+}
+.schedule th {
+	text-align:center;
+	border-bottom:1.5px solid black;
+	font-size:12pt;
+	font-weight:300;
+}
+.schedule td {
+	font-size:10pt;
+	text-align:left;
+	width:auto;
+}
+
+/* schedule end */
+
+/* staff */
+
+div.staff {
+	column-count:2;
+	column-fill:balance;
+	column-gap:2em;
+}
+div.pintro {
+	display:inline-block;
+}
+.staff h4 {
+	margin:0px;
+}
+.staff h4:before {
+	content:none;
+}
+.staff p {
+	margin-top:0.5em;
+	line-height:2em;
+}
+
+/* staff end */
+
+/* chapter-specific */
+
+/* chapter 0 */
+table.ch0, table.ch2 {
+	width:70%;
+	border:none;
+	line-height:2em;
+}
+.ch0 td, .ch2 td {
+	padding:0.3em 0.5em;
+	border:none;
+}
+table#tb01, table#tb02 {
+	text-justify:none;
+	prince-text-justify:none;
+}
+/* table 1 below */
+#tb01 tr:first-child td {
+	border-top:1px solid black;
+}
+#tb01 tr:last-child td {
+	border:none;
+	border-top:1px solid black;
+	position:relative;
+	left:1em;
+	padding-right:1.5em;
+}
+#tb01 tr:last-child td:before {
+	position:absolute;
+	left:-0.5em;
+	content:"⌾";
+}
+#tb01 tr:first-child td:first-child, #tb01 tr:nth-child(2) td:first-child, #tb01 tr:nth-child(3) td:first-child, #tb01 tr:nth-child(4) td:first-child {
+	width:3em;
+	border-left:1px solid black;
+}
+#tb01 td:nth-child(2) {
+	width:4em;
+	border-bottom:1px solid black;
+}
+#tb01 td:nth-child(3) {
+	width:9em;
+	border-bottom:1px solid black;
+}
+#tb01 td:nth-child(4) {
+	width:5em;
+	border-bottom:1px solid black;
+}
+#tb01 td:nth-child(5) {
+	width:1%;
+	border-right:1px solid black;
+}
+#tb01 tr:first-child td:first-child {
+	border-top:1px solid black;
+}
+
+/* table 2 below */
+#tb02 tr:first-child td {
+	border-top:1px solid black;
+}
+#tb02 tr:last-child td {
+	border:none;
+	border-top:1px solid black;
+	position:relative;
+	left:1em;
+	padding-right:1.5em;
+}
+#tb02 tr:last-child td:before {
+	position:absolute;
+	left:-0.5em;
+	content:"⌾";
+}
+#tb02 tr:first-child td:first-child {
+	width:7em;
+	border-left:1px solid black;
+}
+#tb02 tr:first-child td:nth-child(2), #tb02 tr:nth-child(2) td:first-child, #tb02 tr:nth-child(3) td:first-child, #tb02 tr:nth-child(4) td:first-child {
+	width:9em;
+	border-bottom:1px solid black;
+}
+#tb02 tr:first-child td:nth-child(3), #tb02 tr:nth-child(2) td:nth-child(2), #tb02 tr:nth-child(3) td:nth-child(2), #tb02 tr:nth-child(4) td:nth-child(2) {
+	width:5em;
+	border-bottom:1px solid black;
+}
+#tb02 tr:first-child td:last-child, #tb02 tr:nth-child(2) td:last-child, #tb02 tr:nth-child(3) td:last-child, #tb02 tr:nth-child(4) td:last-child {
+	width:1%;
+	border-right:1px solid black;
+}
+
+/* table 3&4 below */
+table#tb03, table#tb04 {
+	hyphens:none;
+	width:100%;
+}
+#tb03 td:first-child, #tb04 td:first-child {
+	width:10.5em;
+	text-align:right;
+	vertical-align:top;
+}
+#tb03 td:last-child, #tb04 td:last-child {
+	vertical-align:top;
+}
+#tb04 ol.num > li {
+	position:relative;
+	left:1em;
+	margin-right:1em;
+}
+#tb04 ol.num > li:before {
+	position:absolute;
+	left:-1em;
+	counter-increment:num;
+	content:counter(num) ".";
+}
+
+/* chapter 0 end */
+
+/* chapter 2 */
+
+/* table 1 below */
+table.ch2 {
+	width:100%;
+}
+.ch2 td {
+	border-bottom:2px solid #aaa;
+}
+.ch2 tr:last-child td {
+	border-bottom:none;
+}
+
+/* chapter 2 end */
+
+/* chapter-specific end */
+
+span.note:hover > span.box {
+	visibility:visible;
+	opacity:1;
+}
+.box {
+	width:18em;
+	padding:1em;
+	border-radius: 9px;
+	background-color:#ccc;
+	box-shadow:10px 10px 5px #888;
+	position:absolute;
+	visibility:hidden;
+	opacity:0;
+	transition:visibility 0.5s linear, opacity 0.5s linear;
+	font-size:80%;
+	line-height:1.5em;
+	color:#000;
+	cursor:text;
+}
+.fnt {
+	float:footnote;
+	font-size:80%;
+	line-height:1.5em;
+	text-indent:0em;
+	margin-top:0.5em;
+	margin-left:1.2em;
+}

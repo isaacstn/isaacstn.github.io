@@ -1,0 +1,42 @@
+body {
+	width:13.6cm;
+	margin:auto;
+	font-family:'Noto Sans CJK TC', 'Noto Sans TC', sans-serif;
+	font-weight:400;
+	text-align:center;
+}
+@page {
+	size:B5;
+	margin:2cm 2cm;
+}
+div#cover {
+	margin-top:7cm;
+	font-family:'Noto Serif CJK TC', 'Noto Serif TC', serif;
+}
+#cover table {
+	table-layout:auto;
+	border-collapse:collapse;
+	border:none;
+	margin:auto;
+}
+#cover tr:first-child td {
+	line-height:85pt;
+	font-size:85pt;
+	padding-bottom:15pt;
+}
+#cover tr:last-child td {
+	border-top:1px solid black;
+	font-size:22.1pt;
+	padding-top:5pt;
+}
+div#back {
+	margin-top:12.5cm;
+	page-break-before:always;
+}
+#back p {
+	font-size:22.1pt;
+	line-height:22.1pt;
+}
+#back span {
+	font-size:9.35pt;
+}
