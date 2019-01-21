@@ -11,8 +11,8 @@ body {
 	width:14.6cm;
 	margin:auto;
 	counter-reset:page 1 num ult llt urm lrm cjk note;
-	font-family:'Gen Jyuu GothicX', GenJyuu, 'Noto Sans CJK TC', 'Noto Sans TC', STIXGeneral, 'CMU Serif', sans-serif;
-	font-weight:200;
+	font-family:'GenSenMaruGothic TW TTF', GenSanMaru, 'Noto Sans CJK TC', 'Noto Sans TC', STIXGeneral, 'CMU Serif', sans-serif;
+	font-weight:300;
 	font-size:11pt;
 	text-align:justify;
 	text-justify:inter-ideograph;
@@ -22,7 +22,7 @@ body {
 	size:B5;
 	margin:2cm 1.5cm;
 	counter-increment:page;
-	font-family:'Gen Jyuu GothicX', GenJyuu, sans-serif;
+	font-family:'GenSenMaruGothic TW TTF', GenSanMaru, sans-serif;
 	font-size:10pt;
 	font-weight:300;
 }
@@ -92,9 +92,9 @@ h1, h2, h3, h4 {
 	font-weight:400;
 }
 h1 span {
-	font-family:'Gen Jyuu GothicX', GenJyuu, sans-serif;
+	font-family:'GenSenMaruGothic TW TTF', GenSanMaru, sans-serif;
 	font-size:11pt;
-	font-weight:200;
+	font-weight:300;
 }
 h1 span:before {
 	content:"／";
