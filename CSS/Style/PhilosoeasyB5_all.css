@@ -12,7 +12,7 @@ body {
 	margin:auto;
 	counter-reset:page 1 num ult llt urm lrm cjk note;
 	font-family:'GenSenMaruGothic TW TTF', GenSenMaru, 'Noto Sans CJK TC', 'Noto Sans TC', STIXGeneral, 'CMU Serif', sans-serif;
-	font-weight:300;
+	font-weight:200;
 	font-size:11pt;
 	text-align:justify;
 	text-justify:inter-ideograph;
@@ -94,7 +94,7 @@ h1, h2, h3, h4 {
 h1 span {
 	font-family:'GenSenMaruGothic TW TTF', GenSenMaru, sans-serif;
 	font-size:11pt;
-	font-weight:300;
+	font-weight:200;
 }
 h1 span:before {
 	content:"／";
@@ -125,7 +125,7 @@ li {
 	list-style:none;
 	position:relative;
 	left:1em;
-	margin-right:2em;
+	margin-right:1em;
 }
 ol,ul {
 	margin:1em 0 1em 1em;
@@ -140,30 +140,39 @@ ol.reset, ul.reset {
 ol.list, ul.list {
 	margin:0;
 }
-ul.non > li {
-	left:0em;
-}
-ul.disc > li {
-	list-style:disc;
-	left:1.2em;
-	margin-top:0;
-}
-ul.disc ul.disc > li {
-	list-style:circle;
-	left:0.3em;
-	margin-top:0;
-}
-ul.disc ul.disc ul.disc > li {
-	list-style:square;
-	left:0.3em;
-	margin-top:0;
-}
 ul.disc  ul.disc {
 	margin-top:0;
 	margin-bottom:0;
 }
+ul.disc > li, ul.disc ul.disc > li, ul.disc ul.disc ul.disc > li {
+	margin-top:0;
+}
+ul.disc > li:before {
+	content:"∙"; /* bullet operator */
+	position:absolute;
+	left:-1em;
+}
+ul.disc ul.disc > li:before {
+	content:"◦"; /* white bullet */
+	position:absolute;
+	left:-1.5em;
+}
+ul.disc ul.disc > li {
+	left:0.5em;
+}
+ul.disc ul.disc ul.disc > li:before {
+	content:"⋄"; /* triangular bullet */
+	position:absolute;
+	left:-1.25em;
+}
+ul.disc ul.disc ul.disc > li {
+	left:0.5em;
+}
 ul.disc > li.mtop {
 	margin-top:1em;
+}
+ul.non > li {
+	left:0em;
 }
 ol.num > li:before {
 	position:absolute;
@@ -267,7 +276,7 @@ div.day {
 	text-align:center;
 	border-bottom:1.5px solid black;
 	font-size:12pt;
-	font-weight:300;
+	font-weight:200;
 }
 .schedule td {
 	font-size:10pt;
