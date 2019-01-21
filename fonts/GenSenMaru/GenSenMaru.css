@@ -1,0 +1,37 @@
+/*
+@font-face {
+  font-family: 'GenSenMaru';
+  font-weight: 200;
+  src: url('https://isaacstn.github.io/fonts/GenSenMaru/GenSenMaruGothicTW-ExtraLight.ttf') format('truetype');
+}
+*/
+
+@font-face {
+  font-family: 'GenSenMaru';
+  font-weight: 300;
+  src: url('https://isaacstn.github.io/fonts/GenSenMaru/GenSenMaruGothicTW-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GenSenMaru';
+  font-weight: 400;
+  src: url('https://isaacstn.github.io/fonts/GenSenMaru/GenSenMaruGothicTW-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GenSenMaru';
+  font-weight: 500;
+  src: url('https://isaacstn.github.io/fonts/GenSenMaru/GenSenMaruGothicTW-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GenSenMaru';
+  font-weight: 700;
+  src: url('https://isaacstn.github.io/fonts/GenSenMaru/GenSenMaruGothicTW-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GenSenMaru';
+  font-weight: 900;
+  src: url('https://isaacstn.github.io/fonts/GenSenMaru/GenSenMaruGothicTW-Heavy.ttf') format('truetype');
+}
