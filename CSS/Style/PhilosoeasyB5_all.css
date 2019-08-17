@@ -432,21 +432,6 @@ table#tb03, table#tb04 {
 
 /* chapter 0 end */
 
-/* chapter 2 */
-
-/* table 1 below */
-table.ch2 {
-	width:100%;
-}
-.ch2 td {
-	border-bottom:2px solid #aaa;
-}
-.ch2 tr:last-child td {
-	border-bottom:none;
-}
-
-/* chapter 2 end */
-
 /* chapter-specific end */
 
 span.note:hover > span.box {
