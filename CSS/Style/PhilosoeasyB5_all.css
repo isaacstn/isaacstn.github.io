@@ -25,6 +25,13 @@ body {
 	font-family:'GenSenMaruGothic TW TTF', GenSenMaru, sans-serif;
 	font-size:10pt;
 	font-weight:300;
+	@footnotes{
+		margin-top: 0.5em;
+		border-top: 1px solid #000;
+		border-clip: 4em;
+		padding-top: 0.5em;
+		max-height: 25%;
+	}
 }
 @page:first {
 	@top-right {
