@@ -112,6 +112,9 @@ h2.first, h3.first, h4.first {
 h2.no::before, h3.no::before {
 	content:none;
 }
+h2.no, h3.no {
+	margin-left:-0.2em;
+}
 
 /* text-title end */
 
