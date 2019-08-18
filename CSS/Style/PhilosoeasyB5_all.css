@@ -109,7 +109,7 @@ h1 span:before {
 h2.first, h3.first, h4.first {
 	margin-top:1.5em;
 }
-h2.no(before), h3.no(before) {
+h2.no:before, h3.no:before {
 	content:none;
 }
 
