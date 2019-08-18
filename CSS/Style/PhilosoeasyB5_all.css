@@ -110,7 +110,7 @@ h2.first, h3.first, h4.first {
 	margin-top:1.5em;
 }
 h2.no(before), h3.no(before) {
-	
+	content:none;
 }
 
 /* text-title end */
