@@ -1,0 +1,40 @@
+body {
+	hyphens:auto;
+	hyphenate-after:3;
+	hyphenate-before:3;
+	-moz-hyphens:auto;
+	-moz-hyphenate-after:3;
+	-moz-hyphenate-before:3;
+	-webkit-hyphens:auto;
+	-webkit-hyphenate-after:3;
+	-webkit-hyphenate-before:3;
+	width:auto;
+	margin:1em;
+	font-family:'Noto Sans TC', sans-serif;
+	font-size:13pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+}
+h1 {
+	font-size:48pt;
+	font-weight:bold;
+	margin:0 0 -10px -10px;
+}
+h2 {
+	margin:1em 0;
+	font-size:28pt;
+	font-weight:bold;
+}
+div {
+	line-height:1.5em;
+}
+blockquote {
+	margin:1em 2em;
+}
+ul {
+	margin:1em 0 1em 0em;
+	padding:0;
+}
+li {
+	list-style:none;
+}
