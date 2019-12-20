@@ -11,7 +11,7 @@ body {
 	width:auto;
 	margin:1em;
 	font-family:sans-serif;
-	font-size:32pt;
+	font-size:28pt;
 	text-align:justify;
 	text-justify:inter-ideograph;
 }
@@ -23,7 +23,7 @@ h1 {
 h2 {
 	margin:1em 0;
 	font-weight:bold;
-	font-size:32pt;
+	font-size:28pt;
 }
 div {
 	line-height:1.5em;
@@ -31,10 +31,12 @@ div {
 p {
 	text-indent:2em;
 }
+li {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
 ul {
 	margin:1em 0 1em 0em;
 	padding:0;
-}
-li {
-	list-style:none;
 }
