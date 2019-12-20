@@ -11,18 +11,17 @@ body {
 	width:auto;
 	margin:1em;
 	font-family:'Noto Sans TC', sans-serif;
-	font-size:13pt;
+	font-size:24pt;
 	text-align:justify;
 	text-justify:inter-ideograph;
 }
 h1 {
 	font-size:48pt;
 	font-weight:bold;
-	margin:0 0 -10px -10px;
+	margin:0;
 }
 h2 {
 	margin:1em 0;
-	font-size:28pt;
 	font-weight:bold;
 }
 div {
