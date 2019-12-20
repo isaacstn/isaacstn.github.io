@@ -10,7 +10,7 @@ body {
 	-webkit-hyphenate-before:3;
 	width:auto;
 	margin:1em;
-	font-family:'Noto Sans TC', sans-serif;
+	font-family:sans-serif;
 	font-size:24pt;
 	text-align:justify;
 	text-justify:inter-ideograph;
