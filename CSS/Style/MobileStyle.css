@@ -12,8 +12,10 @@ body {
 	margin:1em;
 	font-family:sans-serif;
 	font-size:20pt;
+	color:#ccc;
 	text-align:justify;
 	text-justify:inter-ideograph;
+	background-color:#333;
 }
 h1 {
 	font-size:48pt;
