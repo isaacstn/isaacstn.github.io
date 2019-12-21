@@ -18,7 +18,7 @@ body {
 }
 div.main {
 	margin:1em;
-	margin-bottom:50%;
+	padding-bottom:50%;
 }
 h1 {
 	font-size:48pt;
