@@ -1,0 +1,123 @@
+body {
+	font-family:'CMU Serif','STIXGeneral','新細明體','MingLiU-ExtB';
+	font-family:'CMU Serif','STIXGeneral','Noto Serif TC','MingLiU-ExtB';
+	font-size:normal;
+	counter-reset:prf page 1;
+}
+@page {
+	font-family:'DFYuanLight-B5';
+	font-family:'GenSenMaru';
+	size:20cm 15cm;
+	margin:0cm 0cm 0.5cm 0cm;
+	@bottom-left {
+		background-color:#342d7e;
+		width:12.5cm;
+		text-align:right;
+		color:#fff;
+		font-family:'DFYuanLight-B5','華康細圓體';
+		font-family:'GenSenMaru';
+		font-size:90%;
+		font-weight:bold;
+		content:"899125004 黃頌竹　";
+		content:"黃頌竹　";
+	}
+	@bottom-right {
+		background-color:#000;
+		width:7.5cm;
+		text-align:left;
+		color:#fff;
+		font-family:'DFYuanLight-B5','華康細圓體';
+		font-family:'GenSenMaru';
+		font-size:90%;
+		font-weight:bold;
+		counter-increment:page;
+		content:"　" counter(page) "/2";
+		content:"　" counter(page);
+	}
+}@media {
+    html, body {
+@@ -63,8 +63,8 @@ body > div > div > p {
+}
+body > div > div:nth-child(3) {
+	hyphens:auto;
+	hyphenate-after:2;
+	hyphenate-before:2;
+	hyphenate-after:3;
+	hyphenate-before:3;
+	text-align:justify;
+	padding:1.5cm 2cm 0cm 2cm;
+	font-weight:bold;
+@@ -156,45 +156,6 @@ li.hidden {
+table {
+	border-collapse:collapse;
+}
+table.nobefore {
+	width:100%;
+}
+table.nobefore td:before {
+	display:none;
+}
+table.nobefore td {
+	width:50%;
+}
+table.short td:first-of-type {
+	width:35%;
+}
+table.truth {
+	float:left;
+	text-align:center;
+	margin:0 2.2em 0 2.2em;
+}
+table.truth tr:nth-of-type(2) {
+	border-bottom:solid 1px black;
+}
+table.truth tr:nth-of-type(3) td:nth-of-type(3),table.truth tr:nth-of-type(3) td:nth-of-type(4),table.truth tr:nth-of-type(4) td:nth-of-type(3),table.truth tr:nth-of-type(4) td:nth-of-type(4) {
+	border:solid 1px black;
+}
+table.theorem {
+	counter-reset:num;
+	width:100%;
+}
+table.theorem td:before {
+	position:absolute;
+	left:-3.5em;
+	counter-increment:num;
+	content:"*"counter(num)". ";
+}
+table.theorem td {
+	position:relative;
+	left:3.5em;
+	vertical-align:middle;
+	width:auto;
+}
+table.prf {
+	width:100%;
+	counter-reset:tprf;
+@@ -215,27 +176,9 @@ table.prf td {
+table.prf th {
+	width:1.5cm;
+}
+table.right td {
+	text-align:right;
+	vertical-align:top;
+}
+table.right td:first-of-type {
+	text-align:left;
+}
+table.right td:last-of-type {
+	text-align:left;
+	position:relative;
+	left:3em;
+	margin-right:3em;
+}
+table.right td:last-of-type:before {
+	position:absolute;
+	left:-3em;
+	content:"　─";
+}
+.white {
+	color:#fff;
+}
+.red {
+	color:#f00;
+}
