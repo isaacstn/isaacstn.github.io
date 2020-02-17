@@ -208,6 +208,7 @@ table.prf {
 	counter-reset:tprf;
 	margin:1em 2em;
 	vertical-align:middle;
+	border: solid 1px black;
 }
 table.full {
 	width:100%;
