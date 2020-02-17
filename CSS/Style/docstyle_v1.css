@@ -243,7 +243,7 @@ em {
 blockquote {
 	margin:1em 4em 1em 2em;
 	text-indent:0;
-	font-family:'CMU Serif','cwTeXFangSong';
+	font-family:'CMU Serif','Adobe FangSong';
 }
 .part {
 	counter-reset:page 1;
