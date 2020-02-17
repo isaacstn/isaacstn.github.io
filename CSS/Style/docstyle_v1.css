@@ -87,7 +87,7 @@ p {
 	line-height:18pt;
 	margin-top:1em;
 }
-p:first-of-type(1) {
+p:first-of-type {
 	text-indent:0;
 }
 math.isaac {
