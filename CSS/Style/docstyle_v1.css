@@ -38,7 +38,7 @@ body {
 	}
 }
 h1, h2, h3, h4, h5 {
-	font:normal bold 'CMU serif','Noto Serif TC';
+	font:normal bold 'CMU Serif','Noto Serif TC';
 }
 h1 {
 	text-align:center;
@@ -84,7 +84,7 @@ h4 {
 }
 p {
 	text-indent:2em;
-	line-height:18pt;
+	line-height:1.5em;
 	margin-top:1em;
 }
 p:first-of-type {
@@ -207,7 +207,6 @@ ul.induction > li {
 table.prf {
 	counter-reset:tprf;
 	margin:1em 2em;
-	border: solid 1px black;
 }
 table.full {
 	width:100%;
@@ -218,9 +217,6 @@ table.3qt {
 table.half {
 	width:50%;
 }
-table.prf tr {
-	height:1.1em;
-}
 table.prf td {
 	vertical-align:middle;
 }
@@ -229,7 +225,6 @@ table.prf td:nth-child(1):before {
 	left:-1.5em;
 	counter-increment:tprf;
 	content:counter(tprf)". ";
-	vertical-align:middle;
 }
 table.prf td:nth-child(1) {
 	position:relative;
