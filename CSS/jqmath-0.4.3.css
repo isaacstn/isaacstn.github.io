@@ -26,14 +26,14 @@ mo.fm-radic			{ font-family: 'Lucida Sans Unicode', 'Lucida Grande',
 .ma-script, fmath mi[mathvariant*=script], fmath mo[mathvariant*=script],
 fmath mn[mathvariant*=script], fmath mtext[mathvariant*=script], fmath ms[mathvariant*=script]
 					{ font-family:
-						'England Hand DB', 'Embassy BT', 'Amazone BT', 'Bank Script D',
+						'Felipa', 'England Hand DB', 'Embassy BT', 'Amazone BT', 'Bank Script D',
 						'URW Chancery L', 'Lucida Calligraphy', 'Apple Chancery',
 						'Monotype Corsiva', Corsiva,
 						'Vivaldi D', Gabriola, 'Segoe Script', cursive }
 .ma-fraktur, fmath mi[mathvariant*=fraktur], fmath mo[mathvariant*=fraktur],
 fmath mn[mathvariant*=fraktur], fmath mtext[mathvariant*=fraktur],
 fmath ms[mathvariant*=fraktur]
-					{ font-family: UnifrakturMaguntia, Impact, fantasy }
+					{ font-family: Unifraktur, UnifrakturMaguntia, Impact, fantasy }
 fmath mi[mathvariant*=monospace], fmath mo[mathvariant*=monospace],
 fmath mn[mathvariant*=monospace], fmath mtext[mathvariant*=monospace],
 fmath ms[mathvariant*=monospace]
