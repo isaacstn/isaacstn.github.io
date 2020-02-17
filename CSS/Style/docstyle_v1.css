@@ -4,7 +4,7 @@ body {
 	hyphenate-before:2;
 	width:15.92cm;
 	margin: auto;
-	font:normal normal 12pt 'Noto Serif TC';
+	font:normal normal 12pt 'CMU Serif','Noto Serif TC';
 	counter-reset:num urm ult lrm llt numd urmd ultd lrmd lltd section prf;
 	text-align:justify;
 	text-justify:inter-ideograph;
@@ -38,7 +38,7 @@ body {
 	}
 }
 h1, h2, h3, h4, h5 {
-	font:normal bold 'Noto Serif TC';
+	font:normal bold 'CMU Serif','Noto Serif TC';
 }
 h1 {
 	text-align:center;
