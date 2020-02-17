@@ -205,8 +205,17 @@ ul.induction > li {
 	margin-right:2.5em;
 }
 table.prf {
-	width:100%;
 	counter-reset:tprf;
+	margin:1em 2em;
+}
+table.full {
+	width:100%;
+}
+table.3qt {
+	width:75%;
+}
+table.half {
+	width:50%;
 }
 table.prf tr {
 	height:1.1em;
