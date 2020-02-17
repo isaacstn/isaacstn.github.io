@@ -207,6 +207,7 @@ ul.induction > li {
 table.prf {
 	counter-reset:tprf;
 	margin:1em 2em;
+	vertical-align:middle;
 }
 table.full {
 	width:100%;
@@ -229,9 +230,6 @@ table.prf td:nth-child(1):before {
 table.prf td:nth-child(1) {
 	position:relative;
 	left:1.5em;
-}
-table.prf td {
-	vertical-align:middle;
 }
 div.inblock {
 	display:inline-block;
