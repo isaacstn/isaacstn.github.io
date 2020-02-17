@@ -2,9 +2,9 @@ body {
 	hyphens:auto;
 	hyphenate-after:2;
 	hyphenate-before:2;
-	width:15cm;
+	width:15.92cm;
 	margin: auto;
-	font:normal normal 12pt 'CMU Serif',cwTeXMing;
+	font:normal normal 12pt 'CMU Serif','Noto Serif TC';
 	counter-reset:num urm ult lrm llt numd urmd ultd lrmd lltd section prf;
 	text-align:justify;
 	text-justify:inter-ideograph;
@@ -12,7 +12,7 @@ body {
 }
 @page {
 	size:A4;
-	margin:4cm 3cm;
+	margin:2.54cm;
 	@footnotes{
 		margin-top: 0.5em;
 		border-top: 1px solid #000;
@@ -38,12 +38,12 @@ body {
 	}
 }
 h1, h2, h3, h4, h5 {
-	font:normal bold 'CMU serif','HWHvyMing';
+	font:normal bold 'CMU serif','Noto Serif TC';
 }
 h1 {
 	text-align:center;
-	font-size:240%;
-	padding:0.5em 0em 0.5em 0em;
+	font-size:48pt;
+	padding:0.5em 0em;
 }
 h1#ref {
 	text-align:left;
@@ -56,7 +56,7 @@ h2:before {
 h2 {
 	counter-reset:subsection;
 	margin:1em auto 0 auto;
-	font-size:150%;
+	font-size:24pt;
 }
 h2#abstract:before {
 	content:none;
@@ -72,7 +72,7 @@ h3 {
 	counter-reset:portion;
 	margin-bottom:-0.5em;
 	padding-top:0.5em;
-	font-size:125%;
+	font-size:16pt;
 }
 h4:before {
 	counter-increment:portion;
@@ -80,12 +80,14 @@ h4:before {
 }
 h4 {
 	margin-bottom:-0.5em;
-	font-size:100%;
+	font-size:12pt;
 }
 p {
 	text-indent:2em;
+	line-height:18pt;
+	margin-top:1em;
 }
-p:nth-of-type(1) {
+p:first-of-type(1) {
 	text-indent:0;
 }
 math.isaac {
@@ -236,7 +238,7 @@ div#bonus {
 }
 em {
 	font-style:normal;
-	font-weight:bold;
+	font-weight:700;
 }
 blockquote {
 	margin:1em 4em 1em 2em;
@@ -252,19 +254,19 @@ blockquote {
 }
 .fnt {
 	float:footnote;
-	font:normal normal 80% 'CMU Serif','cwTeXMing';
+	font:normal normal 9pt 'CMU Serif','Noto Serif TC';
 	line-height:1em;
 	text-indent:0em;
 	margin:0.5em 0em 0 1.2em;
 }
 .quote {
-	font-family:'CMU Serif','cwTeXFangSong';
+	font-family:'CMU Serif','Adobe FangSong';
 }
 .kai {
-	font-family:'標楷體','DFKai-SB';
+	font-family:'Adobe Kai','標楷體','DFKai-SB';
 }
 .song {
-	font-family:'cwTeXFangSong';
+	font-family:'Adobe FangSong';
 }
 #front {
 	page:front-matter;
