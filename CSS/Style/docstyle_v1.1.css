@@ -1,0 +1,322 @@
+body {
+	hyphens:auto;
+	hyphenate-limit-chars:6 3 2;
+	-moz-hyphenate-limit-chars:6 3 2;
+	width:15.92cm;
+	margin:auto;
+	font:normal normal 12pt 'CMU Serif','Noto Serif TC';
+	line-height:1.5em;
+	counter-reset:num urm ult lrm llt numd urmd ultd lrmd lltd section prf note;
+	text-align:justify;
+	text-justify:inter-character;
+	prince-text-justify:prince-cjk;
+}
+@page {
+	size:A4;
+	margin:2.54cm;
+	@footnotes{
+		margin-top: 0.5em;
+		border-top: 1px solid #000;
+		border-clip: 4em;
+		padding-top: 0.5em;
+		max-height: 25%;
+	}
+}
+@page front-matter {
+	@bottom-center {
+		line-height:auto;
+		counter-increment:page;
+		content:counter(page, lower-roman);
+		padding-bottom: 40%;
+	}
+}
+@page main {
+	@bottom-center {
+		line-height:auto;
+		counter-increment:page;
+		content:counter(page);
+		padding-bottom: 40%;
+	}
+}
+@media print {
+		span.note:before {
+				display:none;
+		}
+}
+h1, h2, h3, h4, h5 {
+	font:normal bold 'CMU Serif','Noto Serif TC';
+}
+h1 {
+	font-size:24pt;
+	padding:0.5em 0em;
+}
+h1#ref {
+	text-align:left;
+	padding:0;
+}
+h2:before {
+	counter-increment:section;
+	content: counter(section) ". ";
+}
+h2 {
+	counter-reset:subsection;
+	margin:1em auto 0 auto;
+	font-size:20pt;
+}
+h2#abstract:before {
+	content:none;
+}
+h2#abstract {
+	text-align:center;
+}
+h3:before {
+	counter-increment:subsection;
+	content: counter(section) "." counter(subsection) ". ";
+}
+h3 {
+	counter-reset:portion;
+	margin-bottom:-0.5em;
+	padding-top:0.5em;
+	font-size:16pt;
+}
+h4:before {
+	counter-increment:portion;
+	content:counter(section) "." counter(subsection) "." counter(portion) ". ";
+}
+h4 {
+	margin-bottom:-0.5em;
+	font-size:12pt;
+}
+p {
+	text-indent:2em;
+	margin-top:1em;
+}
+p:first-of-type {
+	text-indent:0;
+}
+em {
+	font-style:normal;
+	font-weight:700;
+}
+blockquote {
+	margin:1em 4em 1em 2em;
+	text-indent:0;
+	font-family:'CMU Serif','Adobe FangSong';
+}
+math.isaac {
+	font-family:'CMU math','STIXGeneral',Serif;
+	margin-top:0.5em;
+	display:block;
+}
+math.isaac mi {
+	font:italic;
+	mathvariant:italic;
+}
+math.isaac mfrac {
+	font-size:1.3em;
+}
+ol.quiz p {
+	text-indent:0;
+}
+ol,ul {
+	margin:1em 0 1em 2em;
+	padding:0;
+	counter-reset:quiz;
+}
+ol.local {
+	counter-reset:num urm ult lrm llt prf numd urmd ultd lrmd lltd;
+}
+li:before {
+	position:absolute;
+	left:-2em;
+}
+li {
+	list-style:none;
+	position:relative;
+	left:2em;
+	margin-right:2em;
+	margin-top:1em;
+}
+li:first-child {
+	margin-top:0;
+}
+ol.quiz > li:before {
+	counter-increment:quiz;
+	content:counter(quiz) ".";
+	left:-1.5em;
+}
+ol.quiz > li {
+	margin-top:1.5em;
+}
+ol.prf > li:before {
+	counter-increment:prf;
+	content:"P" counter(prf) ". ";
+	font-style:italic;
+}
+ol.prf > li:last-child:before {
+	counter-increment:none;
+	content:"C. ";
+}
+ol.num > li:before {
+	counter-increment:num;
+	content:"(" counter(num) ")";
+}
+ol.urm > li:before {
+	counter-increment:urm;
+	content:"(" counter(urm,upper-roman) ")";
+}
+ol.ult > li:before {
+	counter-increment:ult;
+	content:"(" counter(ult,upper-latin) ")";
+}
+ol.lrm > li:before {
+	counter-increment:lrm;
+	content:"(" counter(lrm,lower-roman) ")";
+}
+ol.llt > li:before {
+	counter-increment:llt;
+	content:"(" counter(llt,lower-latin) ")";
+}
+ol.numd > li:before {
+	counter-increment:numd;
+	content:counter(numd) ". ";
+}
+ol.urmd > li:before {
+	counter-increment:urmd;
+	content:counter(urmd,upper-roman) ". ";
+}
+ol.ultd > li:before {
+	counter-increment:ultd;
+	content:counter(ultd,upper-latin) ". ";
+}
+ol.lrmd > li:before {
+	counter-increment:lrmd;
+	content:counter(lrmd,lower-roman) ". ";
+}
+ol.lltd > li:before {
+	counter-increment:lltd;
+	content:counter(lltd,lower-latin) ". ";
+}
+ol.tight > li, ol.prf > li {
+	margin-top:0;
+}
+ul.induction > li:before {
+	position:absolute;
+	left:-2.5em;
+}
+ul.induction > li:nth-child(1):before {
+	content:"B.C.";
+}
+ul.induction > li:nth-child(2):before {
+	content:"I.H.";
+}
+ul.induction > li:nth-child(3):before {
+	content:"I.C.";
+}
+ul.induction > li {
+	left:2.5em;
+	margin-right:2.5em;
+}
+table.prf {
+	counter-reset:tprf;
+	margin:1em 2em;
+}
+table.full {
+	width:100%;
+}
+table.3qt {
+	width:75%;
+}
+table.half {
+	width:50%;
+}
+table.prf td {
+	vertical-align:middle;
+}
+table.prf td:first-child:before {
+	position:absolute;
+	left:-1.5em;
+	counter-increment:tprf;
+	content:counter(tprf)". ";
+}
+table.prf td:first-child {
+	position:relative;
+	left:1.5em;
+	padding-right:1em;
+}
+table.prf td:last-child {
+	position:relative;
+	left:1.5em;
+}
+div.inblock {
+	display:inline-block;
+}
+div#bonus {
+	margin-bottom:-0.5em;
+	font-weight:bold;
+	page-break-before:always;
+}
+#ref p {
+	text-indent:-2em;
+	margin-left:2em;
+}
+.part {
+	counter-reset:page 1;
+}
+.break {
+	page-break-before:always;
+	page-break-after:avoid;
+}
+.fnt {
+	float:footnote;
+	font:normal normal 9pt 'CMU Serif','Noto Serif TC';
+	line-height:1em;
+	text-indent:0em;
+	margin:0.5em 0em 0 1.2em;
+}
+span.note:before {
+ counter-increment:note;
+ content:"[" counter(note) "]";
+ vertical-align:baseline;
+ position:relative;
+ top:-0.6em;
+ font-size:70%;
+ cursor:pointer;
+ color:#d00;
+}
+span.note:hover span.box {
+  visibility:visible;
+  opacity:1;
+}
+.box {
+  width:18em;
+  padding:1em;
+  border-radius: 9px;
+  background-color:#ccc;
+  box-shadow:10px 10px 5px #888;
+  position:absolute;
+  visibility:hidden;
+  opacity:0;
+  transition:visibility 0.5s linear, opacity 0.2s linear;
+  font-size:80%;
+  line-height:1.5em;
+  color:#000;
+}
+.quote {
+	font-family:'CMU Serif','Adobe FangSong';
+}
+.kai {
+	font-family:'Adobe Kai','標楷體','DFKai-SB';
+}
+.song {
+	font-family:'Adobe FangSong';
+}
+#front {
+	page:front-matter;
+}
+#main {
+	page:main;
+}
+#ref {
+	page:main;
+}
