@@ -45,10 +45,14 @@ h1, h2, h3, h4, h5 {
 h1 {
 	font-size:24pt;
 	padding:0.5em 0em;
+	page-break-before:always;
 }
 h1#ref {
 	text-align:left;
 	padding:0;
+}
+h1:first-of-type {
+	page-break-before:avoid;
 }
 h2:before {
 	counter-increment:section;
@@ -58,12 +62,16 @@ h2 {
 	counter-reset:subsection;
 	margin:1em auto 0 auto;
 	font-size:20pt;
+	page-break-before:always;
 }
 h2#abstract:before {
 	content:none;
 }
 h2#abstract {
 	text-align:center;
+}
+h2:first-of-type {
+	page-break-before:avoid;
 }
 h3:before {
 	counter-increment:subsection;
@@ -82,6 +90,12 @@ h4:before {
 h4 {
 	margin-bottom:-0.5em;
 	font-size:12pt;
+}
+.def h4:before {
+	content:none;
+}
+div.def {
+	margin-top:2em;
 }
 p {
 	text-indent:2em;
@@ -187,9 +201,9 @@ ol.lltd > li:before {
 .tight > li, .prf > li , .def > li {
 	margin-top:0.25em;
 }
-ul.def {
+.def ul {
 	border:solid 1px black;
-	margin-right:2em;
+	margin-left:0;
 	padding:0.25em 0.5em;
 }
 .def span:before {
@@ -339,6 +353,7 @@ span.note:hover span.box {
 		position:static;
 		visibility:visible;
 		opacity:1;
+		font-size:9pt;
 		padding:0;
 		margin:0.5em 0em 0 1.2em;
 	}
