@@ -1,15 +1,17 @@
 body {
 	hyphens:auto;
+	-webkit-hyphens:auto;
 	hyphenate-limit-chars:6 3 2;
+	-ms-hyphenate-limit-chars:6 3 2;
 	-moz-hyphenate-limit-chars:6 3 2;
+	-webkit-hyphenate-limit-chars:6 3 2;
 	width:15.92cm;
-	margin:auto;
+	margin: auto;
 	font:normal normal 12pt 'CMU Serif','Noto Serif TC';
 	line-height:1.5em;
 	counter-reset:num urm ult lrm llt numd urmd ultd lrmd lltd section prf note;
 	text-align:justify;
 	text-justify:inter-character;
-	prince-text-justify:prince-cjk;
 }
 @page {
 	size:A4;
@@ -19,7 +21,6 @@ body {
 		border-top: 1px solid #000;
 		border-clip: 4em;
 		padding-top: 0.5em;
-		max-height: 25%;
 	}
 }
 @page front-matter {
@@ -37,11 +38,6 @@ body {
 		content:counter(page);
 		padding-bottom: 40%;
 	}
-}
-@media print {
-		span.note:before {
-				display:none;
-		}
 }
 h1, h2, h3, h4, h5 {
 	font:normal bold 'CMU Serif','Noto Serif TC';
@@ -103,18 +99,6 @@ blockquote {
 	text-indent:0;
 	font-family:'CMU Serif','Adobe FangSong';
 }
-math.isaac {
-	font-family:'CMU math','STIXGeneral',Serif;
-	margin-top:0.5em;
-	display:block;
-}
-math.isaac mi {
-	font:italic;
-	mathvariant:italic;
-}
-math.isaac mfrac {
-	font-size:1.3em;
-}
 ol.quiz p {
 	text-indent:0;
 }
@@ -139,6 +123,9 @@ li {
 }
 li:first-child {
 	margin-top:0;
+}
+ul > li {
+	left:0;
 }
 ol.quiz > li:before {
 	counter-increment:quiz;
@@ -197,8 +184,20 @@ ol.lltd > li:before {
 	counter-increment:lltd;
 	content:counter(lltd,lower-latin) ". ";
 }
-ol.tight > li, ol.prf > li {
-	margin-top:0;
+.tight > li, .prf > li , .def > li {
+	margin-top:0.25em;
+}
+ul.def {
+	border:solid 1px black;
+	margin-right:2em;
+	padding:0.25em 0.5em;
+}
+.def span:before {
+	content:"Df";
+	vertical-align:baseline;
+	position:relative;
+	bottom:-0.4em;
+	font:bold 70% 'Felipa';
 }
 ul.induction > li:before {
 	position:absolute;
@@ -217,21 +216,25 @@ ul.induction > li {
 	left:2.5em;
 	margin-right:2.5em;
 }
-table.prf {
-	counter-reset:tprf;
+table {
 	margin:1em 2em;
+	border-collapse:collapse;
 }
 table.full {
 	width:100%;
 }
-table.3qt {
+table.qt3 {
 	width:75%;
 }
 table.half {
 	width:50%;
 }
+table.prf {
+	counter-reset:tprf;
+}
 table.prf td {
 	vertical-align:middle;
+	padding-top:0.25em;
 }
 table.prf td:first-child:before {
 	position:absolute;
@@ -247,6 +250,14 @@ table.prf td:first-child {
 table.prf td:last-child {
 	position:relative;
 	left:1.5em;
+}
+table.prf tr:first-child td {
+	padding-top:0;
+}
+table.prf tr:last-child td:first-child:before {
+	position:absolute;
+	left:-1.5em;
+	content:"C. ";
 }
 div.inblock {
 	display:inline-block;
@@ -267,13 +278,6 @@ div#bonus {
 	page-break-before:always;
 	page-break-after:avoid;
 }
-.fnt {
-	float:footnote;
-	font:normal normal 9pt 'CMU Serif','Noto Serif TC';
-	line-height:1em;
-	text-indent:0em;
-	margin:0.5em 0em 0 1.2em;
-}
 span.note:before {
  counter-increment:note;
  content:"[" counter(note) "]";
@@ -283,24 +287,27 @@ span.note:before {
  font-size:70%;
  cursor:pointer;
  color:#d00;
+ padding-right:0.25em;
 }
 span.note:hover span.box {
-  visibility:visible;
-  opacity:1;
+	visibility:visible;
+	opacity:1;
 }
 .box {
-  width:18em;
-  padding:1em;
-  border-radius: 9px;
-  background-color:#ccc;
-  box-shadow:10px 10px 5px #888;
-  position:absolute;
-  visibility:hidden;
-  opacity:0;
-  transition:visibility 0.5s linear, opacity 0.2s linear;
-  font-size:80%;
-  line-height:1.5em;
-  color:#000;
+	width:18em;
+	padding:1em;
+	border-radius: 9px;
+	background-color:#ccc;
+	box-shadow:10px 10px 5px #888;
+	position:absolute;
+	z-index:1;
+	visibility:hidden;
+	opacity:0;
+	transition:visibility 0.5s linear, opacity 0.2s linear;
+	text-indent:0;
+	font-size:10pt;
+	line-height:1.5em;
+	float:footnote;
 }
 .quote {
 	font-family:'CMU Serif','Adobe FangSong';
@@ -319,4 +326,20 @@ span.note:hover span.box {
 }
 #ref {
 	page:main;
+}
+@media print {
+	span.note:before {
+		display:none;
+	}
+	span.box {
+		width:100%;
+		border:none;
+		background-color:transparent;
+		box-shadow:none;
+		position:static;
+		visibility:visible;
+		opacity:1;
+		padding:0;
+		margin:0.5em 0em 0 1.2em;
+	}
 }
