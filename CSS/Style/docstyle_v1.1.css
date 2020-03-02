@@ -367,10 +367,3 @@ span.note:hover span.box {
 		margin:0.5em 0em 0 1.2em;
 	}
 }
-
-/* move below to html when complete */
-
-h1:before {
-	counter-increment:;
-	content:"第" counter(chapter) "章 ";
-}
