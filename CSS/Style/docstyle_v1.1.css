@@ -235,7 +235,7 @@ table {
 	border-collapse:collapse;
 }
 table.full {
-	width:100%;
+	width:95%;
 }
 table.qt3 {
 	width:75%;
@@ -249,6 +249,9 @@ table.prf {
 table.prf td {
 	vertical-align:middle;
 	padding-top:0.25em;
+}
+table.follow {
+	border-top:1px solid #000;
 }
 table.prf td:first-child:before {
 	position:absolute;
@@ -272,6 +275,12 @@ table.prf tr:last-child td:first-child:before {
 	position:absolute;
 	left:-1.5em;
 	content:"C. ";
+}
+table.follow tr:first-child td {
+	padding-top:1em;
+}
+tr.last {
+	display:none;
 }
 div.inblock {
 	display:inline-block;
@@ -357,4 +366,11 @@ span.note:hover span.box {
 		padding:0;
 		margin:0.5em 0em 0 1.2em;
 	}
+}
+
+/* move below to html when complete */
+
+h1:before {
+	counter-increment:;
+	content:"第" counter(chapter) "章 ";
 }
