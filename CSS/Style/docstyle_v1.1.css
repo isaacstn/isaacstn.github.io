@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5 {
 }
 h1 {
 	font-size:24pt;
-	padding:0.5em 0em;
+	padding-top:1em;
 	page-break-before:always;
 }
 h1#ref {
@@ -56,9 +56,10 @@ h1:first-of-type {
 }
 h2:before {
 	counter-increment:section;
-	content: counter(section) ". ";
+	content: counter(chapter) "." counter(section) ". ";
 }
 h2 {
+	padding-top:0.5em;
 	counter-reset:subsection;
 	margin:1em auto 0 auto;
 	font-size:20pt;
@@ -75,21 +76,20 @@ h2:first-of-type {
 }
 h3:before {
 	counter-increment:subsection;
-	content: counter(section) "." counter(subsection) ". ";
+	content: counter(chapter) "." counter(section) "." counter(subsection) ". ";
 }
 h3 {
 	counter-reset:portion;
-	margin-bottom:-0.5em;
 	padding-top:0.5em;
 	font-size:16pt;
 }
 h4:before {
 	counter-increment:portion;
-	content:counter(section) "." counter(subsection) "." counter(portion) ". ";
+	content:counter(chapter) "." counter(section) "." counter(subsection) "." counter(portion) ". ";
 }
 h4 {
 	margin-bottom:-0.5em;
-	font-size:12pt;
+	font-size:14pt;
 }
 .def h4:before {
 	content:none;
