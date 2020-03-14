@@ -9,7 +9,7 @@ body {
 	margin: auto;
 	font:normal normal 12pt 'CMU Serif','Noto Serif TC';
 	line-height:1.5em;
-	counter-reset:num urm ult lrm llt numd urmd ultd lrmd lltd section prf note;
+	counter-reset:num urm ult lrm llt numd urmd ultd lrmd lltd chapter prf note;
 	text-align:justify;
 	text-justify:inter-character;
 }
@@ -46,6 +46,7 @@ h1 {
 	font-size:24pt;
 	padding-top:1em;
 	page-break-before:always;
+	counter-reset:section;
 }
 h1#ref {
 	text-align:left;
@@ -54,7 +55,7 @@ h1#ref {
 h1:first-of-type {
 	page-break-before:avoid;
 }
-h2:before {
+h2::before {
 	counter-increment:section;
 	content: counter(chapter) "." counter(section) ". ";
 }
@@ -65,7 +66,7 @@ h2 {
 	font-size:20pt;
 	page-break-before:always;
 }
-h2#abstract:before {
+h2#abstract::before {
 	content:none;
 }
 h2#abstract {
@@ -74,7 +75,7 @@ h2#abstract {
 h2:first-of-type {
 	page-break-before:avoid;
 }
-h3:before {
+h3::before {
 	counter-increment:subsection;
 	content: counter(chapter) "." counter(section) "." counter(subsection) ". ";
 }
@@ -83,15 +84,15 @@ h3 {
 	padding-top:0.5em;
 	font-size:16pt;
 }
-h4:before {
+h4::before {
 	counter-increment:portion;
 	content:counter(chapter) "." counter(section) "." counter(subsection) "." counter(portion) ". ";
 }
 h4 {
 	margin-bottom:-0.5em;
-	font-size:14pt;
+	font-size:12pt;
 }
-.def h4:before {
+.def h4::before {
 	content:none;
 }
 div.def {
@@ -124,7 +125,10 @@ ol,ul {
 ol.local {
 	counter-reset:num urm ult lrm llt prf numd urmd ultd lrmd lltd;
 }
-li:before {
+ol.stop {
+	counter-increment: num -1 urm -1 ult -1 lrm -1 llt -1 prf -1 numd -1 urmd -1 ultd -1 lrmd -1 lltd -1;
+}
+li::before {
 	position:absolute;
 	left:-2em;
 }
@@ -141,7 +145,7 @@ li:first-child {
 ul > li {
 	left:0;
 }
-ol.quiz > li:before {
+ol.quiz > li::before {
 	counter-increment:quiz;
 	content:counter(quiz) ".";
 	left:-1.5em;
@@ -149,52 +153,59 @@ ol.quiz > li:before {
 ol.quiz > li {
 	margin-top:1.5em;
 }
-ol.prf > li:before {
+ol.prf > li::before {
 	counter-increment:prf;
 	content:"P" counter(prf) ". ";
 	font-style:italic;
 }
-ol.prf > li:last-child:before {
+ol.prf > li:last-child::before {
 	counter-increment:none;
 	content:"C. ";
 }
-ol.num > li:before {
+ol.num > li::before {
 	counter-increment:num;
 	content:"(" counter(num) ")";
 }
-ol.urm > li:before {
+ol.urm > li::before {
 	counter-increment:urm;
 	content:"(" counter(urm,upper-roman) ")";
 }
-ol.ult > li:before {
+ol.ult > li::before {
 	counter-increment:ult;
 	content:"(" counter(ult,upper-latin) ")";
 }
-ol.lrm > li:before {
+ol.lrm > li::before {
 	counter-increment:lrm;
 	content:"(" counter(lrm,lower-roman) ")";
 }
-ol.llt > li:before {
+ol.llt > li::before {
 	counter-increment:llt;
 	content:"(" counter(llt,lower-latin) ")";
 }
-ol.numd > li:before {
+.numd > li::before, .urmd > li::before, .lrmd > li::before, .ultd > li::before, .lltd > li::before {
+	left:-1.5em;
+}
+.numd > li, .urmd > li, .lrmd > li, .ultd > li, .lltd > li {
+	left:1.5em;
+	margin-right:1.5em;
+}
+ol.numd > li::before {
 	counter-increment:numd;
 	content:counter(numd) ". ";
 }
-ol.urmd > li:before {
+ol.urmd > li::before {
 	counter-increment:urmd;
 	content:counter(urmd,upper-roman) ". ";
 }
-ol.ultd > li:before {
+ol.ultd > li::before {
 	counter-increment:ultd;
 	content:counter(ultd,upper-latin) ". ";
 }
-ol.lrmd > li:before {
+ol.lrmd > li::before {
 	counter-increment:lrmd;
 	content:counter(lrmd,lower-roman) ". ";
 }
-ol.lltd > li:before {
+ol.lltd > li::before {
 	counter-increment:lltd;
 	content:counter(lltd,lower-latin) ". ";
 }
@@ -206,24 +217,24 @@ ol.lltd > li:before {
 	margin-left:0;
 	padding:0.25em 0.5em;
 }
-.def span:before {
+.def span::before {
 	content:"Df";
 	vertical-align:baseline;
 	position:relative;
 	bottom:-0.4em;
 	font:bold 70% 'Felipa';
 }
-ul.induction > li:before {
+ul.induction > li::before {
 	position:absolute;
 	left:-2.5em;
 }
-ul.induction > li:nth-child(1):before {
+ul.induction > li:nth-child(1)::before {
 	content:"B.C.";
 }
-ul.induction > li:nth-child(2):before {
+ul.induction > li:nth-child(2)::before {
 	content:"I.H.";
 }
-ul.induction > li:nth-child(3):before {
+ul.induction > li:nth-child(3)::before {
 	content:"I.C.";
 }
 ul.induction > li {
@@ -253,7 +264,7 @@ table.prf td {
 table.follow {
 	border-top:1px solid #000;
 }
-table.prf td:first-child:before {
+table.prf td:first-child::before {
 	position:absolute;
 	left:-1.5em;
 	counter-increment:tprf;
@@ -271,7 +282,7 @@ table.prf td:last-child {
 table.prf tr:first-child td {
 	padding-top:0;
 }
-table.prf tr:last-child td:first-child:before {
+table.prf tr:last-child td:first-child::before {
 	position:absolute;
 	left:-1.5em;
 	content:"C. ";
@@ -301,16 +312,16 @@ div#bonus {
 	page-break-before:always;
 	page-break-after:avoid;
 }
-span.note:before {
- counter-increment:note;
- content:"[" counter(note) "]";
- vertical-align:baseline;
- position:relative;
- top:-0.6em;
- font-size:70%;
- cursor:pointer;
- color:#d00;
- padding-right:0.25em;
+span.note::before {
+	counter-increment:note;
+	content:"[" counter(note) "]";
+	vertical-align:baseline;
+	position:relative;
+	top:-0.6em;
+	font-size:70%;
+	cursor:pointer;
+	color:#d00;
+	padding-right:0.25em;
 }
 span.note:hover span.box {
 	visibility:visible;
@@ -332,14 +343,11 @@ span.note:hover span.box {
 	line-height:1.5em;
 	float:footnote;
 }
-.quote {
+.song, .quote {
 	font-family:'CMU Serif','Adobe FangSong';
 }
 .kai {
-	font-family:'Adobe Kai','標楷體','DFKai-SB';
-}
-.song {
-	font-family:'Adobe FangSong';
+	font-family:'CMU Serif','Adobe Kai','標楷體','DFKai-SB';
 }
 #front {
 	page:front-matter;
@@ -351,7 +359,7 @@ span.note:hover span.box {
 	page:main;
 }
 @media print {
-	span.note:before {
+	span.note::before {
 		display:none;
 	}
 	span.box {
