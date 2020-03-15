@@ -9,14 +9,14 @@ body {
 	margin: auto;
 	font:normal normal 12pt 'CMU Serif','Noto Serif TC';
 	line-height:1.5em;
-	counter-reset:num urm ult lrm llt numd urmd ultd lrmd lltd chapter prf note;
+	counter-reset:num urm ult lrm llt numd urmd ultd lrmd lltd numpd urmpd ultpd lrmpd lltpd chapter prf note;
 	text-align:justify;
 	text-justify:inter-character;
 }
 @page {
 	size:A4;
 	margin:2.54cm;
-	@footnotes{
+	@footnotes {
 		margin-top: 0.5em;
 		border-top: 1px solid #000;
 		border-clip: 4em;
@@ -41,6 +41,9 @@ body {
 }
 h1, h2, h3, h4, h5 {
 	font:normal bold 'CMU Serif','Noto Serif TC';
+}
+h1::before {
+	content:"第" counter(chapter, trad-chinese-informal) "章 ";
 }
 h1 {
 	font-size:24pt;
@@ -123,10 +126,10 @@ ol,ul {
 	counter-reset:quiz;
 }
 ol.local {
-	counter-reset:num urm ult lrm llt prf numd urmd ultd lrmd lltd;
+	counter-reset:num urm ult lrm llt prf numd urmd ultd lrmd lltd numpd urmpd ultpd lrmpd lltpd;
 }
 ol.stop {
-	counter-increment: num -1 urm -1 ult -1 lrm -1 llt -1 prf -1 numd -1 urmd -1 ultd -1 lrmd -1 lltd -1;
+	counter-increment: num -1 urm -1 ult -1 lrm -1 llt -1 prf -1 numd -1 urmd -1 ultd -1 lrmd -1 lltd -1 numpd -1 urmpd -1 ultpd -1 lrmpd -1 lltpd -1;
 }
 li::before {
 	position:absolute;
@@ -182,10 +185,10 @@ ol.llt > li::before {
 	counter-increment:llt;
 	content:"(" counter(llt,lower-latin) ")";
 }
-.numd > li::before, .urmd > li::before, .lrmd > li::before, .ultd > li::before, .lltd > li::before {
+.numd > li::before, .urmd > li::before, .lrmd > li::before, .ultd > li::before, .lltd > li::before, .numpd > li::before, .urmpd > li::before, .lrmpd > li::before, .ultpd > li::before, .lltpd > li::before {
 	left:-1.5em;
 }
-.numd > li, .urmd > li, .lrmd > li, .ultd > li, .lltd > li {
+.numd > li, .urmd > li, .lrmd > li, .ultd > li, .lltd > li, .numpd > li, .urmpd > li, .lrmpd > li, .ultpd > li, .lltpd > li {
 	left:1.5em;
 	margin-right:1.5em;
 }
@@ -208,6 +211,26 @@ ol.lrmd > li::before {
 ol.lltd > li::before {
 	counter-increment:lltd;
 	content:counter(lltd,lower-latin) ". ";
+}
+ol.numpd > li::before {
+	counter-increment:numd;
+	content:counter(numpd) "'. ";
+}
+ol.urmpd > li::before {
+	counter-increment:urmd;
+	content:counter(urmpd,upper-roman) "'. ";
+}
+ol.ultpd > li::before {
+	counter-increment:ultd;
+	content:counter(ultpd,upper-latin) "'. ";
+}
+ol.lrmpd > li::before {
+	counter-increment:lrmd;
+	content:counter(lrmpd,lower-roman) "'. ";
+}
+ol.lltpd > li::before {
+	counter-increment:lltd;
+	content:counter(lltpd,lower-latin) "'. ";
 }
 .tight > li, .prf > li , .def > li {
 	margin-top:0.25em;
@@ -313,15 +336,15 @@ div#bonus {
 	page-break-after:avoid;
 }
 span.note::before {
-	counter-increment:note;
-	content:"[" counter(note) "]";
-	vertical-align:baseline;
-	position:relative;
-	top:-0.6em;
-	font-size:70%;
-	cursor:pointer;
-	color:#d00;
-	padding-right:0.25em;
+ counter-increment:note;
+ content:"[" counter(note) "]";
+ vertical-align:baseline;
+ position:relative;
+ top:-0.6em;
+ font-size:70%;
+ cursor:pointer;
+ color:#d00;
+ padding-right:0.25em;
 }
 span.note:hover span.box {
 	visibility:visible;
@@ -339,9 +362,9 @@ span.note:hover span.box {
 	opacity:0;
 	transition:visibility 0.5s linear, opacity 0.2s linear;
 	text-indent:0;
+	font-family:'CMU Serif','Noto Serif TC';
 	font-size:10pt;
 	line-height:1.5em;
-	float:footnote;
 }
 .song, .quote {
 	font-family:'CMU Serif','Adobe FangSong';
@@ -363,6 +386,7 @@ span.note:hover span.box {
 		display:none;
 	}
 	span.box {
+		float:footnote;
 		width:100%;
 		border:none;
 		background-color:transparent;
