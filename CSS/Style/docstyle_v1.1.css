@@ -16,7 +16,7 @@ body {
 @page {
 	size:A4;
 	margin:2.54cm;
-	@footnotes {
+	@footnotes{
 		margin-top: 0.5em;
 		border-top: 1px solid #000;
 		border-clip: 4em;
@@ -67,16 +67,12 @@ h2 {
 	counter-reset:subsection;
 	margin:1em auto 0 auto;
 	font-size:20pt;
-	page-break-before:always;
 }
 h2#abstract::before {
 	content:none;
 }
 h2#abstract {
 	text-align:center;
-}
-h2:first-of-type {
-	page-break-before:avoid;
 }
 h3::before {
 	counter-increment:subsection;
@@ -124,12 +120,6 @@ ol,ul {
 	margin:1em 0 1em 2em;
 	padding:0;
 	counter-reset:quiz;
-}
-ol.local {
-	counter-reset:num urm ult lrm llt prf numd urmd ultd lrmd lltd numpd urmpd ultpd lrmpd lltpd;
-}
-ol.stop {
-	counter-increment: num -1 urm -1 ult -1 lrm -1 llt -1 prf -1 numd -1 urmd -1 ultd -1 lrmd -1 lltd -1 numpd -1 urmpd -1 ultpd -1 lrmpd -1 lltpd -1;
 }
 li::before {
 	position:absolute;
@@ -213,24 +203,120 @@ ol.lltd > li::before {
 	content:counter(lltd,lower-latin) ". ";
 }
 ol.numpd > li::before {
-	counter-increment:numd;
+	counter-increment:numpd;
 	content:counter(numpd) "'. ";
 }
 ol.urmpd > li::before {
-	counter-increment:urmd;
+	counter-increment:urmpd;
 	content:counter(urmpd,upper-roman) "'. ";
 }
 ol.ultpd > li::before {
-	counter-increment:ultd;
+	counter-increment:ultpd;
 	content:counter(ultpd,upper-latin) "'. ";
 }
 ol.lrmpd > li::before {
-	counter-increment:lrmd;
+	counter-increment:lrmpd;
 	content:counter(lrmpd,lower-roman) "'. ";
 }
 ol.lltpd > li::before {
-	counter-increment:lltd;
+	counter-increment:lltpd;
 	content:counter(lltpd,lower-latin) "'. ";
+}
+ol.stop.num {
+	counter-increment: num -1;
+}
+ol.stop.urm {
+	counter-increment: urm -1;
+}
+ol.stop.ult {
+	counter-increment: ult -1;
+}
+ol.stop.lrm {
+	counter-increment: lrm -1;
+}
+ol.stop.llt {
+	counter-increment: llt -1;
+}
+ol.stop.numd {
+	counter-increment: numd -1;
+}
+ol.stop.urmd {
+	counter-increment: urmd -1;
+}
+ol.stop.ultd {
+	counter-increment: ultd -1;
+}
+ol.stop.lrmd {
+	counter-increment: lrmd -1;
+}
+ol.stop.lltd {
+	counter-increment: lltd -1;
+}
+ol.stop.numpd {
+	counter-increment: numpd -1;
+}
+ol.stop.urmpd {
+	counter-increment: urmpd -1;
+}
+ol.stop.ultpd {
+	counter-increment: ultpd -1;
+}
+ol.stop.lrmpd {
+	counter-increment: lrmpd -1;
+}
+ol.stop.lltpd {
+	counter-increment: lltpd -1;
+}
+ol.stop.prf {
+	counter-increment: prf -1;
+}
+ol.local.num {
+	counter-reset: num;
+}
+ol.local.urm {
+	counter-reset: urm;
+}
+ol.local.ult {
+	counter-reset: ult;
+}
+ol.local.lrm {
+	counter-reset: lrm;
+}
+ol.local.llt {
+	counter-reset: llt;
+}
+ol.local.numd {
+	counter-reset: numd;
+}
+ol.local.urmd {
+	counter-reset: urmd;
+}
+ol.local.ultd {
+	counter-reset: ultd;
+}
+ol.local.lrmd {
+	counter-reset: lrmd;
+}
+ol.local.lltd {
+	counter-reset: lltd;
+}
+ol.local.numpd {
+	counter-reset: numpd;
+}
+ol.local.urmpd {
+	counter-reset: urmpd;
+}
+ol.local.ultpd {
+	counter-reset: ultpd;
+}
+ol.local.lrmpd {
+	counter-reset: lrmpd;
+}
+ol.local.lltpd {
+	counter-reset: lltpd;
+}
+ol.local.prf {
+	counter-reset: prf;
 }
 .tight > li, .prf > li , .def > li {
 	margin-top:0.25em;
