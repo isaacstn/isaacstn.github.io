@@ -542,11 +542,3 @@ span.note:hover span.box {
 }
 
 /* move below to doc */
-
-
-	h1::before {
-		counter-increment:chapter 1;
-	}
-	div#main {
-		counter-reset:page 24;
-	}
