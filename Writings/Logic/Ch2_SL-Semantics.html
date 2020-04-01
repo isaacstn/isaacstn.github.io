@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/docstyle_v1.2.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+
+	<style>
+	h1::before {
+		counter-increment:chapter 2;
+	}
+	div#main {
+		counter-reset:page 24;
+	}
+	</style>
+
+	<script src="https://isaacstn.github.io/script/jquery-1.4.3.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+	<script src="https://isaacstn.github.io/script/note.bubble.v1.js"></script>
+
+	<title>Ch2_SL-Semantics</title>
+</head>
+
+<body>
+	<div id="main">
+		<h1>語句邏輯的語意</h1>
+		
+		<div class="chapter">
+		
+			<h2>語意和真假</h2>
+			
+			<div class="section">
+				<p>
+				語句邏輯的語言是具有組合性的語言，當我們說一個語言是有組合性的時候，意思是：一、這個語言中所有複雜的表達式都是由語言中的基本元素所構成的；而且二、這個語言中所有複雜表達式的意義都是由那些基本元素的意義所決定的。
+				</p>
+				<p>
+				由於語句邏輯中的基本元素是原子語句（也就是所有僅僅由語句符號所構成的語句），因此所有語句邏輯中的所有語句的意義，都會是由原子語句的意義所決定的。也就是說，只要確定了每一個原子語句的意義是什麼，我們就可以知道所有複雜語句（就是那些至少利用了一個語句連接詞來建構的語句）的意義是什麼。
+				</p>
+				<p>
+				在自然語言中，語句的意義就是語句表達的實質內容，比如說：
+					<ol class="lltd tight song">
+						<li>南華大學位在嘉義縣大林鎮。</li>
+					</ol>
+				這個語句表達的實質內容，就是在說有一個名叫「南華大學」的教育研究機構，這個機構的地理位置位在一個名叫「嘉義縣大林鎮」的地方。但語句邏輯中的語句其實都沒有實質的內容，因為語句邏輯中的語句只是用來表現出一個語句的形式結構而已，所以在決定語句邏輯中的語句的意義時，我們就只談它們的真或假而已。
+				</p>
+				<p>
+				整理以上的討論：由於語句邏輯是個組合性的語言，所以語句邏輯中所有複雜表達性的意義都是由構成這些表達式的基本元素所決定的。而語句邏輯中所有語句的意義就是這些語句的真假。所以綜合起來，我們可以知道，語句邏輯中所有語句的真假，都是由構成那個語句的基本元素（也就是原子語句）的真假所決定的。換言之，只要給定了所有原子語句的真假，我們就能知道語句邏輯中所有語句的真假。
+				</p>
+				<p>
+				舉例來說，當我們看到 '$&not;A&and;(B&or;C)$' 這個語句邏輯的語句時，我們要如何判斷它的真假呢？我們需要先知道這個語句中使用到的每一個原子語句的真假是什麼。由於我們不知道 '$A$'、'$B$'、'$C$' 這三個原子語句分別表達了什麼內容，所以無法直接知道它們分別是真還是假，所以我們就先用假設的。
+				</p>
+				<p>
+				讓我們先假設 '$A$' 為真、'$B$' 為真、'$C$' 為假。根據前面對完構式的討論，我們知道 '$&not;A&and;(B&or;C)$' 這個語句的主要連接詞是 '&and;'，因此可以知道這個語句是用 '&and;' 來分別連接 '$&not;A$' 和 '$B&or;C$' 這兩個語句。因此為了判斷 '$&not;A&and;(B&or;C)$' 這個語句的真假，我們需要先判斷 '$&not;A$' 和 '$B&or;C$' 這兩個語句的真假。
+				</p>
+				<p>
+				我們先來判斷 '$&not;A$' 的真假：由於 '$&not;A$' 是用來表達對 '$A$' 的否定，所以在假定了 '$A$' 為真的情況下，我們就可以知道 '$&not;A$' 是假的。接下來判斷 '$B&or;C$' 的真假：由於 '$B&or;C$' 是用來肯定 '$B$' 和 '$C$' 這兩個語句中至少有一個是真的，因此，在假定了 '$B$' 為真而 '$C$' 為假的情況下，因為 '$B$' 是真的，所以 '$B$' 和 '$C$' 這兩個語句就確實至少有一個是真的，因此 '$B&or;C$' 就是真的。
+				</p>
+				<p>
+				在判斷完 '$&not;A$' 和 '$B&or;C$' 的真假之後，我們就可以來判斷 '$&not;A&and;(B&or;C)$' 這個語句的真假。前面已經分析過了，這個語句是用 '&and;' 來連接 '$&not;A$' 和 '$B&or;C$' 這兩個語句，因此這個語句是在同時肯定 '$&not;A$' 和 '$B&or;C$' 這兩個語句都為真。而根據上面的討論，我們已經知道，在假設了 '$A$' 為真、'$B$' 為真、'$C$' 為假的情況下，'$&not;A$' 是假的，而 '$B&or;C$' 是真的，因此這兩個語句並不都為真，因此 '$&not;A&and;(B&or;C)$' 就不為真，因此是假的（因為語句邏輯是二值性的語言）。
+				</p>
+				<p>
+				上面這個例子是在假設了 '$A$' 為真、'$B$' 為真、'$C$' 為假的情況下，去判斷 '$not;A&and;(B&or;C)$' 的真假會是什麼，然而當 '$A$'、'$B$'、'$C$' 這三個語句的真假與我們假設的情況不同時，'$&not;A&and;(B&or;C)$' 這個語句的真假就有可能會隨之改變。因為 '$&not;A&and;(B&or;C)$' 這個語句使用了三個原子語句，而三個原子語句分別都有真或假兩種可能，所以為了知道 '$&not;A&and;(B&or;C)$' 在所有不同的可能情況下分別是真還是假，我們一共會有 $2^3$ ($=8$) 種不同的情況需要討論。<span class="note"><span class="box">分別是（依 '$A$'、'$B$'、'$C$' 之真假的順序排列）：「真真真、真真假、真假真、真假假、假真真、假真假、假假真、假假假」這 $8$ 種不同的可能情況。</span></span>
+				</p>
+				
+				<h3>真值表</h3>
+				<div class="subsection">
+					<p>
+					為了方便判斷語句邏輯中每個語句在不同情況下的真假，邏輯學家開發出<b>真值表 (truth table)</b> 這套工具來幫助我們整理每個語句在不同的假設情況下的真假。而為了介紹真值表的用法，我將延用之前在介紹語句邏輯中的完構式時使用到的後設符號來提供協助，我一樣會用小寫的希臘字母來表示任何一個語句邏輯中的語句，然後分別用真值表來介紹當系統中的五個語句連接詞被當成語句中的主要連接詞時，那個語句在所有可能的情況下分別是真還是假。
+					</p>
+					<p>
+					<b>否定句 (negation)</b>：當一個語句的主要連接詞是 '&not;' 的時候，我們稱呼這樣的語句是一個否定句，它具有 '$&not;&alpha;$' 的形式。否定句是用來否定被 '&not;' 這個連接詞所連接的那個語句的，因此當 '&not;' 所連接的語句為真時，否定句就為假；當 '&not;' 所連接的語句為假時，否定句就為真。故否定句 '$&not;&alpha;$' 的真值表如下：
+						<table class="truth">
+							<tr><td>$&alpha;$</td><td>$&not;&alpha;$</td></tr>
+							<tr><td>T</td><td>F</td></tr>
+							<tr><td>F</td><td>T</td></tr>
+						</table>
+					真值表的最右邊那一欄代表的就是我們要判斷的語句的真假，而真值表左邊的欄位則表示被連接詞所連接起來的語句共有哪些真假的可能性。因為 '&not;' 是一元連接詞，所以它只會連接一個語句，因此我們只需要考慮它所連接的那一個語句分別為真或為假的情況，一共是 $2^1$ ($=2$) 種。
+					</p>
+					<p>
+					當一個語句為真時，我們就填入 'T'，取「真」的英文 (true) 字首，當一個語句為假時，我們就填入 'F'，取「假」的英文 (false) 字首。因此，這個真值表的寫法意味著：當 '$&alpha;$' 為真時（第一列），'$&not;&alpha;$' 為假；當 '$&alpha;$' 為假時（第二列），'$&not;&alpha;$' 為真。
+					</p>
+					<p>
+					<b>連言句 (conjunction)</b>：當一個語句的主要連接詞是 '&and;' 的時候，我們稱呼這樣的語句是一個連言句，它具有 '$&alpha;&and;&beta;$' 的形式。連言句是用來同時肯定由 '&and;' 這個連接詞所連接起來的兩個語句的，因此當 '&and;' 所連接的兩個語句皆為真時，連言句就為真；而當 '&and;' 所連接的兩個語句中有任何一個是假的時，連言句就為假。故連言句 '$&alpha;&and;&beta;$' 的真值表如下：
+						<table class="truth">
+							<tr><td>$&alpha;$</td><td>$&beta;$</td><td>$&alpha;&and;&beta;$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td></tr>
+						</table>
+					</p>
+					<p>
+					<b>選言句 (disjunction)</b>：當一個語句的主要連接詞是 '&or;' 的時候，我們稱呼這樣的語句是一個選言句，它具有 '$&alpha;&or;&beta;$' 的形式。選言句是用來肯定由 '&or;' 這個連接詞所連接起來的兩個語句中的至少一個的，因此當 '&or;' 所連接的兩個語句中至少有一個為真時，選言句就為真；當 '&or;' 所連接的兩個語句皆為假時，選言句就為假。故選言句 '$&alpha;&or;&beta;$' 的真值表如下：
+						<table class="truth">
+							<tr><td>$&alpha;$</td><td>$&beta;$</td><td>$&alpha;&or;&beta;$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td></tr>
+						</table>
+					</p>
+					<p>
+					<b>實質條件句 (material conditional)</b>：當一個語句的主要連接詞是 '&rarr;' 的時候，我們稱呼這樣的語句是一個實質條件句，它具有 '$&alpha;&rarr;&beta;$' 的形式，我們將位在 '$&alpha;$' 的位置上的語句稱為<b>前件</b>，將位在 '$&beta;$' 的位置上的語句稱為<b>後件</b>。實質條件句是用來表達前件和後件之間的單向實質蘊涵關係，說 '$&alpha;$' 實質蘊涵 '$&beta;$'，意思就是<b>當 '$&alpha;$' 為真時，'$&beta;$' 不能為假。</b>因此，當前件為真而後件為假時，實質條件句就為假；而在其餘的情況下，實質條件句皆不為假，因此為真（因為語句邏輯是二值性的語言）。故實質條件句 '$&alpha;&rarr;&beta;$' 的真值表如下：
+						<table class="truth">
+							<tr><td>$&alpha;$</td><td>$&beta;$</td><td>$&alpha;&rarr;&beta;$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td></tr>
+						</table>
+					如果大家還有印象的話，我之前在介紹 '&rarr;' 這個語句連接詞的時候，我說這個語句連接詞可以被翻譯成中文裡的「如果……，則……」，但從真值表的情況來看，我們不難發現兩者其實有明顯的差異。比如說考慮以下這個句子：
+						<ol class="lltd song">
+							<li>如果科科期中考不及格，則科科的通識邏輯會被當。</li>
+						</ol>
+					假如安安和科科針對這句話的真假打賭，安安賭這句話是真的，科科賭這句話是假的，結果科科的期中考及格了，試問誰才贏了這場賭局？請務必注意，科科和安安的賭局並不是針對「科科的通識邏輯會不會被當」這件事，而是針對 b 這個語句的真假。當 b 為真時安安贏，當 b 為假時則是科科贏。所以要判斷科科和安安誰贏了這場賭局，就必須判斷 b 到底是真的還是假的。
+					</p>
+					<p>
+					假如科科的期中考確實不及格（也就是條件句的前件為真），那麼我們只要看看科科的通識邏輯會不會被當，就能知道這個條件句是真還是假了：只要科科的通識邏輯確實因此被當了，就表示條件句為真，安安贏了賭局；只要科科的通識邏輯沒有被當，就表示條件句是假的，科科贏了賭局。
+					</p>
+					<p>
+					然而現在科科的期中考及格了（也就是條件句的前件為假），那麼不管科科的通識邏輯是否被當了，我們都無從得知那和科科的期中考不及格到底有沒有任何關係，因此我們無法知道 b 到底是不是真的，也就無法判斷科科和安安到底誰能贏得賭局。換言之，當我們在自然語言中使用條件句時，如果前件為假時，我們多半是無法得知條件句本身的真假的。
+					</p>
+					<p>
+					但語句邏輯中的實質條件句卻不一樣，根據上述的真值表，我們發現，只要一個實質條件句的前件為假時，那麼無論後件的真假如何，整個條件句都是真的。也就是說，如果把 b 看成是一個語句邏輯中的實質條件句，那麼只要我們確定了前件為假（也就是科科的期中考及格了），我們就能輕易知道 b 是真的。因此，語句邏輯中的實值條件句，和自然語言中的條件句，其實意思明顯不相同，不能混為一談。
+					</p>
+					<p>
+					接下來我們要看的是最後一個語句連接詞 '$&harr;$' 作為主要連接詞時所形成的句型：
+					</p>
+					<p>
+					<b>實質雙條件句 (material biconditional)</b>：當一個語句的主要連接詞是 '&harr;' 的時候，我們稱呼這樣的語句是一個實質雙條件句，它具有 '$&alpha;&harr;&beta;$' 的形式，我們一樣將位在 '$&alpha;$' 位置上的語句稱為<b>前件</b>，將位在 '$&beta;$' 位置上的語句稱為<b>後件</b>。實質雙條件句是用來表達前件和後件之間的雙向實質蘊涵關係，即 '$&alpha;$' 和 '$&beta;$' 實質蘊涵彼此，也就是說，<b>當 '$&alpha;$' 為真時，'$&beta;$' 不能為假，而且，當 '$&beta;$' 為真時，'$&alpha;$' 也不能為假。</b>因此，當前件為真而後件為假，或者當前件為假而後件為真時，實質雙條件句就為假；而在其餘的情況下，實質雙條件句皆不為假，因此為真（因為語句邏輯是二值性的語言）。故實質雙條件句 '$&alpha;&harr;&beta;$' 的真值表如下：
+						<table class="truth">
+							<tr><td>$&alpha;$</td><td>$&beta;$</td><td>$&alpha;&harr;&beta;$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td></tr>
+						</table>
+					由於實質雙條件句是在條件句的前、後件同真或同假時為真，在前、後件的真假不同時為假，所以我們也把實質雙條件句所表達的雙向實質蘊涵關係稱為<b>實質等值 (material equivalence)</b>。之所以說「等值」，正是取<b>當雙條件句為真時，前、後件的真值會相等</b>之意。
+					</p>
+					<p>
+					一樣要注意的是，由於實質雙條件句其實就是兩個實質條件句的縮寫，每個實質雙條件句 '$&alpha;&harr;&beta;$' 都可以被分解成 '$&alpha;&rarr;&beta;$' 和 '$&beta;&rarr;&alpha;$' 這樣的兩個實質條件句的連言，因此既然實質條件句的意思和自然語言中的條件句的意思有明顯的不同而不能混為一談，實質雙條件句和自然語言中的雙條件句當然也不相同。
+					</p>
+				</div>
+				
+				<h3>真值表的使用方式</h3>
+				
+				<div class="subsection">
+					<p>
+					給定上述五個真值表，我們就能判斷任何語句邏輯中的完構式在不同的可能情況下的真假。比如我們在本章一開始示範的那個語句 '$&not;A&and;(B&or;C)$'，我說因為這個語句用到了三個原子語句，所以一共有 $8$ 種不同的情況需要考慮，現在有了真值表，我們就能有系統地判斷出這個語句在所有可能的情況下的真假為何。首先，我們將三個原子語句寫在真值表的最左邊三欄，將語句本身寫在最右邊那一欄，因為可能的情況一共有 $8$ 種，所以在底下畫出八列：
+						<table class="truth triple">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$&not;A&and;(B&or;C)$</td></tr>
+							<tr><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+						</table>
+					接著，我們先將所有原子語句之真假的不同情況填進去最左邊的三欄：
+						<table class="truth triple">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$&not;A&and;(B&or;C)$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>&ensp;</td></tr>
+						</table>
+					接著，我們要找出我們想要判斷其真假的語句的主要連接詞，並將它標示出來：
+						<table class="truth triple">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$&not;A$</td><td class="mainc">$&and;$</td><td>$(B&or;C)$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+						</table>
+						主要連接詞所在的那一欄，就代表著 '$&not;A&and;(B&or;C)$' 這個語句的真假，而為了要判斷這一欄在每一列（也就是每一種可能的情況下）分別該填入 'T' 或 'F'，我們就需要判斷它所連接的左右兩側的語句分別是真還是假。首先先判斷 '$&not;A$' 在這八種不同的情況裡分別是真還是假：
+						<table class="truth triple">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$&not;A$</td><td class="mainc">$&and;$</td><td>$(B&or;C)$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>F</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>F</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>F</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>F</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>T</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>T</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>T</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>T</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+						</table>
+						因為 '$&not;A$' 只有使用到 '$A$' 這個原子語句，因此 '$&not;A$' 的真假完全決定於 '$A$' 的真假，所以我們只要看 '$A$' 的那一欄，再根據前面介紹的否定句的真值表來填入即可，故在 '$A$' 為真的那四列中，'$&not;A$' 皆為假，而在 '$A$' 為假的那四列中，'$&not;A$' 則皆為真。接下來我們判斷 '$(B&or;C)$' 的真假：
+						<table class="truth triple">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$&not;A$</td><td class="mainc">$&and;$</td><td>$(B&or;C)$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>F</td><td class="mainc">&ensp;</td><td>T</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>F</td><td class="mainc">&ensp;</td><td>T</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>F</td><td class="mainc">&ensp;</td><td>T</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>F</td><td class="mainc">&ensp;</td><td>F</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>T</td><td class="mainc">&ensp;</td><td>T</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>T</td><td class="mainc">&ensp;</td><td>T</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>T</td><td class="mainc">&ensp;</td><td>T</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>T</td><td class="mainc">&ensp;</td><td>F</td></tr>
+						</table>
+						因為 '$(B&or;C)$' 只有使用到 '$B$'、'$C$' 兩個原子語句，故 '$(B&or;C)$' 的真假完全決定於 '$B$'、'$C$' 的真假，所以我們只要看 '$B$'、'$C$' 那兩欄，再根據前面介紹的選言句的真值表來填入即可。故在 '$B$'、'$C$' 中至少有一個為真的那六列中，'$(B&or;C)$' 為真，而在 '$B$'、'$C$' 皆為假的那兩列中，'$(B&or;C)$' 為假。最後，在確定了由整個語句的主要連接詞 '$&and;$' 所連接起來的兩個語句（即 '$&not;A$' 和 '$(B&or;C)$'）在八種不同的可能情況下的真假後，我們終於可以來判斷 '$&not;A&and;(B&or;C)$' 的真假：
+						<table class="truth triple">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$&not;A$</td><td class="mainc">$&and;$</td><td>$(B&or;C)$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>F</td><td class="mainc"><b><i>F</i></b></td><td>T</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>F</td><td class="mainc"><b><i>F</i></b></td><td>T</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>F</td><td class="mainc"><b><i>F</i></b></td><td>T</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>F</td><td class="mainc"><b><i>F</i></b></td><td>F</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>T</td><td class="mainc"><b><i>T</i></b></td><td>T</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>T</td><td class="mainc"><b><i>T</i></b></td><td>T</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>T</td><td class="mainc"><b><i>T</i></b></td><td>T</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>T</td><td class="mainc"><b><i>F</i></b></td><td>F</td></tr>
+						</table>
+					</p>
+					<p>
+					無論是多複雜的語句，只要一步步根據完構式的建構方式將它拆解成更基本的語句，最後就能根據原子語句的真假來判斷出該語句在不同的假設情況下分別是真還是假。我們再看一個例子：$(A&rarr;(B&or;&not;C))&or;((C&and;&not;B)&harr;(A&and;B))$
+						<table class="truth triple">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A&rarr;(B&or;&not;C))&or;((C&and;&not;B)&harr;(A&and;B))$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>&ensp;</td></tr>
+						</table>
+					雖然這個語句比較長，結構上也比較複雜（我們是用一個語句使用的語句連接詞的數量來定義語句的結構複雜的程度），但因為總共只用了三個原子語句，故所有的可能性依然只有 $2^3$ ($=8$) 種，所以一樣畫八列真值表，並分別填入三個原子語句之真假的不同排列組合。接著，我們把要判斷其真假的語句的主要連接詞那欄標示出來：
+						<table class="truth triple">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A&rarr;(B&or;&not;C))$</td><td class="mainc">$&or;$</td><td>$((C&and;&not;B)&harr;(A&and;B))$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td></tr>
+						</table>
+					為了判斷主要連接詞那一欄的真假，我們必須判斷由主要連接詞所連接的左、右兩個語句的真假，因此我們也需要標示出這兩個語句各自的主要連接詞：
+						<table class="truth triple bigrank full">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A$</td><td class="mainc2">&rarr;</td><td>$(B&or;&not;C))$</td><td class="mainc">$&or;$</td><td>$((C&and;&not;B)$</td><td class="mainc2">$&harr;$</td><td>$(A&and;B))$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td></tr>
+						</table>
+					為了判斷 '$(A&rarr;(B&or;&not;C))$' 的真假，我們需要先判斷 '$(B&or;&not;C)$' 的真假，所以一樣要把 '$(B&or;&not;C)$' 的主要連接詞那一欄標示出來；同理，為了判斷 '$((C&and;&not;B)&harr;(A&and;B))$' 的真假，我們也需要先分別判斷 '$(C&and;&not;B)$' 和 '$(A&and;B)$' 的真假，因此也要分別將這兩個語句的主要連接詞那一欄標示出來：
+						<table class="truth triple bigrank full">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A$</td><td class="mainc2">&rarr;</td><td>$(B$</td><td>$&or;$</td><td>$&not;C))$</td><td class="mainc">$&or;$</td><td>$((C$</td><td>$&and;$</td><td>$&not;B)$</td><td class="mainc2">$&harr;$</td><td>$(A$</td><td>$&and;$</td><td>$B))$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+						</table>
+					然後就可以一步一步從結構最簡單的語句一路填到結構最複雜的語句。首先，我們把 '$&not;C$' 和 '$&not;B$' 那兩欄的真假填進去：
+						<table class="truth triple bigrank full">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A$</td><td class="mainc2">&rarr;</td><td>$(B$</td><td>$&or;$</td><td>$&not;C))$</td><td class="mainc">$&or;$</td><td>$((C$</td><td>$&and;$</td><td>$&not;B)$</td><td class="mainc2">$&harr;$</td><td>$(A$</td><td>$&and;$</td><td>$B))$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td class="mainc">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td class="mainc2">&ensp;</td><td>&ensp;</td><td>&ensp;</td><td>&ensp;</td></tr>
+						</table>
+					接著，我們可以用 '$B$' 和 '$&not;C$' 的真假來判斷 '$(B&or;&not;C)$' 的真假，用 '$C$' 和 '$&not;B$' 的真假來判斷 '$(C&and;&not;B)$' 的真假，用 '$A$' 和 '$B$' 的真假來判斷 '$(A&and;B)$' 的真假，然後就可以將這三個語句的真假也分別填進去：
+						<table class="truth triple bigrank full">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A$</td><td class="mainc2">&rarr;</td><td>$(B$</td><td>$&or;$</td><td>$&not;C))$</td><td class="mainc">$&or;$</td><td>$((C$</td><td>$&and;$</td><td>$&not;B)$</td><td class="mainc2">$&harr;$</td><td>$(A$</td><td>$&and;$</td><td>$B))$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td>F</td><td class="mainc">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>F</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td>T</td><td class="mainc">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>F</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>F</td><td class="mainc">&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td>T</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td>T</td><td class="mainc">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>T</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td>F</td><td class="mainc">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>F</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td>T</td><td class="mainc">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>F</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>F</td><td class="mainc">&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td>T</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>T</i></b></td><td>T</td><td class="mainc">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>T</td><td class="mainc2">&ensp;</td><td>&ensp;</td><td><b><i>F</i></b></td><td>&ensp;</td></tr>
+						</table>
+					下一步，我們就可以用 '$A$' 和 '$(B&or;&not;C)$' 的真假來判斷 '$(A&rarr;(B&or;&not;C))$' 的真假，用 '$(C&and;&not;B)$' 和 '$(A&and;B)$' 的真假來判斷 '$((C&and;&not;B)&harr;(A&and;B))$' 的真假，並將這兩個語句的真假分別填入：
+						<table class="truth triple bigrank full">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A$</td><td class="mainc2">&rarr;</td><td>$(B$</td><td>$&or;$</td><td>$&not;C))$</td><td class="mainc">$&or;$</td><td>$((C$</td><td>$&and;$</td><td>$&not;B)$</td><td class="mainc2">$&harr;$</td><td>$(A$</td><td>$&and;$</td><td>$B))$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc2"><b><i>T</i></b></td><td>&ensp;</td><td>T</td><td>F</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>F</td><td>F</td><td class="mainc2"><b><i>F</i></b></td><td>&ensp;</td><td>T</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc2"><b><i>T</i></b></td><td>&ensp;</td><td>T</td><td>T</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>F</td><td>F</td><td class="mainc2"><b><i>F</i></b></td><td>&ensp;</td><td>T</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc2"><b><i>F</i></b></td><td>&ensp;</td><td>F</td><td>F</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>T</td><td>T</td><td class="mainc2"><b><i>F</i></b></td><td>&ensp;</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc2"><b><i>T</i></b></td><td>&ensp;</td><td>T</td><td>T</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>F</td><td>T</td><td class="mainc2"><b><i>T</i></b></td><td>&ensp;</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc2"><b><i>T</i></b></td><td>&ensp;</td><td>T</td><td>F</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>F</td><td>F</td><td class="mainc2"><b><i>T</i></b></td><td>&ensp;</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc2"><b><i>T</i></b></td><td>&ensp;</td><td>T</td><td>T</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>F</td><td>F</td><td class="mainc2"><b><i>T</i></b></td><td>&ensp;</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc2"><b><i>T</i></b></td><td>&ensp;</td><td>F</td><td>F</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>T</td><td>T</td><td class="mainc2"><b><i>F</i></b></td><td>&ensp;</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc2"><b><i>T</i></b></td><td>&ensp;</td><td>T</td><td>T</td><td class="mainc">&ensp;</td><td>&ensp;</td><td>F</td><td>T</td><td class="mainc2"><b><i>T</i></b></td><td>&ensp;</td><td>F</td><td>&ensp;</td></tr>
+						</table>
+					最後，我們就能用 '$(A&rarr;(B&or;&not;C))$' 和 '$((C&and;&not;B)&harr;(A&and;B))$' 這兩個語句的真假，根據選言句的真值表來判斷 '$(A&rarr;(B&or;&not;C))&or;((C&and;&not;B)&harr;(A&and;B))$' 的真假：
+						<table class="truth triple bigrank full">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A$</td><td class="mainc2">&rarr;</td><td>$(B$</td><td>$&or;$</td><td>$&not;C))$</td><td class="mainc">$&or;$</td><td>$((C$</td><td>$&and;$</td><td>$&not;B)$</td><td class="mainc2">$&harr;$</td><td>$(A$</td><td>$&and;$</td><td>$B))$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc2">T</td><td>&ensp;</td><td>T</td><td>F</td><td class="mainc"><b><i>T</i></b></td><td>&ensp;</td><td>F</td><td>F</td><td class="mainc2">F</td><td>&ensp;</td><td>T</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc2">T</td><td>&ensp;</td><td>T</td><td>T</td><td class="mainc"><b><i>T</i></b></td><td>&ensp;</td><td>F</td><td>F</td><td class="mainc2">F</td><td>&ensp;</td><td>T</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc2">F</td><td>&ensp;</td><td>F</td><td>F</td><td class="mainc"><b><i>F</i></b></td><td>&ensp;</td><td>T</td><td>T</td><td class="mainc2">F</td><td>&ensp;</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc2">T</td><td>&ensp;</td><td>T</td><td>T</td><td class="mainc"><b><i>T</i></b></td><td>&ensp;</td><td>F</td><td>T</td><td class="mainc2">T</td><td>&ensp;</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td><td>&ensp;</td><td class="mainc2">T</td><td>&ensp;</td><td>T</td><td>F</td><td class="mainc"><b><i>T</i></b></td><td>&ensp;</td><td>F</td><td>F</td><td class="mainc2">T</td><td>&ensp;</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td>&ensp;</td><td class="mainc2">T</td><td>&ensp;</td><td>T</td><td>T</td><td class="mainc"><b><i>T</i></b></td><td>&ensp;</td><td>F</td><td>F</td><td class="mainc2">T</td><td>&ensp;</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td><td>&ensp;</td><td class="mainc2">T</td><td>&ensp;</td><td>F</td><td>F</td><td class="mainc"><b><i>T</i></b></td><td>&ensp;</td><td>T</td><td>T</td><td class="mainc2">F</td><td>&ensp;</td><td>F</td><td>&ensp;</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td><td>&ensp;</td><td class="mainc2">T</td><td>&ensp;</td><td>T</td><td>T</td><td class="mainc"><b><i>T</i></b></td><td>&ensp;</td><td>F</td><td>T</td><td class="mainc2">T</td><td>&ensp;</td><td>F</td><td>&ensp;</td></tr>
+						</table>
+					</p>
+					<p>
+					要熟悉真值表的使用方式，無非就是練習，所以我會在下面列出幾個語句邏輯中的語句，請你試著用真值表來判斷這些語句在所有的不同可能情況下，真假為何：
+						<ol class="numd tight">
+							<li>$A&rarr;&not;B$</li>
+							<li>$&not;(B&or;(A&rarr;C))$</li>
+							<li>$&not;(A&and;B)&rarr;&not;(A&or;C)$</li>
+							<li>$(A&rarr;B)&or;(A&and;&not;B)$</li>
+							<li>$A&rarr;(B&rarr;A)$</li>
+							<li>$(A&or;B)&and;(&not;A&and;&not;B)$</li>
+						</ol>
+					</p>
+				</div>
+				<!--
+				<h3>真值函數</h3>
+				
+				<div class="subsection">
+					<p>
+					之所以可以用真值表來判斷任何一個語句在不同的可能情況下的真假，是因為語句邏輯中的所有語句都是以某個語句連接詞作為主要連接詞構成的，而每一個以某個語句連接詞作為主要連接詞構成的語句都是一個<b>真值函數 (truth function)</b>。
+					</p>
+					<p>
+					為了說明真值函數的意義，以及說明真值函數與真值表之間的關係，我必須先簡單地介紹一下<b>函數 (function)</b> 這個概念。不過因為函數是一個<b>集合論 (set theory)</b> 的概念，它是用來描述兩個集合的成員之間的特殊對應關係，所以為了說明函數的概念，我也會順便介紹一些基礎的集合論觀念。
+					</p>
+					
+					<h5>集合</h5>
+					
+					<div class="portion">
+						<p>
+						什麼是<b>集合 (set)</b>？簡單地說，只要我們任意地蒐集一堆東西，就可以形成一個集合。我們通常用 '$\{\}$' 來表示一個集合，並將所有被蒐集進某一個集合內的東西寫在 '$\{\}$' 之中，然後用 '$,$' 將個別的東西分隔開來。比如說，$\{1,2,3,4,5\}$就是一個蒐集了 1-5 這五個阿拉伯數字的集合，而 $\{(A&rarr;B), (C&and;(D&or;B)), (&not;B), (A)\}$ 則是一個蒐集了 '$A&rarr;B$'、'$C&and;(D&or;B)$'、'$&not;B$'、'$A$' 這四個語句的集合。
+						</p>
+						<p>
+						集合能夠蒐集的東西沒有任何限制，無論是抽象的或具體的事物，都可以被蒐集到某個集合之中，集合之中甚至可以蒐集其它的集合。因為集合可以聚集任意數量的任何東西，所以當我們要談論一堆東西的時候，集合就是一個很方便的概念工具。比如說，當我們要談所有自然數（所有 $&ge;0$ 的整數）的時候，因為自然數有無限多個，我們不可能一一指出來談，但有了集合之後，我們就可以直接談論自然數的集合。
+						</p>
+						<p>
+						既然集合是在蒐集了任意一堆東西後所形成的，我們就說那些被一個集合蒐集起來的東西是那個集合的<b>成員 (member)</b>。比如說，'$1$'、'$2$'、'$3$'、'$4$'、'$5$' 都是 $\{1,2,3,4,5\}$ 這個集合的成員。讓我們用大寫的希臘字母（如 '$\&Gamma;$'、'$\&Delta;$'、'$\&Theta;$' 等）來表示一個集合（必要時可加上數字下標），並且令 $\{1,2,3,4,5\}=\&Gamma;$，我們就可以用 '$1&isin;\&Gamma;$' 來表示 $1$ 是 $\&Gamma;$ 這個集合的成員，我們將它讀作「$1$ 屬於 $\&Gamma;$」。
+						</p>
+					</div>
+					
+					<h5>函數</h5>
+					
+					<div class="portion">
+						<p>
+						簡單說明過集合與其成員間的關係後，現在要說明什麼是函數。前面說，函數是用來描述兩個集合的成員之間的特殊對應關係，那這個特殊對應關係是什麼呢？這個特殊的對應關係是這樣的：當我們說 '$\sc{f}$' 是一個從 $\&Gamma;$ 到 $\&Delta;$ 的函數時，意味著以下兩件事：<b>一、$\&Gamma;$ 中的每一個成員都會在 $\&Delta;$ 中找到一個對應的成員；二、$\&Gamma;$ 中的每一個成員，都只會在 $\&Delta;$ 中找到一個對應的成員。</b>我們通常會將「$\sc{f}$ 是一個從 $\&Gamma;$ 到 $\&Delta;$ 的函數」寫作 '$\sc{f}\：\&Gamma;&rarr;\&Delta;$'。
+						</p>
+						<p>
+						換言之，一個從 $\&Gamma;$ 到 $\&Delta;$ 的函數，就是一個以 $\&Gamma;$ 的成員為輸入，並且以 $\&Delta;$ 的成員為輸出的操作程序。若我們以 '$x$' 來代表 $\&Gamma;$ 中的成員，以 '$y$' 來代表 $\&Delta;$ 中的成員，當 $\sc{f}$ 是一個從 $\&Gamma;$ 到 $\&Delta;$ 的函數時，只要從 $\&Gamma;$ 當中挑任何一個 '$x$' 出來並輸入 '$\sc{f}$' 這個函數之中，這個函數就會輸出一個 $\&Delta;$ 中成員 '$y$'，而且只會輸出一個。
+						</p>
+						<p>
+						舉例來說，自然數加法中的 '$&plus;1$' 就是一個從自然數的集合到自然數的集合的函數，對任何自然數的成員 '$x$' 來說，只要將它輸入 $+1$ 這個函數之中（其實就是對 $x$ 做 $+1$ 的操作），就會輸出一個自然數的成員（$x+1$），而且一個輸入一定只會有一個輸出。比如說，$1$ 是自然數的成員，只要我們把 $1$ 輸入 $+1$ 的函數之中，我們就會得到 $2$ 這個輸出，而且只會得到 $2$ 這個輸出；$2$ 也是自然數的成員，只要我們把 $2$ 輸入 $+1$ 這個函數，我們就會得到 $3$ 這個輸出，而且只會得到 $3$ 這個輸出。
+						</p>
+						<p>
+						再舉一個例子來說，我們平時搭乘的電梯也是一個函數，當你輸入一個電梯樓層的按鈕，電梯就會以「到達對應的樓層」為輸出。你按下「3樓」的按鈕作為輸入，電梯就會以「到達3樓」為輸出；你按下「6樓」的按鈕作為輸入，電梯就會以「到達6樓」為輸出。每一個樓層按鈕的輸入都會對應到一個「到達樓層」的輸出，而且每一個樓層按鈕的輸入都只會對應到一個「到達樓層」的輸出。按下「3樓」的按鈕，電梯就只會到達3樓，而不會到達其它樓層。
+						</p>
+						<p>
+						函數是一個輸入到輸出的操作，有輸入就一定要有輸出，而且每個輸入一定都只能對應到一個輸出。但函數的輸入不一定都只能是「一個東西」，函數有時候可以輸入「一組東西」。比如說，前面提到的 '$+1$' 是一個每次都只能輸入「一個東西」的函數，但四則運算中的 '$+$' 就必須同時輸入兩個數字才能得到一個輸出。如果我們只對 '$+$' 輸入一個數字，那不論是 '$3+$' 或 '$+3$'，都不會有任何輸出，唯有同時輸入兩個數字時，比如說 '$3+2$' 或 '$5+1$'，我們才能分別得到 '$5$' 和 '$6$' 這兩個輸出。
+						</p>
+						<p>
+						因此，我們也會根據一個函數必須輸入多少東西才能得到輸出，將函數區分成幾元的函數。必須輸入一個東西的函數被稱為<b>一元</b>函數，必須輸入兩個東西的函數被稱為<b>二元</b>函數，必須輸入三個東西的函數，就被稱為<b>三元</b>函數，以此類推。
+						</p>
+					</div>
+					
+					<h5>真值函數</h5>
+					
+					<div class="portion">
+						<p>
+						簡單介紹過集合和函數這兩個概念後，我們就要來談<b>真值函數</b>了。我在這一小節的最開頭提到：語句邏輯中每一個以某個語句連接詞作為主要連接詞的語句，都是一個真值函數。這段話的意思是：當我們以語句的<b>真值 (truth value)</b> 作為輸入時，我們都會得到一個語句的真值作為輸出。
+						</p>
+						<p>
+						舉例來說，'$&alpha;&and;&beta;$' 是一個以 '$&and;$'
+						</p>
+					</div>
+				</div>
+        -->
+			</div>
+			<!--
+			<h2>語句邏輯的語意模型</h2>
+			
+			<div class="section">
+			
+				<h3>語句的真假和世界的關係</h3>
+				
+				<div class="subsection">
+					<p>
+					在介紹基本概念的時候，我提到自然語言中的語句依其功能可以分成不同的類型，常見的有用來提出問題的<b>疑問句</b>，或是向別人提出請求或下達命令的<b>祈使句</b>，還有用來描述事實的<b>陳述句</b>等。此外我也提到，在這些不同的語句類型當中，只有陳述句是有真假可言的，而判斷陳述句真假的方法，就是去檢查陳述句的描述和事實是否相符，相符者就是真的，不相符者就是假的。
+					</p>
+					<p>
+					也就是說，在判斷陳述句的真假時，我們一共需要確認兩樣東西：一、我們要判斷其真假的那個陳述句到底描述了什麼？二、我們的世界長什麼樣子？在分別確認過這兩樣東西之後，我們才有可能去比較兩者之間是否相符。舉例來說：
+						<ol class="lltd tight song">
+							<li>南華大學位在嘉義縣大林鎮。</li>
+						</ol>
+					要判斷這個陳述句的真假，就需要先確認這個陳述句描述了什麼，而要確認這個陳述句說了什麼，其實就是要確認這個陳述句的<b>意義</b>是什麼。
+					</p>
+					<p>
+					根據我們對中文的理解，我們知道這個陳述句是在描述一個名叫「南華大學」的教育研究機構的地理位置是在一個被稱作「嘉義縣大林鎮」的地方。在確認了這個陳述句的意義之後，我們進一步就要確認這個世界上是不是有這麼一個名叫「南華大學」的教育研究機構，它是不是確實位在被稱作「嘉義縣大林鎮」的地方？
+					</p>
+					<p>
+					經過確認之後，我們發現確實有這麼一個名叫「南華大學」的教育研究機構，這個機構的地理位置也確實是在一個被稱作「嘉義縣大林鎮」的地方，因此我們可以判斷，a 這個陳述句是真的。
+					</p>
+					<p>
+					這個世界上當然不會只有這麼一個可以被中文語句描述的事實，實際上，這個世界有難以計數的事實可以被中文的語句給描述，因此，我們可以說：這個世界決定了一組為真的中文語句。意思是，給定了這個世界所有的事實之後，我們可以找出一組為數相當龐大的中文語句是真的。當然，相對來說，給定了這個世界的所有事實之後，我們也可以找到一組為數相當龐大的中文語句是假的。
+					</p>
+					<p>
+					比如說，我們剛剛其實就已經確認過了，在給定了這個世界的所有事實之後，a 這個中文語句會是真的。此外，我們也可以知道：
+						<ol class="lltd tight song">
+							<li>中山大學在高雄市鼓山區。</li>
+						</ol>
+					這個語句也是真的，因為 b 的描述也和這個世界的事實相符。同理，我們還會知道：
+						<ol class="lltd tight song">
+							<li>政治大學在台北市文山區。</li>
+							<li>文化大學在台北市士林區。</li>
+							<li>逢甲大學在台中市西屯區。</li>
+							<li>環球科技大學在雲林縣斗六市。</li>
+						</ol>
+					這些語句也都是真的，因為這些語句的描述都和這個世界的事實是相符的。
+					</p>
+					<p>
+					相對來說，在給定了這個世界的所有事實之後，我們也會知道以下這些語句全部都是假的：
+						<ol class="lltd tight song">
+							<li>台南市在嘉義市的北邊。</li>
+							<li>台北市在花蓮市的東邊。</li>
+							<li>南投縣四面都靠海。</li>
+							<li>澎湖縣的陸地與台灣本島相連。</li>
+						</ol>
+					因為這些語句的描述都和這個世界的事實並不相符。
+					</p>
+					<p>
+					 然而要注意的是，我們之所以能夠判斷上述的語句是真或是假，是因為我們已經給定了這個世界的現實情況是什麼。可是這個世界不一定必須是如此，比如說，雖然我們都知道南華大學事實上就是位在嘉義縣大林鎮，但只要當初建校時有些不同的考慮，南華大學很可能就不是位在嘉義縣大林鎮，而是被建在雲林縣虎尾鎮，或被台南市永康區了。
+					</p>
+					<p>
+					根據這個世界的現實狀況，南華大學確實位在嘉義縣大林鎮，因此 a 是真的；但若考慮一個和現實世界有些不一樣的世界，a 或許就變成假的了（比如說，考慮一個南華大學因為某些理由而被建在雲林縣虎尾鎮的世界，此時 a 就是假的）。也就是說，同樣的一個語句只要被放在不同的世界裡，它的真假就有可能會被改變。
+					</p>
+					<p>
+					我們前面提到，這個世界（也就是現實的世界）決定了一組真語句和一組假語句，但在經過以上的考量之後，我們現在可以說：對任何一個不同的世界來說，每一個世界都可以決定一組屬於它自己的真語句和假語句。在我們所身處的這個現實世界之中，a-f 這五個語句都是真的，而 g-j 這四個語句都是假的；但我們也可以設想出一個不一樣的世界，在那個世界中 a-f 都是假的，而 g-j 卻都是真的。
+					</p>
+				</div>
+				
+				<h3>語意模型</h3>
+				
+				<div class="subsection">
+					<p>
+					既然我們可以藉由確認語句的意義和世界的實際狀態，來判斷自然語言中的語句的真假，那語句邏輯中的語句是否也能用相同的方式來判斷真假呢？如果說，在寫下每一個語句邏輯中的語句時，我們都確切地知道那是用來翻譯哪一個自然語言中的語句的話，我們就可以一一去判斷其真假。
+					</p>
+					<p>
+					但是我們並不總是知道一個語句邏輯的語句是用來翻譯自然語言中的哪一個語句，這時候我們自然無法去比較這個語句的描述和事實是否相符合，也就無法判斷這個語句的真假。不過即使如此，我們至少還是可以知道一件事：根據我在前面介紹過的語言的二值性，我們可以知道這個語句無論表達了什麼意義，它若不是真的，那它就是假的，不會有既真又假或既不真又不假的情況出現。
+					</p>
+					<p>
+					換個方式來說這件事：要判斷一個語句的真假，就必須先確認這個語句表達的意義，然後再比較這個語句的描述是否與事實相符合。那麼，當我們在面對一個語句邏輯的語句時，儘管我們不知道這個語句的意義是什麼，我們至少可以知道，無論這個語句表達的內容是什麼，它的描述要不就符合事實，要不就不符合事實，不會有既符合又不符合，或既沒有符合也沒有不符合的情況。
+					</p>
+					<p>
+					因此，對任意一個語句邏輯中的語句，比如說 '$A$'，雖然我們不知道它究竟表達了什麼內容，但我們知道，當它表達的內容符合事實的話，'$A$' 就為真，當它表達的內容不符合事實的話 '$A$' 就為假。
+					</p>
+				</div>
+			</div>
+      -->
+		</div>
+	</div>
+</body>
