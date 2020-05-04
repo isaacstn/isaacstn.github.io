@@ -111,6 +111,25 @@ p {
 	text-indent:2em;
 	margin-top:1em;
 }
+q {
+	font-family:'CMU Serif','Adobe FangSong';
+}
+q::before, q::after {
+	content:none;
+}
+svg {
+	margin-top:1em;
+	width:100%;
+}
+svg * {
+	stroke:black;
+	stroke-width:1;
+	fill:none;
+}
+text, tspan {
+	stroke-width:0;
+	fill:black;
+}
 p:first-of-type {
 	text-indent:0;
 }
@@ -363,6 +382,10 @@ ul.induction > li {
 table {
 	margin:1em 2em;
 	border-collapse:collapse;
+	empty-cells:show;
+}
+table.model {
+	margin-left:0;
 }
 table.full {
 	width:95%;
@@ -430,7 +453,10 @@ table.truth td {
 	padding-left:1em;
 	padding-right:1em;
 }
-.truth.single td:last-child, .truth.double td:last-child, .truth.triple td:last-child {
+tr:first-child td.omit::after {
+	content:"……";
+}
+.truth.single td:last-child, .truth.double td:last-child, .truth.triple td:last-child, .truth.nosen td:last-child {
 	border-left:solid 1px;
 }
 .single td:first-child {
@@ -456,6 +482,23 @@ table.truth td.mainc3 {
 }
 table.truth.bigrank td {
 	padding:0 0.25em;
+}
+.trans.mc3 td.mainc3, .trans.mc2 td.mainc2 {
+	opacity:0.2;
+}
+.trans tr:first-child td, .trans tr:first-child td.mainc3, .trans tr:first-child td.mainc2 {
+	opacity:1;
+}
+table.truth td.omit {
+	border-bottom-style:none;
+}
+table.truth tr.omit td {
+	border-right-style:none;
+	line-height:0.8em;
+	padding:0.25em;
+}
+table.truth tr.omit td.omit {
+	border-left-style:none;
 }
 div.inblock {
 	display:inline-block;
