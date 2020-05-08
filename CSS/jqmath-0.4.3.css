@@ -12,16 +12,16 @@ fmath mn[mathvariant*=sans-serif], fmath mtext[mathvariant*=sans-serif],
 fmath ms[mathvariant*=sans-serif]
 /* some (crossbrowsertesting/browsershots) IE7s require no line break before
 	'Lucida Sans Unicode': */
-{ font-family: STIXGeneral, 'DejaVu Sans', 'DejaVu Serif', /* Cambria, 'Cambria Math', */ 'Lucida Sans Unicode',
+{ font-family: 'CMU Serif', 'Noto Serif TC', STIXGeneral, 'DejaVu Sans', 'DejaVu Serif', /* Cambria, 'Cambria Math', */ 'Lucida Sans Unicode',
 						'Arial Unicode MS', 'Lucida Grande', Times,
 						OpenSymbol, 'Standard Symbols L', sans-serif }
 .fm-mo-Luc	/* avoid extra space at character tops, especially when stretched */
-{ font-family: STIXGeneral, 'DejaVu Sans', 'DejaVu Serif', /* Cambria, 'Cambria Math', */ 'Lucida Sans Unicode',
+{ font-family: 'CMU Serif', 'Noto Serif TC', STIXGeneral, 'DejaVu Sans', 'DejaVu Serif', /* Cambria, 'Cambria Math', */ 'Lucida Sans Unicode',
 						'Lucida Grande', 'Arial Unicode MS', Times,
 						OpenSymbol, 'Standard Symbols L', sans-serif }
 * html fmath, * html .fm-math, * html fmath mo, * html .fm-mo, * html .IE6-LSU
-					{ font-family: 'Lucida Sans Unicode' !important }	/* IE <=6 only */
-mo.fm-radic			{ font-family: 'Lucida Sans Unicode', 'Lucida Grande',
+					{ font-family: 'CMU Serif', 'Noto Serif TC', 'Lucida Sans Unicode' !important }	/* IE <=6 only */
+mo.fm-radic			{ font-family: 'CMU Serif', 'Noto Serif TC', 'Lucida Sans Unicode', 'Lucida Grande',
 						Verdana, sans-serif !important }
 .ma-script, fmath mi[mathvariant*=script], fmath mo[mathvariant*=script],
 fmath mn[mathvariant*=script], fmath mtext[mathvariant*=script], fmath ms[mathvariant*=script]
