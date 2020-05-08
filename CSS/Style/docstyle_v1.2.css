@@ -111,27 +111,14 @@ p {
 	text-indent:2em;
 	margin-top:1em;
 }
+p:first-of-type, p.noind {
+	text-indent:0;
+}
 q {
 	font-family:'CMU Serif','Adobe FangSong';
 }
 q::before, q::after {
 	content:none;
-}
-svg {
-	margin-top:1em;
-	width:100%;
-}
-svg * {
-	stroke:black;
-	stroke-width:1;
-	fill:none;
-}
-text, tspan {
-	stroke-width:0;
-	fill:black;
-}
-p:first-of-type {
-	text-indent:0;
 }
 em {
 	font-style:normal;
@@ -141,6 +128,45 @@ blockquote {
 	margin:1em 2em 1em 2em;
 	text-indent:0;
 	font-family:'CMU Serif','Adobe FangSong';
+}
+svg {
+	margin:1em 0 0 2em;
+	width:100%;
+}
+svg.back {
+	position:absolute;
+	margin:0;
+	z-index:-1;
+}
+svg * {
+	stroke:black;
+	stroke-width:1;
+	fill:none;
+}
+text, tspan, marker > path {
+	stroke-width:0;
+	fill:black;
+}
+text.ita, tspan.ita {
+	font-style:italic;
+}
+text.bold, tspan.bold {
+	font-weight:bold;
+}
+text.felipa, tspan.felipa {
+	font-family:felipa;
+}
+rect.grey, circle.grey, ellipse.grey {
+	fill:#eee;
+}
+rect.white, circle.white, ellipse.white {
+	fill:white;
+}
+rect.black, circle.black, ellipse.black {
+	fill:black;
+}
+rect.opa, circle.opa, ellipse.opa {
+	fill-opacity:0.5;
 }
 ol.quiz p {
 	text-indent:0;
@@ -408,26 +434,25 @@ table.follow {
 }
 table.prf td:first-child::before {
 	position:absolute;
-	left:-1.5em;
+	left:-2em;
 	counter-increment:tprf;
-	content:counter(tprf)". ";
+	content:"("counter(tprf)") ";
 }
 table.prf td:first-child {
 	position:relative;
-	left:1.5em;
+	left:2em;
 	padding-right:1em;
 }
 table.prf td:last-child {
-	position:relative;
-	left:1.5em;
+	padding-left:3em;
 }
 table.prf tr:first-child td {
 	padding-top:0;
 }
 table.prf tr:last-child td:first-child::before {
 	position:absolute;
-	left:-1.5em;
-	content:"C. ";
+	left:-2em;
+	content:"(C) ";
 }
 table.follow tr:first-child td {
 	padding-top:1em;
@@ -561,6 +586,7 @@ span.note:hover span.box {
 }
 #main {
 	page:main;
+	margin-bottom:25em;
 }
 #ref {
 	page:main;
