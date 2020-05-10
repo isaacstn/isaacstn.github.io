@@ -157,7 +157,10 @@ text.felipa, tspan.felipa {
 	font-family:felipa;
 }
 rect.grey, circle.grey, ellipse.grey {
-	fill:#eee;
+	fill:#444;
+}
+rect.lgrey, circle.lgrey, ellipse.lgrey {
+	fill:#aaa;
 }
 rect.white, circle.white, ellipse.white {
 	fill:white;
