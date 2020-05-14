@@ -20,6 +20,10 @@
 		counter-reset:page 25;
 	}
 	</style>
+	
+	<script src="https://mathscribe.com/mathscribe/jquery-1.4.3.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+	<script src="https://isaacstn.github.io/script/note.bubble.v1.js"></script>
 
 	<title>Ch2_SL-Semantics-1</title>
 </head>
@@ -359,9 +363,9 @@
 							<tr><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td class="omit"></td></tr>
 							<tr><td>F</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td class="omit"></td></tr>
 							<tr class="omit"><td>&vellip;<br/>&vellip;</td><td></td><td></td><td class="omit"></td><td></td><td></td><td></td><td></td><td class="omit"></td><td></td><td class="omit"></td><td></td><td></td><td></td><td class="omit"></td><td></td><td class="omit"></td><td></td><td></td><td></td><td class="omit"></td></tr>
-							<tr><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td>F</td><td class="omit"></td><td>T</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>F</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td class="omit"></td></tr>
-							<tr><td>F</td><td>T</td><td>F</td><td class="omit"></td><td>F</td><td>F</td><td>T</td><td>F</td><td class="omit"></td><td>F</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>F</td><td>T</td><td>F</td><td class="omit"></td></tr>
-							<tr><td>T</td><td>F</td><td>F</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td>F</td><td class="omit"></td><td>F</td><td class="omit"></td><td>F</td><td>F</td><td>T</td><td class="omit"></td><td>F</td><td class="omit"></td><td>F</td><td>T</td><td>T</td><td class="omit"></td></tr>
+							<tr><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>F</td><td>T</td><td>F</td><td>F</td><td class="omit"></td><td>F</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>F</td><td>F</td><td>T</td><td class="omit"></td></tr>
+							<tr><td>F</td><td>T</td><td>F</td><td class="omit"></td><td>T</td><td>T</td><td>F</td><td>F</td><td class="omit"></td><td>F</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>F</td><td>F</td><td>T</td><td class="omit"></td></tr>
+							<tr><td>T</td><td>T</td><td>F</td><td class="omit"></td><td>T</td><td>T</td><td>F</td><td>F</td><td class="omit"></td><td>F</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>F</td><td>F</td><td>T</td><td class="omit"></td></tr>
 							<tr class="omit"><td>&vellip;<br/>&vellip;</td><td></td><td></td><td class="omit"></td><td></td><td></td><td></td><td></td><td class="omit"></td><td></td><td class="omit"></td><td></td><td></td><td></td><td class="omit"></td><td></td><td class="omit"></td><td></td><td></td><td></td><td class="omit"></td></tr>
 						</table>
 					其中的每一列都代表一種可能性。第一列代表著<b>所有原子語句</b>都為真的可能性；第二列代表了 '$A$' 為假但其餘的原子語句全部為真的可能性；第三列則代表了 '$B$' 為假但其餘原子語句全部為真的可能性；第四列則代表了 '$A$'、'$C$' 為假而其餘原子語句全部為真的可能性……。
@@ -379,7 +383,7 @@
 					接著：因為 '$(A&and;Z_1)&or;Y_32$' 為真，而 '$&not;(Q&and;P_997)$' 為假，因此由這兩個語句組成的條件句 '$((A&and;Z_1)&or;Y_32)&rarr;&not;(Q&and;P_997)$' 便為假（因為前件真而後件假）；然後，因為 '$R_13&or;(S&rarr;&not;T)$' 為真，而 '$&not;N_66$' 為假，故 '$(R_13&or;(S&rarr;&not;T))&and;&not;N_66$' 便為假（因為連言句的其中一項為假，故連言句為假）。
 					</p>
 					<p>
-					最後：因為 '$((A&and;Z_1)&or;Y_32)&rarr;&not;(Q&and;P_997)$' 為假，而且 '$(R_13&or;(S&rarr;&not;T))&and;&not;N_66$' 也為假，所以 '$(((A&and;Z_1)&or;Y_32)&rarr;&not;(Q&and;P_997))&harr;((R_13&or;(S&rarr;&not;T))&and;&not;N_66)$' 為真（因為當雙條件句的前後件同真或同假時，雙條件句即為真）。
+					最後：因為 '$((A&and;Z_1)&or;Y_32)&rarr;&not;(Q&and;P_997)$' 和 '$(R_13&or;(S&rarr;&not;T))&and;&not;N_66$' 皆為假，所以 '$(((A&and;Z_1)&or;Y_32)&rarr;&not;(Q&and;P_997))&harr;((R_13&or;(S&rarr;&not;T))&and;&not;N_66)$' 為真（因為當雙條件句的前後件同真或同假時，雙條件句即為真）。
 					</p>
 					<p>
 					我們把這些涵括了<b>所有原子語句</b>之真假的可能性，稱為一個<b>語意模型 (semantic model)</b>，每一個不同的可能性都是一個獨特的語意模型。所有原子語句皆為真的可能性是一個語意模型，而 '$A$' 為假但其餘原子語句皆為真的可能性是另一個語意模型，'$B$' 為假而其餘原子語句都為真的可能性又是另一個語意模型……。
@@ -394,9 +398,9 @@
 						<tr><td>$\sc{v}_3$</td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td class="omit"></td></tr>
 						<tr><td>$\sc{v}_4$</td><td>F</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td class="omit"></td></tr>
 						<tr class="omit"><td>&vellip;<br/>&vellip;</td><td></td><td></td><td></td><td class="omit"></td><td></td><td></td><td></td><td></td><td class="omit"></td><td></td><td class="omit"></td><td></td><td></td><td></td><td class="omit"></td><td></td><td class="omit"></td><td></td><td></td><td></td><td class="omit"></td></tr>
-						<tr><td>$\sc{v}_n$</td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td>F</td><td class="omit"></td><td>T</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>F</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td class="omit"></td></tr>
-						<tr><td>$\sc{v}_{n+1}$</td><td>F</td><td>T</td><td>F</td><td class="omit"></td><td>F</td><td>F</td><td>T</td><td>F</td><td class="omit"></td><td>F</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>F</td><td>T</td><td>F</td><td class="omit"></td></tr>
-						<tr><td>$\sc{v}_{n+2}$</td><td>T</td><td>F</td><td>F</td><td class="omit"></td><td>T</td><td>T</td><td>T</td><td>F</td><td class="omit"></td><td>F</td><td class="omit"></td><td>F</td><td>F</td><td>T</td><td class="omit"></td><td>F</td><td class="omit"></td><td>F</td><td>T</td><td>T</td><td class="omit"></td></tr>
+						<tr><td>$\sc{v}_n$</td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>F</td><td>T</td><td>F</td><td>F</td><td class="omit"></td><td>F</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>F</td><td>F</td><td>T</td><td class="omit"></td></tr>
+						<tr><td>$\sc{v}_{n+1}$</td><td>F</td><td>T</td><td>F</td><td class="omit"></td><td>T</td><td>T</td><td>F</td><td>F</td><td class="omit"></td><td>F</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>F</td><td>F</td><td>T</td><td class="omit"></td></tr>
+						<tr><td>$\sc{v}_{n+2}$</td><td>T</td><td>T</td><td>F</td><td class="omit"></td><td>T</td><td>T</td><td>F</td><td>F</td><td class="omit"></td><td>F</td><td class="omit"></td><td>T</td><td>F</td><td>T</td><td class="omit"></td><td>T</td><td class="omit"></td><td>F</td><td>F</td><td>T</td><td class="omit"></td></tr>
 						<tr class="omit"><td>&vellip;<br/>&vellip;</td><td></td><td></td><td></td><td class="omit"></td><td></td><td></td><td></td><td></td><td class="omit"></td><td></td><td class="omit"></td><td></td><td></td><td></td><td class="omit"></td><td></td><td class="omit"></td><td></td><td></td><td></td><td class="omit"></td></tr>
 					</table>
 					<p>
@@ -702,7 +706,4 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://isaacstn.github.io/script/jquery-3.5.0.min.js"></script>
-	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
-	<script src="https://isaacstn.github.io/script/note.bubble.v1.js"></script>
 </body>
