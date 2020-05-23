@@ -658,6 +658,245 @@
 					</p>
 				</div>
 			</div>
+			
+			<h2>語句的邏輯性質與邏輯關係</h2>
+			
+			<div class="section" id="logical_properties_and_relations_of_sentences">
+			
+				<h3>語句的邏輯性質</h3>
+				
+				<div class="subsection" id="logical_properties_of_sentences">
+					<p>
+					前面說過，對所有語句邏輯中的語句，我們可以根據一個語句所使用的主要連接詞為其做分類；如今，我們要討論的是另一種分類方法，我們要利用語句的邏輯性質來為語句做分類。根據語句的邏輯性質，我們可以將語句邏輯的語句分為三類：<b>恆真句 (tautology)</b>、<b>矛盾句 (self-contradiction)</b>、<b>偶然語句 (contingent sentence)</b>。
+					</p>
+					
+					<h5>恆真句</h5>
+					
+					<div class="portion" id="tautology">
+						<p>
+						<b>恆真句</b>如果顧名思義的話，會把它理解成是<b>永恆為真</b>的語句，但恆真句其實和時間的變化沒有任何關係，這是翻譯上的誤區，但已成為主流，故本文亦沿用此譯法。恆真句指的是那些在任何語意模型底下皆為真的語句。換言之，無論一個恆真句所使用到的原子語句的真假如何分派，恆真句都為真。
+						</p>
+						<p>
+						因此，當我們畫一個恆真句的真值表時，其主要連接詞那一行一定會全部為真。舉例來說，'$A&or;&not;A$' 就是一個恆真句，它的真值表如下：
+							<table class="truth single">
+								<tr><td>$A$</td><td>$A$</td><td>$&or;$</td><td>$&not;A$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td></tr>
+							</table>
+						'$A&rarr;(B&rarr;A)$' 也是一個恆真句，其真值表如下：
+							<table class="truth double">
+								<tr><td>$A$</td><td>$B$</td><td>$A$</td><td>$&rarr;$</td><td>$(B&rarr;A)$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td></tr>
+								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td></tr>
+								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td></tr>
+							</table>
+						'$(A&rarr;B)&rarr;((A&and;C)&rarr;B)'$ 一樣是一個恆真句，我們也可以試著畫看看這個語句的真值表：
+							<table class="truth triple">
+								<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A&rarr;B)$</td><td>$&rarr;$</td><td>$((A&and;C)$</td><td>$&rarr;$</td><td>$B)$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
+								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
+								<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td></tr>
+								<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
+								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td></tr>
+							</table>
+						</p>
+					</div>
+					
+					<h5>矛盾句</h5>
+					
+					<div class="portion" id="self-contradiction">
+						<p>
+						第二種語句類型是矛盾句，不過如果要翻譯得更精確的話，這種語句應該被稱作<b>自我矛盾的語句</b>。矛盾句這一名稱中的「矛盾」一詞，語出《韓非子．難一》篇，說楚國有武器商人在賣盾和矛，先誇其盾牌堅固，任何武器都穿不透，又誇其矛鋒利，任何盾牌都能穿透；於是有路人問他：「若用你的矛刺你的盾會怎樣？」那武器商人便啞口無言。
+						</p>
+						<p>
+						如果他的盾果然沒有武器能穿透，那他的矛就不可能什麼都刺得穿；相反地，設若他的矛果然無堅不摧，那他的盾就不可能任何武器都穿不透。因為武器商人所說的話無論如何都不可能成真，因此<b>矛盾句</b>所指的便是在任何語意模型之下皆為假的語句。換言之，無論一個矛盾句所使用到的原子語句的真假如何分派，矛盾句都為假。
+						</p>
+						<p>
+						因此，當我們畫一個矛盾句的真值表時，其主要連接詞那一行一定會全部為假。舉例來說，'$A&and;&not;A$' 就是一個矛盾句，它的真值表如下：
+							<table class="truth single">
+								<tr><td>$A$</td><td>$A$</td><td>$&and;$</td><td>$&not;A$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\F$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td></tr>
+							</table>
+							'$&not;(A&rarr;B)&and;&not;(B&rarr;A)$' 也是一個矛盾句，其真值表如下：
+							<table class="truth double">
+								<tr><td>$A$</td><td>$B$</td><td>$&not;$</td><td>$(A&rarr;B)$</td><td>$&and;$</td><td>$&not;$</td><td>$(B&rarr;A)$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\F$</td><td>$\T$</td></tr>
+								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\F$</td><td>$\T$</td></tr>
+								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td>$\F$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\F$</td><td>$\T$</td></tr>
+							</table>
+							'$(A&rarr;(B&and;C))&and;(A&and;&not;B)$' 一樣是一個矛盾句，我們也可以試著畫看看這個語句的真值表：
+							<table class="truth triple">
+								<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A$</td><td>$&rarr;$</td><td>$(B&and;C))$</td><td>$&and;$</td><td>$(A$</td><td>$&and;$</td><td>$&not;B)$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc2">$\T$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
+								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
+								<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
+								<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
+								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\T$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\T$</td></tr>
+							</table>
+						</p>
+					</div>
+					
+					<h5>語言的特性</h5>
+					
+					<div class="portion" id="linguistic_property">
+						<p>
+						值得注意的是，根據定義，一個恆真句會在任何語意模型之下皆為真，而一個矛盾句則會在任何語意模型之下皆為假。那麼，考慮到<b>否定號</b>這個一元連接詞的語意特性是：<b>在任何語意模型下，只要一個語句為真，則它的否定句為假，只要一個語句為假，則它的否定句為真</b>。我們就能得知：恆真句的否定會在任何語意模型下皆為假，因此是矛盾句；而矛盾句的否定則會在任何語意模型下皆為真，因此是恆真句。
+						</p>
+						<p>
+						由於恆真句和矛盾句的真值都不會因為語意模型的改變而改變，這意味著無論我們如何調整原子語句的真假，恆真句都會為真，而矛盾句都會為假。而我在前一章說過，我們可以把每一個語意模型都看成是對世界的某一個可能狀態的描述。因此，恆真句和矛盾句的真值不會因為語意模型的改變而改變，就意味著恆真句和矛盾句的真值不是由世界的狀態所決定的。
+						</p>
+						<p>
+						之所以會如此，是因為恆真句與矛盾句的真值完全是由其語句結構來決定的。以 '$A&or;&not;A$' 這個語句來說明，它是一個恆真句，我們可以讓原子語句 '$A$' 代表以下這個中文的原子語句：
+							<ol class="lltd tight song">
+								<li>安安姓朱。</li>
+							</ol>
+						而它的否定句 '$&not;A$' 會是以下這個中文語句：
+							<ol class="lltpd tight song">
+								<li>安安不姓朱。</li>
+							</ol>
+						那麼 '$A&or;&not;A$' 就會是以下這個中文語句：
+							<ol class="lltppd tight song">
+								<li>安安姓朱，或者安安不姓朱。</li>
+							</ol>
+						a'' 這句話看起來像是在談論安安到底姓不姓朱的事情，但其實這句話完全沒有透露關於安安姓什麼的任何資訊。要注意的是，語句之所以可以傳遞任何資訊，不僅是因為我們可以透過意義來理解語句所表達的內容，更重要的是，我們可以透過判斷語句的真假來得到一些關於這個世界的資訊。
+						</p>
+						<p>
+						就以 a 這個語句為例。我們知道 a 這個語句是在表達有個叫「安安」的人，他的姓是「朱」。但如果只是知道這句話的意思，而不知道這句話的真假，我們其實還是不會知道安安到底姓不姓朱，只有當我們知道這句話為真時，才會知道安安確實姓朱，或者當我們知道這句話為假時，才會知道安安不姓朱。
+						</p>
+						<p>
+						然而像 a'' 這樣的語句，即使知道它的真假也不會告訴我們關於安安的任何事，因為 a'' 說的是：「a 和 a' 這兩個句子至少有一個會是真的」，而 a 和 a' 正好是彼此的否定句。給定語句的二值性，一個語句只能是真或是假，因此一個語句及其否定句，定有一個為真。也就是說，根據語言本身的邏輯特性，任何語句和其否定句中定有其一為真，故對任何語句來說，該語句和其否定句所形成的選言句定是真的。
+						</p>
+						<p>
+						同理，給定 '$A$' 代表語句 a，而其否定句 a' 便是 '$&not;A$'，則 '$A&and;&not;A$' 就會代表以下中文語句：
+							<ol class="lltpppd tight song">
+								<li>安安姓朱，而且安安不姓朱。</li>
+							</ol>
+						語句 a''' 說的是「a 和 a' 這兩個語句皆為真」，但根據語言的二值性，任何語句不能既真又假，因此語句 a 與其否定句 a' 定不能皆為真。也就是說，根據語言本身的邏輯特性，任何語句和其否定句定不能皆為真，故對任何語句來說，該語句和其否定句所形成的連言句定是假的。
+						</p>
+						<p>
+						以這兩個語句為例，恆真句和矛盾句並未透露任何關於世界的資訊，相對地，恆真句與矛盾句所透露的，其實是關於語言的一些特性。比如 '$A&or;&not;A$' 為恆真句一事，即是透露了任何語句與其否定句之中定有一為真，而 '$A&and;&not;A$' 為矛盾句一事，則透露了任何語句與其否定句定不可皆為真。其它的恆真句與矛盾句也都各自透露一些關於語言的特性，這在我們接觸更多語句之間的邏輯關係後會更清楚。
+						</p>
+					</div>
+					
+					<h5>偶然語句</h5>
+					
+					<div class="portion" id="contingency">
+						<p>
+						根據前面所說，恆真句和矛盾句並未透露任何關於世界的訊息，而是透露了關於語言本身的邏輯特性。由於世界無論如何改變，我們都是用相同的語言在談論它，因此語言本身（包括其邏輯特性）便不會因世界的改變而改變。那麼，實際上是和語言本身之邏輯特性有關的恆真句與矛盾句，其真假自然不會因為世界的改變而改變。
+						</p>
+						<p>
+						然而，<b>偶然語句</b>則是那些談論世界狀態的語句，因此其真假是會因為世界的改變而改變的。舉例來說，任何一個原子語句一定都是一偶然語句，比如語句 a 這個原子語句，它就會在「<q>安安姓朱</q>」的世界中為真，而在「<q>安安不姓朱</q>」的世界中為假。由於我們用語句邏輯中的 '$A$' 這一原子語句來代表語句 a，故其真值表如下：
+							<table class="truth single">
+								<tr><td>$A$</td><td>$A$</td></tr>
+								<tr><td>$\T$</td><td class="mainc">$T$</td></tr>
+								<tr><td>$\F$</td><td class="mainc">$F$</td></tr>
+							</table>
+						這個真值表的意思是：在任何 '$A$' 為真的世界裡，'$A$' 為真，而在任何 '$A$' 為假的世界裡，'$A$' 為假。
+						</p>
+						<p>
+						這看起來像是一句廢話，但它其實透露了一個重要的訊息，就是 '$A$' 這樣的一個語句既有可能是真的，也有可能是假的，一切都要看我們在談論的是一個怎樣的世界。這就是偶然語句和恆真句與矛盾句之間的重要差異：偶然語句的真假會因世界的改變而改變，恆真句與矛盾句的真假則否。
+						</p>
+						<p>
+						我們可以再看更多的例子，'$A&and;B$' 也是一個偶然語句，其真值表如下：
+							<table class="truth double">
+								<tr><td>$A$</td><td>$B$</td><td>$A&and;B$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td></tr>
+								<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td></tr>
+								<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td></tr>
+							</table>
+						'$(A&or;B)&rarr;(B&and;C)$' 也是一個偶然語句，其真值表如下：
+							<table class="truth triple">
+								<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A&or;B)$</td><td>$&rarr;$</td><td>$(B&and;C)$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+								<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+								<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
+							</table>
+						從以上幾個真值表應該不難看得出來，偶然語句的真值表一定有某些列為真，某些列為假，這意味著偶然語句的真假會隨著語意模型的不同而不同。由於每個語意模型都是世界的不同狀態，換言之，偶然語句的真假會隨世界的改變而改變。
+						</p>
+						<p>
+						綜上所述，恆真句在所有語意模型之下皆為真，矛盾句在所有語意模型之下皆為假，而這又是基於這兩類語句的邏輯特性使然，故前者又被稱為<b>邏輯真 (logical truth)</b>，而後者則被稱為<b>邏輯假 (logical falsity)</b>。而偶然語句則是相對於此二者的，它的邏輯性質就是會在某些語意模型下為真，在另一些語意模型下為假。
+						</p>
+					</div>
+				</div>
+				
+				<h3>語句間的邏輯關係</h5>
+				
+				<div class="subsection" id="logical_relations_between_sentences">
+					<p>
+					簡單談過語句的三種邏輯性質，即在所有語意模型下皆真、在所有語意模型下皆假、在某些語意模型下為真而在另一些語意模型下為假，接下來要介紹的則是語句和語句之間的不同邏輯關係。雖然在語句邏輯中，任兩個語句之間可以存在許多邏輯關係，但我在此處先介紹兩個最基本的邏輯關係：<b>相容 (compatible)</b> 和<b>蘊涵 (entail)</b> 關係，其餘的邏輯關係則可由這兩種邏輯關係來定義。
+					</p>
+					
+					<h5>相容</h5>
+					
+					<div class="portion" id="compatibility">
+						<p>
+						對任兩個語句而言，如果這兩個語句彼此是相容的，意味著這兩個語句可以皆為真。比如說，考慮 '$A&and;B$' 和 '$A&or;B$' 這兩個語句，我們可以將它們的真值表畫在一起如下：
+							<table class="truth double">
+								<tr><td>$A$</td><td>$B$</td><td>$A&and;B$</td><td>$A&or;B$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td class="mainc">$T$</td></tr>
+								<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
+								<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$F$</td></tr>
+							</table>
+						可以得出來，真值表的第一列剛好是 '$A&and;B$' 和 '$A&or;B$' 這兩個語句皆為真的情況：當 '$A$' 為真而 '$B$' 也為真的時候，'$A&and;B$' 和 '$A&or;B$' 皆為真。
+						</p>
+						<p>
+						如果要用更準確地方法來定義兩個語句之間的相容關係，我們可以這麼說：任兩個語句是相容的，當且僅當至少有一個語意模型使這兩個語句皆為真。而根據上述真值表，我們可以知道，對任何一個語意模型 $\sc{v}_n$（$n$ 是未知數）滿足 $\sc{v}_n&vDash;A$ 和 $\sc{v}_n&vDash;B$ 這兩個條件，則 $\sc{v}_n&vDash;A&and;B$ 而且 $\sc{v}_n&vDash;A&or;B$。
+						</p>
+						<p>
+						由於兩個彼此相容的語句一定會在某個語意模型之下為真，因此我們可以用真值表來判斷任兩個語句之間是否相容，只要兩個語句是相容的，當我們用 '$&and;$' 將此二語句連接成一連言組時，其真值表就至少有會一列為真。我們可以繼續以 '$A&and;B$' 和 '$A&or;B$' 這兩個語句為例，將此二語句以 '$&and;$' 連接為 '$(A&and;B)&and;(A&or;B)$' 此一連言句，其真值表如下：
+							<table class="truth double">
+								<tr><td>$A$</td><td>$B$</td><td>$(A&and;B)$</td><td>$&and;$</td><td>$(A&or;B)$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+								<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\T$</td></tr>
+								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\T$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+							</table>
+						如表所示，當我們以 '$&and;$' 來連接 '$A&and;B$' 和 '$A&or;B$' 這兩個語句以形成 '$(A&and;B)&and;(A&or;B)$' 這一連言句後，該連言句之真值表果然至少有一列（即第一列）為真，因此可以證明 '$A&and;B$' 和 '$A&or;B$' 這兩個語句確實相容。
+						</p>
+						<p>
+						值得注意的是，語句之間的相容關係是一種雙向的關係，意思是：對任意兩個語句 '$&alpha;$' 和 '$&beta;$' 來說，如果 '$&alpha;$' 相容於 '$&beta;$'，那麼 '$&beta;$' 也會相容於 '$&alpha;$'。因此我們通常都只說兩個語句是相容的，但其實意思就是說這兩個語句是<b>彼此</b>相容的。
+						</p>
+					</div>
+					
+					<h5>蘊涵</h5>
+					
+					<div class="portion" id="entailment">
+						<p>
+						兩個語句之間的相容關係是一種雙向的關係，但兩個語句之間的蘊涵關係卻只是一種單向的關係，也就是說，給定任意兩個語句 '$&alpha;$' 和 '$&beta;$'，即使 '$&alpha;$' 蘊涵 '$&beta;$'，'$&beta;$' 依然不見得會蘊涵 '$&alpha;$'。這點必須特別注意。
+						</p>
+						<p>
+						給定 '$&alpha;$' 和 '$&beta;$' 是兩個語句，如果 '$&alpha;$' 蘊涵 '$&beta;$'，這意味著在 '$&alpha;$' 為真的所有情況下，'$&beta;$' 也都為真。讓我們繼續考慮 '$A&and;B$' 和 '$A&or;B$' 這兩個語句，將它們的真值表畫在一起如下：
+							<table class="truth double">
+								<tr><td>$A$</td><td>$B$</td><td>$A&and;B$</td><td>$A&or;B$</td></tr>
+								<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td class="mainc">$T$</td></tr>
+								<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
+								<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
+								<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$F$</td></tr>
+							</table>
+						注意，在此真值表中，語句 '$A&and;B$' 為真的情況只有第一列，其餘都是 '$A&and;B$' 為假的情況。由於為了判斷 '$A&and;B$' 是否蘊涵 '$A&or;B$'，我們需要檢查的是 '$A&and;B$' 為真的所有情況，所以根據這個真值表，我們需要檢查的情況就只有第一列。經過檢查後可以發現，在 '$A&and;B$' 為真的所有情況下，'$A&or;B$' 確實都為真，因此可以判斷出 '$A&and;B$' 蘊涵 '$A&or;B$'。
+						</p>
+						<p>
+						但若要反過來考慮 '$A&or;B$' 是否蘊涵 '$A&and;B$' 的話，我們就要檢查所有 '$A&or;B$' 為真的情況，而根據上表，'$A&or;B$' 為真的所有情況包括了第一、二、三列這三種情況，而在這三種情況中，只有在第一列的情況下 '$A&and;B$' 也為真，故 '$A&and;B$' 並沒有在所有 '$A&or;B$' 為真的情況下皆為真，因此 '$A&or;B$' 就不蘊涵 '$A&and;B$'。
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<script src="https://isaacstn.github.io/script/jquery-3.5.0.min.js"></script>
