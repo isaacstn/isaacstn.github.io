@@ -834,7 +834,7 @@
 					</div>
 				</div>
 				
-				<h3>語句間的邏輯關係</h5>
+				<h3>語句間的邏輯關係</h3>
 				
 				<div class="subsection" id="logical_relations_between_sentences">
 					<p>
@@ -1168,6 +1168,113 @@
 							</table>
 						如果所示，'$(A&or;&not;B)&harr;(&not;A&and;B)$' 確為一矛盾句，故可證 '$A&or;&not;B$' 和 '$&not;A&and;B$' 為彼此矛盾的語句。
 						</p>
+					</div>
+					
+					<h5>邏輯獨立</h5>
+					
+					<div class="portion" id="independence">
+						<p>
+						在介紹完上述五個語句之間可能存在的邏輯關係之後，我們要介紹的是最後一個，<b>邏輯獨立</b>的關係。邏輯獨立也是一種雙向關係，在我們所介紹的這六個語句間的邏輯關係中，除了蘊涵關係是單向關係外，其它五種關係都是雙向關係。
+						</p>
+						<p>
+						當兩個語句彼此是邏輯獨立的時候，就意味著這兩個語句除了相容之外，不具備其它任何邏輯關係。它們既不矛盾也不衝突、不等值、也沒有任何一個蘊涵另外一個。當兩個語句邏輯上彼此獨立時，無論將兩個語句寫成連言句、條件句或雙條件句，都只會得到偶然語句。
+						</p>
+					</div>
+					
+					<h5>邏輯關係之關係圖</h5>
+					
+					<div class="portion" id="relation_chart">
+						<p>
+						介紹完以上六種不同的邏輯關係之後，我們可以將語句間的邏輯關係之間的關係整理成以下圖表：
+						</p>
+						<svg height="426px">
+							<rect height="50" width="75" x="0" y="100" />
+								<text x="15" y="130"><tspan class="ita bold">&alpha;&emsp;&beta;</tspan></text>
+								<path marker-end="url(#head)" d="M37.5 100 L37.5 50 L100 50" />
+							<rect height="50" width="75" x="106" y="25" />
+								<text x="127" y="56" class="bold">相容</text>
+								<path marker-end="url(#head)" d="M181 50 L200 50 L200 26 L224 26" />
+								<rect height="50" width="100" x="230" y="1" />
+									<text x="239" y="23" class="bold">
+										<tspan class="ita">&alpha;</tspan> 不蘊涵 <tspan class="ita">&beta;</tspan>
+									</text>
+									<text x="239" y="41" class="bold">
+										<tspan class="ita">&beta;</tspan> 不蘊涵 <tspan class="ita">&alpha;</tspan>
+									</text>
+									<path marker-end="url(#head)" d="M330 26 L354 26" />
+									<rect x="360" y="1" width="75" height="50" />
+										<text class="bold">
+											<tspan x="381" y="23">邏輯</tspan>
+											<tspan x="381" y="41">獨立</tspan>
+										</text>
+										<path marker-end="url(#head)" d="M435 26 L502 26 L502 69" />
+								<path marker-end="url(#head)" d="M200 50 L200 100 L224 100" />
+								<rect height="50" width="100" x="230" y="75" />
+									<text x="246" y="97" class="bold">
+										<tspan class="ita">&alpha;</tspan> 蘊涵 <tspan class="ita">&beta;</tspan>
+									</text>
+									<text x="239" y="115" class="bold">
+										<tspan class="ita">&beta;</tspan> 不蘊涵 <tspan class="ita">&alpha;</tspan>
+									</text>
+									<path marker-end="url(#head)" d="M330 100 L459 100" />
+								<path marker-end="url(#head)" d="M200 100 L200 175 L224 175" />
+								<rect height="50" width="100" x="230" y="150" />
+									<text x="239" y="172" class="bold">
+										<tspan class="ita">&alpha;</tspan> 不蘊涵 <tspan class="ita">&beta;</tspan>
+									</text>
+									<text x="246" y="190" class="bold">
+										<tspan class="ita">&beta;</tspan> 蘊涵 <tspan class="ita">&alpha;</tspan>
+									</text>
+									<path d="M330 175 L398 175 L398 100" />
+									<rect x="465" y="75" width="75" height="50" />
+										<text class="bold">
+											<tspan x="486" y="97">邏輯</tspan>
+											<tspan x="478" y="115">不等值</tspan>
+										</text>
+								<path marker-end="url(#head)" d="M200 175 L200 250 L224 250" />
+								<rect height="50" width="100" x="230" y="225" />
+									<text x="246" y="247" class="bold">
+										<tspan class="ita">&alpha;</tspan> 蘊涵 <tspan class="ita">&beta;</tspan>
+									</text>
+									<text x="246" y="265" class="bold">
+										<tspan class="ita">&beta;</tspan> 蘊涵 <tspan class="ita">&alpha;</tspan>
+									</text>
+									<path marker-end="url(#head)" d="M330 250 L354 250" />
+									<rect x="360" y="225" height="50" width="75" />
+										<text class="bold">
+											<tspan x="381" y="247">邏輯</tspan>
+											<tspan x="381" y="265">等值</tspan>
+										</text>
+								<path marker-end="url(#head)" d="M37.5 150 L37.5 200 L100 200" />
+								<rect x="106" y="175" height="50" width="75" />
+									<text class="bold">
+										<tspan x="127" y="197">衝突</tspan>
+										<tspan x="112" y="215">(不相容)</tspan>
+									</text>
+									<path marker-end="url(#head)" d="M143 225 L143 325 L106 325" />
+									<rect x="0" y="300" width="100" height="50" />
+										<text class="bold">
+											<tspan x="17" y="322">不可同真</tspan>
+											<tspan x="17" y="341">但可同假</tspan>
+										</text>
+										<path marker-end="url(#head)" d="M50 350 L50 400 L354 400" />
+										<rect x="360" y="375" width="75" height="50" />
+											<text class="bold">
+												<tspan x="381" y="397">衝突</tspan>
+												<tspan x="366" y="416">但不矛盾</tspan>
+											</text>
+											<path d="M435 400 L502 400 L502 325" />
+									<path marker-end="url(#head)" d="M143 325 L194 325" />
+									<rect x="200" y="300" width="100" height="50" />
+										<text class="bold">
+											<tspan x="218" y="322">不可同真</tspan>
+											<tspan x="210" y="341">亦不可同假</tspan>
+										</text>
+										<path marker-end="url(#head)" d="M300 325 L354 325" />
+										<rect x="360" y="300" width="75" height="50" />
+											<text class="bold" x="381" y="331">矛盾</text>
+											<path marker-end="url(#head)" d="M435 325 L502 325 L502 131" />
+						</svg>
 					</div>
 				</div>
 			</div>
