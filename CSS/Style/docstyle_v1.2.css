@@ -97,9 +97,15 @@ h4 {
 	margin-top:1em;
 	font-size:12pt;
 }
+h5::before {
+	content:"【";
+}
 h5 {
 	margin-top:1em;
 	font-size:12pt;
+}
+h5::after {
+	content:"】";
 }
 .def h4::before {
 	content:none;
@@ -192,9 +198,6 @@ li {
 }
 li:first-child {
 	margin-top:0;
-}
-ul > li {
-	left:0;
 }
 ol.quiz > li::before {
 	counter-increment:quiz;
@@ -393,6 +396,9 @@ ol.local.prf {
 .tight > li, .prf > li , .def > li {
 	margin-top:0.25em;
 }
+ul > li {
+	left:0;
+}
 .def ul {
 	border:solid 1px black;
 	margin-left:0;
@@ -421,6 +427,14 @@ ul.induction > li:nth-child(3)::before {
 ul.induction > li {
 	left:2.5em;
 	margin-right:2.5em;
+}
+ul.disc > li::before {
+	position:absolute;
+	left:-1em;
+	content:"•";
+}
+ul.disc > li {
+	left:1.5em;
 }
 table {
 	margin:1em 2em;
