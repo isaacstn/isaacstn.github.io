@@ -5,7 +5,7 @@
 @font-face {
   font-family: 'Adobe FangSong';
   src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Regular.otf') format('opentype');
-  unicode-range:U+3000-303F;
+  unicode-range:U+3000-303F, U+FF00-FFEF;
 }
 
 @font-face {
@@ -15,5 +15,5 @@
 @font-face {
   font-family: 'Adobe Kai';
   src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Regular.otf') format('opentype');
-  unicode-range:U+3000-303F;
+  unicode-range:U+3000-303F, U+FF00-FFEF;
 }
