@@ -2,8 +2,18 @@
   font-family: 'Adobe FangSong';
   src: url('https://isaacstn.github.io/fonts/AdobeTC/AdobeFangsongStd-Regular.otf') format('opentype');
 }
+@font-face {
+  font-family: 'Adobe FangSong';
+  src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Regular.otf') format('opentype');
+  unicode-range:U+3000-303F;
+}
 
 @font-face {
   font-family: 'Adobe Kai';
   src: url('https://isaacstn.github.io/fonts/AdobeTC/AdobeKaitiStd-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Adobe Kai';
+  src: url('https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifCJKtc-Regular.otf') format('opentype');
+  unicode-range:U+3000-303F;
 }
