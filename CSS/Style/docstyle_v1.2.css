@@ -607,6 +607,9 @@ span.note:hover span.box {
 .kai {
 	font-family:'CMU Serif','Adobe Kai','標楷體','DFKai-SB';
 }
+.hidden {
+	visibility:hidden;
+}
 #front {
 	page:front-matter;
 }
