@@ -120,6 +120,23 @@ p {
 p:first-of-type, p.noind {
 	text-indent:0;
 }
+a {
+	font-weight:bold;
+}
+a:link {
+	color:#000;
+}
+a:hover {
+	color:#666;
+	text-decoration:none;
+}
+a:active {
+	color:#aaa;
+	text-decoration:none;
+}
+a:visited {
+	color:#aaa;
+}
 q {
 	font-family:'CMU Serif','Adobe FangSong';
 }
@@ -639,6 +656,9 @@ span.note:hover span.box {
 	}
 	table, svg {
 		page-break-inside:avoid;
+	}
+	table.prf {
+		page-break-inside:auto;
 	}
 }
 
