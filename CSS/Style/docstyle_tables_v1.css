@@ -1,0 +1,117 @@
+/* table in general */
+table {
+	margin:1em 2em;
+	border-collapse:collapse;
+	empty-cells:show;
+}
+table.full {
+	width:95%;
+}
+table.qt3 {
+	width:75%;
+}
+table.half {
+	width:50%;
+}
+table.follow {
+	border-top:1px solid #000;
+}
+table.follow tr:first-child td {
+	padding-top:1em;
+}
+tr.last {
+	display:none;
+}
+
+/* tables for proof */
+table.prf {
+	counter-reset:tprf;
+}
+table.prf td {
+	vertical-align:middle;
+	padding-top:0.25em;
+	text-align:left;
+}
+table.prf td:first-child::before {
+	position:absolute;
+	left:-2em;
+	counter-increment:tprf;
+	content:"("counter(tprf)") ";
+}
+table.prf tr:last-child td:first-child::before {
+	content:"(C) ";
+}
+table.prf td:first-child {
+	position:relative;
+	left:2em;
+	padding-right:2em;
+}
+table.prf td:last-child {
+	padding-left:1em;
+}
+table.prf tr:first-child td {
+	padding-top:0;
+}
+
+/* truth tables */
+table.truth {
+	text-align:center;
+}
+table.truth td {
+	border-right:solid black 1px;
+	border-bottom:solid black 1px;
+	padding:0 1em;
+}
+table.truth td:last-child {
+	border-right:none;
+}
+table.truth tr:last-child td {
+	border-bottom:none;
+}
+table.truth.bigrank td {
+	padding:0 0.25em;
+}
+table.single td:first-child, table.double td:nth-child(2), table.triple td:nth-child(3) {
+	border-right:double 6px;
+}
+table.single tr:first-child td:nth-child(n+2), table.double tr:first-child td:nth-child(n+3), table.triple tr:first-child td:nth-child(n+4) {
+	border-right:none;
+	border-left:none;
+}
+table.truth td.mainc, table.truth td.mainc+td {
+	border-left:solid 3px;
+}
+table.truth td.mainc {
+	font-weight:700;
+}
+table.truth td.mainc2, table.truth td.mainc2+td {
+	border-left:solid 2px;
+}
+table.truth td.mainc3, table.truth td.mainc3+td {
+	border-left:solid 1px;
+}
+.trans.mc3 td.mainc3, .trans.mc2 td.mainc2 {
+	opacity:0.2;
+}
+.trans tr:first-child td, .trans tr:first-child td.mainc3, .trans tr:first-child td.mainc2 {
+	opacity:1;
+}
+
+/* tables presenting semantic models */
+table.model {
+	margin-left:0;
+}
+table.truth td.omit {
+	border-bottom-style:none;
+}
+table.truth tr.omit td {
+	border-right-style:none;
+	line-height:0.8em;
+	padding:0.25em;
+}
+table.truth tr.omit td.omit {
+	border-left-style:none;
+}
+tr:first-child td.omit::after {
+	content:"……";
+}
