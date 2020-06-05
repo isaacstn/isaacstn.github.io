@@ -3,15 +3,26 @@
 
 <head>
 	<meta charset="utf-8"/>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+	<script src="https://isaacstn.github.io/script/note.bubble.v1.js"></script>
 
+	<!--fonts-->
 	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
 	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
 	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
 	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
 	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
-	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/docstyle_logic_v1.3.css"/><!--docstyle-->
+	
+	<!--styles-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_pagestyle_v1.css"/><!--pagestyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_titlestyle_v1.css"/><!--titlestyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.3.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_liststyle_v1.css"/><!--liststyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_tablestyle_v1.css"/><!--tablestyle-->
 	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
-	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3-math.css"/><!--jqmath-math-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3-math.css"/><!--jqmath-->
 
 	<style>
 	h1::before {
@@ -138,6 +149,179 @@
 								</li>
 							</ol>
 						</p>
+					</div>
+					
+					<div class="portion">
+						<h5>對集合的操作</h5>
+						<p>
+						對於集合，我們可以做各種不同的操作。比如說，對任意兩個集合 $\&Gamma;$ 和 $\&Delta;$，我們可以試著取這兩個集合的<b>交集 (intersection)</b>：$\&Gamma;&cap;\&Delta;$。對兩個集合取交集，取得的交集也是一個集合，它是兩個集合最大的共同子集合。簡單說，$\&Gamma;&cap;\&Delta;$ 就是將 $\&Gamma;$ 和 $\&Delta;$ 中所有相同的成員都蒐集起來的集合。（如【圖二】左）
+						</p>
+						<p>
+						對任意兩個集合 $\&Gamma;$ 和 $\&Delta;$，我們也可以取這兩個集合的<b>聯集 (union)</b>：$\&Gamma;&cup;\&Delta;$。對兩個集合取聯集，取得的聯集也會是一個集合，它是同時蒐集了兩個集合中所有成員的集合。簡單說，$\&Gamma;&cup;\&Delta;$ 就是將 $\&Gamma;$ 和 $\&Delta;$ 中所有的成員都蒐集起來的集合（當蒐集到重複的成員時，只能算一個）。（如【圖二】右）
+						</p>
+						<svg height="180px">
+							<defs>
+								<clipPath id="Lrcircle">
+									<circle r="74" cx="155" cy="75" />
+								</clipPath>
+							</defs>
+							<circle class="lgrey" clip-path="url(#Lrcircle)" r="74" cx="80" cy="75" />
+							<circle r="74" cx="80" cy="75" />
+							<circle r="74" cx="155" cy="75" />
+							<text class="bold" x="45" y="80">&Gamma;</text>
+							<text class="bold" x="180" y="80">&Delta;</text>
+							<text class="bold" x="97" y="179">&Gamma;&cap;&Delta;</text>
+							<defs>
+								<clipPath id="RlCircle">
+									<circle r="74" cx="350" cy="75" />
+								</clipPath>
+								<clipPath id="RrCircle">
+									<circle r="74" cx="425" cy="75" />
+								</clipPath>
+							</defs>
+							<circle class="lgrey" r="74" cx="350" cy="75" />
+							<circle class="lgrey" r="74" cx="425" cy="75" />
+							<circle r="74" cx="350" cy="75" clip-path="url(#RrCircle)" />
+							<text class="bold" x="315" y="80">&Gamma;</text>
+							<text class="bold" x="450" y="80">&Delta;</text>
+							<text class="bold" x="367" y="179">&Gamma;&cup;&Delta;</text>
+							<text class="bold" x="510" y="179">【圖二】</text>
+						</svg>
+						<p>
+						舉例來說，如果 $\&Gamma;&equals;\{1,2,3,4,5\}$，而 $\&Delta;&equals;\{4,5,6,7,8\}$，則 $\&Gamma;&cap;\&Delta;&equals;\{4,5\}$，因為只有 4、5 這兩個阿拉伯數字是 $\&Gamma;$ 和 $\&Delta;$ 這兩個集合所共有的成員。至於 $\&Gamma;&cup;&Delta;$ 則會是 $\{1,2,3,4,5,6,7,8\}$ 這個集合，因為將兩個集合中的所有成員都蒐集進同一個集合的話，會得到 $\{1,2,3,4,4,5,5,6,7,8\}$，而其中重複出現過兩次的 4 和 5 這兩個成員各自都只能算一個，所以其實是 $\{1,2,3,4,5,6,7,8\}$。
+						</p>
+						<p>
+						除了對任意兩個集合取交集或聯集之外，我們也可以對任意兩個集合 $\&Gamma;$ 和 $\&Delta;$ 取其<b>乘積 (product)</b>：$\&Gamma;&times;\&Delta;$。$\&Gamma;&times;\&Delta;$ 也是一個集合，不過這個集合的成員比較特別，我們要從 $\&Gamma;$ 和 $\&Delta;$ 這兩個集合中任意各取一個成員出來，然後將從 $\&Gamma;$ 中取出來的成員放前面，將從 $\&Delta;$ 中取出來的成員放後面，形成一個二元組。最後將所有依前述方法組成的二元組都蒐集進同一個集合，就是 $\&Gamma;&times;\&Delta;$。
+						</p>
+						<p>
+						舉例來說，如果 $\&Gamma;&equals;\{1,2,3\}$，$\&Delta;=\{a,b,c\}$，那 $\&Gamma;&times;\&Delta;$ 就會等於 $\{&#x27e8;1,a&#x27e9;,&#x27e8;1,b&#x27e9;,$ $&#x27e8;1,c&#x27e9;,&#x27e8;2,a&#x27e9;,&#x27e8;2,b&#x27e9;,&#x27e8;2,c&#x27e9;,&#x27e8;3,a&#x27e9;,&#x27e8;3,b&#x27e9;,&#x27e8;3,c&#x27e9;\}$。這個集合一共有九個成員，每個成員都是一個二元組，每個二元組都是由一個取自 $\&Gamma;$ 的成員和一個取自 $\&Delta;$ 的成員所組成，而且取自 $\&Gamma;$ 的成員必須放在左邊，取自 $\&Delta;$ 的成員則必須放在右邊。（見【圖三】）
+						</p>
+						<svg height="200">
+							<defs>
+								<marker id="head" orient="auto" markerWidth="6" markerHeight="6" refX="0.1" refY="3">
+									<path d="M0 0 V6 L6 3 Z" />
+								</marker>
+
+	<div id="main">
+		<div class="chapter">
+			<h1>語句邏輯的語意（二）</h1>
+						
+			<div class="section">
+				<h2>真值函數</h2>
+				<p>
+				前一章關於真值表和語意模型的討論，其實都是建立在相同的基礎之上：語句邏輯中的每一個語句都是由一個語句連接詞作為主要連接詞，並連接相應數量的語句來形成的；而要判斷每一個語句的真假，一定都是用該語句之主要連接詞所連接的語句之真假來判斷。因此，每一個語句邏輯中的語句都是一個<b>真值函數 (truth function)</b>。
+				</p>
+				<p>
+				為了說明真值函數是什麼，以及說明真值函數與真值表和語意模型之間的關係，我必須先簡單地介紹一下<b>函數 (function)</b> 這個概念。不過因為函數是一個<b>集合論 (set theory)</b> 的概念，它是用來描述兩個集合的成員之間的特殊對應關係，所以為了說明函數的概念，我也必須先介紹一些基礎的集合論觀念。
+				</p>
+				
+				<div class="subsection">
+					<h3>集合</h3>
+					<p>
+					什麼是<b>集合 (set)</b>？簡單地說，只要我們任意地蒐集一堆東西，就可以形成一個集合。我們通常用 '$\{\}$' 來表示一個集合，並將所有被蒐集進某一個集合內的東西寫在 '$\{\}$' 之中，然後用 '$,$' 將個別的東西分隔開來。比如說，$\{1,2,3,4,5\}$就是一個蒐集了 1-5 這五個阿拉伯數字的集合，而 $\{(A&rarr;B), (C&and;(D&or;B)), (&not;B), (A)\}$ 則是一個蒐集了 '$A&rarr;B$'、'$C&and;(D&or;B)$'、'$&not;B$'、'$A$' 這四個語句的集合。
+					</p>
+					<p>
+					集合能夠蒐集的東西沒有任何限制，無論是抽象的或具體的事物，都可以被蒐集到某個集合之中，集合之中甚至可以蒐集其它的集合。因為集合可以聚集任意數量的任何東西，所以當我們要談論一堆東西的時候，集合就是一個很方便的概念工具。比如說，當我們要談所有自然數（所有 $&ge;0$ 的整數）的時候，因為自然數有無限多個，我們不可能一一指出來談，但有了集合之後，我們就可以直接談論自然數的集合。
+					</p>
+					<p>
+					既然集合是在蒐集了任意一堆東西後所形成的，我們就說那些被一個集合蒐集起來的東西是那個集合的<b>成員 (member)</b>。比如說，'$1$'、'$2$'、'$3$'、'$4$'、'$5$' 都是 $\{1,2,3,4,5\}$ 這個集合的成員。讓我們用大寫的希臘字母（如 '$\&Gamma;$'、'$\&Delta;$'、'$\&Theta;$' 等）來表示一個集合（必要時可加上數字下標），並且令 $\{1,2,3,4,5\}=\&Gamma;$，我們就可以用 '$1&isin;\&Gamma;$' 來表示 $1$ 是 $\&Gamma;$ 這個集合的成員，我們將它讀作「$1$ 屬於 $\&Gamma;$」。
+					</p>
+					
+					<div class="portion">
+						<h5>集合的寫法</h5>
+						<p>
+						前面介紹過一個集合的寫法，就是用左右大括號 '{'、'}' 來包住所有的集合成員，這是所有集合最基本的寫法。這種寫法用來應付成員不多的集合不會有什麼問題，可是如果一個集合的成員很多的話，這種寫法就太浪費時間和空間。為了節省成本，對某些成員很多，但卻可以找到某種規律的集合，我們就用定義的方式來寫它。
+						</p>
+						<p>
+						比如說，如果我們要寫一個蒐集了 $1$ 和 $100$（包括 $1$ 和 $100$）之間所有正整數的集合，照基本的寫法，我們就必須把這一百個數字全部寫下來。為了節省時間和空間，我們可以用定義的方式把這個集合寫成：$\{x|x&isin;&#x2115;,1&le;x&le;100\}$。這種寫法的意思是：這個集合蒐集了所有滿足 '$|$' 這個符號右邊所列條件的 '$x$'。也就是說，這個集合蒐集了所有「屬於自然數」，而且「大於等於 $1$ 並且小於等於 $100$」的 '$x$'。
+						</p>
+						<p>
+						這樣一來，我們不必把那一百個數字全部都列出來，也能把蒐集了所有介於 1 和 100（包括 1 和 100）之間的自然數的集合寫出來。
+						</p>
+					</div>
+					
+					<div class="portion">
+						<h5>集合的同一性</h5>
+						<p>
+						每個集合都是由它所包含的成員來決定的，只要擁有相同的成員，就會是同一個集合，無論成員的排列順序如何，也就是說，$\{1,2,3,4,5\}$ 和 $\{5,4,3,2,1\}$ 是同一個集合。除此以外，集合的成員不會有重複的，重複的成員也都會是同一個，因此 $\{1,2,3,4,5\}$ 和 $\{1,1,2,3,3,3,4,4,5,5,5,5\}$ 也是同一個集合。
+						</p>
+					</div>
+					
+					<div class="portion">
+						<h5>集合的大小</h5>
+						<p>
+						集合和集合之間也可以比大小，一個集合的大小是由它擁有的成員的個數來決定的。比如說，$\{1,2,3,4,5\}$ 這個集合有五個成員，所以它的大小就是五；而 $\{6,7,8,9\}$ 這個集合只有四個成員，因此它的大小就是四。因為五大於四，所以 $\{1,2,3,4,5\}$ 這個集合就比 $\{6,7,8,9\}$ 這個集合還要大。而當兩個集合擁有的成員個數一樣多時，這兩個集合就一樣大。
+						</p>
+						<p>
+						要注意的是，相同的集合，其大小一定是相等的，但兩個大小相等的集合，卻不一定會是同一個集合。比如說，$\{1,2,3,4,5\}$ 和 $\{1,1,2,3,3,3,4,4,5,5,5,5\}$ 是同一個集合，因此兩個集合的大小是相等的，它們的大小都是五（記得嗎？集合中重複的成員只能算成一個）；但 $\{1,2,3,4,5\}$ 和 $\{6,7,8,9,10\}$ 的大小雖然相等，都是有五個成員的集合，這兩個集合卻不是同一個集合，因為兩個集合各自的成員並不相同。
+						</p>
+					</div>
+					
+					<div class="portion">
+						<h5>子集合與超集合</h5>
+						<p>
+						集合和集合之間除了可以判斷是否相等和比大小之外，也可以判斷兩個集合之間是否有<b>包含</b>的關係：對於任意兩個集合 $\&Gamma;$ 和 $\&Delta;$ 而言，如果 $\&Delta;$ 的所有成員也都是 $\&Gamma;$ 的成員，那麼 $\&Gamma;$ 就包含了 $\&Delta;$。這時候，我們稱 $\&Delta;$ 是 $\&Gamma;$ 的<b>子集合 (subset)</b>。我們用 '$&sube;$' 的記號來表示「……是……的子集合」這個關係，因此，
+						</p>
+						<blockquote>
+							$\&Delta;$ 是 $\&Gamma;$ 的子集合
+						</blockquote>
+						<p>
+						就可以被寫成：
+						</p>
+						<blockquote>
+							$\&Delta;&sube;\&Gamma;$
+						</blockquote>
+						<p>
+						同時，因為 $\&Delta;$ 是 $\&Gamma;$ 的子集合，所以 $\&Gamma;$ 是 $\&Delta;$ 的<b>超集合 (superset)</b>（由於 'subset' 在中文裡被譯成「子集合」的關係，也有人將 'superset' 的中文譯為「父集合」）。我們用 '$&supe;$' 這個記號來表示「……是……的超集合」這個關係，因此，
+						</p>
+						<blockquote>
+							$\&Gamma;$ 是 $\&Delta;$ 的超集合
+						</blockquote>
+						<p>
+						也可以被寫成：
+						</p>
+						<blockquote>
+						$\&Gamma;&supe;\&Delta;$
+						</blockquote>
+						<p>
+						簡單來說，子集合和超集合之間的關係是這樣的：對任意兩個集合 $\&Gamma;$ 和 $\&Delta;$ 而言，只要 $\&Delta;$ 是 $\&Gamma;$ 的子集合，那 $\&Gamma;$ 就會是 $\&Delta;$ 的超集合。（參考【圖一】）
+						</p>
+						<svg height="200px">
+							<circle cx="100" cy="100" r="99" />
+							<circle class="lgrey" cx="83" cy="118" r="70" />
+							<text class="bold" x="140" y="50">&Gamma;</text>
+							<text class="bold" x="72" y="127">&Delta;</text>
+							<text x="250" y="100">&Delta; 是 &Gamma; 的子集合</text>
+							<text x="250" y="120">&Gamma; 是 &Delta; 的超集合</text>
+							<text x="400" y="199">【圖一】</text>
+						</svg>
+						<p>
+						要注意的是，當 $\&Delta;$ 的所有成員也都是 $\&Gamma;$ 的成員時，$\&Gamma;$ 並不一定就擁有比 $\&Delta;$ 更多的成員，它們有可能剛好擁有一模一樣的成員（也就是說，當 $\&Delta;$ 和 $\&Gamma;$ 有可能是同一個集合）。因此，當 $\&Delta;$ 是 $\&Gamma;$ 的子集合時，$\&Gamma;$ 也可能是 $\&Delta;$ 的子集合，不過這種情況只會發生在 $\&Delta;$ 和 $\&Gamma;$ 是同一個集合的情況下。因此：<b>$\&Delta;&sube;\&Gamma;$ 而且 $\&Gamma;&sube;\&Delta;$，當且僅當 $\&Delta;&equals;\&Gamma;$。</b>也就是說：當 $\&Delta;&sube;\&Gamma;$ 而且 $\&Gamma;&sube;\&Delta;$ 時，$\&Delta;&equals;\&Gamma;$；並且，只有當 $\&Delta;&equals;\&Gamma;$ 時，$\&Delta;&sube;\&Gamma;$ 和 $\&Gamma;&sube;\&Delta;$ 才會都成立。
+						</p>
+						<p>
+						另一個要注意的事情是，稍早我提到集合的成員可以是任何東西，包括集合本身。因此，$\{1,2,3,4,5\}$ 是一個集合，而 $\{1,2,3,\{4,5\}\}$ 也會是一個集合，而且它們會是兩個不一樣的集合。集合 $\{1,2,3,4,5\}$ 一共有五個成員，分別是 1、2、3、4、5 這五個阿拉伯數字；然而集合 $\{1,2,3,\{4,5\}\}$ 的成員卻只有四個，它的成員是 1、2、3 這三個阿拉伯數字，以及 $\{4,5\}$ 這個集合。
+						</p>
+						<p>
+						另外，對集合 $\{1,2,3,4,5\}$ 來說，$\{4,5\}$ 是它的子集合，因為 $\{4,5\}$ 這個集合的所有成員（4、5 這兩個阿拉伯數字）都是 $\{1,2,3,4,5\}$ 這個集合的成員；但是 $\{4,5\}$ 這個集合卻不是 $\{1,2,3,\{4,5\}\}$ 這個集合的子集合，因為 $\{1,2,3,\{4,5\}\}$ 這個集合的成員中既沒有 4 這個阿拉伯數字，也沒有 5 這個阿拉伯數字。
+						</p>
+					</div>
+					
+					<div class="portion">
+						<h5>$n$-元組</h5>
+						<p>
+						另外有一種跟集合類似，但卻不是集合的東西，叫做 <b>$n$-元組 ($n$-tuple)</b>。$n$-元組中的 $n$ 是任意的一個自然數，它代表的是這個組當中有幾個東西，任何有三個東西的組都叫做三元組，任何有四個東西的組就叫四元組，以此類推。我們通常用角括號 '$&LeftAngleBracket;$', '$&RightAngleBracket;$' 來表示一個 $n$-元組。比如說，$&#x27E8;1,2,3&#x27e9;$ 是一個三元組，$&#x27e8;5,6,7,8&#x27e9;$ 則是一個四元組，其餘的可以此類推。
+						</p>
+						<p>
+						$n$-元組和集合除了記號上的不同之外，有兩個主要的差別：
+						</p>
+						<ol class="num local">
+							<li>
+							對集合來說，成員的順序不重要，但對一個 $n$-元組來說，變換成員的排列順序就會變成不同的 $n$-元組。比如說，前面提過，$\{1,2,3,4,5\}$ 和 $\{5,4,3,2,1\}$，儘管成員的順序不同，但它們仍是同一個集合；相反地，$&#x27e8;1,2,3,4,5&#x27e9;$ 和 $&#x27e8;5,4,3,2,1&#x27e9;$ 就是兩個不同的五元組。
+							</li>
+							<li>
+							一個集合中不會有重複的成員，重複的成員只能算成是一個成員，因此 $\{1,2,3,4,5\}$ 和 $\{1,1,2,2,3,4,4,5\}$ 是同一個集合，在後面那個寫法中，所有重複的數字都只能算是一個，因此前後兩個集合都只有五個成員；相反地，$n$-元組就可以有重複的成員，因此 $&LeftAngleBracket;1,2,3,4,5&RightAngleBracket;$ 和 $&#x27e8;1,1,2,2,3,4,4,5&#x27e9;$ 就是兩個不同的 $n$-元組，前者是一個五元組，而後者則是一個八元組。
+							</li>
+						</ol>
 					</div>
 					
 					<div class="portion">
@@ -377,6 +561,7 @@
 						<text x="290" y="134">輸出</text>
 						<text x="220" y="145">+1</text>
 						<text x="450" y="149">【圖六】</text>
+					</svg>
 					<p>
 					再舉一個例子來說，我們平時搭乘的電梯也是一個函數，當你輸入一個電梯樓層的按鈕，電梯就會以「到達對應的樓層」為輸出。你按下「3樓」的按鈕作為輸入，電梯就會以「到達3樓」為輸出；你按下「6樓」的按鈕作為輸入，電梯就會以「到達6樓」為輸出。每一個樓層按鈕的輸入都會對應到一個「到達樓層」的輸出，而且每一個樓層按鈕的輸入都只會對應到一個「到達樓層」的輸出。按下「3樓」的按鈕，電梯就只會到達3樓，而不會到達其它樓層。
 					</p>
@@ -457,12 +642,14 @@
 					</p>
 					<p>
 					舉例來說，'$&alpha;&and;&beta;$' 是一個以 '$&and;$' 作為主要連接詞，將 '$&alpha;$' 和 '$&beta;$' 這兩個言句連接起來的連言句。根據連言句的真值表，我們知道：
-						<ul class="tight">
-							<li>當 '$&alpha;$' 為真、'$&beta;$' 為真時，'$&alpha;&and;&beta;$' 為真；</li>
-							<li>當 '$&alpha;$' 為真、'$&beta;$' 為假時，'$&alpha;&and;&beta;$' 為假；</li>
-							<li>當 '$&alpha;$' 為假、'$&beta;$' 為真時，'$&alpha;&and;&beta;$' 為假；</li>
-							<li>當 '$&alpha;$' 為假、'$&beta;$' 為假時，'$&alpha;&and;&beta;$' 為假。</li>
-						</ul>
+					</p>
+					<ul class="tight">
+						<li>當 '$&alpha;$' 為真、'$&beta;$' 為真時，'$&alpha;&and;&beta;$' 為真；</li>
+						<li>當 '$&alpha;$' 為真、'$&beta;$' 為假時，'$&alpha;&and;&beta;$' 為假；</li>
+						<li>當 '$&alpha;$' 為假、'$&beta;$' 為真時，'$&alpha;&and;&beta;$' 為假；</li>
+						<li>當 '$&alpha;$' 為假、'$&beta;$' 為假時，'$&alpha;&and;&beta;$' 為假。</li>
+					</ul>
+					<p>
 					如果把 '$&alpha;&and;&beta;$' 中的 '$&alpha;$' 和 '$&beta;$' 看成是可以輸入真假值的兩個位置，那麼 '$&alpha;&and;&beta;$' 就可以被看成是一個函數：只要在 '$&alpha;$' 和 '$&beta;$' 的位置分別填入真或假，那 '$&alpha;&and;&beta;$' 就會輸出一個真假值。比如說，在 '$&alpha;$' 的位置輸入「真」，在 '$&beta;$' 的位置輸入「真」，'$&alpha;&and;&beta;$' 就會輸出「真」；在 '$&alpha;$' 的位置輸入「假」，在 '$&beta;$' 的位置輸入「真」，'$&alpha;&and;&beta;$' 就會輸出假；……以此類推。
 					</p>
 					<p>
@@ -576,49 +763,64 @@
 					</p>
 					<p>
 					$\sc{v}_n'$ 是一個以<b>所有語句邏輯的語句（包括所有原子語句和複雜語句）所形成的集合</b>為論域，並以 $\{\T,\F\}$ 為對應域的函數。我們將所有語句邏輯的語句所形成的集合簡稱為 $SL$（"sentential logic"，也就是語句邏輯的英文的縮寫），那麼，對於某個語意模型 $\sc{v}_n$ 所決定出來的真值函數 $\sc{v}_n'$，我們就可以將它寫成：$\sc{v}_n'\：SL&rarr;\{\T,\F\}$。然後，我們可以用以下方式定義 $\sc{v}_n'$ 這個函數：
-						<ol class="numd local tight">
-							<li>當 $&alpha;$ 是原子語句時，$\sc{v}_n'(&alpha;)=\T$ 當且僅當 $\sc{v}_n&vDash;\sc{&alpha;}$。</li>
-						</ol>
+					</p>
+					<ol class="numd local tight">
+						<li>當 $&alpha;$ 是原子語句時，$\sc{v}_n'(&alpha;)=\T$ 當且僅當 $\sc{v}_n&vDash;\sc{&alpha;}$。</li>
+					</ol>
+					<p>
 					在利用定義 1 確定了所有原子語句之真假後，我們接下來定義五大句型的真值函數：
-						<ol class="numd tight">
-							<li>$\sc{v}_n'(&not;&alpha;)=\T$ 當且僅當 $\sc{v}_n'(&alpha;)=\F$。</li>
-							<li>$\sc{v}_n'(&alpha;&and;&beta;)=\T$ 當且僅當 $\sc{v}_n'(&alpha;)=\T$ 而且 $\sc{v}_n'(&beta;)=\T$。</li>
-							<li>$\sc{v}_n'(&alpha;&or;&beta;)=\T$ 當且僅當 $\sc{v}_n'(&alpha;)=\T$ 或者 $\sc{v}_n'(&beta;)=\T$。</li>
-							<li>$\sc{v}_n'(&alpha;&rarr;&beta;)=\T$ 當且僅當 $\sc{v}_n'(&alpha;)=\F$ 或者 $\sc{v}_n'(&beta;)=\T$。</li>
-							<li>$\sc{v}_n'(&alpha;&harr;&beta;)=\T$ 當且僅當 $\sc{v}_n'(&alpha;)=\sc{v}_n'(&beta;)$。</li>
-						</ol>
+					</p>
+					<ol class="numd tight">
+						<li>$\sc{v}_n'(&not;&alpha;)=\T$ 當且僅當 $\sc{v}_n'(&alpha;)=\F$。</li>
+						<li>$\sc{v}_n'(&alpha;&and;&beta;)=\T$ 當且僅當 $\sc{v}_n'(&alpha;)=\T$ 而且 $\sc{v}_n'(&beta;)=\T$。</li>
+						<li>$\sc{v}_n'(&alpha;&or;&beta;)=\T$ 當且僅當 $\sc{v}_n'(&alpha;)=\T$ 或者 $\sc{v}_n'(&beta;)=\T$。</li>
+						<li>$\sc{v}_n'(&alpha;&rarr;&beta;)=\T$ 當且僅當 $\sc{v}_n'(&alpha;)=\F$ 或者 $\sc{v}_n'(&beta;)=\T$。</li>
+						<li>$\sc{v}_n'(&alpha;&harr;&beta;)=\T$ 當且僅當 $\sc{v}_n'(&alpha;)=\sc{v}_n'(&beta;)$。</li>
+					</ol>
+					<p>
+					透過這六條定義，我們就能用這樣的函數來判斷任何語句的真假了。
 					</p>
 					<p>
-					透過這六條定義，我們就能用這樣的函數來判斷任何語句的真假了。我們繼續採用 '$&not;A&and;(B&or;C)$' 這個語句來當作例子，要用上述函數來判斷這個語句的真假，我們就要將它輸入到那個函數之中。所以我們就是要求：
-						<ul>
-							<li>$\sc{v}_n'(&not;A&and;(B&or;C))=\？$</li>
-						</ul>
+					我們繼續採用 '$&not;A&and;(B&or;C)$' 這個語句來當作例子，要用上述函數來判斷這個語句的真假，我們就要將它輸入到那個函數之中。所以我們就是要求以下等式的解：
+					</p>
+					<ul>
+						<li>$\sc{v}_n'(&not;A&and;(B&or;C))=\？$</li>
+					</ul>
+					<p>
 					因為 '$&not;A&and;(B&or;C)$' 的主要連接詞是 '$&and;$'，所以第一步要先套用定義 3，得到：
-						<ul>
-							<li>$\sc{v}_n'(&not;A&and;(B&or;C))=\T$ 當且僅當 $\sc{v}_n'(&not;A)=\T$ 而且 $\sc{v}_n'(B&or;C)=\T$</li>
-						</ul>
+					</p>
+					<ul>
+						<li>$\sc{v}_n'(&not;A&and;(B&or;C))=\T$ 當且僅當 $\sc{v}_n'(&not;A)=\T$ 而且 $\sc{v}_n'(B&or;C)=\T$</li>
+					</ul>
+					<p>
 					因此我們需要分別求 $\sc{v}_n'(&not;A)$ 和 $\sc{v}_n'(B&or;C)$ 的值，因此要分別套用定義 2、4，得到：
-						<ul class="tight">
-							<li>$\sc{v}_n'(&not;A)=\T$ 當且僅當 $\sc{v}_n'(A)=\F$。</li>
-							<li>$\sc{v}_n'(B&or;C)=\T$ 當且僅當 $\sc{v}_n'(B)=\T$ 或者 $\sc{v}_n'(C)=\T$。</li>
-						</ul>
+					</p>
+					<ul class="tight">
+						<li>$\sc{v}_n'(&not;A)=\T$ 當且僅當 $\sc{v}_n'(A)=\F$。</li>
+						<li>$\sc{v}_n'(B&or;C)=\T$ 當且僅當 $\sc{v}_n'(B)=\T$ 或者 $\sc{v}_n'(C)=\T$。</li>
+					</ul>
+					<p>
 					最後，就可以根據定義 1 來分別判斷 $\sc{v}_n'(A)$、$\sc{v}_n'(B)$ 和 $\sc{v}_n'(C)$ 的值，而這個判斷就涉及我們選擇的語意模型究竟是哪一個了。比如說，假如我們選擇的語意模型是 $\sc{v}_1$，而 $\sc{v}_1$ 是所有原子語句都為真的語意模型，因此，透過 $\sc{v}_1$ 所對應到的真值函數 $\sc{v}_1'$ 來計算 '$&not;A&and;(B&or;C)$' 這個語句的真假時，計算的過程就會如下：
-						<table class="prf">
-							<tr><td>$\sc{v}_1'(A)=\T$、$\sc{v}_1'(B)=\T$，而且 $\sc{v}_1'(C)=\T$</td><td>根據定義 1</td></tr>
-							<tr><td>因 $\sc{v}_1'(A)=\T&ne;\F$，故 $\sc{v}_1'(&not;A)=\F$</td><td>根據 (1) 和定義 2</td></tr>
-							<tr><td>因 $\sc{v}_1'(B)=\T$，故 $\sc{v}_1'(B&or;C)=\T$<span class="note"><span class="box">在這裡，根據定義 4，只要 $\sc{v}_1'(B)=\T$ 和 $\sc{v}_1'(C)=\T$ 任一成立，$\sc{v}_1'(B&or;C)=\T$ 就會成立，故此處只需要判斷 $\sc{v}_1'(B)=\T$，就足以判斷 $\sc{v}_1'(B&or;)=\T$。當然，如果你要用 $\sc{v}_1'(C)=\T$ 來判斷 $\sc{v}_1'(B&or;C)=\T$ 也是可以的。</span></span></td><td>根據 (1) 和定義 4</td></tr>
-							<tr><td>因 $\sc{v}_1'(&not;A)=F&ne;\T$，<br/>故 $\sc{v}_1'(&not;A&and;(B&or;C))=\F$</td><td>根據 (2),(3) 和定義 3</td></tr>
-						</table>
+					</p>
+					<table class="prf">
+						<tr><td>$\sc{v}_1'(A)=\T$、$\sc{v}_1'(B)=\T$，而且 $\sc{v}_1'(C)=\T$</td><td>根據定義 1</td></tr>
+						<tr><td>因 $\sc{v}_1'(A)=\T&ne;\F$，故 $\sc{v}_1'(&not;A)=\F$</td><td>根據 (1) 和定義 2</td></tr>
+						<tr><td>因 $\sc{v}_1'(B)=\T$，故 $\sc{v}_1'(B&or;C)=\T$<span class="note"><span class="box">在這裡，根據定義 4，只要 $\sc{v}_1'(B)=\T$ 和 $\sc{v}_1'(C)=\T$ 任一成立，$\sc{v}_1'(B&or;C)=\T$ 就會成立，故此處只需要判斷 $\sc{v}_1'(B)=\T$，就足以判斷 $\sc{v}_1'(B&or;)=\T$。當然，如果你要用 $\sc{v}_1'(C)=\T$ 來判斷 $\sc{v}_1'(B&or;C)=\T$ 也是可以的。</span></span></td><td>根據 (1) 和定義 4</td></tr>
+						<tr><td>因 $\sc{v}_1'(&not;A)=F&ne;\T$，<br/>故 $\sc{v}_1'(&not;A&and;(B&or;C))=\F$</td><td>根據 (2),(3) 和定義 3</td></tr>
+					</table>
+					<p>
 					因此，我們可以知道，'$&not;A&and;(B&or;C)$' 在 $\sc{v}_1$ 這個語意模型之下為假。
 					</p>
 					<p>
 					我們還可以再換另一個語意模型來測試看看，比如說 $\sc{v}_2$，$\sc{v}_2$ 是讓 '$A$' 為假而其餘原子語句皆為真的語意模型，因此用與之對應的真值函數 $\sc{v}_2'$ 去計算 '$&not;A&and;(B&or;C)$' 的真假時，計算方式如下：
-						<table class="prf">
-							<tr><td>$\sc{v}_2'(A)=\F$、$\sc{v}_2'(B)=\T$，而且 $\sc{v}_2'(C)=\T$</td><td>根據定義 1</td></tr>
-							<tr><td>因 $\sc{v}_2'(A)=\F$，故 $\sc{v}_2'(&not;A)=\T$</td><td>根據 (1) 和定義 2</td></tr>
-							<tr><td>因 $\sc{v}_2'(B)=\T$，故 $\sc{v}_2'(B&or;C)=\T$<span class="note"><span class="box">同上，根據定義 4，只要 $\sc{v}_2'(B)=\T$ 和 $\sc{v}_2'(C)=\T$ 任一成立，$\sc{v}_2'(B&or;C)=\T$ 就會成立，故此處只需要判斷 $\sc{v}_2'(B)=\T$，就足以判斷 $\sc{v}_2'(B&or;)=\T$。當然，如果你要用 $\sc{v}_2'(C)=\T$ 來判斷 $\sc{v}_2'(B&or;C)=\T$ 也是可以的。</span></span></td><td>根據 (1) 和定義 4</td></tr>
-							<tr><td>因 $\sc{v}_2'(&not;A)=\T$ 且 $\sc{v}_2'(B&or;C)=\T$，<br/>故 $\sc{v}_2'(&not;A&and;(B&or;C))=\T$</td><td>根據 (2),(3) 和定義 3</td></tr>
-						</table>
+					</p>
+					<table class="prf">
+						<tr><td>$\sc{v}_2'(A)=\F$、$\sc{v}_2'(B)=\T$，而且 $\sc{v}_2'(C)=\T$</td><td>根據定義 1</td></tr>
+						<tr><td>因 $\sc{v}_2'(A)=\F$，故 $\sc{v}_2'(&not;A)=\T$</td><td>根據 (1) 和定義 2</td></tr>
+						<tr><td>因 $\sc{v}_2'(B)=\T$，故 $\sc{v}_2'(B&or;C)=\T$<span class="note"><span class="box">同上，根據定義 4，只要 $\sc{v}_2'(B)=\T$ 和 $\sc{v}_2'(C)=\T$ 任一成立，$\sc{v}_2'(B&or;C)=\T$ 就會成立，故此處只需要判斷 $\sc{v}_2'(B)=\T$，就足以判斷 $\sc{v}_2'(B&or;)=\T$。當然，如果你要用 $\sc{v}_2'(C)=\T$ 來判斷 $\sc{v}_2'(B&or;C)=\T$ 也是可以的。</span></span></td><td>根據 (1) 和定義 4</td></tr>
+						<tr><td>因 $\sc{v}_2'(&not;A)=\T$ 且 $\sc{v}_2'(B&or;C)=\T$，<br/>故 $\sc{v}_2'(&not;A&and;(B&or;C))=\T$</td><td>根據 (2),(3) 和定義 3</td></tr>
+					</table>
+					<p>
 					因此，我們可以知道，'$&not;A&and;(B&or;C)$' 在 $\sc{v}_2$ 這個語意模型之下為真。
 					</p>
 					<p>
@@ -626,32 +828,38 @@
 					</p>
 					<p>
 					一樣，因為這個語句是一個連言句，所以我們要先套用定義 3，得知：
-						<ul>
-							<li>$\sc{v}_n'(&not;A&and;(B&or;C))=\T$ 當且僅當 $\sc{v}_n'(&not;A)=\T$ 而且 $\sc{v}_n'(B&or;C)=\T$</li>
-						</ul>
+					</p>
+					<ul>
+						<li>$\sc{v}_n'(&not;A&and;(B&or;C))=\T$ 當且僅當 $\sc{v}_n'(&not;A)=\T$ 而且 $\sc{v}_n'(B&or;C)=\T$</li>
+					</ul>
+					<p>
 					由於我們現在要求的是 $\sc{v}_n'(&not;A&and;(B&or;C))=\F$，所以可以加上上述定義得知：
-						<ul>
-							<li>$\sc{v}_n'(&not;A)=\F$ 或者 $\sc{v}_n'(B&or;C)=\F$</li>
-						</ul>
+					</p>
+					<ul>
+						<li>$\sc{v}_n'(&not;A)=\F$ 或者 $\sc{v}_n'(B&or;C)=\F$</li>
+					</ul>
+					<p>
 					既然令 '$&not;A&and;(B&or;C)$' 的可能性有兩個，我們就分別來判斷。首先，根據 $\sc{v}_n'(&not;A)=\F$，我們可以利用定義 2 得知：
-						<ul>
-							<li>$\sc{v}_n'(A)=\T$
-						</ul>
+					</p>
+					<ul>
+						<li>$\sc{v}_n'(A)=\T$
+					</ul>
+					<p>
 					再來，根據 $\sc{v}_n'(B&or;C)=\F$，我們可以利用定義 4 得知：
-						<ul>
-							<li>$\sc{v}_n'(B)=\F$ 而且 $\sc{v}_n'(C)=\F$</li>
-						</ul>
+					</p>
+					<ul>
+						<li>$\sc{v}_n'(B)=\F$ 而且 $\sc{v}_n'(C)=\F$</li>
+					</ul>
+					<p>
 					</p>
 					<p>
-					我們可以從以上討論得知，要讓 '$&not;A&and;(B&or;C)$' 為假，總共有兩種方法可以做到：(1) 令 '$A$' 為真，只要 '$A$' 為真，無論 '$B$'、'$C$' 的真假是什麼，'$&not;A&and;(B&or;C)$' 都為假；(2) 令 '$B$'、'$C$' 為假，只要 '$B$'、'$C$' 為假，無論 '$A$' 的真假是什麼，'$&not;A&and;(B&or;C)$' 就為假。
-					</p>
-					<p>
+					從以上討論我們可以發現，要讓 '$&not;A&and;(B&or;C)$' 為假，總共有兩種方法可以做到：(1) 令 '$A$' 為真，只要 '$A$' 為真，無論 '$B$'、'$C$' 的真假是什麼，'$&not;A&and;(B&or;C)$' 都為假；(2) 令 '$B$'、'$C$' 為假，只要 '$B$'、'$C$' 為假，無論 '$A$' 的真假是什麼，'$&not;A&and;(B&or;C)$' 就為假。
 					對應到語意模型的話，我們可以知道：
-						<ol class="num local tight">
-							<li>對任何語意模型 $\sc{v}_n$，只要 $\sc{v}_n&vDash;A$，則 $\sc{v}_n&nvDash;&not;A&and;(B&or;C)$；而且，</li>
-							<li>對任何語意模型 $\sc{v}_n$，只要 $\sc{v}_n&nvDash;B$ 且 $\sc{v}_n&nvDash;C$，則 $\sc{v}_n&nvDash;&not;A&and;(B&or;C)$。</li>
-						</ol>
 					</p>
+					<ol class="num local tight">
+						<li>對任何語意模型 $\sc{v}_n$，只要 $\sc{v}_n&vDash;A$，則 $\sc{v}_n&nvDash;&not;A&and;(B&or;C)$；而且，</li>
+						<li>對任何語意模型 $\sc{v}_n$，只要 $\sc{v}_n&nvDash;B$ 且 $\sc{v}_n&nvDash;C$，則 $\sc{v}_n&nvDash;&not;A&and;(B&or;C)$。</li>
+					</ol>
 					<p>
 					由以上討論可知，我們可以用任意一個語意模型定義出一個真值函數，並且使用這個真值函數來判斷語句邏輯中所有語句的真假；除此之外，我們還可以反過來利用真值函數判斷任何語句為真或為假的條件。由於這樣的真值函數可以較快速地做到上述這兩件事，因此能幫助我們有效地去判斷一個推論是不是有效的。下一節我們就會討論如何利用語意模型對應的真值函數來判斷一個論證是不是有效論證。
 					</p>
@@ -674,31 +882,37 @@
 						</p>
 						<p>
 						因此，當我們畫一個恆真句的真值表時，其主要連接詞那一行一定會全部為真。舉例來說，'$A&or;&not;A$' 就是一個恆真句，它的真值表如下：
-							<table class="truth single">
-								<tr><td>$A$</td><td>$A$</td><td>$&or;$</td><td>$&not;A$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td></tr>
-							</table>
+						</p>
+						<table class="truth single">
+							<tr><td>$A$</td><td>$A$</td><td>$&or;$</td><td>$&not;A$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td></tr>
+						</table>
+						<p>
 						'$A&rarr;(B&rarr;A)$' 也是一個恆真句，其真值表如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$A$</td><td>$&rarr;$</td><td>$(B&rarr;A)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td></tr>
-							</table>
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$A$</td><td>$&rarr;$</td><td>$(B&rarr;A)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td></tr>
+						</table>
+						<p>
 						'$(A&rarr;B)&rarr;((A&and;C)&rarr;B)'$ 一樣是一個恆真句，我們也可以試著畫看看這個語句的真值表：
-							<table class="truth triple">
-								<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A&rarr;B)$</td><td>$&rarr;$</td><td>$((A&and;C)$</td><td>$&rarr;$</td><td>$B)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td></tr>
-							</table>
+						</p>
+						<table class="truth triple">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A&rarr;B)$</td><td>$&rarr;$</td><td>$((A&and;C)$</td><td>$&rarr;$</td><td>$B)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$T$</b></td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td></tr>
+						</table>
+						<p>
 						</p>
 					</div>
 					
@@ -712,31 +926,37 @@
 						</p>
 						<p>
 						因此，當我們畫一個矛盾句的真值表時，其主要連接詞那一行一定會全部為假。舉例來說，'$A&and;&not;A$' 就是一個矛盾句，它的真值表如下：
-							<table class="truth single">
-								<tr><td>$A$</td><td>$A$</td><td>$&and;$</td><td>$&not;A$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td></tr>
-							</table>
+						</p>
+						<table class="truth single">
+							<tr><td>$A$</td><td>$A$</td><td>$&and;$</td><td>$&not;A$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td></tr>
+						</table>
+						<p>
 							'$&not;(A&rarr;B)&and;&not;(B&rarr;A)$' 也是一個矛盾句，其真值表如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$&not;$</td><td>$(A&rarr;B)$</td><td>$&and;$</td><td>$&not;$</td><td>$(B&rarr;A)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\F$</td><td>$\T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\F$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\F$</td><td>$\T$</td></tr>
-							</table>
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$&not;$</td><td>$(A&rarr;B)$</td><td>$&and;$</td><td>$&not;$</td><td>$(B&rarr;A)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\F$</td><td>$\T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\F$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\F$</td><td>$\T$</td></tr>
+						</table>
+						<p>
 							'$(A&rarr;(B&and;C))&and;(A&and;&not;B)$' 一樣是一個矛盾句，我們也可以試著畫看看這個語句的真值表：
-							<table class="truth triple">
-								<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A$</td><td>$&rarr;$</td><td>$(B&and;C))$</td><td>$&and;$</td><td>$(A$</td><td>$&and;$</td><td>$&not;B)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc2">$\T$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\T$</td></tr>
-							</table>
+						</p>
+						<table class="truth triple">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A$</td><td>$&rarr;$</td><td>$(B&and;C))$</td><td>$&and;$</td><td>$(A$</td><td>$&and;$</td><td>$&not;B)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc2">$\T$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\T$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\T$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc2">$\T$</td><td>$\F$</td><td class="mainc"><b>$F$</b></td><td>$\T$</td><td class="mainc2">$\F$</td><td>$\T$</td></tr>
+						</table>
+						<p>
 						</p>
 					</div>
 					
@@ -750,17 +970,29 @@
 						</p>
 						<p>
 						之所以會如此，是因為恆真句與矛盾句的真值完全是由其語句結構來決定的。以 '$A&or;&not;A$' 這個語句來說明，它是一個恆真句，我們可以讓原子語句 '$A$' 代表以下這個中文的原子語句：
-							<ol class="lltd tight song">
-								<li>安安姓朱。</li>
-							</ol>
+						</p>
+					</p>
+					<ol class="lltd tight song">
+							<li>安安姓朱。</li>
+					</ol>
+					<p>
+						<p>
 						而它的否定句 '$&not;A$' 會是以下這個中文語句：
-							<ol class="lltpd tight song">
-								<li>安安不姓朱。</li>
-							</ol>
+						</p>
+					</p>
+					<ol class="lltpd tight song">
+							<li>安安不姓朱。</li>
+					</ol>
+					<p>
+						<p>
 						那麼 '$A&or;&not;A$' 就會是以下這個中文語句：
-							<ol class="lltppd tight song">
-								<li>安安姓朱，或者安安不姓朱。</li>
-							</ol>
+						</p>
+					</p>
+					<ol class="lltppd tight song">
+							<li>安安姓朱，或者安安不姓朱。</li>
+					</ol>
+					<p>
+						<p>
 						a'' 這句話看起來像是在談論安安到底姓不姓朱的事情，但其實這句話完全沒有透露關於安安姓什麼的任何資訊。要注意的是，語句之所以可以傳遞任何資訊，不僅是因為我們可以透過意義來理解語句所表達的內容，更重要的是，我們可以透過判斷語句的真假來得到一些關於這個世界的資訊。
 						</p>
 						<p>
@@ -771,9 +1003,13 @@
 						</p>
 						<p>
 						同理，給定 '$A$' 代表語句 a，而其否定句 a' 便是 '$&not;A$'，則 '$A&and;&not;A$' 就會代表以下中文語句：
-							<ol class="lltpppd tight song">
-								<li>安安姓朱，而且安安不姓朱。</li>
-							</ol>
+						</p>
+					</p>
+					<ol class="lltpppd tight song">
+							<li>安安姓朱，而且安安不姓朱。</li>
+					</ol>
+					<p>
+						<p>
 						語句 a''' 說的是「a 和 a' 這兩個語句皆為真」，但根據語言的二值性，任何語句不能既真又假，因此語句 a 與其否定句 a' 定不能皆為真。也就是說，根據語言本身的邏輯特性，任何語句和其否定句定不能皆為真，故對任何語句來說，該語句和其否定句所形成的連言句定是假的。
 						</p>
 						<p>
@@ -788,11 +1024,13 @@
 						</p>
 						<p>
 						然而，<b>偶然語句</b>則是那些談論世界狀態的語句，因此其真假是會因為世界的改變而改變的。舉例來說，任何一個原子語句一定都是一偶然語句，比如語句 a 這個原子語句，它就會在「<q>安安姓朱</q>」的世界中為真，而在「<q>安安不姓朱</q>」的世界中為假。由於我們用語句邏輯中的 '$A$' 這一原子語句來代表語句 a，故其真值表如下：
-							<table class="truth single">
-								<tr><td>$A$</td><td>$A$</td></tr>
-								<tr><td>$\T$</td><td class="mainc">$T$</td></tr>
-								<tr><td>$\F$</td><td class="mainc">$F$</td></tr>
-							</table>
+						</p>
+						<table class="truth single">
+							<tr><td>$A$</td><td>$A$</td></tr>
+							<tr><td>$\T$</td><td class="mainc">$T$</td></tr>
+							<tr><td>$\F$</td><td class="mainc">$F$</td></tr>
+						</table>
+						<p>
 						這個真值表的意思是：在任何 '$A$' 為真的世界裡，'$A$' 為真，而在任何 '$A$' 為假的世界裡，'$A$' 為假。
 						</p>
 						<p>
@@ -800,25 +1038,29 @@
 						</p>
 						<p>
 						我們可以再看更多的例子，'$A&and;B$' 也是一個偶然語句，其真值表如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$A&and;B$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td></tr>
-							</table>
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$A&and;B$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td></tr>
+						</table>
+						<p>
 						'$(A&or;B)&rarr;(B&and;C)$' 也是一個偶然語句，其真值表如下：
-							<table class="truth triple">
-								<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A&or;B)$</td><td>$&rarr;$</td><td>$(B&and;C)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
-							</table>
+						</p>
+						<table class="truth triple">
+							<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A&or;B)$</td><td>$&rarr;$</td><td>$(B&and;C)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
+						</table>
+						<p>
 						從以上幾個真值表應該不難看得出來，偶然語句的真值表一定有某些列為真，某些列為假，這意味著偶然語句的真假會隨著語意模型的不同而不同。由於每個語意模型都是世界的不同狀態，換言之，偶然語句的真假會隨世界的改變而改變。
 						</p>
 						<p>
@@ -842,15 +1084,17 @@
 						之前在介紹語句邏輯中的五個語句連接詞時，我有提過，'$&rarr;$' 這個語句連接詞表達的是兩個語句間的<b>單向</b>蘊涵關係，不過當時所談的蘊涵關係和此處所談的蘊涵關係是兩個不同的概念：'$&rarr;$' 所表達的是兩個語句之間的<b>實質蘊涵</b>關係，而此處所談的則是兩個語句之間的<b>邏輯蘊涵 (logical entailment)</b> 關係，或者，我們也可以稱之為兩個語句之間的<b>語意蘊涵 (semantic entailment)</b> 關係。
 						</p>
 						<p>
-						給定 '$&alpha;$' 和 '$&beta;$' 是語句邏輯中的兩個語句，如果 '$&alpha;$' 邏輯蘊涵 '$&beta;$'，這意味著在 '$&alpha;$' 為真的所有情況下，'$&beta;$' 也都為真。讓我們考慮 '$A&and;B$' 和 '$A&or;B$' 這兩個語句，我們可以將它們的真值表畫在一起如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$A&and;B$</td><td>$A&or;B$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td class="mainc">$T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$F$</td></tr>
-							</table>
-						值得注意的是，為了判斷 '$A&and;B$' 是否蘊涵 '$A&or;B$'，我們需要檢查的是 '$A&and;B$' 為真的所有情況，因此 '$A&and;B$' 為假的情況都可以被忽略。在此真值表中，語句 '$A&and;B$' 為真的情況只有第一列，所以我們需要檢查的情況就只有第一列。而在 '$A&and;B$' 為真的所有情況下，'$A&or;B$' 確實都為真，因此 '$A&and;B$' 蘊涵 '$A&or;B$'。
+						給定 '$&alpha;$' 和 '$&beta;$' 是語句邏輯中的兩個語句，如果 '$&alpha;$' 邏輯蘊涵 '$&beta;$'，這就意味著在 '$&alpha;$' 為真的所有情況下，'$&beta;$' 也都為真。讓我們考慮 '$A&and;B$' 和 '$A&or;B$' 這兩個語句，我們可以將它們的真值表畫在一起如下：
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$A&and;B$</td><td>$A&or;B$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td class="mainc">$T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$F$</td></tr>
+						</table>
+						<p>
+						值得注意的是，為了判斷 '$A&and;B$' 是否蘊涵 '$A&or;B$'，我們需要檢查的是 '$A&and;B$' 為真的所有情況，因此 '$A&and;B$' 為假的情況都可以被忽略。在上面這個真值表當中，語句 '$A&and;B$' 為真的情況只有第一列，所以我們需要檢查的情況就只有第一列。檢查後發現，在 '$A&and;B$' 為真的所有情況下 '$A&or;B$' 確實都為真，故可以判斷 '$A&and;B$' 確實蘊涵 '$A&or;B$'。
 						</p>
 						<p>
 						但若要反過來考慮 '$A&or;B$' 是否蘊涵 '$A&and;B$' 的話，我們就要檢查所有 '$A&or;B$' 為真的所有情況，而根據上表，'$A&or;B$' 為真的所有情況包括了第一、二、三列這三種情況，而在這三種情況中，只有在第一列的情況下 '$A&and;B$' 也為真，故 '$A&and;B$' 並沒有在所有 '$A&or;B$' 為真的情況下皆為真，因此 '$A&or;B$' 就不蘊涵 '$A&and;B$'。
@@ -869,24 +1113,28 @@
 						</p>
 						<p>
 						我們繼續以 '$A&and;B$' 和 '$A&or;B$' 這兩個語句為例，若用 '$&rarr;$' 將此二語句連接，會形成 '$(A&and;B)&rarr;(A&or;B)$' 這一實質單條件句，而其真值表如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$(A&and;B)$</td><td>$&rarr;$</td><td>$(A&or;B)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
-							</table>
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$(A&and;B)$</td><td>$&rarr;$</td><td>$(A&or;B)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
+						</table>
+						<p>
 						根據上表，'$(A&and;B)&rarr;(A&or;B)$' 確是一恆真句，故 '$A&and;B$' 邏輯蘊涵 '$A&or;B$'。
 						</p>
 						<p>
 						相反地，如果要檢查 '$A&or;B$' 是否邏輯蘊涵 '$A&and;B$'，我們就要將 '$A&or;B$' 寫成實質單條件句的前件，而將 '$A&and;B$' 寫成實質單條件句的後件，也就是說，我們必須檢查 '$(A&or;B)&rarr;(A&and;B)$' 是不是一恆真句。'$(A&or;B)&rarr;(A&and;B)$' 的真值表如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$(A&or;B)$</td><td>$&rarr;$</td><td>$(A&and;B)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
-							</table>
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$(A&or;B)$</td><td>$&rarr;$</td><td>$(A&and;B)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
+						</table>
+						<p>
 						根據上表，'$(A&or;B)&rarr;(A&and;B)$' 並不是一個恆真句，當 '$A$' 為真 '$B$' 為假，或 '$A$' 為假 '$B$' 為真的時候，'$(A&or;B)&rarr;(A&and;B)$' 都不為真，因此 '$(A&or;B)$' 就沒有邏輯蘊涵 '$(A&and;B)$'。
 						</p>
 						<p>
@@ -918,26 +1166,30 @@
 						然而，根據等值關係之定義的後半，在 '$&beta;$' 為真的所有情況中，'$&alpha;$' 也都必須為真，因此不可能有那種 '$&beta;$' 為真但 '$&alpha;$' 不為真的情況。然而根據上一段的說明，如果真的在有些情況下 '$&alpha;$' 和 '$&beta;$' 真假是不同的，那麼這些情況一定是 '$&alpha;$' 不為真但 '$&beta;$' 為真的情況。那麼，既然根據等值關係的定義，不可能會有 '$&alpha;$' 不為真但 '$&beta;$' 為真的情況，這就表示不可能會有 '$&alpha;$' 和 '$&beta;$' 的真假不同的情況。
 						</p>
 						<p>
-						故得證：當 '$&alpha;$' 和 '$&beta;$' 彼此等值的時候，'$&alpha;$' 和 '$&beta;$' 的真假一定會在所有情況下都相同。既然如此，我們就可以用真值表來檢查兩個語句是否等值。舉例來說，'$&not;A&or;B$' 和 '$A&rarr;B$' 是彼此等值的兩個語句，我們可以將這兩個語句的真值表畫在一起如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$(&not;A&or;B)$</td><td>$(A&rarr;B)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td class="mainc">&ensp;$T$</td><td class="mainc">$T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td class="mainc">&ensp;$F$</td><td class="mainc">$F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td class="mainc">&ensp;$T$</td><td class="mainc">$T$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td class="mainc">&ensp;$T$</td><td class="mainc">$T$</td></tr>
-							</table>
+						故得證：當 '$&alpha;$' 和 '$&beta;$' 彼此等值的時候，'$&alpha;$' 和 '$&beta;$' 的真假一定會在所有情況下都相同。既然如此，我們就可以用真值表來檢查兩個語句是否等值。舉例來說，要檢查 '$&not;A&or;B$' 和 '$A&rarr;B$' 是不是彼此等值的兩個語句，我們可以將這兩個語句的真值表畫在一起如下：
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$(&not;A&or;B)$</td><td>$(A&rarr;B)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td class="mainc">&ensp;$T$</td><td class="mainc">$T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td class="mainc">&ensp;$F$</td><td class="mainc">$F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td class="mainc">&ensp;$T$</td><td class="mainc">$T$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td class="mainc">&ensp;$T$</td><td class="mainc">$T$</td></tr>
+						</table>
+						<p>
 						如上表所示，兩個語句的真假在所有情況下確實都相同，所以 '$&not;A&or;B$' 和 '$A&rarr;B$' 是彼此等值的語句。
 						</p>
 						<p>
 						由於兩個等值的語句之真假在所有情況下都相同，所以當我們將兩個等值的語句以 '$&harr;$' 連接在一起形成一雙條件句後，會得到一個恆真句（因為雙條件句是在前後件同真同假時為真）。因此我們也可以將 '$&not;A&or;B$' 和 '$A&rarr;B$' 以 '$&harr;$' 連接起來，得到一雙條件句 '$(&not;A&or;B)&harr;(A&rarr;B)$'，其真值表如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$(&not;A&or;B)$</td><td>$&harr;$</td><td>$(A&rarr;B)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>&nbsp;&ensp;$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>&nbsp;&ensp;$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>&nbsp;&ensp;$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>&nbsp;&ensp;$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
-							</table>
-						如表所示，'$(&not;A&or;B)&harr;(A&rarr;B)$' 果然是一恆真句，故可證明 '$&not;A&or;B$' 和 '$A&rarr;B$' 確為彼此等值的兩個語句。
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$(&not;A&or;B)$</td><td>$&harr;$</td><td>$(A&rarr;B)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>&nbsp;&ensp;$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>&nbsp;&ensp;$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>&nbsp;&ensp;$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>&nbsp;&ensp;$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+						</table>
+						<p>
+						如表所示，'$(&not;A&or;B)&harr;(A&rarr;B)$' 果然是一個恆真句，因此可以證明 '$&not;A&or;B$' 和 '$A&rarr;B$' 確為彼此等值的兩個語句。
 						</p>
 						<p>
 						值得注意的是，由於兩個彼此等值的語句會在所有情況下都同真同假，所以，只要能夠證明兩個語句是等值的，那麼我們就可以在語句邏輯的脈絡下，將這兩個語句視作意義相同的語句，因此可以在任何情況下替換這兩個語句，並且不會造成任何邏輯意義上的改變。
@@ -953,17 +1205,19 @@
 					<div class="portion" id="compatibility">
 						<h5>相容</h5>
 						<p>
-						前面提到，邏輯蘊涵關係是兩個語句之間的一種<b>單向</b>關係，而<b>相容關係</b>則是兩個語句之間的一種<b>雙向</b>關係。也就是說，對任意兩個語句 '$&alpha;$' 和 '$&beta;$' 而言，如果 '$&alpha;$' 相容於 '$&beta;$'，那麼 '$&beta;$' 也會相容於 '$&alpha;$'。也就是說，對任意兩個語句來說，只要這兩個語句是相容於，它們一定是相容於<b>彼此</b>的。
+						前面提到，邏輯蘊涵關係是兩個語句之間的一種<b>單向</b>關係，而<b>相容關係</b>則是兩個語句之間的一種<b>雙向</b>關係。意即，對任意兩個語句 '$&alpha;$' 和 '$&beta;$' 而言，如果 '$&alpha;$' 相容於 '$&beta;$'，那麼 '$&beta;$' 也會相容於 '$&alpha;$'。也就是說，對任意兩個語句來說，只要這兩個語句是相容於，它們一定是相容於<b>彼此</b>的。
 						</p>
 						<p>
 						對任意兩個語句 '$&alpha;$' 和 '$&beta;$' 而言，如果這兩個語句彼此是相容的，意味著這兩個語句可以同時為真。比如說，一樣考慮 '$A&and;B$' 和 '$A&or;B$' 這兩個語句，我們可以將它們的真值表畫在一起如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$A&and;B$</td><td>$A&or;B$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td class="mainc">$T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$F$</td></tr>
-							</table>
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$A&and;B$</td><td>$A&or;B$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td class="mainc">$T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$F$</td></tr>
+						</table>
+						<p>
 						從上表可以看出來，真值表的第一列剛好是 '$A&and;B$' 和 '$A&or;B$' 這兩個語句同時為真的情況：當 '$A$' 為真且'$B$' 也為真的時候，'$A&and;B$' 和 '$A&or;B$' 這兩個語句便同時為真，故此二語句是彼此相容的。
 						</p>
 						<p>
@@ -973,14 +1227,16 @@
 						因此的確有語意模型可以讓 '$A&and;B$' 與 '$A&or;B$' 同時為真：任何讓 '$A$' 和 '$B$' 這兩個原子語句同時為真的語意模型，都會讓 '$A&and;B$' 與 '$A&or;B$' 同時為真，故此二語句確是相容的。
 						</p>
 						<p>
-						由於兩個彼此相容的語句一定會在某個語意模型之下為真，因此我們可以用真值表來判斷任兩個語句之間是否相容：只要兩個語句是相容的，當我們用 '$&and;$' 將此二語句連接成一連言組時，其真值表就至少有會一列為真。我們繼續以 '$A&and;B$' 和 '$A&or;B$' 這兩個語句為例，將此二語句以 '$&and;$' 連接起來，形成 '$(A&and;B)&and;(A&or;B)$' 這個連言句，其真值表如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$(A&and;B)$</td><td>$&and;$</td><td>$(A&or;B)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
-							</table>
+						由於兩個彼此相容的語句一定會在某個語意模型之下同時為真，因此我們可以用真值表來判斷任兩個語句之間是否相容：只要兩個語句是相容的，當我們用 '$&and;$' 將此二語句連接成一個連言句時，其真值表至少有會有一列為真。我們繼續以 '$A&and;B$' 和 '$A&or;B$' 這兩個語句為例，將此二語句以 '$&and;$' 連接起來，形成 '$(A&and;B)&and;(A&or;B)$' 這個連言句，其真值表如下：
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$(A&and;B)$</td><td>$&and;$</td><td>$(A&or;B)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+						</table>
+						<p>
 						如表所示，'$(A&and;B)&and;(A&or;B)$' 的真值表果然至少有一列（即第一列）為真，因此可以證明 '$A&and;B$' 和 '$A&or;B$' 這兩個語句確實相容。
 						</p>
 					</div>
@@ -992,13 +1248,15 @@
 						</p>
 						<p>
 						舉例來說，考慮 '$&not;A$' 和 '$A&and;B$' 這兩個語句，我們可以將這兩個語句的真值表畫在一起如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$&not;A$</td><td>$A&and;B$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td class="mainc">$F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td class="mainc">$F$</td></tr>
-							</table>
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$&not;A$</td><td>$A&and;B$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td class="mainc">$F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td class="mainc">$F$</td></tr>
+						</table>
+						<p>
 						根據以上真值表所顯示的，'$&not;A$' 和 '$A&and;B$' 這兩個語句在所有可能的情況中都沒有同時為真。也就是說，對所有語意模型 $\sc{v}_n$（$n$ 是任意自然數）而言，$\sc{v}_n&nvDash;&not;A$ 或者 $\sc{v}_n&nvDash;A&and;B$。總之不會有任何一個語意模型讓兩個語句同時為真，故 '$&not;A$' 和 '$A&and;B$' 是衝突的。
 						</p>
 						<p>
@@ -1006,25 +1264,33 @@
 						</p>
 						<p>
 						根據語句的二值性，我們可以知道，當一個語意模型讓 '$&alpha;$' 為假，其實就是讓 '$&not;&alpha;$' 為真；當一個語意模型讓 '$&beta;$' 為假，其實就是讓 '$&not;&beta;$' 為真。因此，「<q>所有語意模型都會讓 '$&alpha;$' 為假，或者讓 '$&beta;$' 為假</q>」就可以被理解為：
-							<ul class="disc song tight">
-								<li>所有語意模型都會讓 '$&alpha;$' 為假，或者讓 '$&not;&beta;$' 為真；以及，</li>
-								<li>所有語意模型都會讓 '$&beta;$' 為假，或者讓 '$&not;&alpha;$' 為真。</li>
-							</ul>
+						</p>
+						<ul class="disc song tight">
+							<li>所有語意模型都會讓 '$&alpha;$' 為假，或者讓 '$&not;&beta;$' 為真；以及，</li>
+							<li>所有語意模型都會讓 '$&beta;$' 為假，或者讓 '$&not;&alpha;$' 為真。</li>
+						</ul>
+						<p>
 						然後，參考我們在第二章裡用語意模型，或者在第三章中用真值函數來定義實質單條件句的真值表的方法，就會發現上述兩個說法又可以被進一步理解為：
-							<ul class="disc song tight">
-								<li>所有語意模型都會讓 '$&alpha;&rarr;&not;&beta;$' 為真；以及，</li>
-								<li>所有語意模型都會讓 '$&beta;&rarr;&not;&alpha;$' 為真。</li>
-							</ul>
+						</p>
+						<ul class="disc song tight">
+							<li>所有語意模型都會讓 '$&alpha;&rarr;&not;&beta;$' 為真；以及，</li>
+							<li>所有語意模型都會讓 '$&beta;&rarr;&not;&alpha;$' 為真。</li>
+						</ul>
+						<p>
 						而這兩個說法其實就是在說：
-							<ul class="disc song tight">
-								<li>'$&alpha;&rarr;&not;&beta;$' 為一恆真句；以及，</li>
-								<li>'$&beta;&rarr;&not;&alpha;$' 為一恆真句。</li>
-							</ul>
+						</p>
+						<ul class="disc song tight">
+							<li>'$&alpha;&rarr;&not;&beta;$' 為一恆真句；以及，</li>
+							<li>'$&beta;&rarr;&not;&alpha;$' 為一恆真句。</li>
+						</ul>
+						<p>
 						接著，根據我們先前對邏輯蘊涵關係的定義，我們可以將上述兩個說法再進一步地理解為：
-							<ul class="disc song tight">
-								<li>'$&alpha;$' 邏輯蘊涵 '$&not;&beta;$'；以及，</li>
-								<li>'$&beta;$' 邏輯蘊涵 '$&not;&alpha;$'。</li>
-							</ul>
+						</p>
+						<ul class="disc song tight">
+							<li>'$&alpha;$' 邏輯蘊涵 '$&not;&beta;$'；以及，</li>
+							<li>'$&beta;$' 邏輯蘊涵 '$&not;&alpha;$'。</li>
+						</ul>
+						<p>
 						因此，我們可以將衝突關係的定義重新改寫為：<b>對任兩個語句 '$&alpha;$' 和 '$&beta;$' 而言，'$&alpha;$' 和 '$&beta;$' 是衝突的，當且僅當，'$&alpha;$' 邏輯蘊涵 '$&not;&beta;$'。</b><span class="note"><span class="box">或者也可以說是 '$&beta;$' 邏輯蘊涵 '$&not;&alpha;$'，兩個說法的意思是相同的。</span></span>換言之，任意兩個語句是衝突的，當且僅當，兩個語句會互相蘊涵彼此的否定句。
 						</p>
 						<p>
@@ -1032,13 +1298,15 @@
 						</p>
 						<p>
 						由於兩個彼此衝突的語句不會同時為真，因此當我們以 '$&and;$' 來連接兩個彼此衝突的語句時，所得的連言句就會是一矛盾句。以 '$&not;A$' 和 '$A&and;B$' 這兩個語句為例，將它們以 '$&and;$' 連接起來所形成的連言句之真值表如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$&not;A$</td><td>$&and;$</td><td>$(A&and;B)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$F$</td><td>$\T$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$F$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$F$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td>$F$</td><td>$\F$</td></tr>
-							</table>
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$&not;A$</td><td>$&and;$</td><td>$(A&and;B)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$F$</td><td>$\T$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$F$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$F$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td>$F$</td><td>$\F$</td></tr>
+						</table>
+						<p>
 						依上表所示，用 '$&and;$' 連接 '$&not;A$' 和 '$A&and;B$' 所形成之連言句 '$&not;A&and;(A&and;B)$' 確實為一矛盾句，故 '$&not;A$' 和 '$A&and;B$' 彼此衝突。
 						</p>
 					</div>
@@ -1053,11 +1321,13 @@
 						</p>
 						<p>
 						考慮一組最典型的矛盾句：'$A$' 和 '$&not;A$'，我們可以將這兩個語句的真值表畫在一起如下表：
-							<table class="single truth">
-								<tr><td>$A$</td><td>$A$</td><td>$&not;A$</td></tr>
-								<tr><td>$\T$</td><td class="mainc">$T$</td><td class="mainc">$F$</td></tr>
-								<tr><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
-							</table>
+						</p>
+						<table class="single truth">
+							<tr><td>$A$</td><td>$A$</td><td>$&not;A$</td></tr>
+							<tr><td>$\T$</td><td class="mainc">$T$</td><td class="mainc">$F$</td></tr>
+							<tr><td>$\F$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
+						</table>
+						<p>
 						從上表可以清楚地看出來，由於 '$&not;A$' 是 '$A$' 的否定句，故當 '$A$' 為真時，'$&not;A$' 就為假；反之當 '$A$' 為假時，'$&not;A$' 就為真。故此二語句確實彼此矛盾。
 						</p>
 						<p>
@@ -1086,74 +1356,88 @@
 						</p>
 						<p>
 						若將 '$&alpha;&rarr;&not;&beta;$' 和 '$&not;&beta;&rarr;&alpha;$' 這兩個單條件句合在一起，就會得到 '$&alpha;&harr;&not;&beta;$' 這一雙條件句，因此，當兩個語句 '$&alpha;$' 和 '$&beta;$' 彼此矛盾時，只要將其中一語句和另一個語句的否定句以 '$&harr;$' 連在一起，所形成的雙條件句（'$&alpha;&harr;&not;&beta;$' 或 '$&beta;&harr;&not;&alpha;$'）就會是恆真句。以 '$A$' 和 '$&not;A$' 這兩個語句為例，將 '$A$' 和 '$&not;A$' 的否定句 '$&not;&not;A$' 以 '$&harr;$' 連在一起，會得到 '$A&harr;&not;&not;A$'，其真值表如下：
-							<table class="single truth">
-								<tr><td>$A$</td><td>$A$</td><td>$&harr;$</td><td>$&not;$</td><td>$(&not;A)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td><td>$\T$</td></tr>
-							</table>
+						</p>
+						<table class="single truth">
+							<tr><td>$A$</td><td>$A$</td><td>$&harr;$</td><td>$&not;$</td><td>$(&not;A)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td><td>$\T$</td></tr>
+						</table>
+						<p>
 						依上表所示，'$A&harr;&not;&not;A$' 果然是恆真句，故可證 '$A$' 與 '$&not;A$' 確實彼此矛盾。或者，我們也可以用 '$&harr;$' 連接 '$A$' 的否定句和 '$&not;A$' 這兩個語句，得到 '$&not;A&harr;&not;A$'，其真值表如下：
-							<table class="single truth">
-								<tr><td>$A$</td><td>$&not;A$</td><td>$&harr;$</td><td>$&not;A$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
-							</table>
+						</p>
+						<table class="single truth">
+							<tr><td>$A$</td><td>$&not;A$</td><td>$&harr;$</td><td>$&not;A$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+						</table>
+						<p>
 						依上表所示，'$&not;A&harr;&not;A$' 果然也是一恆真句，故亦得證 '$A$' 和 '$&not;A$' 彼此矛盾。
 						</p>
 						<p>
 						為了加深讀者的印象，我再舉一組矛盾的語句為例：'$A&or;&not;B$' 與 '$&not;A&and;B$' 也是一組彼此矛盾的語句，我們可以將此二語句的真值表畫在一起如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$A&or;&not;B$</td><td>$&not;A&and;B$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td class="mainc">$F$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td class="mainc">$F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td class="mainc">$F$</td></tr>
-							</table>
-						依上表所示，在 '$A&or;&not;B$' 為真的所有情況中（也就是真值表的第一、二、四列），'$&not;A&and;B$' 都為假，而且在 '$&not;A&and;B$' 為真的所有情況中（也就是真值表的第三列），'$A&or;&not;B$' 也確實都為假，因此這兩個語句確實彼此矛盾。
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$A&or;&not;B$</td><td>$&not;A&and;B$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td class="mainc">$F$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td class="mainc">$F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td class="mainc">$T$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$T$</td><td class="mainc">$F$</td></tr>
+						</table>
+						<p>
+						依上表所示，在 '$A&or;&not;B$' 為真的所有情況中（也就是真值表的第一、二、四列這三種情況），'$&not;A&and;B$' 都為假，而且在 '$A&or;&not;B$' 為假的所有情況中（也就是真值表的第三列），'$&not;A&and;B$' 也確實都為真，因此這兩個語句確實彼此矛盾。
 						</p>
 						<p>
 						除此以外，我們也可以用雙條件句的方式來檢查這兩個語句是否彼此矛盾，我們可以選擇用 '$A&or;&not;B$' 和 '$&not;A&and;B$' 的否定句（也就是 '$&not;(&not;A&and;B)$'）來形成雙條件句，也可以選擇用 '$A&or;&not;B$' 的否定句（即 '$&not;(A&or;&not;B)$'）和 '$&not;A&and;B$' 來形成雙條件句。只要 '$A&or;&not;B$' 與 '$&not;A&and;B$' 確實彼此矛盾，則前述兩個雙條件句一定都會是恆真句。我們分別以真值表檢查：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$(A&or;&not;B)$</td><td>$&harr;$</td><td>$&not;$</td><td>$(&not;A&and;B)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td><td>$\F$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td><td>$\F$</td></tr>
-							</table>
-						如上表，當我們以 '$&harr;$' 連接 '$A&or;&not;B$' 和 '$&not;A&and;B$' 的否定句（即 '$&not;(&not;A&and;B)$'），得到的雙條件句 '$(A&or;&not;B)&harr;&not;(&not;A&and;B)$' 確實是恆真句。我們也可以用 '$&harr;$' 來連接 '$A&or;&not;B$' 的否定句（即 '$&not;(A&or;&not;B)$'）和 '$&not;A&and;B$' 得到 '$&not;(A&or;&not;B)&harr;(&not;A&and;B)$' 這一雙條件句，並以真值表檢查它是否為恆真句：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$&not;$</td><td>$(A&or;&not;B)$</td><td>$&harr;$</td><td>$(&not;A&and;B)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
-							</table>
-						依上表所示，'$&not;(A&or;&not;B)&harr;(&not;A&and;B)$' 果然也是一恆真句，故亦可證 '$A&or;&not;B$' 和 '$&not;A&and;B$' 彼此矛盾。
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$(A&or;&not;B)$</td><td>$&harr;$</td><td>$&not;$</td><td>$(&not;A&and;B)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td><td>$\F$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\F$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\T$</td><td>$\F$</td></tr>
+						</table>
+						<p>
+						如上表，若以 '$&harr;$' 連接 '$A&or;&not;B$' 和 '$&not;A&and;B$' 的否定句（即 '$&not;(&not;A&and;B)$'），得到的雙條件句 '$(A&or;&not;B)&harr;&not;(&not;A&and;B)$' 確實是恆真句。我們也可以用 '$&harr;$' 來連接 '$A&or;&not;B$' 的否定句（即 '$&not;(A&or;&not;B)$'）和 '$&not;A&and;B$' 這兩個語句，如此我們將會得到 '$&not;(A&or;&not;B)&harr;(&not;A&and;B)$' 這一雙條件句，並以真值表檢查它是否為恆真句：
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$&not;$</td><td>$(A&or;&not;B)$</td><td>$&harr;$</td><td>$(&not;A&and;B)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$T$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$T$</td><td>$\F$</td></tr>
+						</table>
+						<p>
+						依上表所示，'$&not;(A&or;&not;B)&harr;(&not;A&and;B)$' 果然也是恆真句，故亦可證明 '$A&or;&not;B$' 和 '$&not;A&and;B$' 彼此矛盾。
 						</p>
 						<p>
-						要注意的是，當我們要檢查兩個語句 '$&alpha;$' 和 '$&beta;$' 是否彼此矛盾時，只要在 '$&alpha;&harr;&not;&beta;$' 和 '$&not;&alpha;&harr;&beta;$' 之間選擇一個來檢查即可，這是因為對於任意兩個語句 '$&alpha;$' 和 '$&beta;$' 而言，'$&alpha;&harr;&not;&beta;$' 和 '$&not;&alpha;&harr;&beta;$' 會是<b>等值</b>的兩個語句，因此檢查其中的一個就等於檢查了另一個。我在上面之所以分別都檢查一遍，只是為了不要有所遺漏而已。
+						要注意的是，由於對於任意兩個語句 '$&alpha;$' 和 '$&beta;$' 而言，'$&alpha;&harr;&not;&beta;$' 和 '$&not;&alpha;&harr;&beta;$' 會是<b>等值</b>的兩個語句，所以只要檢查其中的一個就等於檢查了另一個。因此當我們要檢查兩個語句 '$&alpha;$' 和 '$&beta;$' 是否彼此矛盾時，其實只要在 '$&alpha;&harr;&not;&beta;$' 和 '$&not;&alpha;&harr;&beta;$' 之間選擇一個來檢查即可。我在上面之所以分別都檢查一遍，只是為了不要有所遺漏而已。
 						</p>
 						<p>
 						此外，根據矛盾關係的定義，當兩個語句 '$&alpha;$' 和 '$&beta;$' 彼此矛盾時，這兩個語句的真假在所有情況下一定都不相同，因此當我們用 '$&harr;$' 來連接 '$&alpha;$' 和 '$&beta;$' 這兩個語句時，得到的雙條件句一定會是一個矛盾句。這是因為根據雙條件句的真值表，只要雙條件句的前後件真假不同，雙條件句就為假。因此我們也可以用這個方法來檢查兩個語句是否彼此矛盾。
 						</p>
 						<p>
 						比如說，我們可以將 '$A$' 和 '$&not;A$' 用 '$&harr;$' 連接起來形成 '$A&harr;&not;A$'，並檢查其真值表如下：
-							<table class="single truth">
-								<tr><td>$A$</td><td>$A$</td><td>$&harr;$</td><td>$&not;A$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\T$</td></tr>
-							</table>
+						</p>
+						<table class="single truth">
+							<tr><td>$A$</td><td>$A$</td><td>$&harr;$</td><td>$&not;A$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\T$</td></tr>
+						</table>
+						<p>
 						如表所示，'$A&harr;&not;A$' 果為一矛盾句，因此 '$A$' 和 '$&not;A$' 彼此矛盾。
 						</p>
 						<p>
 						又比如說，我們可以將 '$A&or;&not;B$' 和 '$&not;A&and;B$' 用 '$&harr;$' 連接起來，形成以下雙條件句： '$(A&or;&not;B)&harr;(&not;A&and;B)$'，並檢查其真值表如下：
-							<table class="truth double">
-								<tr><td>$A$</td><td>$B$</td><td>$(A&or;&not;B)$</td><td>$&harr;$</td><td>$(&not;A&and;B)$</td></tr>
-								<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
-								<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
-								<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\T$</td></tr>
-								<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
-							</table>
-						如果所示，'$(A&or;&not;B)&harr;(&not;A&and;B)$' 確為一矛盾句，故可證 '$A&or;&not;B$' 和 '$&not;A&and;B$' 為彼此矛盾的語句。
+						</p>
+						<table class="truth double">
+							<tr><td>$A$</td><td>$B$</td><td>$(A&or;&not;B)$</td><td>$&harr;$</td><td>$(&not;A&and;B)$</td></tr>
+							<tr><td>$\T$</td><td>$\T$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+							<tr><td>$\T$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+							<tr><td>$\F$</td><td>$\T$</td><td>$\F$</td><td class="mainc">$F$</td><td>$\T$</td></tr>
+							<tr><td>$\F$</td><td>$\F$</td><td>$\T$</td><td class="mainc">$F$</td><td>$\F$</td></tr>
+						</table>
+						<p>
+						如表所示，'$(A&or;&not;B)&harr;(&not;A&and;B)$' 確為矛盾句，故可證 '$A&or;&not;B$' 和 '$&not;A&and;B$' 為彼此矛盾的語句。
 						</p>
 					</div>
 					
@@ -1328,17 +1612,20 @@
 					</p>
 					<p>
 					我們在底下將以實際的例子來演練，看看實際上要如何利用歸謬推論來判斷一個語句是不是恆真句或矛盾句。我們一樣先用 '$A&or;&not;A$' 這個經典的恆真句當例子。要判斷 '$A&or;&not;A$' 是不是一個恆真句，我們要先做一個歸謬假設：假設 '$A&or;&not;A$' 為假。然後從這個假設開始，利用我在本章第一節中定義的真值函數，<b>往回推算原子語句的真假</b><span class="note"><span class="box">一定要把一個語句的每個部分都推算到原子語句的層次為止，這點非常重要！否則會漏掉某些可能存在的矛盾！</span></span>要如何分配才能使 '$A&or;&not;A$' 為假：
-						<table class="prf">
+					</p>
+					<table class="prf">
 							<tr><td>$\sc{v}_n'(A&or;&not;A)=\F$</td><td>歸謬假設</td></tr>
 							<tr><td>$\sc{v}_n'(A)=\F$ 而且 $\sc{v}_n'(&not;A)=\F$</td><td>根據 (1) 和定義 4</td></tr>
 							<tr><td>$\sc{v}_n'(A)=\F$ 而且 $\sc{v}_n'(A)=\T$</td><td>根據 (2) 和定義 2</td></tr>
 							<tr><td>(3) 自相矛盾</td><td></td></tr>
-						</table>
+					</table>
+					<p>
 					自相矛盾的結果當然是一個荒謬的結果，因為它不可能成立，所以為了拒絕這個荒謬的結果，我們只好回頭去否定一開始的假設，因此我們必須接受 '$A&or;&not;A$' 不可能為假，因此它是一個恆真句。
 					</p>
 					<p>
 					讓我們再看另一個例子，以 '$A&rarr;(B&rarr;A)$' 為例，要判斷它是不是一個恆真句，我們一樣先假設它為假，然後再進行推論：
-						<table class="prf">
+					</p>
+					<table class="prf">
 							<tr><td>$\sc{v}_n'(A&rarr;(B&rarr;A))=\F$</td><td>歸謬假設</td></tr>
 							<tr><td>$\sc{v}_n'(A)=\T$ 而且 $\sc{v}_n'(B&rarr;A)=\F$</td><td>根據 (1) 和定義 5</td></tr>
 							<tr><td>$\sc{v}_n'(A)=\T$</td><td>根據 (2)</td></tr>
@@ -1346,7 +1633,8 @@
 							<tr><td>$\sc{v}_n'(B)=\T$ 而且 $\sc{v}_n'(A)=\F$</td><td>根據 (4) 和定義 5</td></tr>
 							<tr><td>$\sc{v}_n'(A)=\F$</td><td>根據 (5)</td></tr>
 							<tr><td>(3) 和 (6) 彼此矛盾</td><td></td></tr>
-						</table>
+					</table>
+					<p>
 					在這個推論中，我們得到的是彼此矛盾的結果，而彼此矛盾的結果當然也是荒謬的結果。因此為了拒絕這個荒謬的結果，我們只好回頭去否定一開始的假設，所以我們必須接受 '$A&rarr;(B&rarr;A)$' 不可能為假，因此它是一個恆真句。
 					</p>
 					<p>
@@ -1354,7 +1642,8 @@
 					</p>
 					<p>
 					不過，有時候要發現矛盾的結果並不那麼容易。以我們前面討論過的兩個例子來看，它們都只用到了單線的推論。然而，在某些情況裡，我們的推論或許會產生分支，那就必須分成多條支線處理。我們可以試著判斷 '$(A&rarr;B)&rarr;((A&and;C)&rarr;B)$' 是不是一個恆真句：
-						<table class="prf">
+					</p>
+					<table class="prf">
 							<tr><td>$\sc{v}_n'((A&rarr;B)&rarr;((A&and;C)&rarr;B))=\F$</td><td>歸謬假設</td></td></tr>
 							<tr><td>$\sc{v}_n'(A&rarr;B)=\T$ 而且 $\sc{v}_n'((A&and;C)&rarr;B)=\F$</td><td>根據 (1) 和定義 5</td></tr>
 							<tr><td>$\sc{v}_n'(A&rarr;B)=\T$</td><td>根據 (2)</td></tr>
@@ -1365,99 +1654,121 @@
 							<tr><td>$\sc{v}_n'(A)=\T$ 而且 $\sc{v}_n'(C)=\T$</td><td>根據 (6) 和定義 3</td></tr>
 							<tr><td>$\sc{v}_n'(A)=\T$</td><td>根據 (8)</td></tr>
 							<tr><td>$\sc{v}_n'(A)=\F$ 或者 $\sc{v}_n'(B)=\T$</td><td>根據 (3) 和定義 5</td></tr>
-							<tr class="hidden"><td></td><td></td></tr>
-						</table>
+							<tr class="last"><td></td><td></td></tr>
+					</table>
+					<p>
 					要注意的是，(10) 的連接詞是「或者」，也就是說，這兩種情況分別都可以讓歸謬假設成立，因此我們必須將兩種可能的情況分別考慮，只有當這兩種情況都會得到矛盾時，我們才能回頭去否定歸謬假設。
 					</p>
 					<p class="noind">
 					<b>情況一</b>：
-						<table class="prf" style="counter-reset:tprf 10">
+					</p>
+					<table class="prf" style="counter-reset:tprf 10">
 							<tr><td>$\sc{v}_n'(A)=\F$</td><td>(10) 的第一種情況</td></tr>
-							<tr><td>(11) 和 (9) 彼此矛盾</td><td></td></tr>
-						</table>
+							<tr><td>(9) 和 (11) 彼此矛盾&emsp;</td><td></td></tr>
+					</table>
+					<p>
 					<b>情況二</b>：
-						<table class="prf" style="counter-reset:tprf 10">
+					</p>
+					<table class="prf" style="counter-reset:tprf 10">
 							<tr><td>$\sc{v}_n'(B)=\T$</td><td>(10) 的第二種情況</td></tr>
-							<tr><td>(11) 和 (7) 佊此矛盾</td><td></td></tr>
-						</table>
+							<tr><td>(7) 和 (11) 佊此矛盾&emsp;</td><td></td></tr>
+					</table>
+					<p>
 					分別考慮了情況一和二後發現，無論是哪一種情況都會得到矛盾的結果，因此可以知道歸謬假設是錯的，'$(A&rarr;B)&rarr;((A&and;C)&rarr;B)$' 不可能為假，因此是一個恆真句。
 					</p>
 					<p>
 					然後我們再來看第四個例句，看看 '$(A&or;B)&rarr;(A&and;B)$' 是不是一個恆真句，判斷的方式當然還是透過歸謬推論，因此仍然是從歸謬假設開始：
-						<table class="prf">
+					</p>
+					<table class="prf">
 							<tr><td>$\sc{v}_n'((A&or;B)&rarr;(A&and;B))=\F$</td><td>歸謬假設</td></tr>
-							<tr><td>$\sc{v}_n'((A&or;B))=\T$ 而且 $\sc{v}_n'((A&and;B))=\F$</td><td>根據 (1) 和定義 5</td></tr>
-							<tr><td>$\sc{v}_n'((A&or;B))=\T$</td><td>根據 (2)</td></tr>
-							<tr><td>$\sc{v}_n'((A&and;B))=\F$</td><td>根據 (2)</td></tr>
-							<tr class="hidden"><td></td><td></td></tr>
-						</table>
-					分析到這個階段時，$\sc{v}_n'((A&or;B))=\T$ 和 $\sc{v}_n'((A&and;B))=\F$ 都還需要進一步地分析，因為它們都還沒被分析到原子語句的層次。
+							<tr><td>$\sc{v}_n'(A&or;B)=\T$ 而且 $\sc{v}_n'(A&and;B)=\F$</td><td>根據 (1) 和定義 5</td></tr>
+							<tr><td>$\sc{v}_n'(A&or;B)=\T$</td><td>根據 (2)</td></tr>
+							<tr><td>$\sc{v}_n'(A&and;B)=\F$</td><td>根據 (2)</td></tr>
+							<tr class="last"><td></td><td></td></tr>
+					</table>
+					<p>
+					分析到這個階段時，$\sc{v}_n'(A&or;B)=\T$ 和 $\sc{v}_n'(A&and;B)=\F$ 都還需要進一步地分析，因為它們都還沒被分析到原子語句的層次。
 					</p>
 					<p>
-					可是無論要進一步分析這兩個條件，都會有分支。比如說，若要分析 $\sc{v}_n'((A&or;B))=\T$ 這個條件，那就會分成 $\sc{v}_n'((A))=\T$ 和 $\sc{v}_n'((B))=\T$ 這兩個情況；而若要分析 $\sc{v}_n'((A&and;B))=\F$，則會分成 $\sc{v}_n'((A))=\F$ 和 $\sc{v}_n'((B))=\F$ 兩種情況。
+					可是無論要進一步分析這兩個條件，都會有分支。比如說，若要分析有哪些條件可以讓 $\sc{v}_n'(A&or;B)=\T$ 成立，那就會分成 $\sc{v}_n'(A)=\T$ 和 $\sc{v}_n'(B)=\T$ 這兩個情況；若要分析有哪些條件可以讓 $\sc{v}_n'(A&and;B)=\F$ 成立，則會分成 $\sc{v}_n'(A)=\F$ 和 $\sc{v}_n'(B)=\F$ 兩種情況。
 					</p>
 					<p>
-					既然兩個都會產生分支，先分析哪一個就沒有什麼差別，所以可以任意選一個先做。比如說，我們先分析 $\sc{v}_n'((A&or;B))=\T$ 這個條件。因為會產生分支，所以要記得分成兩個情況來考慮：
+					既然兩個都會產生分支，先分析哪一個就沒有什麼差別，所以可以任意選一個先做。比如說，我們先分析 $\sc{v}_n'(A&or;B)=\T$ 這個條件。因為會產生分支，所以要記得分成兩個情況來考慮：
 					</p>
 					<p class="noind">
-						<b>情況一</b>：
-						<table class="prf" style="counter-reset:tprf 4">
-							<tr><td>$\sc{v}_n'((A))=\T$</td><td>根據 (3) 和定義 4</td></tr>
-							<tr class="hidden"><td></td><td></td></tr>
-						</table>
-						<b>情況二</b>：
-						<table class="prf" style="counter-reset:tprf 4">
-							<tr><td>$\sc{v}_n'((B))=\T$</td><td>根據 (3) 和定義 4</td></tr>
-							<tr class="hidden"><td></td><td></td></tr>
-						</table>
-						分析到這個步驟時，雖然 $\sc{v}_n'((A&or;B))=\T$ 這個條件已經被分析到原子語句的層次了，但還有 $\sc{v}_n'((A&and;B))=\F$ 這個條件尚未分析，因此在情況一和二當中，都必須繼續分析 $\sc{v}_n'((A&and;B))=\F$ 這個條件。然而，前提說過，若要分析 $\sc{v}_n'((A&and;B))=\F$ 這一條件，也會產生 $\sc{v}_n'((A))=\F$ 和 $\sc{v}_n'((B))=\F$ 這兩個分支。
-						</p>
-						<p>
-						也就是說，既然在情況一和二當中都必須繼續分析 $\sc{v}_n'((A&and;B))=\F$ 這一條件，而分析這一條件又會產生分支，那就表示在情況一和二中又各自必須再分成兩個情況來考慮：
+					<b>情況一</b>：
+					</p>
+					<table class="prf" style="counter-reset:tprf 4">
+							<tr><td>$\sc{v}_n'(A)=\T$</td><td>根據 (3) 和定義 4</td></tr>
+							<tr class="last"><td></td><td></td></tr>
+					</table>
+					<p>
+					<b>情況二</b>：
+					</p>
+					<table class="prf" style="counter-reset:tprf 4">
+							<tr><td>$\sc{v}_n'(B)=\T$</td><td>根據 (3) 和定義 4</td></tr>
+							<tr class="last"><td></td><td></td></tr>
+					</table>
+					<p>
+					分析到這個步驟時，雖然 $\sc{v}_n'(A&or;B)=\T$ 這個條件已經被分析到原子語句的層次了，但還有 $\sc{v}_n'(A&and;B)=\F$ 這個條件尚未分析，因此在情況一和二當中，都必須繼續分析 $\sc{v}_n'(A&and;B)=\F$ 這個條件。然而，前提說過，若要分析 $\sc{v}_n'(A&and;B)=\F$ 這一條件，也會產生 $\sc{v}_n'(A)=\F$ 和 $\sc{v}_n'(B)=\F$ 這兩個分支。
+					</p>
+					<p>
+					也就是說，既然在情況一和二當中都必須繼續分析 $\sc{v}_n'(A&and;B)=\F$ 這一條件，而分析這一條件又會產生分支，那就表示在情況一和二中又各自必須再分成兩個情況來考慮：
 					</p>
 					<p class="noind">
 						<b>情況一之一</b>：
-						<table class="prf" style="counter-reset:tprf 4">
-							<tr><td>$\sc{v}_n'((A))=\T$</td><td>根據 (3) 和定義 4</td></tr>
-							<tr><td>$\sc{v}_n'((A))=\F$</td><td>根據 (4) 和定義 3</td></tr>
-							<tr><td>(5) 和 (6) 彼此矛盾</td><td></td></tr>
-						</table>
+					</p>
+					<table class="prf" style="counter-reset:tprf 4">
+							<tr><td>$\sc{v}_n'(A)=\T$</td><td>根據 (3) 和定義 4</td></tr>
+							<tr><td>$\sc{v}_n'(A)=\F$</td><td>根據 (4) 和定義 3</td></tr>
+							<tr><td>(5) 和 (6) 彼此矛盾&emsp;</td><td>&emsp;</td></tr>
+					</table>
+					<p>
 						<b>情況一之二</b>：
-						<table class="prf" style="counter-reset:tprf 4">
-							<tr><td>$\sc{v}_n'((A))=\T$</td><td>根據 (3) 和定義 4</td></tr>
-							<tr><td>$\sc{v}_n'((B))=\F$</td><td>根據 (4) 和定義 3</td></tr>
-							<tr><td>沒有出現矛盾</td><td></td></tr>
-						</table>
+					</p>
+					<table class="prf" style="counter-reset:tprf 4">
+							<tr><td>$\sc{v}_n'(A)=\T$</td><td>根據 (3) 和定義 4</td></tr>
+							<tr><td>$\sc{v}_n'(B)=\F$</td><td>根據 (4) 和定義 3</td></tr>
+							<tr><td>沒有出現矛盾&emsp;</td><td></td></tr>
+					</table>
+					<p>
 						<b>情況二之一</b>：
-						<table class="prf" style="counter-reset:tprf 4">
-							<tr><td>$\sc{v}_n'((B))=\T$</td><td>根據 (3) 和定義 4</td></tr>
-							<tr><td>$\sc{v}_n'((A))=\F$</td><td>根據 (4) 和定義 3</td></tr>
-							<tr><td>沒有出現矛盾</td><td></td></tr>
-						</table>
+					</p>
+					<table class="prf" style="counter-reset:tprf 4">
+							<tr><td>$\sc{v}_n'(B)=\T$</td><td>根據 (3) 和定義 4</td></tr>
+							<tr><td>$\sc{v}_n'(A)=\F$</td><td>根據 (4) 和定義 3</td></tr>
+							<tr><td>沒有出現矛盾&emsp;</td><td></td></tr>
+					</table>
+					<p>
 						<b>情況二之二</b>：
-						<table class="prf" style="counter-reset:tprf 4">
-							<tr><td>$\sc{v}_n'((B))=\T$</td><td>根據 (3) 和定義 4</td></tr>
-							<tr><td>$\sc{v}_n'((B))=\F$</td><td>根據 (4) 和定義 3</td></tr>
-							<tr><td>(5) 和 (6) 彼此矛盾</td><td></td></tr>
-						</table>
-						到此為止，我們已經把 '$(A&or;B)&rarr;(A&and;B)$' 這個語句是不是恆真句的歸謬分析都做完了，因為語句中的每一個部分都被分析到原子語句的層次了。從結果來看，一共有四個分支，而這四個分析當中只有兩個情況是有矛盾的，另外二個情況則沒有任何矛盾。這意味著，至少有兩種不會產生矛盾的方式可以讓 '$(A&or;B)&rarr;(A&and;B)$' 為假，既然如此，這就意味著這個語句<b>可能為假</b>，因此就不是恆真句。
+					</p>
+					<table class="prf" style="counter-reset:tprf 4">
+							<tr><td>$\sc{v}_n'(B)=\T$</td><td>根據 (3) 和定義 4</td></tr>
+							<tr><td>$\sc{v}_n'(B)=\F$</td><td>根據 (4) 和定義 3</td></tr>
+							<tr><td>(5) 和 (6) 彼此矛盾&emsp;</td><td></td></tr>
+					</table>
+					<p>
+					到此為止，我們已經把 '$(A&or;B)&rarr;(A&and;B)$' 這個語句是不是恆真句的歸謬分析都做完了，因為語句中的每一個部分都被分析到原子語句的層次了。從結果來看，一共有四個分支，而這四個分析當中只有兩個情況是有矛盾的，另外二個情況則沒有任何矛盾。這意味著，至少有兩種不會產生矛盾的方式可以讓 '$(A&or;B)&rarr;(A&and;B)$' 為假，既然如此，這就意味著這個語句<b>可能為假</b>，因此就不是恆真句。
 					</p>
 					<p>
 					以上所示範的都是判斷恆真句的方法，但相同的方法也可以用來判斷一個語句是不是矛盾句。前面說過，因為恆真句有<b>不可能為假</b>的特性，所以為了用歸謬方法來判斷一個語句是不是恆真句，我們在做歸謬假設時必須假設該語句<b>有可能為假</b>，也就是，假設至少有一個語意模型會讓該語句為假。同理，既然矛盾句有<b>不可能為真</b>的特性，在用歸謬方法判斷一個語句是否矛盾句時，歸謬假設就必須假設該語句<b>有可能為真</b>，也就是，假設至少有一個語意模型會讓該語句為真。
 					</p>
 					<p>
 					為了示範實際操作的方法，我們一樣先從最經典的矛盾句 '$A&and;&not;A$' 的分析開始示範。為了使用歸謬法，我們必須假設 '$A&and;&not;A$' 有可能為真：
-						<table class="prf">
+					</p>
+					<table class="prf">
 							<tr><td>$\sc{v}_n'(A&and;&not;A)=\T$</td><td>歸謬假設</td></tr>
 							<tr><td>$\sc{v}_n'(A)=\T$ 而且 $\sc{v}_n'(&not;A)=\T$</td><td>根據 (1) 和定義 3</td></tr>
 							<tr><td>$\sc{v}_n'(A)=\T$ 而且 $\sc{v}_n'(A)=\F$</td><td>根據 (2) 和定義 2</td></tr>
 							<tr><td>(3) 自相矛盾</td><td></td></tr>
-						</table>
+					</table>
+					<p>
 					由於 (3) 自相矛盾，這意味著要讓 '$A&and;&not;A$' 為真就會產生矛盾，也就是說，沒有方法可以讓 '$A&and;&not;A$' 為真而不矛盾，因此 '$A&and;&not;A$' 便不可能為真，故得證 '$A&and;&not;A$' 為一矛盾句。
 					</p>
 					<p>
 					為了熟悉操作的方法，我們再選一個例子來示範，以 '$&not;(A&rarr;B)&and;&not;(B&rarr;A)$' 為例，要用歸謬法判斷它是不是矛盾句，就必須假設它可能為真：
-						<table class="prf">
+					</p>
+					<table class="prf">
 							<tr><td>$\sc{v}_n'(&not;(A&rarr;B)&and;&not;(B&rarr;A))=\T$</td><td>歸謬假設</td></tr>
 							<tr><td>$\sc{v}_n'(&not;(A&rarr;B))=\T$ 而且 $\sc{v}_n'(&not;(B&rarr;A))=\T$</td><td>根據 (1) 和定義 3</td></tr>
 							<tr><td>$\sc{v}_n'(A&rarr;B)=\F$ 而且 $\sc{v}_n'(B&rarr;A)=\F$</td><td>根據 (2) 和定義 2</td></tr>
@@ -1468,14 +1779,770 @@
 							<tr><td>$\sc{v}_n'(A)=\T$</td><td>根據 (6)</td></tr>
 							<tr><td>$\sc{v}_n'(A)=\F$</td><td>根據 (7)</td></tr>
 							<tr><td>(8) 和 (9) 彼此矛盾</td><td></td></tr>
-						</table>
+					</table>
+					<p>
 					(8) 和 (9) 彼此矛盾的結論意味著要讓 '$&not;(A&rarr;B)&and;&not;(B&rarr;A)$' 為真就會產生矛盾，也就是說，'$&not;(A&rarr;B)&and;&not;(B&rarr;A)$' 不可能為真，因此是一個矛盾句。
+					</p>
+				</div>
+				
+				<div class="subsection" id="tree">
+					<h3>樹枝法</h3>
+					<p>
+					在使用前一小節所介紹的推論方法時，可能會因為不確定產生分支的情況到底討論完了沒有而感到困惑，也可能會因為要寫一大堆等式而感到厭煩，所以這一小節要介紹一種更圖形化，而且更簡易的記號方式，讓整個推論的過程可以更清楚且更平易近人。這種方法因為直接將分支的情況以圖形化的方式來呈現，故又被稱為<b>樹枝法</b>，但其原理其實仍是利用歸謬法與真值函數進行推論。
+					</p>
+					<p>
+					在使用樹枝法時，為了簡化記號的方式，我們將函數的記號一概省略，當我們原本要寫 '$\sc{v}_n'(&alpha;)=\T$' 時（意思是：$\sc{v}_n$ 這個語意模型會讓 '$&alpha;$' 這個語句為真），我們就直接寫 '$&alpha;$'；相反地，當我們需要寫 '$\sc{v}_n'(&alpha;)=\T$'（意思是：$\sc{v}_n$ 這個語意模型會讓 '$&alpha;$' 這個語句為假），我們就直接寫 '$&not;&alpha;$'。
+					</p>
+					<p>
+					此外，在用樹枝法分析語句時還要謹記：如果一個分支已經出現矛盾，那就可以不用再分析下去，但對於那些一直沒有出現矛盾的分支，請一定要分析到所有語句部分都只剩下<b>原子語句</b>或<b>原子語句的否定句</b>為止，才能判斷該分支沒有矛盾，否則很有可能會有一些矛盾被遺漏掉。
+					</p>
+					<p>
+					以下用 '$(A&rarr;B)&rarr;((A&and;C)&rarr;B)$' 當作例子來示範。為了用歸謬法證明這個語句是一個恆真句，我們必須先假設這個語句為假，然後用真值函數推論出要讓這個語句為假的條件是什麼，如果所有可能令該語句為假的條件都有矛盾，那麼這個語句就不可能為假，因此就是恆真句。反之，只要有任何可能令該語句為假的條件不會有任何矛盾，該語句就不是恆真句。以下是推論的做法：
+					</p>
+					<div class="tree">
+						<span>$&not;((A&rarr;B)&rarr;((A&and;C)&rarr;B))$</span>
+						<svg>
+							<path d="M300 0 L300 24" />
+						</svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$&not;((A&and;C)&rarr;B)$</span>
+					</div>
+					<p>
+					在這個樹狀圖中的第一行，我寫上了 '$&not;((A&rarr;B)&rarr;((A&and;C)&rarr;B))$'，這一行就是這個推論的歸謬假設，也就是假設 '$(A&rarr;B)&rarr;((A&and;C)&rarr;B)$' 有可能為假。接著，我畫了一條直線下來到第二組，我寫下 '$A&rarr;B$' 和 '$&not;((A&and;C)&rarr;B)$' 這兩行，意思是：為了讓歸謬假設成立，'$A&rarr;B$' 須為真，'$((A&and;C)&rarr;B)$' 則必須為假。
+					</p>
+					<p>
+					然而 '$A&rarr;B$' 和 '$&not;((A&and;C)&rarr;B)$' 都還不是原子語句或原子語句的否定句，因此我們還得繼續分析下去：
+					</p>
+					<div class="tree">
+						<span>$&not;((A&rarr;B)&rarr;((A&and;C)&rarr;B))$</span>
+						<svg>
+							<path d="M300 0 L300 24" />
+						</svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$&not;((A&and;C)&rarr;B)$</span>
+						<svg>
+							<path d="M300 0 L300 24" />
+						</svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$A&and;C$</span><br/>
+						<span>$&not;B$</span>
+					</div>
+					<p>
+					在新的步驟中，我選擇先分析 '$&not;((A&and;C)&rarr;B)$' 這個條件，所以我先把 '$A&rarr;B$' 這個條件原封不動地移下來擺在第一行。然後將 '$&not;((A&and;C)&rarr;B)$' 可以成立的條件寫在第二和第三行。這兩行的意思是：為了讓 '$&not;((A&and;C)&rarr;B)$' 成立，'$A&and;C$' 必須為真，而 '$B$' 必須為假。
+					</p>
+					<p>
+					到此，'$&not;B$' 已經是原子語句的否定句了，因此不必再分析，剩下來必須分析的條件還剩下 '$A&rarr;B$' 和 '$A&and;C$' 兩個。我們還是先不要處理 '$A&rarr;B$' 這個條件，先來分析 '$A&and;C$' 這個條件：
+					</p>
+					<div class="tree">
+						<span>$&not;((A&rarr;B)&rarr;((A&and;C)&rarr;B))$</span>
+						<svg>
+							<path d="M300 0 L300 24" />
+						</svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$&not;((A&and;C)&rarr;B)$</span>
+						<svg>
+							<path d="M300 0 L300 24" />
+						</svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$A&and;C$</span><br/>
+						<span>$&not;B$</span>
+						<svg>
+							<path d="M300 0 L300 24" />
+						</svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$&not;B$</span><br/>
+						<span>$A$</span><br/>
+						<span>$C$</span>
+					</div>
+					<p>
+					因此我再拉一條直線下來，並且把暫時不打算處理的 '$A&rarr;B$'，以及已經處理完畢的 '$&not;B$' 都先寫下來。而接下來的 '$A$' 和 '$C$' 這兩行則是表示：為了讓 '$A&and;C$' 這個條件成立，則 '$A$' 必須為真，而 '$C$' 也必須為真。
+					</p>
+					<p>
+					由於 '$A$' 和 '$C$' 都是原子語句了，故不需要再分析，因此我們最後剩下來還未分析的條件，就只剩下 '$A&rarr;B$' 了。而之所以把它留到現在才處理，是因為它會產生分支：要讓 '$A&rarr;B$' 這個條件成立一共有兩個方法，其中一個方法是讓 '$A$' 為假，另一個方法則是讓 '$B$' 為真。
+					</p>
+					<p>
+					由於一共有兩種方法可以讓 '$A&rarr;B$' 成立，所以我們就畫兩條件下來，分成兩種情況來考慮。在這兩種情況下，我們都先把之前分析完畢的其它條件都先搬下來（也就是 '$&not;B$'、'$A$'、'$C$' 這三個條件），因為這些條件是兩條支線所共享的條件。最後我們再把剛剛分析的兩個不同的條件分別寫在這兩個支線下方。意思是：在左邊這條支線下，我們藉由讓 '$A$' 為假來讓 '$A&rarr;B$' 成立；在右邊這條支線下，我們則是藉由讓 '$B$' 為真來讓 '$A&rarr;B$' 成立。
+					</p>
+					<div class="tree">
+						<span>$&not;((A&rarr;B)&rarr;((A&and;C)&rarr;B))$</span>
+						<svg>
+							<path d="M300 0 L300 24" />
+						</svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$&not;((A&and;C)&rarr;B)$</span>
+						<svg>
+							<path d="M300 0 L300 24" />
+						</svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$A&and;C$</span><br/>
+						<span>$&not;B$</span>
+						<svg>
+							<path d="M300 0 L300 24" />
+						</svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$&not;B$</span><br/>
+						<span>$A$</span><br/>
+						<span>$C$</span>
+						<svg>
+							<path d="M300 1 L150 23" />
+							<path d="M300 1 L450 23" />
+						</svg>
+						<div>
+							<span>$&not;B$</span><br/>
+							<span>$A$</span><br/>
+							<span>$C$</span><br/>
+							<span>$&not;A$</span><br/>
+						</div>
+						<div>
+							<span>$&not;B$</span><br/>
+							<span>$A$</span><br/>
+							<span>$C$</span><br/>
+							<span>$B$</span><br/>
+						</div>
+					</div>
+					<p>
+					到此，我們已經把所有為了讓歸謬假設可以成立而必須滿足的條件到分析成原子語句或原子語句的否定句了，這個樹狀圖最後的兩個分支所代表的意義是：為了讓一開始的歸謬假設可以成立，有兩種方法可以達成，第一種方法是讓 '$B$' 為假、讓 '$A$' 為真、讓 '$C$' 為真、讓 '$A$' 為假；第二種方法則是讓 '$B$' 為假、讓 '$A$' 為真、讓 '$C$' 為真、讓 '$B$' 為真。
+					</p>
+					<p>
+					第一種方法會產生矛盾，因為我們不可能讓 '$A$' 既真又假；第二種方法也會產生矛盾，因為我們不可能讓 '$B$' 既真又假，因此我們將這兩組彼此矛盾的語句圈出來，並在產生矛盾的分支底下都畫個 '&cross;' 的記號，表示這些分支都會產生矛盾：
+					</p>
+					<div class="tree">
+						<span>$&not;((A&rarr;B)&rarr;((A&and;C)&rarr;B))$</span>
+						<svg>
+							<path d="M300 0 L300 24" />
+						</svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$&not;((A&and;C)&rarr;B)$</span>
+						<svg>
+							<path d="M300 0 L300 24" />
+						</svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$A&and;C$</span><br/>
+						<span>$&not;B$</span>
+						<svg>
+							<path d="M300 0 L300 24" />
+						</svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$&not;B$</span><br/>
+						<span>$A$</span><br/>
+						<span>$C$</span>
+						<svg>
+							<path d="M300 1 L150 23" />
+							<path d="M300 1 L450 23" />
+						</svg>
+						<div>
+							<span>$&not;B$</span><br/>
+							<svg class="back">
+								<circle cx="150" cy="12" r="11" />
+							</svg>
+							<span>$A$</span><br/>
+							<span>$C$</span><br/>
+							<svg class="back">
+								<ellipse cx="150" cy="12" rx="20" ry="11" />
+							</svg>
+							<span>$&not;A$</span><br/>
+							<span>&cross;</span>
+						</div>
+						<div>
+							<svg class="back">
+								<ellipse cx="150" cy="12" rx="20" ry="11" />
+							</svg>
+							<span>$&not;B$</span><br/>
+							<span>$A$</span><br/>
+							<span>$C$</span><br/>
+							<svg class="back">
+								<circle cx="150" cy="12" r="11" />
+							</svg>
+							<span>$B$</span><br/>
+							<span>&cross;</span><br/>
+						</div>
+					</div>
+					<p>
+					由於分支只有兩條，這意味著總共只有兩個方法可以讓一開始的歸謬假設成立。既然這兩種方法都會產生矛盾，這表示我們其實沒有任何方法可以讓歸謬假設成立，也就是說，我們不可能讓 '$(A&rarr;B)&rarr;((A&and;C)&rarr;B)$' 為假。既然它不可能為假，這就表示它是一恆真句。
+					</p>
+					<p>
+					我再示範幾個例子，比如說，試證明 '$(A&rarr;(B&and;C))&and;(A&and;&not;C)$' 是一個矛盾句。我們一樣是用歸謬法和樹枝法來證明這件事，既然是用歸謬法，一開始就需要做歸謬假設，又因為我們要證明該語句<b>是</b>矛盾句，因此歸謬假設就必須假設它為真。若在假設它為真的情況下，所有分支都會推論出矛盾，那就證明它是矛盾句；反之，只要有一個分支不會出現矛盾，則證明它不是矛盾句：
+					</p>
+					<div class="tree">
+						<span>$(A&rarr;(B&and;C))&and;(A&and;&not;C)$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;(B&and;C)$</span><br/>
+						<span>$A&and;&not;C$</span>
+					</div>
+					<p class="noind">
+					在這兩個步驟中，我首先做了歸謬假設，假設 '$(A&rarr;(B&and;C))&and;(A&and;&not;C)$' 為真，並推論說，為了讓它為真，則 '$A&rarr;(B&and;C)$' 和  '$A&and;&not;C$' 都必須為真。由於這兩個語句都還不是原子語句或原子語句的否定句，因此還需要接著分析：
+					</p>
+					<div class="tree">
+						<span>$(A&rarr;(B&and;C))&and;(A&and;&not;C)$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;(B&and;C)$</span><br/>
+						<span>$A&and;&not;C$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;(B&and;C)$</span><br/>
+						<span>$A$</span><br/>
+						<span>$&not;C$</span>
+					</div>
+					<p class="noind">
+					在這一新的步驟中，我先分析 '$A&and;&not;C$' 為真的條件，因此把 '$A&rarr;(B&and;C)$' 原封不動的移下來。然後，為了讓 '$A&and;&not;C$' 為真，'$A$' 必須為真，而 '$C$' 必須為假，因此我記下 '$A$'（代表 '$A$' 為真）和 '$&not;C$'（代表 '$C$' 為假）。由於 '$A$' 和 '$&not;C$' 都已經是原子語句或原子語句的否定了，因此接下來就要分析剩下的 '$A&rarr;(B&and;C)$'。
+					</p>
+					<p>
+					然而，因為有兩個不同的方法可以讓 '$A&rarr;(B&and;C)$' 為真，所以兩個方法必須分別考慮，因此在這裡必須產生分支。我們一樣先把已經分析完畢的 '$A$' 和 '$&not;C$' 都搬到兩條分支底下，然後再分別考慮能讓 '$A&rarr;(B&and;C)$' 為真的兩個條件：
+					</p>
+					<div class="tree">
+						<span>$(A&rarr;(B&and;C))&and;(A&and;&not;C)$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;(B&and;C)$</span><br/>
+						<span>$A&and;&not;C$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;(B&and;C)$</span><br/>
+						<span>$A$</span><br/>
+						<span>$&not;C$</span>
+						<svg><path d="M300 1 L150 23" /><path d="M300 1 L450 23" /></svg>
+						<div>
+							<span>$A$</span><br/>
+							<span>$&not;C$</span><br/>
+							<span>$&not;A$</span>
+						</div>
+						<div>
+							<span>$A$</span><br/>
+							<span>$&not;C$</span><br/>
+							<span>$B&and;C$</span><br/>
+						</div>
+					</div>
+					<p class="noind">
+					左邊這條分支已經產生矛盾了，因為 '$A$' 不能既真又假，因此我們將 '$A$' 和 '$&not;A$' 分別圈起來，並在這條分支底下畫上 '&cross;' 的記號。這意味著，如果我們藉由讓 '$A$' 為假來讓 '$A&rarr;(B&and;C)$' 為真，會產生矛盾，因此左邊這個方法行不通。既然左邊這條路不可行，而右邊的分支還有 '$B&and;C$' 尚未被分析至原子語句或原子語句之否定的層次，故需要繼續分析下去：
+					</p>
+					<div class="tree">
+						<span>$(A&rarr;(B&and;C))&and;(A&and;&not;C)$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;(B&and;C)$</span><br/>
+						<span>$A&and;&not;C$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;(B&and;C)$</span><br/>
+						<span>$A$</span><br/>
+						<span>$&not;C$</span>
+						<svg><path d="M300 1 L150 23" /><path d="M300 1 L450 23" /></svg>
+						<div>
+							<svg class="back">
+								<circle cx="150" cy="12" r="11" />
+							</svg>
+							<span>$A$</span><br/>
+							<span>$&not;C$</span><br/>
+							<svg class="back">
+								<ellipse cx="150" cy="12" rx="20" ry="11" />
+							</svg>
+							<span>$&not;A$</span><br/>
+							<span>&cross;</span>
+						</div>
+						<div>
+							<span>$A$</span><br/>
+							<span>$&not;C$</span><br/>
+							<span>$B&and;C$</span>
+							<svg><path d="M150 0 L150 24" />
+							<span>$A$</span><br/>
+							<span>$&not;C$</span><br/>
+							<span>$B$</span><br/>
+							<span>$C$</span><br/>
+						</div>
+					</div>
+					<p class="noind">
+					繼續分析下去後發現，若要藉由讓 '$B&and;C$' 為真的方式來讓 '$A&rarr;(B&and;C)$' 為真，那麼 '$B$' 和 '$C$' 都必須為真。然而根據前面的分析，為了讓 '$A&and;&not;C$' 為真，我們必須讓 '$C$' 為假，因此產生矛盾，因為 '$C$' 不能既真又假，故右邊這條路也行不通。所以我們一樣把彼此矛盾的 '$&not;C$' 和 '$C$' 都圈起來，並在右邊這條分支下面也畫上一個 '&cross;' 的記號：
+					</p>
+					<div class="tree">
+						<span>$(A&rarr;(B&and;C))&and;(A&and;&not;C)$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;(B&and;C)$</span><br/>
+						<span>$A&and;&not;C$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;(B&and;C)$</span><br/>
+						<span>$A$</span><br/>
+						<span>$&not;C$</span>
+						<svg><path d="M300 1 L150 23" /><path d="M300 1 L450 23" /></svg>
+						<div>
+							<svg class="back">
+								<circle cx="150" cy="12" r="11" />
+							</svg>
+							<span>$A$</span><br/>
+							<span>$&not;C$</span><br/>
+							<svg class="back">
+								<ellipse cx="150" cy="12" rx="20" ry="11" />
+							</svg>
+							<span>$&not;A$</span><br/>
+							<span>&cross;</span>
+						</div>
+						<div>
+							<span>$A$</span><br/>
+							<span>$&not;C$</span><br/>
+							<span>$B&and;C$</span>
+							<svg><path d="M150 0 L150 24" /></svg>
+							<span>$A$</span><br/>
+							<svg class="back">
+								<ellipse cx="150" cy="12" rx="20" ry="11" />
+							</svg>
+							<span>$&not;C$</span><br/>
+							<span>$B$</span><br/>
+							<svg class="back">
+								<circle cx="150" cy="12" r="11" />
+							</svg>
+							<span>$C$</span><br/>
+							<span>&cross;</span><br/>
+						</div>
+					</div>
+					<p>
+					由於兩條路都會產生矛盾，因此都行不通，這就意味著一開始的歸謬假設不可能成立，也就是說，'$(A&rarr;(B&and;C))&and;(A&and;&not;C)$' 不可能為真，既然不可能為真，故可證明它是一矛盾句。
+					</p>
+					<p>
+					最後讓我示範最後一個例子，試判斷 '$(A&or;B)&rarr;(A&and;B)$' 是不是一個矛盾句。一樣是使用歸謬法和樹枝法來判斷，而且我這次不再逐步驟說明我做的事，我會直接把判斷的過程和結果一起畫出來：
+					</p>
+					<div class="tree">
+						<span>$(A&or;B)&rarr;(A&and;B)$</span>
+						<svg><path d="M300 1 L150 23" /><path d="M300 1 L450 23" /></svg>
+						<div>
+							<span>$&not;(A&or;B)$</span>
+							<svg><path d="M150 0 L150 24" /></svg>
+							<span>$&not;A$</span><br/>
+							<span>$&not;B$</span><br/>
+							<span>&check;</span><br/>
+						</div>
+						<div>
+							<span>$A&and;B$</span>
+							<svg><path d="M150 0 L150 24" /></svg>
+							<span>$A$</span><br/>
+							<span>$B$</span><br/>
+							<span>&check;</span><br/>
+						</div>
+					</div>
+					<p>
+					由於現在是要判斷一個語句是不是矛盾句，因此在做歸謬假設時，我們要假設該語句為真。一路分析下來之後發現一共會有兩個分支，而在這兩個分支之下，都不會產生任何矛盾，因此我們在不會產生矛盾的分支底下都畫上一個 '&check;' 記號，以表示這些分支是可以讓歸謬假設成立的情況。
+					</p>
+					<p>既然有不矛盾的方法可以讓歸謬假設成立，就表示 '$(A&or;B)&rarr;(A&and;B)$' 有可能為真，故可證明它不是一個矛盾句。而在上一個小節中，我們其實已經用歸謬法證明過 '$(A&or;B)&rarr;(A&and;B)$' 不是一個恆真句了，我們可以用樹枝法再把那個證明做一遍：
+					</p>
+					<div class="tree">
+						<span>$&not;((A&or;B)&rarr;(A&and;B))$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&or;B$</span><br/>
+						<span>$&not;(A&and;B)$</span>
+						<svg><path d="M300 1 L150 23" /><path d="M300 1 L450 23" /></svg>
+						<div>
+							<span>$A$</span><br/>
+							<span>$&not;(A&and;B)$</span>
+							<svg><path d="M150 1 L75 23" /><path d="M150 1 L225 23" /></svg>
+							<div>
+								<svg class="back">
+									<circle cx="75" cy="12" r="11" />
+								</svg>
+								<span>$A$</span><br/>
+								<svg class="back">
+									<ellipse cx="75" cy="12" rx="20" ry="11" />
+								</svg>
+								<span>$&not;A$</span><br/>
+								<span>&cross;</span>
+							</div>
+							<div>
+								<span>$A$</span><br/>
+								<span>$&not;B$</span><br/>
+								<span>&check;</span>
+							</div>
+						</div>
+						<div>
+							<span>$B$</span><br/>
+							<span>$&not;(A&and;B)$</span>
+							<svg><path d="M150 1 L75 23" /><path d="M150 1 L225 23" /></svg>
+							<div>
+								<span>$B$</span><br/>
+								<span>$&not;A$</span><br/>
+								<span>&check;</span>
+							</div>
+							<div>
+								<svg class="back">
+									<circle cx="75" cy="12" r="11" />
+								</svg>
+								<span>$B$</span><br/>
+								<svg class="back">
+									<ellipse cx="75" cy="12" rx="20" ry="11" />
+								</svg>
+								<span>$&not;B$</span><br/>
+								<span>&cross;</span><br/>
+							</div>
+						</div>
+					</div>
+					<p class="noind">
+					在這個證明中，因為是要判斷 '$(A&or;B)&rarr;(A&and;B)$' 是不是恆真句，所以一開始的歸謬假設便假設該語句為假。經過一連串的分析後發現一共有四條分支，表示有四種不同的方法可以讓歸謬假設成立。由於其中有兩條分支是矛盾的，所以我們這些分支底下畫上 '&cross;' 以表示這些分支行不通；但有兩條分支沒有任何矛盾，所以我們在其下畫上 '&check;'。既然有兩條分支沒有矛盾，表示至少有兩種不矛盾的方法可以讓歸謬假設成立，因此 '$(A&or;B)&rarr;(A&and;B)$' 可能為假，故可證明它不是一個恆真句。
+					</p>
+					<p>
+					既然我們可以證明 '$(A&or;B)&rarr;(A&and;B)$' 既不是恆真句也不是矛盾句，就表示它是一個偶然語句。也就是說，只要給定這套歸謬證明的方法，我們不僅能判斷一個語句是不是恆真句或矛盾句，也可以判斷一個語句是不是偶然語句：<b>只要一個語句可被證明為恆真句或矛盾句，該語句就不是偶然語句；相反，只要一個語句可被證明既不是恆真句也不是矛盾句，該語句就是偶然語句。</b>
+					</p>
+				</div>
+				
+				<div class="subsection" id="logical-relations-and-validity">
+					<h3>判斷邏輯關係和有效論證</h3>
+					<p>
+					在介紹了如何用歸謬方法與真值函數來判斷一個語句的邏輯特性（也就是區辨一個語句是恆真句、矛盾句還是偶然語句）之後，我要來說明這個技巧可以怎麼被應用。
+					</p>
+					<p>
+					我在上一節中介紹語句之間的邏輯關係時有提到，要判斷任意兩個語句 '$&alpha;$' 和 '$&beta;$' 之間是否具有某種邏輯關係時，我們可以用某些語句連接詞來連接 '$&alpha;$' 和 '$&beta;$'，然後判斷形成的語句是不是恆真句或矛盾句，藉此判斷 '$&alpha;$' 和 '$&beta;$' 之間有沒有什麼邏輯關係。在此我將把各種邏輯關係的判斷方法整理成一個清單如下：
+					</p>
+					<ol class="numd tight local">
+						<li>'$&alpha;$' 邏輯蘊涵 '$&beta;$'，當且僅當，'$&alpha;&rarr;&beta;$' <b>是恆真句</b>。</li>
+						<li>'$&alpha;$' 和 '$&beta;$' 等值，當且僅當，'$&alpha;&harr;&beta;$' <b>是恆真句</b>。</li>
+						<li>'$&alpha;$' 和 '$&beta;$' 相容，當且僅當，'$&alpha;&and;&beta;$' <b>不是矛盾句</b>。</li>
+						<li>'$&alpha;$' 和 '$&beta;$' 相容，當且僅當，'$&alpha;&and;&beta;$' <b>是矛盾句</b>。</li>
+						<li>'$&alpha;$' 和 '$&beta;$'  矛盾，當且僅當，'$&alpha;&harr;&beta;$' <b>是矛盾句</b>。</li>
+					</ol>
+					<p>
+					根據以上五條規則，當我們要判斷兩個語句 '$&alpha;$' 和 '$&beta;$' 之間是否具有某種邏輯關係時，只要把它們寫成某個特定的句型，然後再用歸謬法判斷該語句是不是恆真句或矛盾句，就能知道這兩個語句之間有沒有某種邏輯關係。
+					</p>
+					<p>
+					因此，比如說，當我要判斷 '$(&not;A&or;B)$' 和 '$A&rarr;B$' 之間是否邏輯等值時，我可以把這兩個語句寫成 '$(&not;A&or;B)&harr;(A&rarr;B)$' 這樣的雙條件句，然後判斷它是不是一個恆真句。只要它是恆真句，這兩個語句便等值；不是則否。我們立刻來證明：
+					</p>
+					<div class="tree">
+						<span>$&not;((&not;A&or;B)&harr;(A&rarr;B))$</span>
+						<svg><path d="M300 1 L150 23" /><path d="M300 1 L450 23" /></svg>
+						<div>
+							<span>$&not;A&or;B$</span><br/>
+							<span>$&not;(A&rarr;B)$</span>
+							<svg><path d="M150 0 L150 24" /></svg>
+							<span>$&not;A&or;B$</span><br/>
+							<span>$A$</span><br/>
+							<span>$&not;B$</span>
+							<svg><path d="M150 1 L75 23" /><path d="M150 1 L225 23" /></svg>
+							<div>
+								<svg class="back">
+									<circle cx="75" cy="12" r="11" />
+								</svg>
+								<span>$A$</span><br/>
+								<span>$&not;B$</span><br/>
+								<svg class="back">
+									<ellipse cx="75" cy="12" rx="20" ry="11" />
+								</svg>
+								<span>$&not;A$</span><br/>
+								<span>&cross;</span>
+							</div>
+							<div>
+								<span>$A$</span><br/>
+								<svg class="back">
+									<ellipse cx="75" cy="12" rx="20" ry="11" />
+								</svg>
+								<span>$&not;B$</span><br/>
+								<svg class="back">
+									<circle cx="75" cy="12" r="11" />
+								</svg>
+								<span>$B$</span><br/>
+								<span>&cross;</span>
+							</div>
+						</div>
+						<div>
+							<span>$&not;(&not;A&or;B)$</span><br/>
+							<span>$A&rarr;B$</span>
+							<svg><path d="M150 0 L150 24" /></svg>
+							<span>$A&rarr;B$</span><br/>
+							<span>$A$</span><br/>
+							<span>$&not;B$</span>
+							<svg><path d="M150 1 L75 23" /><path d="M150 1 L225 23" /></svg>
+							<div>
+								<svg class="back">
+									<circle cx="75" cy="12" r="11" />
+								</svg>
+								<span>$A$</span><br/>
+								<span>$&not;B$</span><br/>
+								<svg class="back">
+									<ellipse cx="75" cy="12" rx="20" ry="11" />
+								</svg>
+								<span>$&not;A$</span><br/>
+								<span>&cross;</span>
+							</div>
+							<div>
+								<span>$A$</span><br/>
+								<svg class="back">
+									<ellipse cx="75" cy="12" rx="20" ry="11" />
+								</svg>
+								<span>$&not;B$</span><br/>
+								<svg class="back">
+									<circle cx="75" cy="12" r="11" />
+								</svg>
+								<span>$B$</span><br/>
+								<span>&cross;</span><br/>
+							</div>
+						</div>
+					</div>
+					<p>
+					從以上證明可以看出來，在假設 '$(&not;A&or;B)&harr;(A&rarr;B)$' 為假後，分析出來的所有分支都有矛盾，表示 '$(&not;A&or;B)&harr;(A&rarr;B)$' 不可能為假，因此是恆真句，因此可以證明 '$&not;A&or;B$' 和 '$A&rarr;B$' 是邏輯等值的。
+					</p>
+					<p>
+					又或者，如果我要判斷 '$A&rarr;B$' 是否邏輯蘊涵 '$A&and;(B&or;C)$'，我可以用 '$&rarr;$' 連接這兩個語句，得到 '$(A&rarr;B)&rarr;(A&and;(B&or;C))$'，然後再檢查它是不是恆真句：
+					</p>
+					<div class="tree">
+						<span>$&not;((A&rarr;B)&rarr;(A&and;(B&or;C)))$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$&not;(A&and;(B&or;C))$</span>
+						<svg><path d="M300 1 L150 23" /><path d="M300 1 L450 23" /></svg>
+						<div>
+							<span>$&not;A$</span><br/>
+							<span>$&not;(A&and;(B&or;C))$</span>
+							<svg><path d="M150 1 L75 23" /><path d="M150 1 L225 23" /></svg>
+							<div>
+								<span>$&not;A$</span><br/>
+								<span>$&not;A$</span><br/>
+								<span>&check;</span>
+							</div>
+							<div>
+								<span>$&not;A$</span><br/>
+								<span>$&not;(B&or;C)$</span>
+								<svg><path d="M75 0 L75 24" /></svg>
+								<span>$&not;A$</span><br/>
+								<span>$&not;B$</span><br/>
+								<span>$&not;C$</span><br/>
+								<span>&check;</span>
+							</div>
+						</div>
+						<div>
+							<span>$B$</span><br/>
+							<span>$&not;(A&and;(B&or;C))$</span>
+							<svg><path d="M150 1 L75 23" /><path d="M150 1 L225 23" /></svg>
+							<div>
+								<span>$B$</span><br/>
+								<span>$&not;A$</span><br/>
+								<span>&check;</span>
+							</div>
+							<div>
+								<span>$B$</span><br/>
+								<span>$&not;(B&or;C)$</span>
+								<svg><path d="M75 0 L75 24" /></svg>
+								<svg class="back" height="24px">
+									<circle cx="75" cy="12" r="11" />
+								</svg>
+								<span>$B$</span><br/>
+								<svg class="back" height="24px">
+									<ellipse cx="75" cy="12" rx="20" ry="11" />
+								</svg>
+								<span>$&not;B$</span><br/>
+								<span>$&not;C$</span><br/>
+								<span>&cross;</span><br/>
+							</div>
+						</div>
+					</div>
+					<p>
+					根據以上分析，要令 '$(A&rarr;B)&rarr;(A&and;(B&or;C))$' 為假一共有四種不同的方法，因此有四個分支，而這四個分支中只有最後一個是有矛盾的，其它三個分支都沒有。這表示確實存在不矛盾的方法可以讓 '$(A&rarr;B)&rarr;(A&and;(B&or;C))$' 為假，因此它不是恆真句。故可證明 '$A&rarr;B$' 沒有邏輯蘊涵 '$A&and;(B&or;C)$'。
+					</p>
+					<p>
+					我在最開始向大家介紹有效論證時，我說有效論證的定義是：<b>只要一個論證的前提全部為真，則結論就會是真的</b>。如今，我們有了許多邏輯概念可以使用，我們就能用更準確的方式來定義一個有效論證：<b>一個論證是一個有效的，當且僅當，在所有讓論證的前提全部為真的語意模型中，論證的結論都會真</b>。
+					</p>
+					<p>
+					我們可以更精簡地界定出有效論證的定義：<b>一個論證是有效的，當且僅當，論證的所有前提共同邏輯蘊涵論證的結論</b>。這裡所謂的「共同蘊涵」，指的是這些前提要全部加在一起才會邏輯蘊涵結論，而不是指這些前提各自都會邏輯蘊涵結論。
+					</p>
+					<p>
+					舉例來說，如果有一個有效論證使用了三個前提，分別是：(P1) $&alpha;$；(P2) $&beta;$ 和 (P3) $&gamma;$，而論證的結論則是 (C) $&delta;$。因為由 (P1)、(P2)、(P3) 三個前提推論出結論 (C) 的論證是一個有效論證，因此 '$&alpha;$'、'$&beta;$'、'$&gamma;$' 這三個前提會<b>共同邏輯蘊涵</b>結論，也就是 '$&delta;$'。意思是：'$&alpha;&and;(&beta;&and;&gamma;)$' 會邏輯蘊涵 '$&delta;$'。但 '$&alpha;$'、'$&beta;$'、'$&gamma;$' 這三個語句仍可能分別都沒有邏輯蘊涵 '$&delta;$'。
+					</p>
+					<p>
+					既然有效論證可以用<b>前提邏輯蘊涵結論</b>來理解，要判斷一個論證是否有效，自然就可以用判斷蘊涵關係的方式來判斷。我們試著判斷以下論證是不是一個有效論證：
+					</p>
+					<ol class="prf">
+						<li>如果科科年紀比安安大，則安安年紀比蔞雷大。</li>
+						<li>如果科科年紀比安安大，而且安安年紀比蔞雷大，則科科年紀比蔞雷大。</li>
+						<li>如果科科年紀比安安大，則科科年紀比蔞雷大。</li>
+					</ol>
+					<p>
+					為了判斷這個論證是不是一個有效論證，我們需要設法將它的前提和結論都翻譯至語句邏輯的語言中，我們可以試著這樣翻譯：
+					</p>
+					<ul class="tight">
+						<li>令語句符號 '$A$' 代表：科科年紀比安安大。</li>
+						<li>令語句符號 '$B$' 代表：安安年紀比蔞雷大。</li>
+						<li>令語句符號 '$C$' 代表：科科年紀比蔞雷大。</li>
+					</ul>
+					<p>
+					如此指定之後，我們就可以把上面的論證翻譯如下：
+					</p>
+					<ol class="prfp">
+						<li>$A&rarr;B$</li>
+						<li>$(A&and;B)&rarr;C$</li>
+						<li>$A&rarr;C$</li>
+					</ol>
+					<p>
+					要檢查上述論證是不是一個有效論證，就是要檢查這個論證的前提是否共同邏輯蘊涵結論，也就是要判斷 '$(A&rarr;B)&and;((A&and;B)&rarr;C)$' 是否會邏輯蘊涵 '$A&rarr;C$'。因此，我們只要檢查 '$((A&rarr;B)&and;((A&and;B)&rarr;C))&rarr;(A&rarr;C)$' 是不是一個恆真句即可，若它是恆真句，就代論證有效，若它不是恆真句，則代表論證無效：
+					</p>
+					<div class="tree">
+						<span>$&not;(((A&rarr;B)&and;((A&and;B)&rarr;C))&rarr;(A&rarr;C))$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$(A&rarr;B)&and;((A&and;B)&rarr;C)$</span><br/>
+						<span>$&not;(A&rarr;C)$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$(A&and;B)&rarr;C$</span><br/>
+						<span>$&not;(A&rarr;C)$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$(A&and;B)&rarr;C$</span><br/>
+						<span>$A$</span><br/>
+						<span>$&not;C$</span>
+						<svg><path d="M300 1 L150 23" /><path d="M300 1 L450 23" /></svg>
+						<div>
+							<span>$A&rarr;B$</span><br/>
+							<span>$A$</span><br/>
+							<span>$&not;C$</span><br/>
+							<span>$&not;(A&and;B)$</span>
+							<svg><path d="M150 1 L75 23" /><path d="M150 1 L225 23" /></svg>
+							<div>
+								<span>$A&rarr;B$</span><br/>
+								<svg class="back">
+									<circle cx="75" cy="12" r="11"/>
+								</svg>
+								<span>$A$</span><br/>
+								<span>$&not;C$</span><br/>
+								<svg class="back">
+									<ellipse cx="75" cy="12" rx="20" ry="11"/>
+								</svg>
+								<span>$&not;A$</span><br/>
+								<span>&cross;</span>
+							</div>
+							<div>
+								<span>$A&rarr;B$</span><br/>
+								<span>$A$</span><br/>
+								<span>$&not;C$</span><br/>
+								<span>$&not;B$</span>
+								<svg><path d="M75 1 L37.5 23"/><path d="M75 1 L112.5 23"/></svg>
+								<div>
+									<svg class="back">
+										<circle cx="37.5" cy="12" r="11"/>
+									</svg>
+									<span>$A$</span><br/>
+									<span>$&not;C$</span><br/>
+									<span>$&not;B$</span><br/>
+									<svg class="back">
+										<ellipse cx="37.5" cy="12" rx="20" ry="11"/>
+									</svg>
+									<span>$&not;A$</span><br/>
+									<span>&cross;</span>
+								</div>
+								<div>
+									<span>$A$</span><br/>
+									<span>$&not;C$</span><br/>
+									<svg class="back">
+										<ellipse cx="37.5" cy="12" rx="20" ry="11"/>
+									</svg>
+									<span>$&not;B$</span><br/>
+									<svg class="back">
+										<circle cx="37.5" cy="12" r="11"/>
+									</svg>
+									<span>$B$</span><br/>
+									<span>&cross;</span><br/>
+								</div>
+							</div>
+						</div>
+						<div>
+							<span>$A&rarr;B$</span><br/>
+							<span>$A$</span><br/>
+									<svg class="back">
+										<ellipse cx="150" cy="12" rx="20" ry="11"/>
+									</svg>
+							<span>$&not;C$</span><br/>
+									<svg class="back">
+										<circle cx="150" cy="12" r="11"/>
+									</svg>
+							<span>$C$</span><br/>
+							<span>&cross;</span>
+						</div>
+					</div>
+					<p>
+					以上的樹枝圖當中，第一件要注意的事情是前三個步驟的意義。第一個步驟是歸謬假設，也就是假設「以論證前提共同構成的連言句作為前件，並以論證之結論作為後件的條件句」為假。
+					</p>
+					<p>
+					由於歸謬假設是假設「以論證前提共同構成的連言句作為前件，並以論證之結論作為後件的條件句」為假，因此在第二步驟中第一次分析歸謬假設成立的條件時，就一定是把論證前提所共同構成的連言句，以及論證結論之否定句寫在一起。這表示：為了讓歸謬假設成立，就必須讓論證之前提所共同構成的連言句為真，並且讓論證之結論為假。
+					</p>
+					<p>
+					既然由論證之前提所共同構成的連言句必須為真，這表示每一個論證的前提都必須要為真。因此第三步驟就會把論證的所有前提列在一起，並同時列上結論的否定句（因為結論必須為假）。
+					</p>
+					<p>
+					無論我們要分析的論證長什麼樣子，用了多少前提，前三個步驟一定都是按照上述所說的順序進行的。也就是說，無論我們要分析的是哪一個論證，只要我們是要判斷一個論證的有效與否，我們都一定會經歷這三個步驟。因此，我們其實可以省略前兩個步驟，直接從第三個步驟開始。
+					</p>
+					<p>
+					也就是說，在用樹枝法分析一個論證是否有效時，我們可以在第一步就把論證的所有前提，加上結論的否定句一併寫上去，並以此作為分析的起點。比如說，以上的樹狀圖其實可以被簡化成：
+					</p>
+					<div class="tree">
+						<span>$A&rarr;B$</span><br/>
+						<span>$(A&and;B)&rarr;C$</span><br/>
+						<span>$&not;(A&rarr;C)$</span>
+						<svg><path d="M300 0 L300 24" /></svg>
+						<span>$A&rarr;B$</span><br/>
+						<span>$(A&and;B)&rarr;C$</span><br/>
+						<span>$A$</span><br/>
+						<span>$&not;C$</span>
+						<svg><path d="M300 1 L150 23" /><path d="M300 1 L450 23" /></svg>
+						<div>
+							<span>$A&rarr;B$</span><br/>
+							<span>$A$</span><br/>
+							<span>$&not;C$</span><br/>
+							<span>$&not;(A&and;B)$</span>
+							<svg><path d="M150 1 L75 23" /><path d="M150 1 L225 23" /></svg>
+							<div>
+								<span>$A&rarr;B$</span><br/>
+								<svg class="back">
+									<circle cx="75" cy="12" r="11"/>
+								</svg>
+								<span>$A$</span><br/>
+								<span>$&not;C$</span><br/>
+								<svg class="back">
+									<ellipse cx="75" cy="12" rx="20" ry="11"/>
+								</svg>
+								<span>$&not;A$</span><br/>
+								<span>&cross;</span>
+							</div>
+							<div>
+								<span>$A&rarr;B$</span><br/>
+								<span>$A$</span><br/>
+								<span>$&not;C$</span><br/>
+								<span>$&not;B$</span>
+								<svg><path d="M75 1 L37.5 23"/><path d="M75 1 L112.5 23"/></svg>
+								<div>
+									<svg class="back">
+										<circle cx="37.5" cy="12" r="11"/>
+									</svg>
+									<span>$A$</span><br/>
+									<span>$&not;C$</span><br/>
+									<span>$&not;B$</span><br/>
+									<svg class="back">
+										<ellipse cx="37.5" cy="12" rx="20" ry="11"/>
+									</svg>
+									<span>$&not;A$</span><br/>
+									<span>&cross;</span>
+								</div>
+								<div>
+									<span>$A$</span><br/>
+									<span>$&not;C$</span><br/>
+									<svg class="back">
+										<ellipse cx="37.5" cy="12" rx="20" ry="11"/>
+									</svg>
+									<span>$&not;B$</span><br/>
+									<svg class="back">
+										<circle cx="37.5" cy="12" r="11"/>
+									</svg>
+									<span>$B$</span><br/>
+									<span>&cross;</span><br/>
+								</div>
+							</div>
+						</div>
+						<div>
+							<span>$A&rarr;B$</span><br/>
+							<span>$A$</span><br/>
+									<svg class="back">
+										<ellipse cx="150" cy="12" rx="20" ry="11"/>
+									</svg>
+							<span>$&not;C$</span><br/>
+									<svg class="back">
+										<circle cx="150" cy="12" r="11"/>
+									</svg>
+							<span>$C$</span><br/>
+							<span>&cross;</span>
+						</div>
+					</div>
+					<p>
+					如此簡化看起來雖然只省略了兩個步驟，但其實有其道理在。原本的分析是先將一個論證寫成一個條件句，然後再透過檢查條件句是否為恆真句，來判斷論證的前提是否共同蘊涵結論，藉此判斷論證是否有效。
+					</p>
+					<p>
+					然而直接根據有效論證的定義，也就是<b>當論證的前提全部為真時，論證的結論也會為真</b>，我們其實也可以做出歸謬的假設，即假設：<b>當論證的前提全部為真時，結論仍可能為假</b>。而這個歸謬假設，其實就是把所有論證的前提都列出來，然後再加上結論的否定句。因此，要判斷任何論證是否有效，我們其實都可以用論證的前提與結論的否定來當作歸謬假設。
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="https://isaacstn.github.io/script/jquery-3.5.0.min.js"></script>
-	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
-	<script src="https://isaacstn.github.io/script/note.bubble.v1.js"></script>
 </body>
