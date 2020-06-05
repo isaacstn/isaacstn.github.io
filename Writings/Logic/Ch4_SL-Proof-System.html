@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+	<script src="https://isaacstn.github.io/script/note.bubble.v1.js"></script>
+
+	<!--fonts-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	
+	<!--styles-->
+	<link rel="stylesheet" href="logic_pagestyle_v1.css"/><!--pagestyle-->
+	<link rel="stylesheet" href="logic_titlestyle_v1.css"/><!--titlestyle-->
+	<link rel="stylesheet" href="logic_docstyle_v1.3.css"/><!--docstyle-->
+	<link rel="stylesheet" href="logic_liststyle_v1.css"/><!--liststyle-->
+	<link rel="stylesheet" href="logic_tablestyle_v1.css"/><!--tablestyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3-math.css"/><!--jqmath-->
+
+	<style>
+	h1::before {
+		counter-increment:chapter 4;
+	}
+	div#main {
+		counter-reset:page 99;
+	}
+	</style>
+
+	<title>Ch4_SL-Proof-System</title>
+</head>
+
+<body>
+	<div id="main">
+		<div class="chapter" id="Proof-System">
+			<h1>語句邏輯的證明系統</h1>
+			<p>
+			在之前的兩個章節裡，我說明了在語句邏輯中的語意其實就是語句的真假：我講解了語句邏輯中的語句的真假要如何被決定；我也說明了，根據語句的真假，我們可以看出語句有哪些邏輯性質，也可以看出語句之間有什麼邏輯關係；最後，我也說明了如何利用歸謬法和語句間的邏輯關係與語句的邏輯特性來判斷一個論證是否有效。
+			</p>
+			<p>
+			然而，光會判斷一個論證是否有效並不足夠，畢竟很多時候我們是要自己想辦法去證明一些什麼結論，為此，我們就必須去尋找一些可以支持該結論成立的理由（也就是前提）。根據前一章所教的歸謬法，我們只能在知道一個論證的<b>前提</b>和<b>結論</b>分別是什麼的情況下，去判斷那個論證是否有效，卻不能在只有結論的情況下，去找出能夠恰當支持結論的前提（也就是能夠有效地推論出結論的前提）。
+			</p>
+			<p>
+			此外，即使在我們已經事先知道一個論證的前提和結論的情況下，可以利用歸謬法來判斷那些前提是否可以有效地推論出結論，我們所知道的也只是前提和結論之間的語意關係而已。或者說得更清楚些：我們透過歸謬法所知道的，就只是那些前提<b>確實</b>可以有效地推論出結論，但我們卻不知道那些前提<b>如何</b>可以有效地推論出結論。換言之，我們只是知其然不知其所以然。
+			</p>
+			<p>
+			而本章所要介紹的證明系統，既可以幫助我們瞭解要如何從一些前提推論出另一些結論，當我們需要為某些主張提供論證支持時，這個證明系統也可以幫助我們去尋找能夠有效地推論出那些結論的前提。
+			</p>
+			
+			<div class="section" id="proof-system-basics">
+				<h2>證明系統的基本概念</h2>
+				<p>
+				邏輯這門學科被歸類在<b>形式科學 (formal science)</b> 這個學門領域之中，因為它所研究的對象就是各種形式語言。什麼是形式語言？簡單說，一個形式語言就是由各種符號所構成，並且包含了這些符號的各種操作規則。
+				</p>
+				<p>
+				比如說，當我們在第一章學習語句邏輯的語言時，有學到語句邏輯中可以使用的符號有哪些，並且學到如何利用完構式的構成規則來將語句邏輯中的符號組合成合法的表達式，那些完構式的構成規則就是針對符號的操作規則。然而完構式的規則只是告訴我們可以如何從簡單的符號組合出複雜的表達式，卻不能告訴我們這些表達式之間可以怎麼互相轉換，而證明系統就提供了表達式之間的轉換規則。
+				</p>
+				<p>
+				為什麼這樣的語言會被稱作是一個<b>形式</b>語言？這是因為這些關於符號的操作規則在乎的就只是符號的長像，而不在乎這些符號究竟表達了什麼內容。舉例來說：
+				</p>
+				<ol class="prf">
+					<li>如果嘉義在台南的南邊，則台南在嘉義的北邊。</li>
+					<li>嘉義在台南的南邊。</li>
+					<li>台南在嘉義的北邊。</li>
+				</ol>
+				<p>
+				令 '$A$' 代表「嘉義在台南的南邊」，令 '$B$' 代表「台南在嘉義的北邊」，則這個論證可被翻譯至語句邏輯的語言中：
+				</p>
+				<ol class="prfp">
+					<li>$A&rarr;B$</li>
+					<li>$A$</li>
+					<li>$B$</li>
+				</ol>
+				<p>
+				我們再來看一個不一樣的論證：
+				</p>
+				<ol class="prf">
+					<li>如果科科這學期 all pass，則豬會飛。</li>
+					<li>科科這學期 all pass。</li>
+					<li>豬會飛。</li>
+				</ol>
+				<p>
+				令 '$C$' 代表「科科這學期 all pass」，令 '$D$' 代表「豬會飛」，則這個論證可被翻譯至語句邏輯的語言中：
+				</p>
+				<ol class="prfp">
+					<li>$C&rarr;D$</li>
+					<li>$C$</li>
+					<li>$D$</li>
+				</ol>
+				<p>
+				讓我們再來看最後一個例子：
+				</p>
+				<ol class="prf">
+					<li>如果電腦的記憶體故障，則電腦不能啟動。</li>
+					<li>電腦的記憶體故障。</li>
+					<li>電腦不能啟動。</li>
+				</ol>
+				<p>
+				令 '$E$' 代表「電腦的記憶體故障」，令 '$F$' 代表「電腦不能啟動」，則這個論證可被譯譯至語句邏輯的語言中：
+				</p>
+				<ol class="prfp">
+					<li>$E&rarr;F$</li>
+					<li>$E$</li>
+					<li>$F$</li>
+				</ol>
+				<p>
+				以上一共是三組不同的論證，<i>P1</i>、<i>P2</i> 到 <i>C1</i> 是在論證嘉義和台南這兩個地方的方位關係；<i>P3</i>、<i>P4</i> 到 <i>C2</i> 則是在論證科科這學期 all pass 和豬會不會飛之間的關係；<i>P5</i>、<i>P6</i> 到 <i>C3</i> 則是在論證有關電腦記憶體和開機之間的關係。
+				</p>
+				<p>
+				然而無論這些論證到底在談論什麼不同的議題，當我們把這三組論證分別都翻譯至語句邏輯的語言中時，不難發現這三個論證幾乎長得一模一樣：都是以一個條件句，以及該條件句的前件作為論證的<b>前提</b>，並且以作為前提之一的條件句之後件作為結論。若光從<b>形式</b>上來看的話，這三個論證其實具有一模一樣的形式：
+				</p>
+				<ol class="pfs">
+					<li>$&alpha;&rarr;&beta;$</li>
+					<li>$&alpha;$</li>
+					<li>$&beta;$</li>
+				</ol>
+				<p>
+				我們可以進一步用歸謬法判斷看看這個推論形式是不是一個有效的推論形式：
+				</p>
+				<div class="tree">
+					<span>$&alpha;&rarr;&beta;$</span><br/>
+					<span>$&alpha;$</span><br/>
+					<span>$&not;&beta;$</span>
+					<svg><path d="M300 1 L150 23"/><path d="M300 1 L450 23"/></svg>
+					<div>
+						<svg class="back"><circle cx="150" cy="12" r="11"/></svg>
+						<span>$&alpha;$</span><br/>
+						<span>$&not;&beta;$</span><br/>
+						<svg class="back"><ellipse cx="150" cy="12" rx="20" ry="11"/></svg>
+						<span>$&not;&alpha;$</span><br/>
+						<span>&cross;</span>
+					</div>
+					<div>
+						<span>$&alpha;$</span><br/>
+						<svg class="back"><ellipse cx="150" cy="12" rx="20" ry="11"/></svg>
+						<span>$&not;&beta;$</span><br/>
+						<svg class="back"><circle cx="150" cy="12" r="11"/></svg>
+						<span>$&beta;$</span><br/>
+						<span>&cross;</span>
+					</div>
+				</div>
+				<p>
+				由於所有分支都會產生矛盾，這表示歸謬假設不可能成立，也就是說，當論證的前提（'$&alpha;&rarr;&beta;$' 和 '$&alpha;$'）都為真時，結論（'$&beta;$'）不可能為假。因此這是有效的推論形式。
+				</p>
+				<p>
+				證明這是一個有效的推論形式是一件非常重要的事情。比如說，如果我們今天只是檢查 <i>P1'</i>、<i>P2'</i> 到 <i>C1'</i> 這個推論是不是一個有效推論，並在最後發現它是一個有效推論。我們最多就是證明了，從 '$A&rarr;B$' 和 '$A$' 這兩個前提可以有效地推論出 '$B$' 而已，卻不能證明具有相同形式的論證 <i>P3'</i>、<i>P4'</i> 到 <i>C2'</i>，以及 <i>P5'</i>、<i>P6</i> 到 <i>C3'</i> 這些論證是否也是有效論證。
+				</p>
+				<p>
+				然而，如果我們可以直接確定從 '$&alpha;&rarr;&beta;$' 和 '$&alpha;$' 這兩個前提到 '$&beta;$' 這個結論的<b>推論形式</b>是有效的，我們就能不只能肯定 <i>P1'</i>、<i>P2'</i> 到 <i>C1'</i> 是有效論證，也能肯定 <i>P3'</i>、<i>P4'</i> 到 <i>C2'</i>，以及 <i>P5'</i>、<i>P6</i> 到 <i>C3'</i> 這些論證也都是有效論證。不只如此，凡是只要同屬於這一形式的任何推論，都可以確定是一個有效論證。比如說：
+				</p>
+				<ol class="prfp">
+					<li>$((A&rarr;B)&and;(A&rarr;(B&rarr;C)))&rarr;(A&rarr;C))$</li>
+					<li>$(A&rarr;B)&and;(A&rarr;(B&rarr;C))$</li>
+					<li>$A&rarr;C$</li>
+				</ol>
+				<p>
+				這也會是一個有效論證，如果我們將 '$(A&rarr;B)&and;(A&rarr;(B&rarr;C))$ 看成是 '$&alpha;$'，再將 '$A&rarr;C$' 看成是 '$&beta;$'，那就不難看出來，這個論證其實與 '$&alpha;&rarr;&beta;$' 和 '$&alpha;$' 推論出 '$&beta;$' 的論具有相同的形式。
+				</p>
+				<p>
+				換言之，一但我們發現一個有效的<b>推論形式</b>，那我們就能確定任何在形式上相同的推論一定也都是有效的，因此我們不必再理會這些推論所使用到的前提和結論究竟表達了什麼內容，也不必去問這些語句彼此之間的邏輯關係是什麼。只要是根據有效推論形式所規範的符號操作方法操作，一定都會是有效論證。而這些有效的推論形式，就是我們即將要學的證明規則。
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
