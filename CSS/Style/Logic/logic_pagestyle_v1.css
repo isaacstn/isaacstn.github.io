@@ -1,0 +1,64 @@
+@page {
+	size:A4;
+	margin:2.54cm;
+	@footnotes{
+		margin-top: 0.5em;
+		border-top: 1px solid #000;
+		border-clip: 4em;
+		padding-top: 0.5em;
+	}
+}
+@page front-matter {
+	@bottom-center {
+		line-height:auto;
+		counter-increment:page;
+		content:counter(page, lower-roman);
+		padding-bottom: 40%;
+	}
+}
+@page main {
+	@bottom-center {
+		line-height:auto;
+		counter-increment:page;
+		content:counter(page);
+		padding-bottom: 40%;
+	}
+}
+#front {
+	page:front-matter;
+}
+#main {
+	page:main;
+	margin-bottom:25em;
+}
+#ref {
+	page:main;
+}
+@media print {
+	span.note::before {
+		display:none;
+	}
+	span.box {
+		float:footnote;
+		width:100%;
+		border:none;
+		background-color:transparent;
+		box-shadow:none;
+		position:static;
+		visibility:visible;
+		opacity:1;
+		font-size:9pt;
+		padding:0;
+		margin:0.5em 0em 0 1.2em;
+	}
+	div.tree, table, svg {
+		page-break-inside:avoid;
+	}
+	table.prf {
+		page-break-inside:auto;
+	}
+	* {
+		widows:2;
+		orphans:2;
+	}
+}

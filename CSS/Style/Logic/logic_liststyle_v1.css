@@ -1,0 +1,235 @@
+/* list general */
+body {
+	counter-reset:prf prfp pfc pfcp pfs num urm ult lrm llt numd urmd ultd lrmd lltd numpd urmpd ultpd lrmpd lltpd lltppd lltpppd chapter note
+}
+ol,ul {
+	margin:1em 0 1em 2em;
+	padding:0;
+}
+ol ol, ol ul, ul ol, ul ul {
+	margin-left:0;
+	margin-top:0
+}
+li::before {
+	position:absolute;
+	left:-2em
+}
+li {
+	list-style:none;
+	position:relative;
+	left:2em;
+	margin-right:2em
+}
+ul > li {
+	left:0
+}
+.spread > li {
+	margin-top:1em
+}
+.spread > li:first-child {
+	margin-top:0
+}
+
+/* ordered-list style */
+
+/* proof list */
+ol.prf > li::before {
+	counter-increment:prf;
+	content:"P" counter(prf) ". ";
+	font-style:italic
+}
+ol.prf > li:last-child::before {
+	counter-increment:pfc;
+	content:"C" counter(pfc) ". "
+}
+ol.prfp > li::before {
+	counter-increment:prfp;
+	content:"P" counter(prfp) "'. ";
+	font-style:italic
+}
+ol.prfp > li:last-child::before {
+	counter-increment:pfcp;
+	content:"C" counter(pfcp) "'. "
+}
+ol.pfs > li::before {
+	left:-1.5em;
+	counter-increment:pfs;
+	content:counter(pfs) ".";
+	font-style:italic
+}
+ol.pfs > li:last-child::before {
+	counter-increment:none;
+	content:"C. "
+}
+
+/* ordered-list (bracket) */
+ol.num > li::before {
+	counter-increment:num;
+	content:"(" counter(num) ")"
+}
+ol.urm > li::before {
+	counter-increment:urm;
+	content:"(" counter(urm,upper-roman) ")"
+}
+ol.ult > li::before {
+	counter-increment:ult;
+	content:"(" counter(ult,upper-latin) ")"
+}
+ol.lrm > li::before {
+	counter-increment:lrm;
+	content:"(" counter(lrm,lower-roman) ")"
+}
+ol.llt > li::before {
+	counter-increment:llt;
+	content:"(" counter(llt,lower-latin) ")"
+}
+
+/* ordered-list (dotted) */
+.numd > li::before, .urmd > li::before, .lrmd > li::before, .ultd > li::before, .lltd > li::before,
+.numpd > li::before, .urmpd > li::before, .lrmpd > li::before, .ultpd > li::before, .lltpd > li::before,
+.lltppd > li::before, .lltpppd > li::before {
+	left:-1.5em
+}
+.numd > li, .urmd > li, .lrmd > li, .ultd > li, .lltd > li,
+.numpd > li, .urmpd > li, .lrmpd > li, .ultpd > li, .lltpd > li,
+.lltppd > li, .lltpppd > li {
+	left:1.5em;
+	margin-right:1.5em
+}
+ol.numd > li::before {
+	counter-increment:numd;
+	content:counter(numd) ". "
+}
+ol.urmd > li::before {
+	counter-increment:urmd;
+	content:counter(urmd,upper-roman) ". "
+}
+ol.ultd > li::before {
+	counter-increment:ultd;
+	content:counter(ultd,upper-latin) ". "
+}
+ol.lrmd > li::before {
+	counter-increment:lrmd;
+	content:counter(lrmd,lower-roman) ". "
+}
+ol.lltd > li::before {
+	counter-increment:lltd;
+	content:counter(lltd,lower-latin) ". "
+}
+ol.numpd > li::before {
+	counter-increment:numpd;
+	content:counter(numpd) "'. "
+}
+ol.urmpd > li::before {
+	counter-increment:urmpd;
+	content:counter(urmpd,upper-roman) "'. "
+}
+ol.ultpd > li::before {
+	counter-increment:ultpd;
+	content:counter(ultpd,upper-latin) "'. "
+}
+ol.lrmpd > li::before {
+	counter-increment:lrmpd;
+	content:counter(lrmpd,lower-roman) "'. "
+}
+ol.lltpd > li::before {
+	counter-increment:lltpd;
+	content:counter(lltpd,lower-latin) "'. "
+}
+ol.lltppd > li::before {
+	counter-increment:lltppd;
+	content:counter(lltppd,lower-latin) "''. "
+}
+ol.lltpppd > li::before {
+	counter-increment:lltpppd;
+	content:counter(lltpppd,lower-latin) "'''. "
+}
+
+/* counter-reset */
+ol.local.prf {counter-reset: prf}
+ol.local.num {counter-reset: num}
+ol.local.urm {counter-reset: urm}
+ol.local.ult {counter-reset: ult}
+ol.local.lrm {counter-reset: lrm}
+ol.local.llt {counter-reset: llt}
+ol.local.numd {counter-reset: numd}
+ol.local.urmd {counter-reset: urmd}
+ol.local.ultd {counter-reset: ultd}
+ol.local.lrmd {counter-reset: lrmd}
+ol.local.lltd {counter-reset: lltd}
+ol.local.numpd {counter-reset: numpd}
+ol.local.urmpd {counter-reset: urmpd}
+ol.local.ultpd {counter-reset: ultpd}
+ol.local.lrmpd {counter-reset: lrmpd}
+ol.local.lltpd {counter-reset: lltpd}
+ol.local.lltppd {counter-reset: lltppd}
+ol.local.lltpppd {counter-reset: lltpppd}
+
+/* unordered-list style */
+
+/* disc general */
+ul.disc > li::before {
+	position:absolute;
+	left:-0.8em;
+	content:"•"
+}
+ul.disc > li {
+	left:1em
+}
+ul ul.disc > li::before {
+	left:-1.1em;
+	content:"◦"
+}
+ul ul ul.disc > li::before {
+	left:-1em;
+	content:"▸"
+}
+ul ul ul ul.disc > li::before {
+	left:-1em;
+	content:"▹"
+}
+ul ul ul ul ul.disc > li::before {
+	left:-1.3em;
+	font-size:75%;
+	text-align:left;
+	content:"⬥"
+}
+ul ul ul ul ul ul.disc > li::before {
+	left:-1.3em;
+	font-size:75%;
+	text-align:left;
+	content:"⬦"
+}
+
+/* induction style */
+ul.induction > li::before {
+	position:absolute;
+	left:-2.5em
+}
+ul.induction > li:nth-child(1)::before {
+	content:"B.C."
+}
+ul.induction > li:nth-child(2)::before {
+	content:"I.H."
+}
+ul.induction > li:nth-child(3)::before {
+	content:"I.C."
+}
+ul.induction > li {
+	left:2.5em;
+	margin-right:2.5em
+}
+
+/* definition style */
+.def ul {
+	border:solid 1px black;
+	margin-left:0;
+	padding:0.25em 0.5em
+}
+.def span::before {
+	content:"Df";
+	vertical-align:baseline;
+	position:relative;
+	bottom:-0.4em;
+	font:bold 70% 'Felipa'
+}
