@@ -13,15 +13,6 @@ table.qt3 {
 table.half {
 	width:50%;
 }
-table.follow {
-	border-top:1px solid #000;
-}
-table.follow tr:first-child td {
-	padding-top:1em;
-}
-tr.last {
-	display:none;
-}
 
 /* tables for proof */
 table.prf {
@@ -29,7 +20,6 @@ table.prf {
 }
 table.prf td {
 	vertical-align:middle;
-	padding-top:0.25em;
 	text-align:left;
 }
 table.prf td:first-child::before {
@@ -46,11 +36,47 @@ table.prf td:first-child {
 	left:2em;
 	padding-right:2em;
 }
-table.prf td:last-child {
+table.prf td:nth-child(2) {
 	padding-left:1em;
 }
 table.prf tr:first-child td {
 	padding-top:0;
+}
+
+/*tables for proof 2 */
+table.pfs {
+	counter-reset:tpfs nplus
+}
+table.pfs td {
+	vertical-align:middle;
+	text-align:right
+}
+table.pfs td:nth-child(2) {
+	padding-left:0.5em;
+	text-align:left
+}
+table.pfs td:first-child::after {
+	font-style:italic;
+	counter-increment:tpfs;
+	content:counter(tpfs) "."
+}
+table.pfs tr.ellip ~ tr td:first-child::after {
+	counter-increment:nplus;
+	content:"n+" counter(nplus) "."
+}
+table.pfs tr.ellip + tr td:first-child::after {
+	counter-increment:nplus 0;
+	content:"n."
+}
+table.pfs tr.ellip td:nth-child(2)::after {
+	padding-left:0.3em;
+	content:"⋮"
+}
+table.pfs tr.ellip td:first-child::after {
+	content:none !important
+}
+table.pfs tr:last-child > td:first-child::after {
+	content:"C." !important
 }
 
 /* truth tables */
@@ -114,4 +140,15 @@ table.truth tr.omit td.omit {
 }
 tr:first-child td.omit::after {
 	content:"……";
+}
+
+/* table overrider */
+table.follow {
+	border-top:1px solid #000;
+}
+table.follow tr:first-child td {
+	padding-top:1em;
+}
+tr.last {
+	display:none;
 }
