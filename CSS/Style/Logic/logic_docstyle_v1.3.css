@@ -17,27 +17,56 @@ body {
 	text-justify:inter-character;
 	prince-text-justify:prince-cjk;
 }
-div.tree {
-	display:flow-root;
+div.chapter, div.section, div.subsection, div.portion, div.quiz, div.tree, div.tree2 {
+	display:flow-root
+}
+div.tree, div.tree2 {
 	text-align:center;
-	line-height:1.5em;
 	margin-top:1em;
+}
+div.tree2 {
+	width:max-content
 }
 div.tree div {
 	float:left;
 	width:50%;
 }
+div.tree2 div {
+	float:left;
+	width:50%;
+}
+div.prf::before {
+	counter-increment:dprf;
+	content:"(" counter(dprf) ")"
+}
+div.prf {
+	float:left;
+	text-align:left;
+	margin-top:1em;
+	margin-right:2em;
+	width:max-content;
+	height:8em
+}
+div.prf ol {
+	display:inline-block;
+	vertical-align:top;
+}
 div.def {
-	margin-top:2em;
+	border:1px solid black;
+	padding:0 2em 1em 2em;
+	margin-top:1em
 }
 p, p.ind {
 	text-indent:2em;
 	margin-top:1em;
+	clear:both
 } 
 p:first-of-type, 
 p.noind,
 div.tree + p,
+div.tree2 + p,
 blockquote + p,
+blockquote p,
 ol + p, ul + p,
 table + p {
 	text-indent:0;
@@ -74,6 +103,9 @@ blockquote {
 	text-indent:0;
 	font-family:'CMU Serif','Adobe FangSong';
 }
+math.ma-block {
+	max-width:max-content
+}
 svg {
 	display:block;
 	margin:1em 0 0 2em;
@@ -87,6 +119,10 @@ svg.back {
 div.tree svg {
 	margin:0;
 	height:1.5em;
+}
+div.tree2 svg {
+	margin:0;
+	height:1.5em
 }
 svg * {
 	stroke:black;
@@ -184,5 +220,28 @@ span.note:hover span.box {
 .hidden {
 	visibility:hidden;
 }
+.notab {margin-left:0}
+.left {float:left}
+.right {float:right}
+.red {background-color:red}
+.green {background-color:green}
+.blue {background-color:blue}
+.skyblue {background-color:skyblue}
+.pink {background-color:pink}
+.orange {background-color:orange}
+.yellow {background-color:yellow}
+.gold {background-color:gold}
+.aqua {background-color:aqua}
+.cyan {background-color:cyan}
+.salmon {background-color:salmon}
+.silver {background-color:silver}
+.snow {background-color:snow}
+.wheat {background-color:wheat}
+.tomato {background-color:tomato}
+.orchid {background-color:orchid}
+.violet {background-color:violet}
+.lawngreen {background-color:lawngreen}
+.lightgreen {background-color:lightgreen}
+.violet {background-color:violet}
 
 /* move below to doc */
