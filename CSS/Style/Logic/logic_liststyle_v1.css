@@ -1,14 +1,19 @@
 /* list general */
 body {
-	counter-reset:prf prfp pfc pfcp pfs num urm ult lrm llt numd urmd ultd lrmd lltd numpd urmpd ultpd lrmpd lltpd lltppd lltpppd chapter note
+	counter-reset:prf prfp pfc pfcp num urm ult lrm llt numd urmd ultd lrmd lltd numpd urmpd ultpd lrmpd lltpd lltppd lltpppd chapter note dprf
 }
 ol,ul {
+	height:max-content;
+	width:max-content;
 	margin:1em 0 1em 2em;
-	padding:0;
+	padding:0
 }
 ol ol, ol ul, ul ol, ul ul {
 	margin-left:0;
 	margin-top:0
+}
+blockquote ol, blockquote ul {
+	margin-left:0
 }
 li::before {
 	position:absolute;
@@ -23,10 +28,10 @@ li {
 ul > li {
 	left:0
 }
-.spread > li {
+.gap > li {
 	margin-top:1em
 }
-.spread > li:first-child {
+.gap > li:first-child {
 	margin-top:0
 }
 
@@ -51,15 +56,54 @@ ol.prfp > li:last-child::before {
 	counter-increment:pfcp;
 	content:"C" counter(pfcp) "'. "
 }
+ol.pfs {
+	counter-reset:pfs
+}
 ol.pfs > li::before {
 	left:-1.5em;
 	counter-increment:pfs;
 	content:counter(pfs) ".";
 	font-style:italic
 }
-ol.pfs > li:last-child::before {
+div.prf ol.pfs > li::before {
+	left:-2em;
+	content:"P" counter(pfs) ". "
+}
+ol.pfs > li:last-child::before, div.prf ol.pfs > li:last-child::before {
+	left:-1.5em;
 	counter-increment:none;
 	content:"C. "
+}
+ol.pfq::before {
+	width:1.5em;
+	left:-2em;
+	position:absolute;
+	counter-increment:dprf;
+	content:"(" counter(dprf) ")"
+}
+ol.pfq {
+	position:relative;
+	float:left;
+	margin-right:1.5em;
+	margin-bottom:0;
+	counter-reset:pfq
+}
+ol.pfq:last-child {
+	margin-right:0
+}
+ol.pfq > li::before {
+	left:-1.75em;
+	width:1.5em;
+	text-align:right;
+	counter-increment:pfq;
+	content:"P" counter(pfq) ".";
+	font-style:italic
+}
+ol.pfq li:last-child::before {
+	content:"C ."
+}
+ol.pfq li {
+	left:1.75em;
 }
 
 /* ordered-list (bracket) */
@@ -168,37 +212,43 @@ ol.local.lltpppd {counter-reset: lltpppd}
 /* unordered-list style */
 
 /* disc general */
-ul.disc > li::before {
+ul > li::before {
 	position:absolute;
 	left:-0.8em;
 	content:"•"
 }
-ul.disc > li {
+ul > li {
 	left:1em
 }
-ul ul.disc > li::before {
+ul ul > li::before {
 	left:-1.1em;
 	content:"◦"
 }
-ul ul ul.disc > li::before {
+ul ul ul > li::before {
 	left:-1em;
 	content:"▸"
 }
-ul ul ul ul.disc > li::before {
+ul ul ul ul > li::before {
 	left:-1em;
 	content:"▹"
 }
-ul ul ul ul ul.disc > li::before {
+ul ul ul ul ul > li::before {
 	left:-1.3em;
 	font-size:75%;
 	text-align:left;
 	content:"⬥"
 }
-ul ul ul ul ul ul.disc > li::before {
+ul ul ul ul ul ul > li::before {
 	left:-1.3em;
 	font-size:75%;
 	text-align:left;
 	content:"⬦"
+}
+ul.list > li::before {
+	content:none
+}
+ul.list > li {
+	left:0
 }
 
 /* induction style */
@@ -233,3 +283,5 @@ ul.induction > li {
 	bottom:-0.4em;
 	font:bold 70% 'Felipa'
 }
+
+/* list style override */
