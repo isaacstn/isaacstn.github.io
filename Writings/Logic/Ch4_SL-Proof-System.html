@@ -123,24 +123,24 @@
 				<p>
 				我們可以進一步用歸謬法判斷看看這個推論形式是不是一個有效的推論形式：
 				</p>
-				<div class="tree">
+				<div class="tree2">
 					<span>$&alpha;&rarr;&beta;$</span><br/>
 					<span>$&alpha;$</span><br/>
 					<span>$&not;&beta;$</span>
-					<svg><path d="M300 1 L150 23"/><path d="M300 1 L450 23"/></svg>
+					<svg width="200px"><path d="M100 1 L50 23"/><path d="M100 1 L150 23"/></svg>
 					<div>
-						<svg class="back"><circle cx="150" cy="12" r="11"/></svg>
+						<svg class="back"><circle cx="50" cy="12" r="11"/></svg>
 						<span>$&alpha;$</span><br/>
 						<span>$&not;&beta;$</span><br/>
-						<svg class="back"><ellipse cx="150" cy="12" rx="20" ry="11"/></svg>
+						<svg class="back"><ellipse cx="50" cy="12" rx="20" ry="11"/></svg>
 						<span>$&not;&alpha;$</span><br/>
 						<span>&cross;</span>
 					</div>
 					<div>
 						<span>$&alpha;$</span><br/>
-						<svg class="back"><ellipse cx="150" cy="12" rx="20" ry="11"/></svg>
+						<svg class="back"><ellipse cx="50" cy="12" rx="20" ry="11"/></svg>
 						<span>$&not;&beta;$</span><br/>
-						<svg class="back"><circle cx="150" cy="12" r="11"/></svg>
+						<svg class="back"><circle cx="50" cy="12" r="11"/></svg>
 						<span>$&beta;$</span><br/>
 						<span>&cross;</span>
 					</div>
@@ -165,7 +165,718 @@
 				<p>
 				換言之，一但我們發現一個有效的<b>推論形式</b>，那我們就能確定任何在形式上相同的推論一定也都是有效的，因此我們不必再理會這些推論所使用到的前提和結論究竟表達了什麼內容，也不必去問這些語句彼此之間的邏輯關係是什麼。只要是根據有效推論形式所規範的符號操作方法操作，一定都會是有效論證。而這些有效的推論形式，就是我們即將要學的證明規則。
 				</p>
-			</div>
-		</div>
-	</div>
+			</div><!--chap4 sect1-->
+			
+			<div class="section" id="rules">
+				<h2>證明的推論規則</h2>
+				<p>
+				何謂證明？在我們的日常生活中，證明一件事無非就是想辦法找各種道理和證據去支持那件事是成立的。不過在語句邏輯系統中，對證明有一個精準的定義。所謂<b>證明 (proof)</b>就是：
+				</p>
+				<ol class="numd">
+					<li>一組有限數量的語句構成的序列。</li>
+					<li>該序列的最後一個語句是這個證明的結論。</li>
+					<li>證明中的每一個語句都是：
+						<ol class="llt">
+							<li>前提語句；或者，</li>
+							<li>由位在前面的語句，根據有效推論規則推論出來的語句。</li>
+						</ol></li>
+				</ol>
+				<p>
+				也就是說，每一個語句邏輯的證明都會長得像下面這個樣子：
+				</p>
+				<table class="pfs">
+					<tr><td></td><td>前提語句 1</td></tr>
+					<tr><td></td><td>前提語句 2</td></tr>
+					<tr><td></td><td>前提語句 3</td></tr>
+					<tr class="ellip"><td></td><td></td></tr>
+					<tr><td></td><td>語句</td></tr>
+					<tr><td></td><td>語句</td></tr>
+					<tr><td></td><td>語句</td></tr>
+					<tr class="ellip"><td></td><td></td></tr>
+					<tr><td></td><td>結論</td></tr>
+				</table>
+				<p>
+				雖然依照習慣，我們都會把論證使用到的前提放在論證的最前面，但就定義上來說，只要不是最後一個語句，論證的前提可以被放在論證中的任何一個位置。
+				</p>
+				<p>
+				不過要注意的是，因為根據前述證明的定義，論證中的所有語句都只有兩種來源：(a) 它本身是一個前提語句；(b) 它是由<b>位在它前面</b>的語句根據有效推論規則推論出來的語句。那麼，每個論證中的第一個語句前面不可能會有其它語句，因此它不可能是由位在它前面的語句根據有效推論規則推論出來的，因此論證的第一個語句就必須是前提語句。
+				</p>
+				<p>
+				給定證明的定義，那麼結論的來源也只會有兩個：(a) 它本身前提是一個前提語句；(b) 它是由位在它前面的語句，根據有效推論規則推論出來的。如果一個證明的結論本身就是一個前提語句，那這個結論當然可以從前提有效地推論出來，因為任何語句都能夠有效地推論出自己。
+				</p>
+				<p>
+				相對地，如果一個證明的結論是由位在它前面的語句根據有效推論規則推論出來的，那麼能夠有效地推論出結論的那些語句也只有兩種來源：它本身就是前提，或者也是由位在它前面的其它語句根據有效推論規則推論而來的。如果那些能夠有效推論出結論的語句本身是前提語句的話，那結論當然能夠從前提有效地推論出，如果那些語句本身不是前提語句，那就是從位在它前面的其它語句推論出來的……。
+				</p>
+				<p>
+				然而根據定義，一個證明是能是由有限多個語句所構成的，因此結論的來源不可能無限後退，這表示，最後它一定是從一些能夠從前提本身有效地推論出來的語句所推論出來的。由於有效推論關係是有傳遞性的關係（也就是說，當一組語句 $\&Gamma;$ 可以推論出另一組語句 $\&Delta;$，而 $\&Delta;$ 這組語句又可以有效地推論出結論時，那 $\Gamma;$ 這組語句就可以推論出結論），所以對任何一個證明而言，其結論根據定義一定可以從前提有效地推論出來。
+				</p>
+				<p>
+				既然重點在於<b>有效推論規則</b>，我們就開始介紹語句邏輯系統中的有效推論規則有哪些。我要介紹的推論規則一共有十八條，其中有八條規則屬於<b>蘊涵規則</b>，另外有十條規則是<b>等值規則</b>。最後，我還會介紹一條後設規則——<b>條件證法</b>。
+				</p>
+				<p>
+				在介紹推論規則的時候我會用到 '$&vdash;$' 這個符號，用來表示「……可以證明……」。比如當我寫 '$A&rarr;B, A&vdash;B$' 的時候，我的意思就是指 '$A&rarr;B$' 和 '$A$' 這兩個語句可以共同證明 '$B$'。不過因為推論規則要呈現的是有效推論的<b>形式</b>，所以在寫規則時我不會直接用實際的語句去寫，而是用可以<b>代表任意語句</b>的符號如 '$&alpha;$'、'$&beta;$' 等。
+				</p>
+				<p>
+				因此當我寫 '$&alpha;&rarr;&beta;,&alpha;&vdash;&beta;$' 時，我的意思是：任何具有 '$&alpha;&rarr;&beta;$' 和 '$&alpha;$' 這兩個形式的語句，都可以共同證明具有 '$&alpha;$' 這個形式的語句。也就是說，只要將規則當中的 '$&alpha;$'、'$&beta;$' 等符號都用一個實際的語句去代換，就可以得到一個有效的證明。
+				</p>
+				<p>
+				不過要注意的是，在用實際的語句去代換推論規則中的 '$&alpha;$'、'$&beta;$' 等符號時，請一定要用一樣的語句來代換一樣的符號。比如說，當我用 '$A&and;B$' 來代換 '$&alpha;&rarr;&beta;$' 中的 '$&alpha;$'，並用 '$C$' 來代換 '$&alpha;&rarr;&beta;$' 中的 '$&beta;$' 時，我就必須同樣用 '$A&and;B$' 來代換逗號右邊的 '$&alpha;$'，並且用 '$C$' 來代換 '$&vdash;$' 右邊的 '$&beta;$'。
+				</p>
+				
+				<div class="subsection" id="entailment-rules">
+					<h3>蘊涵規則</h3>
+					<p>
+					顧名思義，蘊涵規則所包含的八條推論規則，都是利用語句之間的蘊涵關係建構出來的規則。第一條蘊涵規則是最常被使用到的規則，也是最普遍存在於不同的證明系統中的規則
+					</p>
+					<blockquote>
+						<p>
+						<b>肯定前件律 (<i>modus ponens</i>，簡寫為 MP)</b><br/>
+						</p>
+						<p>
+						$&alpha;&rarr;&beta;,&alpha;&vdash;&beta;$
+						</p>
+					</blockquote>
+					<p>
+					根據肯定前件律，但凡我們有一個條件句，而且有條件句的前件時，我們就可以用這兩個語句有效地推論出條件句的後件。比如說：
+					</p>
+					<table class="prf">
+						<tr><td>$A&rarr;B$</td><td>前提</td></tr>
+						<tr><td>$A$</td><td>前提</td></tr>
+						<tr><td>$B$</td><td>根據 1,2, MP</td></tr>
+					</table>
+					<p>
+					在這個例子裡，我們是用 '$A$' 來代換規則中的 '$&alpha;$'，用 '$B$' 來代換規則中的 '$&beta;$'。我們再看下一個例子：
+					</p>
+					<table class="prf">
+						<tr><td>$(A&and;C)&rarr;B$</td><td>前提</td></tr>
+						<tr><td>$A&and;C$</td><td>前提</td></tr>
+						<tr><td>$B$</td><td>根據 1,2, MP</td></tr>
+					</table>
+					<p>
+					在這個例子中，我們則是用 '$A&and;C$' 代換規則中的 '$&alpha;$'，用 '$C$' 代換規則中的 '$&beta;$'。
+					</p>
+					<table class="prf">
+						<tr><td>$(A&or;B)&rarr;&not;(A&and;C)$</td><td>前提</td></tr>
+						<tr><td>$A&or;B$</td><td>前提</td></tr>
+						<tr><td>$&not;(A&and;C)$</td><td>根據 1,2, MP</td></tr>
+					</table>
+					<p>
+					在第三個例子中，我們則是用 '$A&or;B$' 來代換規則中的 '$&alpha;$'，用 '$&not;(A&and;C)$' 代換規則中的 '$&beta;$'。
+					</p>
+					<p>
+					在使用蘊涵規則時必須要注意的是，這些規則都<b>只能</b>適用在<b>完整的語句</b>之上，而不能應用在語句的一部分。比如說以下的推論就是對 MP 規則的<b>錯誤</b>應用：
+					</p>
+					<table class="prf">
+						<tr><td>$(A&rarr;B)&or;C$</td><td>前提</td></tr>
+						<tr><td>$A$</td><td>前提</td></tr>
+						<tr><td>$B$</td><td>根據 1,2, MP</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$A&rarr;(B&rarr;C)$</td><td>前提</td></tr>
+						<tr><td>$B$</td><td>前提</td></tr>
+						<tr><td>$C$</td><td>根據 1,2, MP</td></tr>
+					</table>
+					<p>
+					這些例子裡都只有把 MP 規則套用到語句中的一部分而已，這都是錯誤的用法。MP 規則必須用在<b>完整的條件句</b>上，以上面這兩個錯誤應用的範例來看，第一組的問題在於前提 (1) 根本不是條件句；第二組的問題在於，儘管前提 (1) 是條件句（其主要連接詞是 '$&rarr;$'），但前提 (2) 並不是前提 (1) 的<b>前件</b>。
+					</p>
+					<p>
+					我們接著來看第二條蘊涵規則，這條蘊涵規則和 MP 經常會成對出現，這條規則的名稱叫做：
+					</p>
+					<blockquote>
+						<p>
+						<b>否定後件律 (<i>modus tollens</i>，簡寫為 MT)</b>
+						</p>
+						<p>
+						$&alpha;&rarr;&beta;,&not;&beta;&vdash;&not;&alpha;$
+						</p>
+					</blockquote>
+					<p>
+					根據肯定後件律，但凡我們有一個條件句，同時有該條件句之後件的否定句，我們就可以用這兩個語句有效地推論出條件句之前件的否定句。舉例來說：
+					</p>
+					<table class="prf">
+						<tr><td>$A&rarr;B$</td><td>前提</td></tr>
+						<tr><td>$&not;B$</td><td>前提</td></tr>
+						<tr><td>$&not;A$</td><td>根據 1,2, MT</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$(A&and;B)&rarr;C$</td><td>前提</td></tr>
+						<tr><td>$&not;C$</td><td>前提</td></tr>
+						<tr><td>$&not;(A&and;B)$</td><td>根據 1,2, MT</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$A&rarr;(B&or;C)$</td><td>前提</td></tr>
+						<tr><td>$&not;(B&or;C)$</td><td>前提</td></tr>
+						<tr><td>$&not;A$</td><td>根據 1,2, MT</td></tr>
+					</table>
+					<p>
+					在這三個例子裡，我們都是用一個條件句，以及該條件句後件的否定句，共同推論出條件句前件的否定。綜合 MP 和 MT 這兩條規則，我們可以知道，給定一個條件句，我們可以從條件句的<b>前件</b>推論出條件句的<b>後件</b> (MP)，也可以從條件句<b>後件的否定</b>推論出條件句<b>前件的否定</b>。要熟悉這兩條規則，可以記得以下兩句口訣：
+					</p>
+					<ul class="song">
+						<li>肯定前件就能肯定後件。</li>
+						<li>否定後件就能否定前件。</li>
+					</ul>
+					<p class="ind">
+					要注意的是，條件句所允許的規則只有<b>肯定前件律</b>和<b>否定後件律</b>。也就是說，給定一個條件句的後件，我們不能有效地推論出條件句的後件，給定條件句前件的否定，我們也不能推論出條件句後件的否定。舉例來說，給定了以下這個條件句：
+					</p>
+					<ol class="lltd song">
+						<li>如果嘉義市在台中市的北邊，則嘉義市在台南市的北邊。</li>
+					</ol>
+					<p>
+					這個條件句當然是真的，畢竟台中市已經在台南市的北邊了，所以如果嘉義市比台中市還要更北邊，那嘉義市當然也會在台南市的北邊。可是我們知道事實上：
+					</p>
+					<ol class="lltd song">
+						<li>嘉義市不在台中市的北邊。</li>
+					</ol>
+					<p>
+					也就是說，a 這個條件的前件是假的。但這兩個語句並不能共同有效推論出：
+					</p>
+					<ol class="lltd song">
+						<li>嘉義市不在台南市的北邊。</li>
+					</ol>
+					<p>
+					畢竟我們知道，事實上嘉義市就在台南市的北邊。這個例子說明了，即使我們可以否定一個條件句的前件，我們也不能有效地推論出條件句後件的否定。
+					</p>
+					<p>
+					如果不放心的話，我們可以把以上推論給形式化。令 '$A$' 代表「嘉義市在台中市的北邊」，令 '$B$' 代表「嘉義市在台南市的北邊」。則由語句 a、b 推論出 c 的論證如下：
+					</p>
+					<table class="prf">
+						<tr><td>$A&rarr;B$</td><td>前提 a</td></tr>
+						<tr><td>$&not;A$</td><td>前提 b</td></tr>
+						<tr><td>$&not;B$</td><td>根據 1,2, 規則？</td></tr>
+					</table>
+					<p>
+					接下來，我們可以用歸謬法來檢查這是不是一個有效推論：
+					</p>
+					<div class="tree2">
+						<span>$A&rarr;B$</span><br/>
+						<span>$&not;A$</span><br/>
+						<span>$B$</span><br/>
+						<svg width="200px"><path d="M100 1 L50 23"/><path d="M100 1 L150 23"/></svg>
+						<div>
+							<span>$&not;A$</span><br/>
+							<span>$B$</span><br/>
+							<span>$&not;A$</span><br/>
+							<span>&check;</span>
+						</div>
+						<div>
+							<span>$&not;A$</span><br/>
+							<span>$B$</span><br/>
+							<span>$B$</span><br/>
+							<span>&check;</span>
+						</div>
+					</div>
+					<p>
+					根據以上的分析，一共有兩個分支可以讓歸謬假設成立，而且這兩個分支都不會產生矛盾。這表示我們有兩種不同的方法可以讓論證的前提全都為真，但依然令論證的結論為假，所以這當然不是一個有效推論。
+					</p>
+					<p>
+					同理，就算我們可以肯定條件句後件為真，也不能據此有效地推論出條件句的前件。繼續以 a 這個條件句為例，我們已經確認過 a 為真，此外我們也知道事實上：
+					</p>
+					<ol class="lltd song">
+						<li>嘉義市在台南市的北邊。</li>
+					</ol>
+					<p>
+					因此我們也肯定了條件句 a 的後件為真，但這兩個語句不能共同推論出：
+					</p>
+					<ol class="lltd song">
+						<li>嘉義市在台中市的北邊。</li>
+					</ol>
+					<p>
+					我們一樣可以先將這個推論形式化：
+					</p>
+					<table class="prf">
+						<tr><td>$A&rarr;B$</td><td>前提 a</td></tr>
+						<tr><td>$B$</td><td>前提 d</td></tr>
+						<tr><td>$A$</td><td>根據 1,2, 規則？</td></tr>
+					</table>
+					<p>
+					然後再用歸謬法檢查這個推論是不是有效的：
+					</p>
+					<div class="tree2">
+						<span>$A&rarr;B$</span><br/>
+						<span>$B$</span><br/>
+						<span>$&not;A$</span><br/>
+						<svg width="200px"><path d="M100 1 L50 23"/><path d="M100 1 L150 23"/></svg>
+						<div>
+							<span>$B$</span><br/>
+							<span>$&not;A$</span><br/>
+							<span>$&not;A$</span><br/>
+							<span>&check;</span>
+						</div>
+						<div>
+							<span>$B$</span><br/>
+							<span>$&not;A$</span><br/>
+							<span>$B$</span><br/>
+							<span>&check;</span>
+						</div>
+					</div>
+					<p>
+					很明顯這也不是一個有效推論，因為一樣有兩個分支可以不矛盾地令歸謬假設成立。這表示共有兩種不矛盾的方法可以令以上推論的前提全都為真，但仍然令結論為假。
+					</p>
+					<p>
+					以上這兩種錯誤的推論方法其實分別都是有名的<b>形式謬誤</b>，其一為<b>否定前件的謬誤</b>，其二為<b>肯定後件的謬誤</b>。但因為這兩個詞誤和 MP 與 MT 規則十分相像，因此經常被混淆，請務必注意它們與 MP 和 MT 規則的差異！
+					</p>
+					<p>
+					接下來要介紹的規則都是和連言句相關的規則，一個規則規定了可以從什麼語句有效地推論出一個連言句，另一個規則規定了可以從連言句有效地推論出什麼語句。它們分別是：
+					</p>
+					<blockquote>
+						<p>
+						<b>連言律 (Law of Conjunction，簡寫為 Conj.)</b>
+						</p>
+						<ul class="list">
+							<li>$&alpha;,&beta;&vdash;&alpha;&and;&beta;$</li>
+							<li>$&alpha;,&beta;&vdash;&beta;&and;&alpha;$</li>
+						</ul>
+					</blockquote>
+					<p>
+					以及：
+					</p>
+					<blockquote>
+						<p>
+						<b>簡化律 (Law of Simplification，簡寫為 Simp.)</b>
+						</p>
+						<ul class="list">
+							<li>$&alpha;&and;&beta;&vdash;&alpha;$</li>
+							<li>$&alpha;&and;&beta;&vdash;&beta;$</li>
+						</ul>
+					</blockquote>
+					<p>
+					根據連言律，每當我們有兩個任意的語句時，例如 '$&alpha;$' 和 '$&beta;$'，我們就可以從這兩個語句有效地推論出這兩個語句合成的連言句 '$&alpha;&and;&beta;$'，而且順序不拘。根據簡化律，每當我們有任意一個連言句 '$&alpha;&and;&beta;$' 的時候，我們都可以從這個連言句有效地推論出任意一個連言項，即 '$&alpha;$' 和 '$&beta;$'。以下是幾個使用<b>連言律</b>的例子：
+					</p>
+					<table class="prf">
+						<tr><td>$A$</td><td>前提</td></tr>
+						<tr><td>$B$</td><td>前提</td></tr>
+						<tr><td>$A&and;B$</td><td>根據 1,2, Conj.</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$A&rarr;C$</td><td>前提</td></tr>
+						<tr><td>$B$</td><td>前提</td></tr>
+						<tr><td>$(A&rarr;C)&and;B$</td><td>根據 1,2, Conj.</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$A&rarr;B$</td><td>前提</td></tr>
+						<tr><td>$&not;(B&harr;(A&or;C))$</td><td>前提</td></tr>
+						<tr><td>$(A&rarr;B)&and;&not;(B&harr;(A&or;C))$</td><td>根據 1,2, Conj.</td></tr>
+					</table>
+					<p>
+					可以看到的是，無論兩個語句本身的結構如何複雜，只要是我們在推論的任何過程中所得到的兩個語句，都可以用連言律將兩者合成一個連言句。底下則是幾個使用簡化律規則的範例：
+					</p>
+					<table class="prf">
+						<tr><td>$A&and;B$</td><td>前提</td></tr>
+						<tr><td>$A$</td><td>根據 1, Simp.</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$A&and;B$</td><td>前提</td></tr>
+						<tr><td>$B$</td><td>根據 1, Simp.</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$(A&rarr;B)&and;&not;(B&harr;(A&or;C))$</td><td>前提</td></tr>
+						<tr><td>$&not;(B&harr;(A&or;C))$</td><td>根據 1, Simp.</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$(A&rarr;B)&and;&not;(B&harr;(A&or;C))$</td><td>前提</td></tr>
+						<tr><td>$A&rarr;B$</td><td>根據 1, Simp.</td></tr>
+					</table>
+					<p>
+					從這幾個例子可以看出來，只要有一個連言句，就可以用簡化律有效地推論出連言句的任一個連言項。從 '$(A&rarr;B)&and;&not;(B&harr;(A&or;C))$' 可以推論出 '$A&rarr;B$' 也可以推論出 '$&not;(B&harr;(A&or;C))$'；從 '$A&and;B$' 可以推論出 '$A$' 也可以推論出 '$B$'。
+					</p>
+					<p>
+					接下來要介紹的推論規則是和選言句有關的推論規則，這個推論規則叫做<b>添加律 (Law of Addition)</b>：
+					</p>
+					<blockquote>
+						<p>
+						<b>添加律 (Law of Addition，簡寫為 Add.)</b>
+						</p>
+						<ul class="list">
+							<li>$&alpha;&vdash;&alpha;&or;&beta;$</li>
+							<li>$&beta;&vdash;&alpha;&or;&beta;$</li>
+						</ul>
+					</blockquote>
+					<p>
+					根據添加律，只要在證明的過程中得到任何一個語句，我們都可以有效地推論出一個包含了該語句的選言句，無論該語句是被放在選言句的左項還是右項都可以。底下來看一些添加律實際被使用的範例：
+					</p>
+					<table class="prf">
+						<tr><td>$A$</td><td>前提</td></tr>
+						<tr><td>$A&or;B$</td><td>根據 1, Add.</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$A$</td><td>前提</td></tr>
+						<tr><td>$B&or;A$</td><td>根據 1, Add.</td></tr>
+					</table>
+					<p>
+					從這兩個例子可以看到，同樣是給定語句 '$A$'，我們不但可以有效地推論出 '$A&or;B$'，也可以有效地推論出 '$B&or;A$'。這意味著當我們要用添加律從任何語句推論出一個選言句時，用來推論的那個語句無論放在選言句的左邊還是右邊都可以。
+					</p>
+					<p>
+					此外，添加律還有一個很有特色，而且非常重要的特性，就是被添加上去的語句可以是<b>任何</b>語句，包括結構十分複雜的語句也行。比如：
+					</p>
+					<table class="prf">
+						<tr><td>$A$</td><td>前提</td></tr>
+						<tr><td>$A&or;(B&and;C)$</td><td>根據 1, Add.</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$A$</td><td>前提</td></tr>
+						<tr><td>$A&or;(B&and;&not;(C&rarr;A))$</td><td>根據 1, Add.</td></tr>
+					</table>
+					<p>
+					因為添加律可以在前提之上添加<b>任何</b>語句，所以當然也可以添加前提本身，例如：
+					</p>
+					<table class="prf">
+						<tr><td>$A$</td><td>前提</td></tr>
+						<tr><td>$A&or;A$</td><td>根據 1, Add.</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$(A&and;B)&rarr;C$</td><td>前提</td></tr>
+						<tr><td>$((A&and;B)&rarr;C)&or;((A&and;B)&rarr;C)$</td><td>根據 1, Add.</td></tr>
+					</table>
+					<p>
+					我們當然也可以將前提的否定句添加上去，如：
+					</p>
+					<table class="prf">
+						<tr><td>$A$</td><td>前提</td></tr>
+						<tr><td>$A&or;&not;A$</td><td>根據 1, Add.</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$(A&and;B)&rarr;C$</td><td>前提</td></tr>
+						<tr><td>$((A&and;B)&rarr;C)&or;&not;((A&and;B)&rarr;C)$</td><td>根據 1, Add.</td></tr>
+					</table>
+					<p>
+					因為添加律可以在前提之上添加任何語句，搭配上我們之後要學到的其它與選言語句有關的規則，就會變得非常有用，不過這先留待以後再說。目前已經學到了五個蘊涵規則，我們就先用這五個蘊涵規則來練習如何建構證明，以下示範幾個證明的建構：
+					</p>
+					<div class="quiz">
+						<ol class="pfq">
+							<li>$A&or;B$</li>
+							<li>$(A&or;B)&rarr;C$</li>
+							<li>$C&rarr;&not;A$</li>
+							<li>$&not;A$</li>
+						</ol>
+						<ol class="pfq">
+							<li>$A&rarr;(C&and;D)$</li>
+							<li>$(C&or;B)&rarr;F$</li>
+							<li>$A$</li>
+							<li>$F$</li>
+						</ol>
+						<ol class="pfq">
+							<li>$A&and;B$</li>
+							<li>$B&rarr;(C&and;&not;D)$</li>
+							<li>$A&rarr;D$</li>
+							<li>$&not;A$</li>
+						</ol>
+					</div>
+					<div class="quiz">
+						<ol class="pfq">
+							<li>$&not;&not;A$</li>
+							<li>$B&rarr;&not;A$</li>
+							<li>$D$</li>
+							<li>$(&not;B&or;C)&and;D$</li>
+						</ol>
+						<ol class="pfq">
+							<li>$&not;A&rarr;C$</li>
+							<li>$&not;&not;A&rarr;(B&and;D)$</li>
+							<li>$A&and;&not;C$</li>
+							<li>$B&or;((D&rarr;E)&or;&not;F)$</li>
+						</ol>
+					</div>
+					<p>
+					以上幾個例題中的 <i>P1</i>、<i>P2</i>、<i>P3</i> 等，就是題目提供的前提，而 <i>C</i> 則是我們必須試圖用前提證明出來的結論。所有的前提語句都可以直接拿來做推論，但我們也只能用這些前提語句做推論。因此，建構證明的技巧就是從這些前提語句和結論語句之間的關係，去推斷要用什麼前提和推論規則來得到結論。以下先示範例題 (1) 的證明：
+					</p>
+					<table class="prf">
+						<tr><td>$A&or;B$</td><td>前提</td></tr>
+						<tr><td>$(A&or;B)&rarr;C$</td><td>前提</td></tr>
+						<tr><td>$C&rarr;&not;A$</td><td>前提</td></tr>
+						<tr><td>$C$</td><td>根據 1,2, MP</td></tr>
+						<tr><td>$&not;A$</td><td>根據 3,4, MP</td></tr>
+					</table>
+					<p>
+					例題 (1) 要我們用前提論證出來的結論是 '$&not;A$'。'$&not;A$' 顯然和前提 <i>P3</i> 有關，因為它直接出現在 <i>P3</i> 這個條件句的後件當中。有沒有什麼規則是可以讓我們用條件句推論出它的後件的？有，就是 MP 規則。但若要用 MP 規則從 <i>P3</i> 推論出 '$&not;A$'，我們需要 '$C$'，所以接下來看看 '$C$' 有沒有出現在什麼前提中。
+					</p>
+					<p>
+					同樣的，'$C$' 剛好是前提 <i>P2</i> 這個條件句的後件，因此，只要我們可以得到 <i>P2</i> 的前件，我們一樣可以用 MP 規則推論出 '$C$'，很巧地，<i>P2</i> 的前件剛好就是 <i>P1</i>。所以我們可以先用 MP 規則從 <i>P1</i> 和 <i>P2</i> 推論出 <i>P3</i> 的前件，也就是 '$C$'；再用 MP 規則從剛剛推論出來的 '$C$' 和 <i>P3</i> 推論出結論 '$&not;A$'，如此就完成了這個證明的建構。
+					</p>
+					<p>
+					我們接著看看要如何建構出第二個例題要我們做的證明。首先，結論 '$F$' 只有出現在 <i>P2</i> 這個條件句的後件，所以我們只能試著用 MP 從 <i>P2</i> 推論出結論，因此我們需要 <i>P2</i> 的前件 '$C&or;B$'。但是 '$C&or;B$' 本身沒有出現在前提中，所以我們很可能要想辦法先得到 '$C$' 或者得到 '$B$'，再利用 Add. 推論出 '$C&or;B$'。
+					</p>
+					<p>
+					由於 '$B$' 沒有出現在 <i>P2</i> 以外的任何前提中，所以我們只能想辦推論出 '$C$'。'$C$' 剛好是 <i>P1</i> 這個條件句的後件的其中一個連言項，而我們知道，只要有一個連言句，我們就可以利用 Simp. 規則推論出它的任意一個連言項。因此，只要我們可以利用 MP 規則推論出 <i>P1</i> 的後件，就可以進一步用 Simp. 推論出 '$C$'。
+					</p>
+					<p>
+					為了用 MP 規則推論出 <i>P1</i> 的後件，我們必須先得到 <i>P1</i> 的前件 '$A$'，而 <i>P1</i> 的前件剛好就是題目所提供的前提 <i>P3</i>，因此一條從前提通往結論的康莊大道便昭然若揭了，我們便按照剛才的推理將證明建構出來吧：
+					</p>
+					<table class="prf">
+						<tr><td>$A&rarr;(C&and;D)$</td><td>前提</td></tr>
+						<tr><td>$(C&or;B)&rarr;F$</td><td>前提</td></tr>
+						<tr><td>$A$</td><td>前提</td></tr>
+						<tr><td>$C&and;D$</td><td>根據 1,3, MP</td></tr>
+						<tr><td>$C$</td><td>根據 4, Simp.</td></tr>
+						<tr><td>$C&or;B$</td><td>根據 5, Add.</td></tr>
+						<tr><td>$F$</td><td>根據 2,6, MP</td></tr>
+					</table>
+					<p>
+					接著看第三題，題目要求我們證明的結論是 '$&not;A$'，但 '$&not;A$' 並沒有出現在前提之中，反而是 '$A$' 分別出現在 <i>P1</i> 和 <i>P3</i> 之中。<i>P1</i> 是一個連言句，用 Simp. 只能得到 '$A$' 而非 '$&not;A$'，所以至少目前沒有幫助。而 '$A$' 在 <i>P3</i> 裡是一個條件句的前件，因此只要我們有 <i>P3</i> 後件的否定句，就可以用 MT 規則推論出 '$&not;A$'。
+					</p>
+					<p>
+					<i>P3</i> 的後件是 '$D$'，否定就是 '$&not;D$'，而 '$&not;D$' 剛好是 <i>P2</i> 這一條件句後件的其中一個連言項。因此，只要可以得到 <i>P2</i> 的前件，就可以用 MP 規則推論出 <i>P2</i> 的後件，然後就可以用 Simp. 規則推論出 '$&not;D$'。所以 <i>P2</i> 的前件 '$B$' 就是我們的目標。而 '$B$' 剛好就是 <i>P1</i> 的其中一個連言項，因此只要對 <i>P1</i> 使用 Simp. 規則，就能得到 '$B$'，然後一路推論出結論。所以 (3) 的證明如下：
+					</p>
+					<table class="prf">
+						<tr><td>$A&and;B$</td><td>前提</td></tr>
+						<tr><td>$B&rarr;(C&and;&not;D)$</td><td>前提</td></tr>
+						<tr><td>$A&rarr;D$</td><td>前提</td></tr>
+						<tr><td>$B$</td><td>根據 1, Simp.</td></tr>
+						<tr><td>$C&and;&not;D$</td><td>根據 2,4, MP</td></tr>
+						<tr><td>$&not;D$</td><td>根據 5, Simp.</td></tr>
+						<tr><td>$&not;A$</td><td>根據 3,6, MT</td></tr>
+					</table>
+					<p>
+					剩下的 (4) 和 (5) 兩個例題，就留給各位嘗試自行建構出證明。如果在嘗試建構證明的時候遇到一些困難不知道該怎麼辦時，可以參考我接下來給的提示。如果你想要自己突破難關，那就請略過下一段。
+					</p>
+					
+					<div class="portion def">
+						<h5>提示</h5>
+						<p>
+						例題 (4) 要證明的結論是 '$(&not;B&or;C)&and;D$'，所以要先證明出 '$&not;B&or;C$' 以及 '$D$' 這兩個語句，然後再用 Conj. 將兩者合組成連言句。但 '$&not;B&or;C$' 中的 '$C$' 在前提裡根本沒有出現過，因此可以推測，此處應該是要先試著證明出 '$&not;B$'，再利用 Add. 規則來證明 '$&not;B&or;C$'。
+						</p>
+						<p>
+						例題 (5) 要證明的結論看起來非常複雜，特別是其中的 '$E$' 和 '$F$' 根本就沒有在前提中出現過，不過注意到結論本身是一個選言句，而且選言句的左項是一個簡單的 '$B$'。因此，只要能證明出 '$B$，就可以利用 Add. 把選言句右項給添加進去。記得嗎？添加律可以讓你在已證得的語句旁邊用 '$&or;$' 添加<b>任何</b>語句，所以不要擔心，大膽地加上去吧！
+						</p>
+					</div>
+					
+					<p>
+					最後要介紹的三個規則分別是<b>選言三段論 (Disjunctive Syllogism)</b>、假言三段論 (Hypothetical Syllogism)</b> 和<b>建構式兩難 (Constructive Dilemma)</b>。
+					</p>
+					<blockquote>
+						<p>
+						<b>選言三段論 (Disjunctive Syllogism，簡寫為 DS)</b>
+						</p>
+						<ul class="list">
+							<li>$&alpha;&or;&beta;,&not;&alpha;&vdash;&beta;$</li>
+							<li>$&alpha;&or;&beta;,&not;&beta;&vdash;&alpha;$</li>
+						</ul>
+					</blockquote>
+					<p>
+					根據選言三段論規則，只要我們有一個選言句，以及選言句中其中一項的否定，我們就能有效地推論出選言句中的另一項。舉例來說：
+					</p>
+					<table class="prf">
+						<tr><td>$A&or;B$</td><td>前提</td></tr>
+						<tr><td>$&not;B$</td><td>前提</td></tr>
+						<tr><td>$A$</td><td>根據 1,2, DS</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$&not;A&or;(B&rarr;C)$</td><td>前提</td></tr>
+						<tr><td>$&not;&not;A$</td><td>前提</td></tr>
+						<tr><td>$B&rarr;C$</td><td>根據 1,2, DS</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$((A&and;C)&rarr;B)&or;(D&rarr;C)$</td><td>前提</td></tr>
+						<tr><td>$&not;(D&rarr;C)$</td><td>前提</td></tr>
+						<tr><td>$(A&and;C)&rarr;B$</td><td>根據 1,2, DS</td></tr>
+					</table>
+					<p>
+					其實選言三段論規則的道理很容易明白，當我們宣稱一個選言句為真時，我們就是在宣稱選言句中的兩個子句至少有一個是真的。既然至少有一個是真的，一但我們可以確定其中一個是假的，那剩下那個當然就必須是真的。
+					</p>
+					<p>
+					舉例來說，你知道你的鑰匙就在書桌的抽屜裡，只是你不確定在哪一個抽屜。由於書桌總共只有左右兩個抽屜，所以你可以知道：
+					</p>
+					<ol class="lltd song">
+						<li>鑰匙在書桌左邊的抽屜，或者鑰匙在書桌右邊的抽屜。</li>
+					</ol>
+					<p>
+					你打開書桌左邊的抽屜翻了個底朝天，你發現鑰匙不在裡面，所以你知道：
+					</p>
+					<ol class="lltd song">
+						<li>鑰匙不在書桌左邊的抽屜。</li>
+					</ol>
+					<p>
+					只要你確實知道 f 和 g 都是真的，你其實根本不用打開書桌右邊的抽屜，你就可以知道鑰匙肯定會在書桌右邊的抽屜裡。這就是選言三段論規則的作用。
+					</p>
+					<p>
+					接下來要介紹的規則是<b>假言三段論</b>。這也是一個很容易理解的規則，而且在日常生活中的推理也經常用到：
+					</p>
+					<blockquote>
+						<p>
+						<b>假言三段論 (Hypothetical Syllogism，簡寫為 HS)</b>
+						</p>
+						<p>
+						$&alpha;&rarr;&beta;,&beta;&rarr;&gamma;&vdash;&alpha;&rarr;&gamma;$
+						</p>
+					</blockquote>
+					<p>
+					根據假言三段論規則，只要我們有兩個條件句，而且其中一個的後件是另一個的前件，我們就能推論出由前一個條件句之前件，和後一個條件句之後件所組成的條件句。換言之，根據假言三段論規則，語句邏輯中的條件句關係（也就是實質蘊涵關係）有<b>傳遞性 (transitivity)</b>。
+					</p>
+					<p>
+					什麼是<b>傳遞性</b>？傳遞性是一種關係的性質。事物和事物之間可以有各種關係，而關係可以有許多不同的性質，傳遞性是其中一種。以「……在……的左邊」這個性質來說，如果我們知道以下兩件事：
+					</p>
+					<ol class="lltd song">
+						<li>科科在安安的左邊。</li>
+						<li>安安在蔞雷的左邊。</li>
+					</ol>
+					<p>
+					那我們就可以知道：
+					</p>
+					<ol class="lltd song">
+						<li>科科在蔞雷的左邊。</li>
+					</ol>
+					<p>
+					這是因為「……在……左邊」這個關係有傳遞性。
+					</p>
+					<p>
+					再來看另外一個例子，以「……比……還要高」這個關係為例，如果我們已經知道以下兩件事：
+					</p>
+					<ol class="lltd song">
+						<li>科科比安安還要高。</li>
+						<li>安安比蔞雷還要高。</li>
+					</ol>
+					<p>
+					我們就可以知道：
+					</p>
+					<ol class="lltd song">
+						<li>科科比蔞雷還要高。</li>
+					</ol>
+					<p>
+					這也是因為「……比……還要高」這個關係具有傳遞性。
+					</p>
+					<p>
+					而假言三段論告訴我們的就是，兩個語句之間的實質蘊涵關係（也就是 '$&rarr;$' 這個語句連接詞所表達的關係）也是有傳遞性的關係：對任三個語句 '$&alpha;$'、'$&beta;$'、'$&gamma;$' 來說，只要 '$&alpha;$' 實質蘊涵 '$&beta;$'，而 '$&beta;$' 實質蘊涵 '$&gamma;$'，那麼 '$&alpha;$' 就會實質蘊涵 '$&gamma;$'。
+					</p>
+					<p>
+					日常生活裡我們其實也經常會用到假言三段論的規則。比如說，給定我知道以下兩件事：
+					</p>
+					<ol class="lltd song">
+						<li>如果我考試當天睡過頭，則我會被扣考。</li>
+						<li>如果我被扣考，則我會被當。</li>
+					</ol>
+					<p>
+					我就可以推論出：
+					</p>
+					<ol class="lltd song">
+						<li>如果我考試當天睡過頭，則我會被當。</li>
+					</ol>
+					<p>
+					既然會知道 p，那麼，既然我一點也不想被當，根據 MT 規則，我就知道我考試當天絕對不可以睡過頭。
+					</p>
+					<p>
+					我們可以看一些在證明中利用假言三段論規則進行推論的例子：
+					</p>
+					<table class="prf">
+						<tr><td>$A&rarr;B$</td><td>前提</td></tr>
+						<tr><td>$B&rarr;C$</td><td>前提</td></tr>
+						<tr><td>$A&rarr;C$</td><td>根據 1,2, HS</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$A&rarr;(B&and;C)$</td><td>前提</td></tr>
+						<tr><td>$(B&and;C)&rarr;(&not;A&or;D)$</td><td>前提</td></tr>
+						<tr><td>$A&rarr;(&not;A&or;D)$</td><td>根據 1,2, HS</td></tr>
+					</table>
+					<p class="ind">
+					最後要介紹的蘊涵規則是<b>建構式兩難</b>，這個規則比較複雜一點，但也是我們在日常生活裡經常用到的。我們先來看規則的內容：
+					</p>
+					<blockquote>
+						<p>
+						<b>建構式兩難 (Constructive Dilemma，簡寫為 CD)</b>
+						</p>
+						<p>
+						$&alpha;&rarr;&beta;,&gamma;&rarr;&delta;,&alpha;&or;&gamma;&vdash;&beta;&or;&delta;$
+						</p>
+					</blockquote>
+					<p>
+					這個規則需要用到的前提一共有三個，其中兩個是任意的兩個條件句，而第三個前提則是前述兩個條件句的<b>前件</b>所構成的選言句。一但掌握了這三個前提後，我們就能用<b>建構式兩難</b>規則推論出兩個條件句的<b>後件</b>所構成的選言句。舉例來說：
+					</p>
+					<table class="prf">
+						<tr><td>$A&rarr;B$</td><td>前提</td></tr>
+						<tr><td>$C&rarr;D$</td><td>前提</td></tr>
+						<tr><td>$A&or;C$</td><td>前提</td></tr>
+						<tr><td>$B&rarr;D$</td><td>根據 1,2,3, CD</td></tr>
+					</table>
+					<table class="prf follow">
+						<tr><td>$(A&and;B)&rarr;B$</td><td>前提</td></tr>
+						<tr><td>$(C&rarr;D)&rarr;(&not;D&rarr;&not;C)$</td><td>前提</td></tr>
+						<tr><td>$(A&and;B)&or;(C&rarr;D)$</td><td>前提</td></tr>
+						<tr><td>$B&or;(&not;D&rarr;&not;C)$</td><td>根據 1,2,3, CD</td></tr>
+					</table>
+					<p class="ind">
+					如果要用實際的例子來說明建構式兩難規則的意義，可以考慮在電視或小說情節裡出現強盜搶劫的情景時，強盜經常會問的問題：「要錢還是要命？」這個問題其實就是對建構式兩難規則的應用。因為強盜實際上想說的是：
+					</p>
+					<ol class="lltd song">
+						<li>如果你要留著命，你就把錢交出來。</li>
+						<li>如果你要留著錢，我就要你的小命。</li>
+					</ol>
+					<p>
+					由於強盜只給被打劫的人兩個選項：
+					</p>
+					<ol class="lltd song">
+						<li>要錢（留著你的錢）或者要命（留著你的命）</li>
+					</ol>
+					<p>
+					所以你會知道，被打劫的人也只會有兩種結果：
+					</p>
+					<ol class="lltd song">
+						<li>把錢交給強盜，或者把命交給強盜。</li>
+					</ol>
+					<p>
+					兩相權衡之下，你會知道命比錢還重要，所以與其把錢留下卻把命交給強盜，還不如把錢交出去。
+					</p>
+					<p>
+					介紹完所有的蘊涵規則之後，一樣提供一些例題讓大家練習這些規則的應用：
+					</p>
+					<div class="quiz">
+						<ol class="pfq">
+							<li>$A&rarr;B$</li>
+							<li>$&not;C&and;&not;&not;D$</li>
+							<li>$C&or;(B&rarr;&not;D)$</li>
+							<li>$&not;A&and;&not;B$</li>
+						</ol>
+						<ol class="pfq">
+							<li>$&not;A&and;(A&or;D)$</li>
+							<li>$(C&or;A)&rarr;L$</li>
+							<li>$(D&or;U)&rarr;C$</li>
+							<li>$L$</li>
+						</ol>
+						<ol class="pfq">
+							<li>$(&not;A&or;D)&and;E$</li>
+							<li>$&not;A&rarr;B$</li>
+							<li>$D&rarr;(F&or;G)$</li>
+							<li>$B&or;(F&or;G)$</li>
+						</ol>
+					</div>
+					<div class="quiz">
+						<ol class="pfq">
+							<li>$(A&or;C)&and;&not;B$</li>
+							<li>$A&rarr;D$</li>
+							<li>$C&rarr;B$</li>
+							<li>$D$</li>
+						</ol>
+						<ol class="pfq">
+							<li>$(R&and;A)&or;E$</li>
+							<li>$(R&and;A)&rarr;D$</li>
+							<li>$&not;D$</li>
+							<li>$E&and;&not;D$</li>
+						</ol>
+						<ol class="pfq">
+							<li>$C&rarr;A$</li>
+							<li>$A&rarr;(B&and;D)$</li>
+							<li>$C$</li>
+							<li>$B&or;E$</li>
+						</ol>
+					</div>
+					<div class="quiz">
+						<ol class="pfq">
+							<li>$&not;A&and;(D&rarr;E)$</li>
+							<li>$&not;A&rarr;(C&or;D)$</li>
+							<li>$A&or;(C&rarr;B)$</li>
+							<li>$B&or;E$</li>
+						</ol>
+						<ol class="pfq">
+							<li>$E&or;(A&rarr;C)$</li>
+							<li>$C&rarr;(D&and;&not;E)$</li>
+							<li>$C&and;D$</li>
+							<li>$A&rarr;(D&and;&not;E)$</li>
+						</ol>
+						<ol class="pfq">
+							<li>$(F&rarr;G)&or;H$</li>
+							<li>$(C&and;D)&rarr;F$</li>
+							<li>$&not;G&and;&not;H$</li>
+							<li>$&not;F$</li>
+						</ol>
+					</div>
+				</div><!--chap4 sect2 subsect1-->
+			</div><!--chap4 sect2-->
+		</div><!--chapter 4-->
+	</div><!--main-->
 </body>
