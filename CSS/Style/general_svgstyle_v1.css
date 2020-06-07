@@ -1,0 +1,46 @@
+svg {
+	display:block;
+	margin:1em 0 0 2em;
+	width:100%;
+}
+svg.back {
+	position:absolute;
+	margin:0;
+	z-index:-1;
+}
+svg * {
+	stroke:black;
+	stroke-width:1;
+	fill:none;
+}
+text, tspan {
+	font-family:'CMU Serif', 'Noto Serif TC', STIXGeneral;
+}
+text, tspan, marker > path {
+	stroke-width:0;
+	fill:black;
+}
+text.ita, tspan.ita {
+	font-style:italic;
+}
+text.bold, tspan.bold {
+	font-weight:bold;
+}
+text.felipa, tspan.felipa {
+	font-family:felipa;
+}
+rect.grey, circle.grey, ellipse.grey {
+	fill:#444;
+}
+rect.lgrey, circle.lgrey, ellipse.lgrey {
+	fill:#aaa;
+}
+rect.white, circle.white, ellipse.white {
+	fill:white;
+}
+rect.black, circle.black, ellipse.black {
+	fill:black;
+}
+rect.opa, circle.opa, ellipse.opa {
+	fill-opacity:0.5;
+}
