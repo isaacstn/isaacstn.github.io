@@ -160,7 +160,7 @@ ol.lltpppd > li::before {
 }
 ol.numltd > li::before {
 	counter-increment:ltd;
-	content:counter(num) counter(ltd,lower-latin) "."
+	content:counter(numd) counter(ltd,lower-latin) "."
 }
 
 /* counter-reset */
