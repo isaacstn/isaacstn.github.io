@@ -18,16 +18,16 @@ h1#ref {
 	text-align:left;
 	padding:0;
 }
-h1:first-of-type::before {
+div.chapter:first-of-type h1::before {
+	content:none;
+	counter-increment:chapter 0
+}
+div.chapter:nth-last-of-type(3) ~ h1::before {
 	content:none;
 	counter-increment:chapter 0;
 }
 h1:first-of-type {
 	page-break-before:avoid;
-}
-h1:nth-last-of-type(3) ~ h1::before {
-	content:none;
-	counter-increment:chapter 0;
 }
 h2::before {
 	counter-increment:section;
