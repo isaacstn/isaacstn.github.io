@@ -158,6 +158,10 @@ ol.lltpppd > li::before {
 	counter-increment:lltpppd;
 	content:counter(lltpppd,lower-latin) "'''. "
 }
+ol.numltd > li::before {
+	counter-increment:ltd;
+	content:counter(num) counter(ltd,lower-latin) "."
+}
 
 /* counter-reset */
 ol.local.prf {counter-reset: prf}
