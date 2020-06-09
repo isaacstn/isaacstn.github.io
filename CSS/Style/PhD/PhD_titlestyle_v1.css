@@ -3,10 +3,6 @@ h1, h2, h3, h4, h5 {
 	font-weight:bold;
 	text-align:center;
 }
-h1::before {
-	content:"第" counter(chapter, trad-chinese-informal) "章　";
-	counter-increment:chapter;
-}
 h1 {
 	font-size:28pt;
 	margin-top:2.5em;
@@ -14,9 +10,12 @@ h1 {
 	page-break-before:always;
 	counter-reset:section;
 }
-h1#ref {
-	text-align:left;
-	padding:0;
+h1:first-of-type {
+	page-break-before:avoid;
+}
+h1::before {
+	content:"第" counter(chapter, trad-chinese-informal) "章　";
+	counter-increment:chapter;
 }
 div.chapter:first-of-type h1::before {
 	content:none;
@@ -25,9 +24,6 @@ div.chapter:first-of-type h1::before {
 div.chapter:nth-last-of-type(3) ~ h1::before {
 	content:none;
 	counter-increment:chapter 0;
-}
-h1:first-of-type {
-	page-break-before:avoid;
 }
 h2::before {
 	counter-increment:section;
