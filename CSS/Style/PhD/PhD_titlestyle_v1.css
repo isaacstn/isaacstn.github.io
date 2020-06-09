@@ -21,7 +21,7 @@ div.chapter:first-of-type h1::before {
 	content:none;
 	counter-increment:chapter 0
 }
-div.chapter:nth-last-of-type(3) ~ h1::before {
+h1:nth-last-of-type(3) ~ h1::before {
 	content:none;
 	counter-increment:chapter 0;
 }
