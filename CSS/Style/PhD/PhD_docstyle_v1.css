@@ -28,10 +28,6 @@ ol + p, ul + p,
 table + p {
 	text-indent:0
 }
-p.new {
-	color:red;
-	background-color:lightcyan;
-}
 q {
 	font-family:'CMU Serif','Adobe FangSong'
 }
@@ -94,6 +90,10 @@ span.note:hover span.box {
 }
 .kai {
 	font-family:'CMU Serif','Adobe Kai','標楷體','DFKai-SB';
+}
+.new {
+	color:red;
+	background-color:lightcyan;
 }
 
 /* move below to doc */
