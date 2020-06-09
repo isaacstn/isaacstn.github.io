@@ -28,6 +28,10 @@ ol + p, ul + p,
 table + p {
 	text-indent:0
 }
+p.new {
+	color:red;
+	background-color:lightcyan;
+}
 q {
 	font-family:'CMU Serif','Adobe FangSong'
 }
