@@ -1,70 +1,71 @@
 h1, h2, h3, h4, h5 {
-	font-family:'CMU Serif','Adobe FangSong';
-	font-weight:bold;
-	text-align:center;
+	font-family: 'CMU Serif','Adobe FangSong';
+	font-weight: bold;
+	text-align: center;
 }
 h1 {
-	font-size:28pt;
-	margin-top:2.5em;
-	margin-bottom:1.5em;
-	page-break-before:always;
-	counter-reset:section;
+	font-size: 28pt;
+	margin-top: 2.5em;
+	margin-bottom: 1.5em;
+	page-break-before: always;
+	counter-reset: section;
 }
 h1:first-of-type {
-	page-break-before:avoid;
+	page-break-before: avoid;
 }
 h1::before {
-	content:"第" counter(chapter, trad-chinese-informal) "章　";
-	counter-increment:chapter;
+	content: "第" counter(chapter, trad-chinese-informal) "章　";
+	counter-increment: chapter;
 }
 div.chapter:first-of-type h1::before {
-	content:none;
-	counter-increment:chapter 0
+	content: none;
+	counter-increment: chapter0
 }
-h1:nth-last-of-type(3) ~ h1::before {
-	content:none;
-	counter-increment:chapter 0;
+div:nth-last-of-type(2) h1::before,
+div:last-of-type h1::before {
+	content: none;
+	counter-increment: chapter0;
 }
 h2::before {
-	counter-increment:section;
+	counter-increment: section;
 	content: "第" counter(section,trad-chinese-informal) "節、";
 }
 h2 {
-	counter-reset:subsection;
-	margin:2em auto 1em auto;
-	font-size:20pt;
+	counter-reset: subsection;
+	margin: 2em auto 1em auto;
+	font-size: 20pt;
 }
 h2#abstract::before {
-	content:none;
+	content: none;
 }
 h2#abstract {
-	text-align:center;
+	text-align: center;
 }
 h3::before {
-	counter-increment:subsection;
+	counter-increment: subsection;
 	content: counter(chapter) "." counter(section) "." counter(subsection) ". ";
 }
 h3 {
-	margin-top:1em;
-	margin-bottom:1em;
-	counter-reset:portion;
-	font-size:16pt;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	counter-reset: portion;
+	font-size: 16pt;
 }
 h4::before {
-	counter-increment:portion;
-	content:counter(chapter) "." counter(section) "." counter(subsection) "." counter(portion) ". ";
+	counter-increment: portion;
+	content: counter(chapter) "." counter(section) "." counter(subsection) "." counter(portion) ". ";
 }
 h4 {
-	margin-top:1em;
-	font-size:12pt;
+	margin-top: 1em;
+	font-size: 12pt;
 }
 h5::before {
-	content:"【";
+	content: "【";
 }
 h5 {
-	margin-top:1em;
-	font-size:12pt;
+	margin-top: 1em;
+	font-size: 12pt;
 }
 h5::after {
-	content:"】";
+	content: "】";
 }
