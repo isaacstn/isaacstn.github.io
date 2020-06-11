@@ -3,6 +3,7 @@ table {
 	margin:1em 2em;
 	border-collapse:collapse;
 	empty-cells:show;
+	page-break-inside:avoid
 }
 table.full {
 	width:95%;
