@@ -17,6 +17,12 @@ body {
 	text-justify:inter-character;
 	prince-text-justify:prince-cjk;
 }
+div.chapter {
+	page-break-before:always
+}
+div.chapter:first-of-type {
+	page-break-before:avoid
+}
 p, p.ind {
 	text-indent:2em;
 	margin-top:1em;
