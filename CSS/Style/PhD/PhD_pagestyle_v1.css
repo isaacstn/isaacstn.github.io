@@ -30,12 +30,6 @@
 		widows:2;
 		orphans:2;
 	}
-	h1, h2, h3, h4, h5 {
-		page-break-after:avoid;
-	}
-	table, svg {
-		page-break-inside:avoid;
-	}
 	span.note::before {
 		display:none;
 	}
