@@ -7,6 +7,7 @@ h1, h2, h3, h4, h5 {
 h1 {
 	margin: 24pt auto;
 	counter-reset: section;
+	text-align:center
 }
 h1:first-of-type {
 	page-break-before: avoid
@@ -30,6 +31,7 @@ h2::before {
 }
 h2 {
 	counter-reset: subsection;
+	text-align:center;
 	margin-top: 24pt
 }
 h2#abstract::before {
