@@ -2,15 +2,14 @@ h1, h2, h3, h4, h5 {
 	font-family: 'CMU Serif','Noto Serif TC';
 	font-size:12.5pt;
 	font-weight: 900;
-	text-align: center
+	page-break-after:avoid
 }
 h1 {
-	margin-bottom: 24pt;
-	page-break-before: always;
+	margin: 24pt auto;
 	counter-reset: section;
 }
 h1:first-of-type {
-	page-break-before: avoid;
+	page-break-before: avoid
 }
 h1::before {
 	content: "第" counter(chapter, trad-chinese-informal) "章　";
@@ -18,12 +17,12 @@ h1::before {
 }
 div.chapter:first-of-type h1::before {
 	content: none;
-	counter-increment: chapter0
+	counter-increment: chapter 0
 }
 div.chapter:nth-last-of-type(2) h1::before,
 div.chapter:last-of-type h1::before {
 	content: none;
-	counter-increment: chapter0;
+	counter-increment: chapter 0;
 }
 h2::before {
 	counter-increment: section;
