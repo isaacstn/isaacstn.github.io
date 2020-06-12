@@ -35,7 +35,8 @@ table + p {
 	text-indent:0
 }
 q {
-	font-family:'CMU Serif','Noto Serif TC'
+	font-family:'CMU Serif','Noto Serif TC';
+	font-weight:200
 }
 q::before, q::after {
 	content:none
@@ -45,6 +46,7 @@ b {
 }
 blockquote {
 	font-family:'CMU Serif','Noto Serif TC';
+	font-weight:200;
 	margin:1em 0 1em 2em;
 	text-indent:0
 }
