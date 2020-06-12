@@ -44,8 +44,8 @@ b {
 	font-weight:900
 }
 blockquote {
-	font-family:'CMU Serif','Adobe FangSong';
-	margin:1em 2em;
+	font-family:'CMU Serif','Noto Serif TC';
+	margin:1em 0 1em 2em;
 	text-indent:0
 }
 #ref p {
