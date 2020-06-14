@@ -16,14 +16,16 @@ blockquote ol, blockquote ul {
 	margin-left:0
 }
 li::before {
+	width:1.75em;
+	text-align:right;
 	position:absolute;
 	left:-2em
 }
 li {
+	margin-right:2em;
 	list-style:none;
 	position:relative;
 	left:2em;
-	margin-right:2em
 }
 ul > li {
 	left:0
@@ -38,10 +40,14 @@ ul > li {
 /* ordered-list style */
 
 /* proof list */
+ol.prf > li::before, ol.prfp > li::before {
+	left:-2.5em;
+	width:2.25em;
+	font-style:italic
+}
 ol.prf > li::before {
 	counter-increment:prf;
-	content:"P" counter(prf) ". ";
-	font-style:italic
+	content:"P" counter(prf) ". "
 }
 ol.prf > li:last-child::before {
 	counter-increment:pfc;
@@ -50,29 +56,58 @@ ol.prf > li:last-child::before {
 ol.prfp > li::before {
 	counter-increment:prfp;
 	content:"P" counter(prfp) "'. ";
-	font-style:italic
 }
 ol.prfp > li:last-child::before {
 	counter-increment:pfcp;
 	content:"C" counter(pfcp) "'. "
+}
+ol.prf > li, ol.prfp > li {
+	left:2.5em;
+	margin-right:2.5em
 }
 ol.pfs {
 	counter-reset:pfs
 }
 ol.pfs > li::before {
 	left:-1.5em;
+	width:1em;
 	counter-increment:pfs;
 	content:counter(pfs) ".";
 	font-style:italic
 }
-div.prf ol.pfs > li::before {
-	left:-2em;
-	content:"P" counter(pfs) ". "
-}
-ol.pfs > li:last-child::before, div.prf ol.pfs > li:last-child::before {
-	left:-1.5em;
+ol.pfs > li:last-child::before {
 	counter-increment:none;
-	content:"C. "
+	content:"C."
+}
+ol.cpfs {
+	counter-reset:cpfs nplus
+}
+ol.cpfs > li::before {
+	left:-3.5em;
+	width:3em;
+	counter-increment:cpfs;
+	content:"P" counter(cpfs) ".";
+	font-style:italic
+}
+ol.cpfs > li.ellip::before {
+	content:none;
+}
+li.ellip + li::before {
+	content:"Pm."
+}
+li.ellip + li ~ li::before {
+	counter-increment:nplus;
+	content:"Pm+" counter(nplus) "."
+}
+ol.cpfs > li:nth-last-of-type(2)::before {
+	content:"Pn."
+}
+ol.cpfs.gai > li:nth-last-of-type(2)::before {
+	content:"Pn-1."
+}
+ol.cpfs > li:last-of-type::before {
+	counter-increment:none;
+	content:"C."
 }
 ol.pfq::before {
 	width:1.5em;
@@ -99,10 +134,10 @@ ol.pfq > li::before {
 	content:"P" counter(pfq) ".";
 	font-style:italic
 }
-ol.pfq li:last-child::before {
+ol.pfq > li:last-child::before {
 	content:"C ."
 }
-ol.pfq li {
+ol.pfq > li {
 	left:1.75em;
 }
 
@@ -132,7 +167,8 @@ ol.llt > li::before {
 .numd > li::before, .urmd > li::before, .lrmd > li::before, .ultd > li::before, .lltd > li::before,
 .numpd > li::before, .urmpd > li::before, .lrmpd > li::before, .ultpd > li::before, .lltpd > li::before,
 .lltppd > li::before, .lltpppd > li::before {
-	left:-1.5em
+	left:-1.5em;
+	width:1.25em
 }
 .numd > li, .urmd > li, .lrmd > li, .ultd > li, .lltd > li,
 .numpd > li, .urmpd > li, .lrmpd > li, .ultpd > li, .lltpd > li,
@@ -212,36 +248,31 @@ ol.local.lltpppd {counter-reset: lltpppd}
 /* unordered-list style */
 
 /* disc general */
+ul li::before {
+	width:2em;
+	text-align:center;
+}
 ul > li::before {
-	position:absolute;
-	left:-0.8em;
 	content:"•"
 }
 ul > li {
 	left:1em
 }
 ul ul > li::before {
-	left:-1.1em;
 	content:"◦"
 }
 ul ul ul > li::before {
-	left:-1em;
 	content:"▸"
 }
 ul ul ul ul > li::before {
-	left:-1em;
 	content:"▹"
 }
 ul ul ul ul ul > li::before {
-	left:-1.3em;
 	font-size:75%;
-	text-align:left;
 	content:"⬥"
 }
 ul ul ul ul ul ul > li::before {
-	left:-1.3em;
 	font-size:75%;
-	text-align:left;
 	content:"⬦"
 }
 ul.list > li::before {
@@ -254,6 +285,7 @@ ul.list > li {
 /* induction style */
 ul.induction > li::before {
 	position:absolute;
+	width:2.25em;
 	left:-2.5em
 }
 ul.induction > li:nth-child(1)::before {
