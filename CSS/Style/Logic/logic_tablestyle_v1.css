@@ -13,18 +13,22 @@ table.qt3 {
 table.half {
 	width:50%;
 }
+li table {margin-left:0}
 
 /* tables for proof */
 table.prf {
 	counter-reset:tprf;
+	margin-right:0;
 }
 table.prf td {
 	vertical-align:middle;
 	text-align:left;
 }
 table.prf td:first-child::before {
+	left:-2.25em;
+	width:1.75em;
+	text-align:right;
 	position:absolute;
-	left:-2em;
 	counter-increment:tprf;
 	content:"("counter(tprf)") ";
 }
@@ -32,15 +36,49 @@ table.prf tr:last-child td:first-child::before {
 	content:"(C) ";
 }
 table.prf td:first-child {
+	padding-right:2.25em;
 	position:relative;
-	left:2em;
-	padding-right:2em;
+	left:2.25em;
 }
 table.prf td:nth-child(2) {
 	padding-left:1em;
 }
-table.prf tr:first-child td {
-	padding-top:0;
+table.prf.bracket td:nth-child(2), table.cprf.bracket td:nth-child(3) {
+	padding-left:0em;
+}
+
+/* tables for conditional proof */
+table.cprf {
+	counter-reset:tcprf;
+	margin-right:0;
+}
+table.cprf td {
+	vertical-align:middle;
+	text-align:left;
+}
+table.cprf td:first-child {
+	text-align:right;
+	vertical-align:top;
+	padding-right:0.5em
+}
+table.cprf td:nth-child(2)::before {
+	left:-2.25em;
+	width:1.75em;
+	text-align:right;
+	position:absolute;
+	counter-increment:tcprf;
+	content:"("counter(tcprf)") ";
+}
+table.cprf tr:last-child td:nth-child(2)::before {
+	content:"(C) ";
+}
+table.cprf td:nth-child(2) {
+	padding-right:2.25em;
+	position:relative;
+	left:2.25em;
+}
+table.cprf td:nth-child(3) {
+	padding-left:1em;
 }
 
 /*tables for proof 2 */
