@@ -116,13 +116,9 @@ svg.back {
 	margin:0;
 	z-index:-1;
 }
-div.tree svg {
+div.tree svg, div.tree2 svg {
 	margin:0;
 	height:1.5em;
-}
-div.tree2 svg {
-	margin:0;
-	height:1.5em
 }
 svg * {
 	stroke:black;
@@ -159,14 +155,6 @@ rect.black, circle.black, ellipse.black {
 }
 rect.opa, circle.opa, ellipse.opa {
 	fill-opacity:0.5;
-}
-div.inblock {
-	display:inline-block;
-}
-div#bonus {
-	margin-bottom:-0.5em;
-	font-weight:bold;
-	page-break-before:always;
 }
 #ref p {
 	text-indent:-2em;
@@ -218,7 +206,10 @@ span.note:hover span.box {
 	font-family:'CMU Serif','Adobe Kai','標楷體','DFKai-SB';
 }
 .hidden {
-	visibility:hidden;
+	visibility:hidden
+}
+.noshow {
+	display:none
 }
 .notab {margin-left:0}
 .left {float:left}
