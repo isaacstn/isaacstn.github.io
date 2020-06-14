@@ -2,7 +2,7 @@
 	margin:0;
 	padding:0;
 }
-html {width:max-content}
+html {width:100vh}
 body {
 	hyphens:auto;
 	-webkit-hyphens:auto;
