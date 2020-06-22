@@ -16,7 +16,7 @@ h1::before {
 	content: "第" counter(chapter, trad-chinese-informal) "章　";
 	counter-increment: chapter;
 }
-div.chapter:first-of-type h1::before {
+div#front h1::before, div.chapter:first-of-type h1::before {
 	content: none;
 	counter-increment: chapter 0
 }
