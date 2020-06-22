@@ -1,6 +1,7 @@
 * {
 	margin:0;
 	padding:0;
+	position:relative;
 }
 body {
 	hyphens:auto;
@@ -33,6 +34,20 @@ blockquote p,
 ol + p, ul + p,
 table + p {
 	text-indent:0
+}
+.toc p {
+	background-color:rgba(128, 128, 128, 0.2);
+	width:90%;
+	text-indent:0;
+	margin:0 auto .5rem auto;
+	line-height:1.2rem;
+}
+.toc p span:last-child {
+	min-width:1rem;
+	text-align:right;
+	position:absolute;
+	right:0;
+	bottom:0;
 }
 q {
 	font-family:'CMU Serif','Noto Serif TC';
@@ -93,7 +108,7 @@ span.note:hover span.box {
 	font-size:10pt;
 	line-height:1.5em;
 }
-.song, .quote {
+.song {
 	font-family:'CMU Serif','Adobe FangSong';
 }
 .kai {
