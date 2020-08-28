@@ -1,28 +1,31 @@
 @page {
 	size:A4;
-	margin:3cm 2.5cm 3cm 3.5cm;
+	margin:3cm 2.5cm 2.75cm 3.5cm;
 	@footnotes {
 		margin-top: 0.5em;
 		border-top: 1px solid #000;
 		border-clip: 8em;
 		padding-top: 0.5em;
 		padding-right:1em;
+		padding-bottom:0.75em;
 	}
 }
 @page front-matter {
 	@top-right {
 		text-align:right;
+		vertical-align:bottom;
 		counter-increment:page;
 		content:counter(page, lower-roman);
-		padding-top:50%;
+		padding-bottom:1cm
 	}
 }
 @page main {
 	@top-right {
 		text-align:right;
+		vertical-align:bottom;
 		counter-increment:page;
 		content:counter(page);
-		padding-top:50%;
+		padding-bottom:1cm
 	}
 }
 @media print {
