@@ -32,7 +32,7 @@ h2::before {
 h2 {
 	counter-reset: subsection;
 	text-align:center;
-	margin-top: 24pt
+	margin: 24pt auto
 }
 h2#abstract::before {
 	content: none;
