@@ -1,6 +1,10 @@
 @page {
 	size:A4;
 	margin:3cm 2.5cm 2.75cm 3.5cm;
+	background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.3) 100%), url(https://isaacstn.github.io/Writings/PhD/CCU.png);
+	background-size:10.5cm auto;
+	background-repeat:no-repeat;
+	background-position:50%;
 	@footnotes {
 		margin-top: 0.5em;
 		border-top: 1px solid #000;
