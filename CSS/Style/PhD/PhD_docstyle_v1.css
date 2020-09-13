@@ -12,7 +12,7 @@ body {
 	width:15cm;
 	margin: auto;
 	font:normal normal 12.5pt 'CMU Serif','Noto Serif TC';
-	line-height:2em;
+	line-height:2rem;
 	text-align:justify;
 	text-justify:inter-character;
 	prince-text-justify:prince-cjk;
@@ -23,13 +23,37 @@ div.chapter {
 div.chapter:first-of-type {
 	page-break-before:avoid
 }
+div#cover {
+	text-align:center;
+	margin-left:-0.5cm;
+	margin-top:4.5cm;
+	line-height:1.5em;
+	font-family:'Adobe Kai';
+}
+div#cover p {
+	text-indent:0
+}
+div#abstract_en,
+div#sign_zh,
+div#sign_en {
+	line-height:1.5rem
+}
+div#sign_zh,
+div#sign_en {
+	height:max-content;
+	width:max-content;
+	margin-left:7.5cm;
+	margin-top:17cm;
+}
 p, p.ind {
 	text-indent:2em;
+	margin-top:1em
 }
 p:first-of-type, 
 blockquote + p,
 blockquote p,
 ol + p, ul + p,
+p.keyword
 table + p {
 	text-indent:0
 }
