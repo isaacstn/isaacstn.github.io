@@ -4,7 +4,6 @@ body {
 }
 ol,ul {
 	height:max-content;
-	width:max-content;
 	margin:1em 0 1em 2em;
 	padding:0
 }
