@@ -53,7 +53,7 @@
 			而本章所要介紹的證明系統，既可以幫助我們瞭解要如何從一些前提推論出另一些結論，當我們需要為某些主張提供論證支持時，這個證明系統也可以幫助我們去尋找能夠有效地推論出那些結論的前提。
 			</p>
 			
-			<div class="section" id="proof-system-basics">
+			<div class="section" id="4-1">
 				<h2>證明系統的基本概念</h2>
 				<p>
 				邏輯這門學科被歸類在<b>形式科學 (formal science)</b> 這個學門領域之中，因為它所研究的對象就是各種形式語言。什麼是形式語言？簡單說，一個形式語言就是由各種符號所構成，並且包含了這些符號的各種操作規則。
@@ -62,7 +62,7 @@
 				比如說，當我們在第一章學習語句邏輯的語言時，有學到語句邏輯中可以使用的符號有哪些，並且學到如何利用完構式的構成規則來將語句邏輯中的符號組合成合法的表達式，那些完構式的構成規則就是針對符號的操作規則。然而完構式的規則只是告訴我們可以如何從簡單的符號組合出複雜的表達式，卻不能告訴我們這些表達式之間可以怎麼互相轉換，而證明系統就提供了表達式之間的轉換規則。
 				</p>
 				
-				<div class="subsection" id="formality">
+				<div class="subsection" id="4-1-1">
 					<h3>有效推論的形式</h3>
 					<p>
 					為什麼這樣的語言會被稱作是一個<b>形式</b>語言？這是因為這些關於符號的操作規則在乎的就只是符號的長像，而不在乎這些符號究竟表達了什麼內容。舉例來說：
@@ -170,7 +170,7 @@
 					</p>
 				</div><!--chap4 sect1 subsect1-->
 				
-				<div class="subsection" id="definition-of-proof">
+				<div class="subsection" id="4-1-2">
 					<h3>證明的定義</h3>
 					<p>
 					那麼何謂證明？在我們的日常生活中，證明一件事無非就是想辦法找各種道理和證據去支持那件事是成立的。不過在語句邏輯系統中，對證明有一個精準的定義。所謂<b>證明 (proof)</b>就是：
@@ -216,7 +216,7 @@
 				</div><!--chap4 sect1 subsect2-->
 			</div><!--chap4 sect1-->
 			
-			<div class="section" id="rules">
+			<div class="section" id="4-2">
 				<h2>證明可用的推論規則</h2>
 				<p>
 				既然重點在於<b>有效推論規則</b>，我們就開始介紹語句邏輯系統中的有效推論規則有哪些。我要介紹的推論規則一共有十八條，其中有八條規則屬於<b>蘊涵規則</b>，另外有十條規則是<b>等值規則</b>。最後，我還會介紹一條後設規則——<b>條件證法</b>。
@@ -231,7 +231,7 @@
 				不過要注意的是，在用實際的語句去代換推論規則中的 '$&alpha;$'、'$&beta;$' 等符號時，請一定要用一樣的語句來代換一樣的符號。比如說，當我用 '$A&and;B$' 來代換 '$&alpha;&rarr;&beta;$' 中的 '$&alpha;$'，並用 '$C$' 來代換 '$&alpha;&rarr;&beta;$' 中的 '$&beta;$' 時，我就必須同樣用 '$A&and;B$' 來代換逗號右邊的 '$&alpha;$'，並且用 '$C$' 來代換 '$&vdash;$' 右邊的 '$&beta;$'。
 				</p>
 				
-				<div class="subsection" id="entailment-rules">
+				<div class="subsection" id="4-2-1">
 					<h3>蘊涵規則（一）</h3>
 					<p>
 					顧名思義，蘊涵規則所包含的八條推論規則，都是利用語句之間的蘊涵關係建構出來的規則。第一條蘊涵規則是最常被使用到的規則，也是最普遍存在於不同的證明系統中的規則
@@ -647,7 +647,7 @@
 					</div>
 				</div><!--chap4 sect2 subsect1-->
 				
-				<div class="subsection" id="entailment-rule-2">
+				<div class="subsection" id="4-2-2">
 					<h3>蘊涵規則（二）</h3>
 					<p>
 					最後要介紹的三個規則分別是<b>選言三段論 (Disjunctive Syllogism)</b>、假言三段論 (Hypothetical Syllogism)</b> 和<b>建構式兩難 (Constructive Dilemma)</b>。
@@ -916,7 +916,7 @@
 					</div>
 				</div><!--chap4 sect2 subsect2-->
 				
-				<div class="subsection" id="equivalence-rule-1">
+				<div class="subsection" id="4-2-3">
 					<h3>等值規則（一）</h3>
 					<p>
 					既然蘊涵規則是來自於語句間的蘊涵關係，等值規則自然就是來自於語句間的等值關係。在上一章介紹等值關係時我有提過，給定任意兩個語句 '$&alpha;$' 和 '$&beta;$'，只要這兩個語句彼此是等值的，就表示這兩個語句在所有語意模型之下的真值都相同，也就是說這兩個語句的<b>意義相同</b>。
@@ -1421,7 +1421,7 @@
 					</div><!--quiz-->
 				</div><!--chap4 sect2 subsect3-->
 				
-				<div class="subsection" id="equivalence-rule-2">
+				<div class="subsection" id="4-2-4">
 					<h3>等值規則（二）</h3>
 					<p>
 					接下來要介紹的是剩下的四條等值規則，這四條等值規則都是和條件句或雙條件句有關的等值規則。以下是第一條規則：
@@ -1953,7 +1953,7 @@
 				</div><!--chap4 sect2 subsect4-->
 			</div><!--chap4 sect2-->
 			
-			<div class="section" id="conditional-proof">
+			<div class="section" id="4-3">
 				<h2>條件證法</h2>
 				<p>
 				最後要跟大家介紹的是一個證明方法，你也可以把它看成是這個證明系統中的第十九條規則。但嚴格說起來，它其實不是一個推論規則，而是這個證明系統的一個後設規則。以下是對這個規則的描述：
