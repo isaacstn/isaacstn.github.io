@@ -18,14 +18,18 @@ body {
 	prince-text-justify:prince-cjk;
 }
 div.chapter, div.section, div.subsection, div.portion, div.quiz, div.tree, div.tree2 {
-	display:flow-root
+	display:flow-root;
+	height:max-content
 }
-div.tree, div.tree2 {
+div.tree, div.tree2, div.quiz {
 	text-align:center;
 	margin-top:1em;
 }
+div.quiz {
+	text-align:left;
+}
 div.tree2 {
-	width:max-content
+	width:max-content;
 }
 div.tree div {
 	float:left;
@@ -34,6 +38,11 @@ div.tree div {
 div.tree2 div {
 	float:left;
 	width:50%;
+}
+div.tree::after, div.tree2::after, div.quiz::after {
+	content:'';
+	display:block;
+	clear:both;
 }
 div.prf::before {
 	counter-increment:dprf;
