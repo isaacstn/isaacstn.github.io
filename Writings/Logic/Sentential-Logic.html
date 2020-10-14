@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+	<script src="https://isaacstn.github.io/script/note.bubble.v1.js"></script>
+
+	<!--fonts-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	
+	<!--styles-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_pagestyle_v1.css"/><!--pagestyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_titlestyle_v1.css"/><!--titlestyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.3.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_liststyle_v1.css"/><!--liststyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_tablestyle_v1.css"/><!--tablestyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3-math.css"/><!--jqmath-->
+
+	<style>
+	h1::before {
+		counter-increment:chapter 4;
+	}
+	div#main {
+		counter-reset:page 99;
+	}
+	</style>
+
+	<title>Ch4_SL-Proof-System</title>
+</head>
+
+<body>
+      <h1 style="page-break-after:avoid;">目錄</h1>
+			<table class="toc" style="page-break-before:avoid;">
+				<tr class="chapter"><td><a href="Ch0_Basic-Ideas.html">第零章 基本觀念</a></td></tr>
+				<tr><td>&emsp;<a href="Ch0_Basic-Ideas.html#0-1">0.1 論證</a></td><td>8</td></tr>
+				<tr><td>&emsp;<a href="Ch0_Basic-Ideas.html#0-2">0.2 語言</a></td><td>14</td></tr>
+				<tr><td>&emsp;&emsp;<a href="Ch0_Basic-Ideas.html#0-2-1">0.2.1 語言是一套符號系統</a></td><td>17</td></tr>
+				<tr><td>&emsp;&emsp;<a href="Ch0_Basic-Ideas.html#0-2-2">0.2.2 語言的組合性</a></td><td>21</td></tr>
+				<tr><td>&emsp;&emsp;<a href="Ch0_Basic-Ideas.html#0-2-3">0.2.3 語句的真假</a></td><td>30</td></tr>
+				<tr><td>&emsp;</td></tr>
+				<tr class="chapter"><td><a href="#2_Source-of-Normativity">第二章 規範性的來源</a></td><td>36</td></tr>
+				<tr><td>&emsp;<a href="#2-1_naturalism">第一節 規範性宣稱的自然主義</a></td><td>37</td></tr>
+				<tr><td>&emsp;<a href="#2-2_the-normative-question">第二節 規範性問題</a></td><td>40</td></tr>
+				<tr><td>&emsp;<a href="#2-3_substantive-vs-procedural">第三節 實質實在論與程序實在論</a></td><td>44</td></tr>
+				<tr><td>&emsp;<a href="#2-4_questioning-the-normative-question">第四節 對根本的規範性問題之質疑</a></td><td>48</td></tr>
+				<tr><td>&emsp;<a href="#2-5_source-of-normativity">第五節 規範性的來源</a></td><td>52</td></tr>
+				<tr><td>&emsp;</td></tr>
+				<tr class="chapter"><td><a href="#3_Content-Neutral-Autonomy">第三章 內容中立的自主性理論</a></td><td>62</td></tr>
+				<tr><td>&emsp;<a href="#3-1_content-neutrality">第一節 內容中立的自主性理論</a></td><td>63</td></tr>
+				<tr><td>&emsp;<a href="#3-2_questioning-desire-heirarchy">第二節 對欲望階層的質疑</a></td><td>70</td></tr>
+				<tr><td>&emsp;<a href="#3-3_questioning-content-neutrality">第三節 對內容中立性的質疑</a></td><td>76</td></tr>
+				<tr><td>&emsp;<a href="#3-4_questioning-reflective-endorsement">第四節 對反思認同的質疑</a></td><td>83</td></tr>
+				<tr><td>&emsp;<a href="#3-5_why-content-neutral-autonomy">第五節 為什麼是內容中立的自主性理論？</a></td><td>86</td></tr>
+				<tr><td>&emsp;</td></tr>
+				<tr class="chapter"><td><a href="#4_Autonomy-Normativity-and-Morality">第四章 自主性、規範性與道德</a></td><td>92</td></tr>
+				<tr><td>&emsp;<a href="#4-1_constructing-normativity">第一節 規範性的建構</a></td><td>93</td></tr>
+				<tr><td>&emsp;<a href="#4-2_love-and-care">第二節 愛與關懷</a></td><td>96</td></tr>
+				<tr><td>&emsp;<a href="#4-3_publicity-of-morality">第三節 道德規範的公共性</a></td><td>100</td></tr>
+				<tr><td>&emsp;<a href="#4-4_other-accounts-of-morality">第四節 其他對道德規範的說明</a></td><td>103</td></tr>
+				<tr><td>&emsp;<a href="#4-5_constructing-public-norms">第五節 建構具公共性的道德規範性</a></td><td>114</td></tr>
+				<tr><td>&emsp;</td></tr>
+				<tr class="chapter"><td><a href="#Conclusion">結論</a></td><td>122</td></tr>
+				<tr class="chapter"><td><a href="#ref">參考文獻</a></td><td>130</td></tr>
+			</table>
