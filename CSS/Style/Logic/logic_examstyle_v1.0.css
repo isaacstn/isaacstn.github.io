@@ -81,6 +81,9 @@ div.float {
 	counter-increment:numd 1;
 	content:counter(numd) ". "
 }
+.exam table.prfq td {
+	height:1.75em
+}
 .exam table.prfq td:first-child {
 	padding-right:1em
 }
