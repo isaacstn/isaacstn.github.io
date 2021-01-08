@@ -1,0 +1,102 @@
+.exam h2:before {
+	content:none
+}
+.exam h2 span {
+	font-size:12pt;
+	font-weight:normal;
+}
+.exam h4:before {
+	content:none
+}
+.exam * {
+	margin-left:0;
+	text-indent:0;
+}
+.exam ol, .exam ul, .exam blockquote, div.section>ol>li {
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+}
+.exam div.section {
+	display:flow-root;
+}
+.flex {
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	align-items:flex-start
+}
+.grow {
+	flex-grow:1
+}
+.flex.nogrow * {
+	flex-grow:0
+}
+div.float {
+	float:left;
+}
+.exam ol.prfq::before {
+	content:counter(ult,upper-latin) ".";
+	counter-increment:ult 1;
+	counter-reset:num
+}
+.exam ol.prfq {
+	counter-reset:num
+}
+.exam ol.prfq li::before {
+	left:-2.5em;
+	content:"(P" counter(num) ") ";
+	counter-increment:num
+}
+.exam ol.prfq li:last-child::before {
+	content:"(C)"
+}
+.exam ol.prfq > li {
+	left:2.5em;
+	margin:0
+}
+.exam ol.rule {
+	border-top:solid 1px black
+}
+.exam ol.rule > li::before {
+	left:-1.5em;
+	content: counter(num) ". ";
+	counter-increment:num
+}
+.exam ol.rule > li {
+	left:1.5em;
+	margin-top:0
+}
+.exam table {
+	margin-top:0.5em
+}
+table.prf {
+	counter-reset:numd;
+}
+table.prf th {
+	border-bottom:solid black 1px
+}
+table.prf td:first-child::before {
+	counter-increment:numd 1;
+	content:counter(numd) ". "
+}
+table.prf td:first-child {
+	padding-right:1em
+}
+table.quiz {
+	width:100%;
+}
+table.quiz td {
+	width:25%;
+	padding-top:0.5em;
+}
+table.quiz tr:first-child td {
+	padding-top:0;
+}
+table.quiz td:before {
+	counter-increment:numd;
+	content:counter(numd) ". ";
+}
+div.wrap {
+	border:solid 1px black;
+}
