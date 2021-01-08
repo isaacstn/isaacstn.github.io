@@ -81,32 +81,32 @@ div.float {
 .exam table.prfq td:first-child {
 	padding-right:1em
 }
-table.quiz {
+.exam table.quiz {
 	width:100%;
 }
-table.quiz td {
+.exam table.quiz td {
 	width:25%;
 	padding-top:0.5em;
 }
-table.quiz tr:first-child td {
+.exam table.quiz tr:first-child td {
 	padding-top:0;
 }
-table.quiz td:before {
+.exam table.quiz td:before {
 	counter-increment:numd;
 	content:counter(numd) ". ";
 }
-table.semantics {
+.exam table.semantics {
 	width:95%;
 	border-collapse:collapse;
 }
-table.semantics tr:first-child td {
+.exam table.semantics tr:first-child td {
 	border-top:none;
 	font-weight:bold;
 }
-table.semantics td:first-child {
+.exam table.semantics td:first-child {
 	font-weight:bold;
 }
-table.semantics td {
+.exam table.semantics td {
 	border-top:1px solid black;
 	padding-top:0.5em;
 	padding-bottom:0.25em;
