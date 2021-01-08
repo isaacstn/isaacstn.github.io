@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.2.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_examstyle_v1.0.css"/><!--docstyle exam supplement-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3-math.css "/><!--jqmath-->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+
+	<style>
+	</style>
+
+	<title>End-of-term Exam</title>
+</head>
+
+<body>
+<div id="main" class="exam">
+	
+		<h2>基礎邏輯期末考</h2>
+		
+		<div class="section" style="padding-bottom:1em">
+			
+			<h4>一、請用樹枝法證明 1、2 為恆真句，3、4 為矛盾句。（每題10分）</h4>
+			
+			<table class="quiz" style="counter-reset:numd">
+				<tr><td style="width:45%">$((A&rarr;B)&and;(A&rarr;&not;B))&rarr;&not;A$</td><td>$(P&and;(Q&or;R))&rarr;((P&and;Q)&or;(P&and;R))$</td></tr>
+				<tr><td>$(A&and;B)&harr;(A&rarr;&not;B)$</td><td>$(A&and;(B&and;C))&and;(&not;C&or;(&not;A&or;&not;B))$</td></tr>
+			</table>
+			
+			<h4>二、請在以下證明中空白的位置填上正確的推論規則。（每格3分）</h4>
+			
+			<div class="flex">
+				<table class="prfq grow">
+					<tr><td>$(A&or;B)&rarr;(C&or;&not;D)$</td><td>前提</td></tr>
+					<tr><td>$A&or;&not;B$</td><td>前提</td></tr>
+					<tr><td>$&notC&and;&not;&not;B$</td><td>前提</td></tr>
+					<tr><td>$&not;&not;B$</td><td>3, Simp.</td></tr>
+					<tr><td>$A$</td><td>2,4, D.S.</td></tr>
+					<tr><td>$A&or;B$</td><td>5, <u>&ensp;(1)&ensp;</u></td></tr>
+					<tr><td>$C&or;&not;D$</td><td>1,6 <u>&ensp;(2)&ensp;</u></td></tr>
+					<tr><td>$&not;C$</td><td>3, <u>&ensp;(3)&ensp;</u></td></tr>
+					<tr><td>$&not;D$</td><td>7,8, <u>&ensp;(4)&ensp;</u></td></tr>
+					<tr><td>$A&and;&not;D$</td><td>5,9, <u>&ensp;(5)&ensp;</u></td></tr>
+				</table>
+				<table class="prfq grow">
+					<tr><td>$&not;Q&or;(P&and;&not;R)$</td><td>前提</td></tr>
+					<tr><td>$&not;(R&and;&not;S)&rarr;&not;T$</td><td>前提</td></tr>
+					<tr><td>$(&not;R&or;&not;&not;S)&rarr;&not;T$</td><td>2, <u>&ensp;(6)&ensp;</u></td></tr>
+					<tr><td>$(&not;R&or;S)&rarr;&not;T$</td><td>3, D.N.</td></tr>
+					<tr><td>$(&not;Q&or;P)&and;(&not;Q&or;&not;R)$</td><td>1, <u>&ensp;(7)&ensp;</u></td></tr>
+					<tr><td>$&not;Q&or;&not;R$</td><td>5, Simp.</td></tr>
+					<tr><td>$(&not;Q&or;&not;R)&or;S$</td><td>6, Add.</td></tr>
+					<tr><td>$&not;Q&or;(&not;R&or;S)$</td><td>7, <u>&ensp;(8)&ensp;</u></td></tr>
+					<tr><td>$Q&rarr;(&not;R&or;S)$</td><td>8, <u>&ensp;(9)&ensp;</u></td></tr>
+					<tr><td>$Q&rarr;&not;T$</td><td>4,9,<u>&#x2006;(10)&#x2006;</u></td></tr>
+				</table>
+			</div>
+			
+			<h4>三、請用十八條推論規則證明以下論證有效。（每題10分）</h4>
+			
+			<div class="flex" style="counter-reset:ult">
+				<ol class="prfq">
+					<li>$P&rarr;Q$</li>
+					<li>$&not;(Q&and;&not;R)$</li>
+					<li>$P&rarr;R$</li>
+				</ol>
+				<ol class="prfq">
+					<li>$(P&and;Q)&rarr;R$</li>
+					<li>$P$</li>
+					<li>$S&rarr;&not;R$</li>
+					<li>$&not;(S&and;Q)$</li>
+				</ol>
+				<ol class="prfq">
+					<li>$&not;A&and;(D&rarr;E)$</li>
+					<li>$&not;A&rarr;(C&or;D)$</li>
+					<li>$A&or;(C&rarr;B)$</li>
+					<li>$B&or;E$</li>
+				</ol>
+			</div>
+			<div class="flex" style="counter-reset:ult 3">
+				<ol class="prfq grow">
+					<li>$A&rarr;B$</li>
+					<li>$A&rarr;(B&rarr;C)$</li>
+					<li>$A&rarr;C$</li>
+				</ol>
+				<ol class="prfq grow">
+					<li>$A&rarr;B$</li>
+					<li>$A&rarr;&not;B$</li>
+					<li>$&not;A$</li>
+				</ol>
+			</div>
+		</div>
+		
+		<h2>語句類型的語意分析</h2>		
+		<div class="section">
+			<table class="semantics">
+				<tr><td></td><td>語句形式</td><td>真 (True)</td><td>假 (False)</td></tr>
+				<tr><td>否定句</td><td>$&not;$ 語句</td><td>語句<sub>F</sub></td><td>語句<sub>T</sub></td></tr>
+				<tr><td>連言句</td><td>左句 $&and;$ 右句</td><td>左句<sub>T</sub>、右句<sub>T</sub></td><td>1. 左句<sub>F</sub><br/>2. 右句<sub>F</sub></td></tr>
+				<tr><td>選言句</td><td>左句 $&or;$ 右句</td><td>1. 左句<sub>T</sub><br/>2. 右句<sub>T</sub></td><td>左句<sub>F</sub>、右句<sub>F</sub></td></tr>
+				<tr><td>條件句</td><td>前件 $&rarr;$ 後件</td><td>1. 前件<sub>F</sub><br/>2. 後件<sub>T</sub></td><td>前件<sub>T</sub>、後件<sub>F</sub></td></tr>
+				<tr><td>雙條件句</td><td>左句 $&harr;$ 右句</td><td>1. 左句<sub>T</sub>、右句<sub>T</sub><br/>2. 左句<sub>F</sub>、右句<sub>F</sub></td><td>1. 左句<sub>T</sub>、右句<sub>F</sub><br/>2. 左句<sub>F</sub>、右句<sub>T</sub></td></tr>
+			</table>
+		</div>
+			
+		<h2>十八條規則</h2>
+		<ol class="rule flex" style="margin-top:1em">
+			<li>肯定前件 (MP)<br/>$x&rarr;y, x&vDash;y$</li>
+			<li>否定後件 (MT)<br/>$x&rarr;y, &not;y&vDash;&not;x$</li>
+			<li>連言律 (Conj.)<br/>$x, y&vDash;x&and;y$<br/>$y, x&vDash;x&and;y$</li>
+			<li>建構式兩難 (C.D.)<br/>$p&rarr;q, r&rarr;s,$<br/>$p&or;r&vDash;q&or;s$</span></li>
+		</ol>
+		<ol class="rule flex">
+			<li>簡化律 (Simp.)<br/>$x&and;y&vDash;x$<br/>$x&and;y&vDash;y$</li>
+			<li>添加律 (Add.)<br/>$x&vDash;x&or;y$<br/>$y&vDash;x&or;y$</li>
+			<li>選言三段論 (D.S.)<br/>$x&or;y, &not;x&vDash;y$<br/>$x&or;y, &not;y&vDash;x$</li>
+			<li>假言三段論 (H.S.)<br/>$x&rarr;y, y&rarr;z&vDash;$<br/>$x&rarr;z$</li>
+		</ol>
+		<ol class="rule flex">
+			<li>雙重否定 (D.N.)<br/>$x&equiv;&not;&not;x$</li>
+			<li>恆真律 (Taut.)<br/>$x&equiv;x&and;x$<br/>$x&equiv;x&or;x$</li>
+			<li>分配律 (Dist.)<br/>$x&and;(y&or;z)&equiv;(x&and;y)&or;(x&and;z)$<br/>$x&or;(y&and;z)&equiv;(x&or;y)&and;(x&or;z)$</li>
+		</ol>
+		<ol class="rule flex">
+			<li>笛摩根律 (DeM.)<br/>$&not;(x&and;y)&equiv;&not;x&or;&not;y$<br/>$&not;(x&or;y)&equiv;&not;x&and;&not;y$</li>
+			<li>交換律 (Comm.)<br/>$x&and;y&equiv;y&and;x$<br/>$x&or;y&equiv;y&or;x$</li>
+			<li>結合律 (Assoc.)<br/>$x&and;(y&and;z)&equiv;(x&and;y)&and;z$<br/>$x&or;(y&or;z)&equiv;(x&or;y)&or;z$</li>
+		</ol>
+		<ol class="rule flex">
+			<li>異值位換律 (Contra.)<br/>$x&rarr;y&equiv;&not;y&rarr;&not;x$</li>
+			<li>移出律 (Exp.)<br/>$x&rarr;(y&rarr;z)&equiv;(x&and;y)&rarr;z$</li>
+			<li>實質蘊涵律 (Impl.)<br/>$x&rarr;y&equiv;&not;x&or;y$</li>
+		</ol>
+		<ol class="rule flex">
+			<li>實質等值律 (Equiv.)<br/>$x&harr;y&equiv;(x&rarr;y)&and;(y&rarr;x)$<br/>$x&harr;y&equiv;(x&and;y)&or;(&not;x&and;&not;y)$</li>
+		</ol>
+	</div>
+</body>

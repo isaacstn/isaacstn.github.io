@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.2.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_examstyle_v1.0.css"/><!--docstyle exam supplement-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+
+	<title>Mid-term Exam</title>
+</head>
+
+<body>
+<div id="main" class="exam">
+	
+		<h2>是非題<span>&emsp;每題3分，正確請填 '<b>T</b>'，錯誤請填 '<b>F</b>'，不知道請填 '<b>N</b>'。</span></h2>
+		
+		<div class="section">
+			<p>
+			<ol class="numd">
+				<li>在一些特殊的情況下，一個二元連接詞就算只連接一個語句也可以形成新的語句。</li>
+				<li>所有原子語句中都不可以出現任何二元連接詞，但可以出現最多一個一元連接詞。</li>
+				<li>當 '$A$' 為真、'$B$' 為真、'$C$' 為真時，'$&not;A&rarr;B&and;C$' 為真。</li>
+				<li>當 '$A$' 為假、'$B$' 為真、'$C$' 為真時，'$&not;A&rarr;B&and;C$' 為假。</li>
+				<li>在語句邏輯中，只要組成語句的原子語句真假不同，語句的真假就會不同。</li>
+				<li>對一個有效論證來說，當結論為假時，論證的前提不會全部為真。</li>
+				<li>對一個有效論證來說，當結論為真時，論證的前提一定全部為真。</li>
+				<li>只要論證的前提中有假的語句，該論證就不會是有效的。</li>
+				<li>對一個恰當的歸納推論來說，只要前提全都為真，結論就是真的。</li>
+				<li>對一個恰當的非演繹推論來說，結論的內容通常不會被包含在前提之中。</li>
+				<li>中文是一種組合式的語言。</li>
+				<li>如果沒有任何人知道一個語句是真還是假，那個語句就不真不假。</li>
+				<li>中文語句的意義由組成語句的語詞決定，至於用什麼方式組合語詞則無關。</li>
+				<li>$(A&and;B)&rarr;A$ <b>不是</b>合法的語句。</li>
+				<li>$A&rarr;(C&or;B)&rarr;&not;D$ <b>是</b>合法的語句。</li>
+				<li>$A(B&or;C)&harr;A$ <b>是</b>合法的語句。</li>
+				<li>$&not;(A&and;(B&rarr;C))&or;&not;A)$ <b>不是</b>合法的語句。</li>
+				<li>$A&or;B&and;C$ <b>是</b>合法的語句。</li>
+				<li>$A&rarr;((A&rarr;B)&rarr;B)$ <b>是</b>合法的語句。</li>
+				<li>$A&and;(A&and;A)$ <b>不是</b>合法的語句。</li>
+			</ol>
+			</p>
+		</div>
+		
+		<h2>問答題</h2>
+		<div class="section">
+			<p>
+			<ol class="numd tight local">
+				<li>請寫出五個不同的合法語句，並滿足以下要求：（25分）
+					<ol class="lrm tight local">
+						<li>每一個合法語句都必須使用到 '$A$' 和 '$B$' 這兩個語句符號。</li>
+						<li>每一個合法語句當中都必須出現至少三個語句連接詞。</li>
+						<li>這五個完構式的主要連接詞必須彼此不同。</li>
+					</ol>
+				<li>請在你寫的五個合法語句中任選一個，將其<b>真值表</b>畫出來。（15分）</li>
+			</ol>
+			</p>
+		</div>
+		
+		
+		
+		<h2 style="margin-bottom:1em;">合法語句的建構規則</h2>
+		<div class="section" style="margin-bottom:3em;">
+			<ol class="numd tight local">
+				<li>所有語句符號都是合法語句（原子語句）。</li>
+				<li>用 '$&not;$' 連接一個合法語句形成的「$&not;$ 語句」是合法語句（否定句）。</li>
+				<li>用 '$&and;$' 連接兩個合法語句形成的「語句 $&and;$ 語句」是合法語句（連言句）。</li>
+				<li>用 '$&or;$' 連接兩個合法語句形成的「語句 $&or;$ 語句」是合法語句（選言句）。</li>
+				<li>用 '$&rarr;$' 連接兩個合法語句形成的「語句 $&rarr;$ 語句」是合法語句（條件句）。</li>
+				<li>用 '$&harr;$' 連接兩個合法語句形成的「語句 $&harr;$ 語句」是合法語句（雙條件句）。</li>
+				<li>只有用 1-6 逐步建構出來的表達式是合法語句。</li>
+			</ol>
+		</div>
+		
+		<h2 style="margin-bottom:1em;">語句類型的語意分析</h2>
+		<div class="section">
+			<table class="semantics">
+				<tr><td></td><td></td><td>真 (True)</td><td>假 (False)</td></tr>
+				<tr><td>否定句</td><td>$&not;$ 語句</td><td>語句<sub>F</sub></td><td>語句<sub>T</sub></td></tr>
+				<tr><td>連言句</td><td>左句 $&and;$ 右句</td><td>左句<sub>T</sub>、右句<sub>T</sub></td><td>左句<sub>T</sub>、右句<sub>F</sub><br/>左句<sub>F</sub>、右句<sub>T</sub><br/>左句<sub>F</sub>、右句<sub>F</sub></td></tr>
+				<tr><td>選言句</td><td>左句 $&or;$ 右句</td><td>左句<sub>T</sub>、右句<sub>T</sub><br/>左句<sub>T</sub>、右句<sub>F</sub><br/>左句<sub>F</sub>、右句<sub>T</sub></td><td>左句<sub>F</sub>、右句<sub>F</sub></td></tr>
+				<tr><td>條件句</td><td>前件 $&rarr;$ 後件</td><td>前件<sub>T</sub>、後件<sub>T</sub><br/>前件<sub>F</sub>、後件<sub>T</sub><br/>前件<sub>F</sub>、後件<sub>F</sub></td><td>前件<sub>T</sub>、後件<sub>F</sub></td></tr>
+				<tr><td>雙條件句</td><td>左句 $&harr;$ 右句</td><td>左句<sub>T</sub>、右句<sub>T</sub><br/>左句<sub>F</sub>、右句<sub>F</sub></td><td>左句<sub>T</sub>、右句<sub>F</sub><br/>左句<sub>F</sub>、右句<sub>T</sub></td></tr>
+			</table>
+		</div>
+	</div>
+</body>
