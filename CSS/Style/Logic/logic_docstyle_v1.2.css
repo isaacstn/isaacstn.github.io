@@ -110,6 +110,15 @@ h5::after {
 .def h4::before {
 	content:none;
 }
+div.tree {
+	text-align:center;
+	line-height:1.5em;
+	margin-top:1em;
+}
+div.tree div {
+	float:left;
+	width:50%;
+}
 div.def {
 	margin-top:2em;
 }
@@ -117,8 +126,16 @@ p {
 	text-indent:2em;
 	margin-top:1em;
 }
-p:first-of-type, p.noind {
+p:first-of-type, 
+p.noind,
+div.tree + p,
+blockquote + p,
+ol + p, ul + p,
+table + p {
 	text-indent:0;
+}
+div.tree p {
+	margin-top:2em;
 }
 a {
 	font-weight:bold;
@@ -153,6 +170,7 @@ blockquote {
 	font-family:'CMU Serif','Adobe FangSong';
 }
 svg {
+	display:block;
 	margin:1em 0 0 2em;
 	width:100%;
 }
@@ -161,10 +179,17 @@ svg.back {
 	margin:0;
 	z-index:-1;
 }
+div.tree svg {
+	margin:0;
+	height:1.5em;
+}
 svg * {
 	stroke:black;
 	stroke-width:1;
 	fill:none;
+}
+text, tspan {
+	font-family:'CMU Serif', 'Noto Serif TC', STIXGeneral;
 }
 text, tspan, marker > path {
 	stroke-width:0;
@@ -193,6 +218,23 @@ rect.black, circle.black, ellipse.black {
 }
 rect.opa, circle.opa, ellipse.opa {
 	fill-opacity:0.5;
+}
+table.semantics {
+	width:95%;
+	border-collapse:collapse;
+}
+table.semantics tr:first-child td {
+	border-top:none;
+	font-weight:bold;
+}
+table.semantics td:first-child {
+	font-weight:bold;
+}
+table.semantics td {
+	border-top:1px solid black;
+	padding-top:0.5em;
+	padding-bottom:0.25em;
+	text-align:center;
 }
 ol.quiz p {
 	text-indent:0;
