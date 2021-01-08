@@ -219,23 +219,6 @@ rect.black, circle.black, ellipse.black {
 rect.opa, circle.opa, ellipse.opa {
 	fill-opacity:0.5;
 }
-table.semantics {
-	width:95%;
-	border-collapse:collapse;
-}
-table.semantics tr:first-child td {
-	border-top:none;
-	font-weight:bold;
-}
-table.semantics td:first-child {
-	font-weight:bold;
-}
-table.semantics td {
-	border-top:1px solid black;
-	padding-top:0.5em;
-	padding-bottom:0.25em;
-	text-align:center;
-}
 ol.quiz p {
 	text-indent:0;
 }
