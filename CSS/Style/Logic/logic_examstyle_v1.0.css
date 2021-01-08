@@ -1,15 +1,15 @@
 .exam h2:before {
-	content:none
+	content:none;
 }
 .exam h2 {
-	margin-bottom:0em
+	margin-bottom:0em;
 }
 .exam h2 span {
 	font-size:12pt;
 	font-weight:normal;
 }
 .exam h4:before {
-	content:none
+	content:none;
 }
 .exam * {
 	margin-left:0;
@@ -27,13 +27,13 @@
 	flex-direction:row;
 	flex-wrap:wrap;
 	justify-content:space-between;
-	align-items:flex-start
+	align-items:flex-start;
 }
 .grow {
-	flex-grow:1
+	flex-grow:1;
 }
 .flex.nogrow * {
-	flex-grow:0
+	flex-grow:0;
 }
 div.float {
 	float:left;
@@ -41,22 +41,22 @@ div.float {
 .exam ol.prfq::before {
 	content:counter(ult,upper-latin) ".";
 	counter-increment:ult 1;
-	counter-reset:num
+	counter-reset:num;
 }
 .exam ol.prfq {
-	counter-reset:num
+	counter-reset:num;
 }
 .exam ol.prfq li::before {
 	left:-2.5em;
 	content:"(P" counter(num) ") ";
-	counter-increment:num
+	counter-increment:num;
 }
 .exam ol.prfq li:last-child::before {
-	content:"(C)"
+	content:"(C)";
 }
 .exam ol.prfq > li {
 	left:2.5em;
-	margin:0
+	margin:0;
 }
 .exam ol.rule {
 	border-top:solid 1px black
@@ -64,11 +64,11 @@ div.float {
 .exam ol.rule > li::before {
 	left:-1.5em;
 	content: counter(num) ". ";
-	counter-increment:num
+	counter-increment:num;
 }
 .exam ol.rule > li {
 	left:1.5em;
-	margin-top:0
+	margin-top:0;
 }
 .exam table {
 	margin:0;
@@ -79,13 +79,13 @@ div.float {
 }
 .exam table.prfq td:first-child::before {
 	counter-increment:numd 1;
-	content:counter(numd) ". "
+	content:counter(numd) ". ";
 }
 .exam table.prfq td {
-	height:1.75em
+	height:1.75em;
 }
 .exam table.prfq td:first-child {
-	padding-right:1em
+	padding-right:1em;
 }
 .exam table.quiz {
 	width:100%;
