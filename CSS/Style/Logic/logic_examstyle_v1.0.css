@@ -1,6 +1,9 @@
 .exam h2:before {
 	content:none
 }
+.exam h2 {
+	margin-bottom:0
+}
 .exam h2 span {
 	font-size:12pt;
 	font-weight:normal;
