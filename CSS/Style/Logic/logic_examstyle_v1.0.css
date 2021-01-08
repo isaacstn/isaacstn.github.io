@@ -68,19 +68,17 @@ div.float {
 	margin-top:0
 }
 .exam table {
-	margin-top:0.5em
+	margin:0;
+	margin-top:0.5em;
 }
-table.prf {
+.exam table.prfq {
 	counter-reset:numd;
 }
-table.prf th {
-	border-bottom:solid black 1px
-}
-table.prf td:first-child::before {
+.exam table.prfq td:first-child::before {
 	counter-increment:numd 1;
 	content:counter(numd) ". "
 }
-table.prf td:first-child {
+.exam table.prfq td:first-child {
 	padding-right:1em
 }
 table.quiz {
