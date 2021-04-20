@@ -438,6 +438,9 @@ ol.local.prf {
 .tight > li, .prf > li , .def > li {
 	margin-top:0.25em;
 }
+.list > li {
+	margin-top:0;
+}
 ul > li {
 	left:0;
 }
