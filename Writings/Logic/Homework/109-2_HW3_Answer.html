@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.2.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_examstyle_v1.1.css"/><!--docstyle exam supplement-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+
+	<style>
+	</style>
+
+	<title>Mid-term Exam</title>
+</head>
+
+<body>
+	<div id="main" class="exam">
+	
+		<h2>用真值表檢查以下論證是否有效</h2>
+		
+		<div class="section">
+			<p>
+			前提：$K∨M$、$K$<br/>
+			結論：$¬M$
+			</p>
+			<table class="truth argue double">
+				<tr><td>$K$</td><td>$M$</td><td>$K∨M$</td><td>$K$</td><td>$¬M$</td></tr>
+				<tr style="background-color:#DDD;"><td>T</td><td>T</td><td>T</td><td>T</td><td>F</td></tr>
+				<tr style="background-color:#DDD;"><td>T</td><td>F</td><td>T</td><td>T</td><td>T</td></tr>
+				<tr><td>F</td><td>T</td><td>T</td><td>F</td><td>F</td></tr>
+				<tr><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td></tr>
+			</table>
+			<p>
+			當 $K$、$M$ 皆為真時，論證的前提全都為真，但結論卻為假，故論證無效。
+			</p>
+			<p>
+			前提：$F$<br/>
+			結論：$E→F$
+			</p>
+			<table class="truth argue double">
+				<tr><td>$E$</td><td>$F$</td><td>$F$</td><td>$E→F$</td></tr>
+				<tr style="background-color:#DDD;"><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+				<tr><td>T</td><td>F</td><td>F</td><td>F</td></tr>
+				<tr style="background-color:#DDD;"><td>F</td><td>T</td><td>T</td><td>T</td></tr>
+				<tr><td>F</td><td>F</td><td>F</td><td>T</td></tr>
+			</table>
+			<p>
+			當 $E$、$F$ 皆真，以及 $E$ 假 $F$ 真時，論證的前提皆為真。而當論證前提皆為真時，結論也都為真。故論證有效。
+			</p>
+			<p>
+			前提：$P→Q$、$Q→R$<br/>
+			結論：$P→R$
+			</p>
+			<table class="truth argue triple">
+				<tr><td>$P$</td><td>$Q$</td><td>$R$</td><td>$P→Q$</td><td>$Q→R$</td><td>$P→R$</td></tr>
+				<tr style="background-color:#DDD;"><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+				<tr><td>T</td><td>T</td><td>F</td><td>T</td><td>F</td><td>F</td></tr>
+				<tr><td>T</td><td>F</td><td>T</td><td>F</td><td>T</td><td>T</td></tr>
+				<tr><td>T</td><td>F</td><td>F</td><td>F</td><td>T</td><td>F</td></tr>
+				<tr style="background-color:#DDD;"><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+				<tr><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td><td>T</td></tr>
+				<tr style="background-color:#DDD;"><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+				<tr style="background-color:#DDD;"><td>F</td><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td></tr>
+			</table>
+			<p>
+			當 $P$、$Q$、$R$ 皆真，$P$ 假 $Q$ 真 $R$ 真，以及 $P$、$Q$ 皆為假時，論證的前提皆為真。而當論證前提皆為真時，結論也都為真。故論證有效。
+			</p>
+			<p>
+			前提：$A→C$、$B→C$、$A∨B$<br/>
+			結論：$C$
+			</p>
+			<table class="truth argue triple">
+				<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$A→C$</td><td>$B→C$</td><td>$A∨B$</td><td>$C$</td></tr>
+				<tr style="background-color:#DDD;"><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+				<tr><td>T</td><td>T</td><td>F</td><td>F</td><td>F</td><td>T</td><td>F</td></tr>
+				<tr style="background-color:#DDD;"><td>T</td><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+				<tr><td>T</td><td>F</td><td>F</td><td>F</td><td>T</td><td>T</td><td>F</td></tr>
+				<tr style="background-color:#DDD;"><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+				<tr><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td></tr>
+				<tr><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td><td>F</td><td>T</td></tr>
+				<tr><td>F</td><td>F</td><td>F</td><td>T</td><td>T</td><td>F</td><td>F</td></tr>
+			</table>
+			<p>
+			當 $A$、$B$、$C$ 皆真，$A$、$C$ 為真而 $B$ 為假，以及 $A$ 為假但 $B$、$C$ 為真時，論證的前提皆為真。而當論證前提皆為真時，結論也都為真。故論證有效。
+			</p>
+		</div>
+	</div>
+</body>
