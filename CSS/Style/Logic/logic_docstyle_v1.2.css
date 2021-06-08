@@ -566,6 +566,13 @@ table.single tr:first-child td:nth-child(n+2), table.double tr:first-child td:nt
 	border-right:none;
 	border-left:none;
 }
+table.truth.argue.single td:nth-child(n+2), table.truth.argue.double td:nth-child(n+3), table.truth.argue.triple td:nth-child(n+4) {
+	border-right:none;
+	border-left:none;
+}
+table.truth.argue.single td:last-child, table.truth.argue.double td:last-child, table.truth.argue.triple td:last-child {
+	border-left:solid 1px black;
+}
 table.truth td.mainc, table.truth td.mainc+td {
 	border-left:solid 3px;
 }
