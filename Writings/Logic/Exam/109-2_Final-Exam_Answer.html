@@ -19,59 +19,49 @@
 	<style>
 	</style>
 
-	<title>Mid-term Exam</title>
+	<title>109-2_Final-Exam_Answer</title>
 </head>
 
 <body>
 	<div id="main" class="exam">
 	
-		<h2>用真值表檢查以下論證是否有效</h2>
+		<h2>請畫出以下語句的真值表</h2>
 		
 		<div class="section">
-			<p>
-			前提：$K∨M$、$K$<br/>
-			結論：$¬M$
-			</p>
-			<table class="truth argue double">
-        <tr><td>$P$</td><td>$P$</td><td>∧</td><td>(¬P)$</td>
-        <tr><td>T</td><td>F</td><td>F</td><td>F$</td>
-        <tr><td>F</td><td>F</td><td>F</td><td>F$</td>
+			<p><b>$P∧(¬P)$</b></p>
+			<table class="truth single sentence">
+				<tr><td>$P$</td><td>$P$</td><td style="background-color:#DDD;">$∧$</td><td>$(¬P)$</td></tr>
+				<tr><td>T</td><td>T</td><td style="background-color:#DDD;">F</td><td>F</td></tr>
+				<tr><td>F</td><td>F</td><td style="background-color:#DDD;">F</td><td>T</td></tr>
 			</table>
-			<p>
-			當 $K$、$M$ 皆為真時，論證的前提全都為真，但結論卻為假，故論證無效。
-			</p>
-			<p>
-			前提：$F$<br/>
-			結論：$E→F$
-			</p>
-			<table class="truth argue double">
-				<tr><td>$E$</td><td>$F$</td><td>$F$</td><td>$E→F$</td></tr>
-				<tr style="background-color:#DDD;"><td>T</td><td>T</td><td>T</td><td>T</td></tr>
-				<tr><td>T</td><td>F</td><td>F</td><td>F</td></tr>
-				<tr style="background-color:#DDD;"><td>F</td><td>T</td><td>T</td><td>T</td></tr>
-				<tr><td>F</td><td>F</td><td>F</td><td>T</td></tr>
+			<br/>
+			<p><b>$(M∧N)→(M∨N)$</b></p>
+			<table class="truth double sentence">
+				<tr><td>$M$</td><td>$N$</td><td>$(M∧N)$</td><td style="background-color:#DDD;">$→$</td><td>$(M∨N)$</td></tr>
+				<tr><td>T</td><td>T</td><td>T</td><td style="background-color:#DDD;">T</td><td>T</td></tr>
+				<tr><td>T</td><td>F</td><td>F</td><td style="background-color:#DDD;">T</td><td>T</td></tr>
+				<tr><td>F</td><td>T</td><td>F</td><td style="background-color:#DDD;">T</td><td>T</td></tr>
+				<tr><td>F</td><td>F</td><td>F</td><td style="background-color:#DDD;">T</td><td>F</td></tr>
 			</table>
-			<p>
-			當 $E$、$F$ 皆真，以及 $E$ 假 $F$ 真時，論證的前提皆為真。而當論證前提皆為真時，結論也都為真。故論證有效。
-			</p>
-			<p>
-			前提：$P→Q$、$Q→R$<br/>
-			結論：$P→R$
-			</p>
-			<table class="truth argue triple">
-				<tr><td>$P$</td><td>$Q$</td><td>$R$</td><td>$P→Q$</td><td>$Q→R$</td><td>$P→R$</td></tr>
-				<tr style="background-color:#DDD;"><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
-				<tr><td>T</td><td>T</td><td>F</td><td>T</td><td>F</td><td>F</td></tr>
-				<tr><td>T</td><td>F</td><td>T</td><td>F</td><td>T</td><td>T</td></tr>
-				<tr><td>T</td><td>F</td><td>F</td><td>F</td><td>T</td><td>F</td></tr>
-				<tr style="background-color:#DDD;"><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
-				<tr><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td><td>T</td></tr>
-				<tr style="background-color:#DDD;"><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
-				<tr style="background-color:#DDD;"><td>F</td><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td></tr>
+			<br/>
+			<p><b>$¬(A→(B∨C))$</b></p>
+			<table class="truth triple sentence">
+				<tr><td>$A$</td><td>$B$</td><td>$C$</td><td style="background-color:#DDD;">$¬$</td><td>$($</td><td>$A$</td><td>$→$</td><td>$(($</td><td>$B∨C$</td><td>$))$</td></tr>
+				<tr><td>T</td><td>T</td><td>T</td><td style="background-color:#DDD;">F</td><td></td><td></td><td>T</td><td></td><td>T</td><td></td></tr>
+				<tr><td>T</td><td>T</td><td>F</td><td style="background-color:#DDD;">F</td><td></td><td></td><td>T</td><td></td><td>T</td><td></td></tr>
+				<tr><td>T</td><td>F</td><td>T</td><td style="background-color:#DDD;">F</td><td></td><td></td><td>T</td><td></td><td>T</td><td></td></tr>
+				<tr><td>T</td><td>F</td><td>F</td><td style="background-color:#DDD;">T</td><td></td><td></td><td>F</td><td></td><td>F</td><td></td></tr>
+				<tr><td>F</td><td>T</td><td>T</td><td style="background-color:#DDD;">F</td><td></td><td></td><td>T</td><td></td><td>T</td><td></td></tr>
+				<tr><td>F</td><td>T</td><td>F</td><td style="background-color:#DDD;">F</td><td></td><td></td><td>T</td><td></td><td>T</td><td></td></tr>
+				<tr><td>F</td><td>F</td><td>T</td><td style="background-color:#DDD;">F</td><td></td><td></td><td>T</td><td></td><td>T</td><td></td></tr>
+				<tr><td>F</td><td>F</td><td>F</td><td style="background-color:#DDD;">F</td><td></td><td></td><td>T</td><td></td><td>F</td><td></td></tr>
 			</table>
-			<p>
-			當 $P$、$Q$、$R$ 皆真，$P$ 假 $Q$ 真 $R$ 真，以及 $P$、$Q$ 皆為假時，論證的前提皆為真。而當論證前提皆為真時，結論也都為真。故論證有效。
-			</p>
+			<br/>
+		</div>
+	
+		<h2>請用真值表判斷以下論證是否有效</h2>
+		
+		<div class="section">
 			<p>
 			前提：$A→C$、$B→C$、$A∨B$<br/>
 			結論：$C$
