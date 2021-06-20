@@ -570,6 +570,10 @@ table.truth.argue.single td:nth-child(n+2), table.truth.argue.double td:nth-chil
 	border-right:none;
 	border-left:none;
 }
+table.truth.single.sentence td:nth-child(n+2), table.truth.double.sentence td:nth-child(n+3), table.truth.triple.sentence td:nth-child(n+4) {
+	border-right:none;
+	border-left:none;
+}
 table.truth.argue.single td:last-child, table.truth.argue.double td:last-child, table.truth.argue.triple td:last-child {
 	border-left:solid 1px black;
 }
