@@ -562,15 +562,11 @@ tr:first-child td.omit::after {
 table.single td:first-child, table.double td:nth-child(2), table.triple td:nth-child(3) {
 	border-right:double 6px;
 }
-table.single tr:first-child td:nth-child(n+2), table.double tr:first-child td:nth-child(n+3), table.triple tr:first-child td:nth-child(n+4) {
+table.truth.single.sentence td:nth-child(n+2), table.truth.double.sentence td:nth-child(n+3), table.truth.triple.sentence td:nth-child(n+4) {
 	border-right:none;
 	border-left:none;
 }
 table.truth.argue.single td:nth-child(n+2), table.truth.argue.double td:nth-child(n+3), table.truth.argue.triple td:nth-child(n+4) {
-	border-right:none;
-	border-left:none;
-}
-table.truth.single.sentence td:nth-child(n+2), table.truth.double.sentence td:nth-child(n+3), table.truth.triple.sentence td:nth-child(n+4) {
 	border-right:none;
 	border-left:none;
 }
