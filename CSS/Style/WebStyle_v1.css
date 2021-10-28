@@ -29,7 +29,7 @@ h1 {
 	font-family:'CMU serif','Noto Serif TC';
 	font-size:700%;
 	font-weight:900;
-	margin-left:10px;
+	padding-left:10px;
 }
 h2:before {
 	counter-reset:subsection;
