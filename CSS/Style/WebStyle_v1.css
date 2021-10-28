@@ -28,8 +28,7 @@ h1 {
 	counter-reset:section;
 	font-family:'CMU serif','Noto Serif TC';
 	font-size:700%;
-	font-weight:700;
-	margin:0 0 0 -10px;
+	font-weight:900;
 }
 h2:before {
 	counter-reset:subsection;
