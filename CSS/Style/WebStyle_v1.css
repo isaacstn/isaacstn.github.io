@@ -10,7 +10,7 @@ body {
 	-webkit-hyphenate-before:3;
 	width:680px;
 	margin:auto;
-	font-family:'CMU Serif','王漢宗細明體繁','HanWangMingLight';
+	font-family:'CMU Serif','Noto Serif TC';
 	font-size:13pt;
 	counter-reset:page 1 num ult llt urm lrm cjk note;
 	text-align:justify;
@@ -26,10 +26,10 @@ body {
 }
 h1 {
 	counter-reset:section;
-	font-family:'CMU serif','HanWangMingHeavy';
+	font-family:'CMU serif','Noto Serif TC';
 	font-size:700%;
-	font-weight:normal;
-	margin:0 0 -10px -10px;
+	font-weight:700;
+	margin:0 0 0 -10px;
 }
 h2:before {
 	counter-reset:subsection;
@@ -41,7 +41,7 @@ h2 {
 	margin:1em 0;
 	font-size:170%;
 	font-weight:bold;
-	font-family:'CMU serif','HanWangMingHeavy';
+	font-family:'CMU serif','Noto Serif TC';
 }
 h2:first-of-type {
 	margin-top:1.5em;
@@ -53,7 +53,7 @@ h3:before {
 h3 {
 	margin:1em 0;
 	font-size:140%;
-	font-family:'CMU serif','HanWangMingHeavy';
+	font-family:'CMU serif','Noto Serif TC';
 	counter-reset:subsubsec;
 }
 h4:before {
@@ -63,7 +63,7 @@ h4:before {
 h4 {
 	margin:1em 0;
 	font-size:120%;
-	font-family:'CMU serif','HanWangMingHeavy';
+	font-family:'CMU serif','Noto Serif TC';
 	counter-reset:subsubsubsec;
 }
 h5:before {
@@ -73,13 +73,13 @@ h5:before {
 h5 {
 	margin:1em 0;
 	font-size:100%;
-	font-family:'CMU serif','HanWangMingHeavy';
+	font-family:'CMU serif','Noto Serif TC';
 }
 div {
 	line-height:1.5em;
 }
 div em {
-	font-family: 'CMU serif','HanWangMingHeavy';
+	font-family: 'CMU serif','Noto Serif TC';
 	font-style: normal;
 }
 blockquote {
