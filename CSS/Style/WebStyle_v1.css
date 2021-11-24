@@ -86,7 +86,6 @@ blockquote {
 	margin:1em 2em;
 }
 table {
-	margin:2em auto;
 	width:95%;
 	border-collapse:collapse;
 	table-layout:fixed;
@@ -98,6 +97,10 @@ table, th, td {
 	text-align:left;
 }
 th {
+	text-align:center;
+}
+table.toc, table.toc td {
+	border:none;
 	text-align:center;
 }
 li {
