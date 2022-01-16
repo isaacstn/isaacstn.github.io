@@ -29,18 +29,18 @@
 		
 		<div class="section">
 			<ol class="numd tight local">
-				<li>所有語句符號都是合法語句（原子語句）。</li>
-				<li>如果 $x$ 是一個合法語句，則 $&not;x$ 也是一個合法語句（否定句）。</li>
-				<li>如果 $x$ 和 $y$ 都是合法語句，則 $x&and;y$ 也是一個合法語句（連言句）。</li>
-				<li>如果 $x$ 和 $y$ 都是合法語句，則 $x&or;y$ 也是一個合法語句（選言句）。</li>
-				<li>如果 $x$ 和 $y$ 都是合法語句，則 $x&rarr;y$ 也是一個合法語句（條件句）。</li>
-				<li>如果 $x$ 和 $y$ 都是合法語句，則 $x&harr;y$ 也是一個合法語句（雙條件句）。</li>
-				<li>只有用 1-6 逐步建構出來的表達式才是合法語句。</li>
+				<li>所有語句符號都是合法命題（原子命題）。</li>
+				<li>如果 $x$ 是一個合法命題，則 $&not;x$ 也是一個合法命題（否定命題）。</li>
+				<li>如果 $x$ 和 $y$ 都是合法命題，則 $x&and;y$ 也是一個合法命題（連言命題）。</li>
+				<li>如果 $x$ 和 $y$ 都是合法命題，則 $x&or;y$ 也是一個合法命題（選言命題）。</li>
+				<li>如果 $x$ 和 $y$ 都是合法命題，則 $x&rarr;y$ 也是一個合法命題（條件命題）。</li>
+				<li>如果 $x$ 和 $y$ 都是合法命題，則 $x&harr;y$ 也是一個合法命題（雙條件命題）。</li>
+				<li>只有用 1-6 逐步建構出來的表達式才是合法命題。</li>
 			</ol>
 			<br/>
 		</div>
 	
-		<h2>五大句型的語意分析</h2>
+		<h2>五大命題型的語意分析</h2>
 		
 		<div class="section">
 			<p><b>否定句</b></p>
@@ -86,6 +86,19 @@
 				<tr><td>F</td><td>F</td><td>T</td></tr>
 			</table>
 			<br/>
+		</div>
+		
+		<h2 style="margin-bottom:1em;">五大命題類型的語意分析</h2>
+		
+		<div class="section" style="clear:both">
+			<table class="semantics">
+				<tr><td></td><td></td><td>真 (True)</td><td>假 (False)</td></tr>
+				<tr><td>否定命題</td><td>$&not;x$</td><td>$x$＝F</td><td>$x$＝T</td></tr>
+				<tr><td>連言命題</td><td>$x&and;y$</td><td>$x$＝$y$＝T</td><td>1. $x$＝F<br/>2. $y$＝F</td></tr>
+				<tr><td>選言命題</td><td>$x&or;y$</td><td>1. $x$＝T<br/>2. $y$＝T</td><td>$x$＝$y$＝F</td></tr>
+				<tr><td>條件命題</td><td>$x&rarr;y$</td><td>1. $x$＝F<br/>2. $y$＝T</td><td>$x$＝T 且 $y$＝F</td></tr>
+				<tr><td>雙條件命題</td><td>$x&harr;y$</td><td>1. $x$＝$y$＝T<br/>2. $x$＝$y$＝F</td><td>1. $x$＝T 且 $y$＝F<br/>2. $x$＝F 且 $y$＝T</td></tr>
+			</table>
 		</div>
 	</div>
 </body>
