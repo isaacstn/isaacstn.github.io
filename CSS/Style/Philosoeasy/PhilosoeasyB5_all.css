@@ -157,6 +157,9 @@ ul.disc  ul.disc {
 ul.disc > li, ul.disc ul.disc > li, ul.disc ul.disc ul.disc > li {
 	margin-top:0;
 }
+ul.disc.mtop > li, ul.disc.mtop ul.disc > li, ul.disc.mtop ul.disc.mtop ul.disc > li {
+	margin-top:1em;
+}
 ul.disc > li:before {
 	content:"∙"; /* bullet operator */
 	position:absolute;
