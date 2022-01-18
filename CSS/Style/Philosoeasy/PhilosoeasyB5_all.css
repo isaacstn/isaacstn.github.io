@@ -25,13 +25,6 @@ body {
 	font-family:'GenSenMaruGothic TW TTF', GenSenMaru, sans-serif;
 	font-size:10pt;
 	font-weight:300;
-	@footnotes{
-		margin-top: 0.5em;
-		border-top: 1px solid #000;
-		border-clip: 4em;
-		padding-top: 0.5em;
-		max-height: 25%;
-	}
 }
 @page:first {
 	@top-right {
@@ -54,6 +47,11 @@ body {
 		content:counter(page);
 	}
 }
+@media print {
+	* {
+		widows:2;
+		orphans:2;
+	}
 
 /* text-title */
 
@@ -108,9 +106,6 @@ h1 span:before {
 }
 h2.first, h3.first, h4.first {
 	margin-top:1.5em;
-}
-h2.no::before, h3.no::before {
-	content:none;
 }
 
 /* text-title end */
@@ -302,12 +297,15 @@ div.day {
 /* staff */
 
 div.staff {
-	column-count:2;
-	column-fill:balance;
-	column-gap:2em;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	align-items:flex-start
 }
 div.pintro {
-	display:inline-block;
+	flex-grow:1;
+	max-width:45%
 }
 .staff h4 {
 	margin:0px;
@@ -437,6 +435,21 @@ table#tb03, table#tb04 {
 }
 
 /* chapter 0 end */
+
+/* chapter 2 */
+
+/* table 1 below */
+table.ch2 {
+	width:100%;
+}
+.ch2 td {
+	border-bottom:2px solid #aaa;
+}
+.ch2 tr:last-child td {
+	border-bottom:none;
+}
+
+/* chapter 2 end */
 
 /* chapter-specific end */
 
