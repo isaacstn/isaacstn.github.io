@@ -1,0 +1,131 @@
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	hyphens:auto;
+	-webkit-hyphens:auto;
+	hyphenate-limit-chars:6 3 2;
+	-ms-hyphenate-limit-chars:6 3 2;
+	-moz-hyphenate-limit-chars:6 3 2;
+	-webkit-hyphenate-limit-chars:6 3 2;
+	width:15cm;
+	margin: auto;
+	font:normal normal 12.5pt 'CMU Serif','Noto Serif TC';
+	line-height:2rem;
+	text-align:justify;
+	text-justify:inter-character;
+	prince-text-justify:prince-cjk;
+}
+article {
+	page-break-before:always
+}
+article:first-of-type {
+	page-break-before:avoid
+}
+div#cover {
+	text-align:center;
+	margin-left:-0.5cm;
+	margin-top:4.5cm;
+	line-height:1.5em;
+	font-family:'Adobe Kai';
+}
+div#cover p {
+	text-indent:0
+}
+div#abstract_en,
+div#sign_zh,
+div#sign_en {
+	line-height:1.5rem
+}
+div#sign_zh,
+div#sign_en {
+	height:max-content;
+	width:max-content;
+	margin-left:7.5cm;
+	margin-top:17cm;
+}
+p, p.ind {
+	text-indent:2em;
+	margin-top:1em
+}
+p:first-of-type, 
+blockquote + p,
+blockquote p,
+ol + p, ul + p,
+p.keyword
+table + p {
+	text-indent:0
+}
+q {
+	font-family:'CMU Serif','Adobe Kai'
+}
+q::before {
+  content:'「'
+}
+q::after {
+	content:'」'
+}
+b {
+	font-weight:900
+}
+blockquote {
+	font-family:'CMU Serif','Adobe Kai';
+	margin:1em 0 1em 2em;
+	text-indent:0
+}
+#ref p {
+	text-indent:-2em;
+	margin-left:2em;
+}
+.part {
+	counter-reset:page 1;
+}
+.break {
+	page-break-before:always;
+	page-break-after:avoid;
+}
+span.note::before {
+ counter-increment:note;
+ content:"[" counter(note) "]";
+ vertical-align:baseline;
+ position:relative;
+ top:-0.6em;
+ font-size:70%;
+ cursor:pointer;
+ color:#d00;
+ padding-right:0.25em;
+}
+span.note:hover span.box {
+	visibility:visible;
+	opacity:1;
+	text-align:justify;
+}
+.box {
+	width:18em;
+	padding:1em;
+	border-radius: 9px;
+	background-color:#ccc;
+	box-shadow:10px 10px 5px #888;
+	position:absolute;
+	z-index:1;
+	visibility:hidden;
+	opacity:0;
+	transition:visibility 0.5s linear, opacity 0.2s linear;
+	text-indent:0;
+	font-family:'CMU Serif','Noto Serif TC';
+	font-size:10pt;
+	line-height:1.5em;
+}
+.song {
+	font-family:'CMU Serif','Adobe FangSong';
+}
+.kai {
+	font-family:'CMU Serif','Adobe Kai','標楷體','DFKai-SB';
+}
+.new {
+	color:red;
+	background-color:lightcyan;
+}
+
+/* move below to doc */
