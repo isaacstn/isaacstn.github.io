@@ -24,10 +24,11 @@
 
 <body>
 	<div id="main" class="exam">
-	
-		<h2>語句邏輯中合法語句的建構規則</h2>
 		
 		<div class="section">
+	
+		<h2>語句邏輯中合法語句的建構規則</h2>
+			
 			<ol class="numd tight local">
 				<li>所有語句符號都是合法語句（原子命題）。</li>
 				<li>如果 $x$ 是合法語句，$&not;x$ 也是合法語句（否定句）。</li>
@@ -39,71 +40,63 @@
 			</ol>
 			<br/>
 		</div>
-	
+		
+		<div class="section">
+			
 		<h2>五大句型的真值表</h2>
-		
-		<div class="section flex">
-			<div>
-				<p><b>否定句</b></p>
-				<table class="truth single sentence">
-					<tr><td>$x$</td><td>$&not;x$</td></tr>
-					<tr><td>T</td><td>F</td></tr>
-					<tr><td>F</td><td>T</td></tr>
-				</table>
+			
+			<div class="flex">
+				<div>
+					<p><b>否定句</b></p>
+					<table class="truth single sentence">
+						<tr><td>$x$</td><td>$&not;x$</td></tr>
+						<tr><td>T</td><td>F</td></tr>
+						<tr><td>F</td><td>T</td></tr>
+					</table>
+				</div>
+				<div>
+					<p><b>連言句</b></p>
+					<table class="truth double sentence">
+						<tr><td>$x$</td><td>$y$</td><td>$x&and;y$</td></tr>
+						<tr><td>T</td><td>T</td><td>T</td></tr>
+						<tr><td>T</td><td>F</td><td>F</td></tr>
+						<tr><td>F</td><td>T</td><td>F</td></tr>
+						<tr><td>F</td><td>F</td><td>F</td></tr>
+					</table>
+				</div>
+				<div>
+					<p><b>選言句</b></p>
+					<table class="truth double sentence">
+						<tr><td>$x$</td><td>$y$</td><td>$x&or;y$</td></tr>
+						<tr><td>T</td><td>T</td><td>T</td></tr>
+						<tr><td>T</td><td>F</td><td>T</td></tr>
+						<tr><td>F</td><td>T</td><td>T</td></tr>
+						<tr><td>F</td><td>F</td><td>F</td></tr>
+					</table>
+				</div>
 			</div>
-			<div>
-				<p>連言句</p>
-				<table class="truth double sentence">
-					<tr><td>$x$</td><td>$y$</td><td>$x&and;y$</td></tr>
-					<tr><td>T</td><td>T</td><td>T</td></tr>
-					<tr><td>T</td><td>F</td><td>F</td></tr>
-					<tr><td>F</td><td>T</td><td>F</td></tr>
-					<tr><td>F</td><td>F</td><td>F</td></tr>
-				</table>
+			<div class="flex" style="justify-content:flex-start">
+				<div style="margin-right:6em">
+					<p><b>條件句</b></p>
+					<table class="truth double sentence">
+						<tr><td>$x$</td><td>$y$</td><td>$x&rarr;y$</td></tr>
+						<tr><td>T</td><td>T</td><td>T</td></tr>
+						<tr><td>T</td><td>F</td><td>F</td></tr>
+						<tr><td>F</td><td>T</td><td>T</td></tr>
+						<tr><td>F</td><td>F</td><td>T</td></tr>
+					</table>
+				</div>
+				<div>
+					<p><b>雙條件句</b></p>
+					<table class="truth double sentence">
+						<tr><td>$x$</td><td>$y$</td><td>$x&harr;y$</td></tr>
+						<tr><td>T</td><td>T</td><td>T</td></tr>
+						<tr><td>T</td><td>F</td><td>F</td></tr>
+						<tr><td>F</td><td>T</td><td>F</td></tr>
+						<tr><td>F</td><td>F</td><td>T</td></tr>
+					</table>
+				</div>
 			</div>
-			<div>
-				<p>選言句</p>
-				<table class="truth double sentence">
-					<tr><td>$x$</td><td>$y$</td><td>$x&or;y$</td></tr>
-					<tr><td>T</td><td>T</td><td>T</td></tr>
-					<tr><td>T</td><td>F</td><td>T</td></tr>
-					<tr><td>F</td><td>T</td><td>T</td></tr>
-					<tr><td>F</td><td>F</td><td>F</td></tr>
-				</table>
-			</div>
-			<div>
-				<p>條件句</p>
-				<table class="truth double sentence">
-					<tr><td>$x$</td><td>$y$</td><td>$x&rarr;y$</td></tr>
-					<tr><td>T</td><td>T</td><td>T</td></tr>
-					<tr><td>T</td><td>F</td><td>F</td></tr>
-					<tr><td>F</td><td>T</td><td>T</td></tr>
-					<tr><td>F</td><td>F</td><td>T</td></tr>
-				</table>
-			</div>
-			<div>
-				<p>雙條件句</p>
-				<table class="truth double sentence">
-					<tr><td>$x$</td><td>$y$</td><td>$x&harr;y$</td></tr>
-					<tr><td>T</td><td>T</td><td>T</td></tr>
-					<tr><td>T</td><td>F</td><td>F</td></tr>
-					<tr><td>F</td><td>T</td><td>F</td></tr>
-					<tr><td>F</td><td>F</td><td>T</td></tr>
-				</table>
-			</div>
-		</div>
-		
-		<h2 style="margin-bottom:1em;">五大句型的真值條件</h2>
-		
-		<div class="section" style="clear:both">
-			<table class="semantics">
-				<tr><td></td><td></td><td>真 (True)</td><td>假 (False)</td></tr>
-				<tr><td>否定命題</td><td>$&not;x$</td><td>$x$＝F</td><td>$x$＝T</td></tr>
-				<tr><td>連言命題</td><td>$x&and;y$</td><td>$x$＝$y$＝T</td><td>1. $x$＝F<br/>2. $y$＝F</td></tr>
-				<tr><td>選言命題</td><td>$x&or;y$</td><td>1. $x$＝T<br/>2. $y$＝T</td><td>$x$＝$y$＝F</td></tr>
-				<tr><td>條件命題</td><td>$x&rarr;y$</td><td>1. $x$＝F<br/>2. $y$＝T</td><td>$x$＝T 且 $y$＝F</td></tr>
-				<tr><td>雙條件命題</td><td>$x&harr;y$</td><td>1. $x$＝$y$＝T<br/>2. $x$＝$y$＝F</td><td>1. $x$＝T 且 $y$＝F<br/>2. $x$＝F 且 $y$＝T</td></tr>
-			</table>
 		</div>
 	</div>
 </body>
