@@ -40,55 +40,60 @@
 			<br/>
 		</div>
 	
-		<h2>五大語句類型的真值表</h2>
+		<h2>五大句型的真值表</h2>
 		
-		<div class="section">
-			<p><b>否定句</b></p>
-			<table class="truth single sentence">
-				<tr><td>$x$</td><td>$&not;x$</td></tr>
-				<tr><td>T</td><td>F</td></tr>
-				<tr><td>F</td><td>T</td></tr>
-			</table>
-			<br/>
-			<p>連言句</p>
-			<table class="truth double sentence">
-				<tr><td>$x$</td><td>$y$</td><td>$x&and;y$</td></tr>
-				<tr><td>T</td><td>T</td><td>T</td></tr>
-				<tr><td>T</td><td>F</td><td>F</td></tr>
-				<tr><td>F</td><td>T</td><td>F</td></tr>
-				<tr><td>F</td><td>F</td><td>F</td></tr>
-			</table>
-			<br/>
-			<p>選言句</p>
-			<table class="truth double sentence">
-				<tr><td>$x$</td><td>$y$</td><td>$x&or;y$</td></tr>
-				<tr><td>T</td><td>T</td><td>T</td></tr>
-				<tr><td>T</td><td>F</td><td>T</td></tr>
-				<tr><td>F</td><td>T</td><td>T</td></tr>
-				<tr><td>F</td><td>F</td><td>F</td></tr>
-			</table>
-			<br/>
-			<p>條件句</p>
-			<table class="truth double sentence">
-				<tr><td>$x$</td><td>$y$</td><td>$x&rarr;y$</td></tr>
-				<tr><td>T</td><td>T</td><td>T</td></tr>
-				<tr><td>T</td><td>F</td><td>F</td></tr>
-				<tr><td>F</td><td>T</td><td>T</td></tr>
-				<tr><td>F</td><td>F</td><td>T</td></tr>
-			</table>
-			<br/>
-			<p>雙條件句</p>
-			<table class="truth double sentence">
-				<tr><td>$x$</td><td>$y$</td><td>$x&harr;y$</td></tr>
-				<tr><td>T</td><td>T</td><td>T</td></tr>
-				<tr><td>T</td><td>F</td><td>F</td></tr>
-				<tr><td>F</td><td>T</td><td>F</td></tr>
-				<tr><td>F</td><td>F</td><td>T</td></tr>
-			</table>
-			<br/>
+		<div class="section flex">
+			<div>
+				<p><b>否定句</b></p>
+				<table class="truth single sentence">
+					<tr><td>$x$</td><td>$&not;x$</td></tr>
+					<tr><td>T</td><td>F</td></tr>
+					<tr><td>F</td><td>T</td></tr>
+				</table>
+			</div>
+			<div>
+				<p>連言句</p>
+				<table class="truth double sentence">
+					<tr><td>$x$</td><td>$y$</td><td>$x&and;y$</td></tr>
+					<tr><td>T</td><td>T</td><td>T</td></tr>
+					<tr><td>T</td><td>F</td><td>F</td></tr>
+					<tr><td>F</td><td>T</td><td>F</td></tr>
+					<tr><td>F</td><td>F</td><td>F</td></tr>
+				</table>
+			</div>
+			<div>
+				<p>選言句</p>
+				<table class="truth double sentence">
+					<tr><td>$x$</td><td>$y$</td><td>$x&or;y$</td></tr>
+					<tr><td>T</td><td>T</td><td>T</td></tr>
+					<tr><td>T</td><td>F</td><td>T</td></tr>
+					<tr><td>F</td><td>T</td><td>T</td></tr>
+					<tr><td>F</td><td>F</td><td>F</td></tr>
+				</table>
+			</div>
+			<div>
+				<p>條件句</p>
+				<table class="truth double sentence">
+					<tr><td>$x$</td><td>$y$</td><td>$x&rarr;y$</td></tr>
+					<tr><td>T</td><td>T</td><td>T</td></tr>
+					<tr><td>T</td><td>F</td><td>F</td></tr>
+					<tr><td>F</td><td>T</td><td>T</td></tr>
+					<tr><td>F</td><td>F</td><td>T</td></tr>
+				</table>
+			</div>
+			<div>
+				<p>雙條件句</p>
+				<table class="truth double sentence">
+					<tr><td>$x$</td><td>$y$</td><td>$x&harr;y$</td></tr>
+					<tr><td>T</td><td>T</td><td>T</td></tr>
+					<tr><td>T</td><td>F</td><td>F</td></tr>
+					<tr><td>F</td><td>T</td><td>F</td></tr>
+					<tr><td>F</td><td>F</td><td>T</td></tr>
+				</table>
+			</div>
 		</div>
 		
-		<h2 style="margin-bottom:1em;">五大語句類型的真值條件</h2>
+		<h2 style="margin-bottom:1em;">五大句型的真值條件</h2>
 		
 		<div class="section" style="clear:both">
 			<table class="semantics">
