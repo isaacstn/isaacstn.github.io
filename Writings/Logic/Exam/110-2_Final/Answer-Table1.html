@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.2.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_examstyle_v1.1.css"/><!--docstyle exam supplement-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+
+	<style>
+		tr.grey {background-color:#DDD}
+	</style>
+
+	<title>110-2_Final-Exam_Answer</title>
+</head>
+
+<body>
+	<div id="main" class="exam">
+		
+		<div class="section">
+		<h2>請用真值表判斷以下論證是否有效</h2>
+      <p>
+      前提：$A→B$、$A→¬B$<br/>
+      結論：$¬A$
+      </p>
+      <table class="truth argue double">
+        <tr><td>$A$</td><td>$B$</td><td>$A→B$</td><td>$A→¬B$</td><td>$¬A$</td></tr>
+        <tr><td>T</td><td>T</td><td>T</td><td>F</td><td>F</td></tr>
+        <tr><td>T</td><td>F</td><td>F</td><td>T</td><td>F</td></tr>
+        <tr class="grey"><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+        <tr class="grey"><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td></tr>
+      </table>
+      <p>
+      兩個前提皆為真的情況一共有 $A$ 假 $B$ 真及 $A$ 假 $B$ 假兩種，而在這兩種情況下結論 $¬A$ 皆為真，故此論證在前提皆真時結論也都為真，故為有效論證。
+      </p>
+		</div>
+	</div>
+</body>
