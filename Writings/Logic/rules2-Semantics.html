@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.2.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_examstyle_v1.1.css"/><!--docstyle exam supplement-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+
+	<style>
+	</style>
+
+	<title>Rules</title>
+</head>
+
+<body>
+	<div id="main" class="exam">
+	
+		<h2>語句邏輯中合法語句的建構規則</h2>
+		
+		<div class="section">
+			<ol class="numd tight local">
+				<li>所有語句符號都是合法語句（原子語句）。</li>
+				<li>如果 $x$ 是一個合法語句，則 $&not;x$ 也是一個合法語句（否定句）。</li>
+				<li>如果 $x$ 和 $y$ 都是合法語句，則 $x&and;y$ 也是一個合法語句（連言句）。</li>
+				<li>如果 $x$ 和 $y$ 都是合法語句，則 $x&or;y$ 也是一個合法語句（選言句）。</li>
+				<li>如果 $x$ 和 $y$ 都是合法語句，則 $x&rarr;y$ 也是一個合法語句（條件句）。</li>
+				<li>如果 $x$ 和 $y$ 都是合法語句，則 $x&harr;y$ 也是一個合法語句（雙條件句）。</li>
+				<li>只有用 1-6 逐步建構出來的表達式才是合法語句。</li>
+			</ol>
+			<br/>
+		</div>
+		
+		<div class="section">
+			
+		<h2>五大句型的真值表</h2>
+			
+			<div class="flex">
+				<div>
+					<p><b>否定句</b></p>
+					<table class="truth single sentence">
+						<tr><td>$x$</td><td>$&not;x$</td></tr>
+						<tr><td>T</td><td>F</td></tr>
+						<tr><td>F</td><td>T</td></tr>
+					</table>
+				</div>
+				<div>
+					<p><b>連言句</b></p>
+					<table class="truth double sentence">
+						<tr><td>$x$</td><td>$y$</td><td>$x&and;y$</td></tr>
+						<tr><td>T</td><td>T</td><td>T</td></tr>
+						<tr><td>T</td><td>F</td><td>F</td></tr>
+						<tr><td>F</td><td>T</td><td>F</td></tr>
+						<tr><td>F</td><td>F</td><td>F</td></tr>
+					</table>
+				</div>
+				<div>
+					<p><b>選言句</b></p>
+					<table class="truth double sentence">
+						<tr><td>$x$</td><td>$y$</td><td>$x&or;y$</td></tr>
+						<tr><td>T</td><td>T</td><td>T</td></tr>
+						<tr><td>T</td><td>F</td><td>T</td></tr>
+						<tr><td>F</td><td>T</td><td>T</td></tr>
+						<tr><td>F</td><td>F</td><td>F</td></tr>
+					</table>
+				</div>
+			</div>
+			<div class="flex" style="justify-content:flex-start">
+				<div style="margin-right:6em">
+					<p><b>條件句</b></p>
+					<table class="truth double sentence">
+						<tr><td>$x$</td><td>$y$</td><td>$x&rarr;y$</td></tr>
+						<tr><td>T</td><td>T</td><td>T</td></tr>
+						<tr><td>T</td><td>F</td><td>F</td></tr>
+						<tr><td>F</td><td>T</td><td>T</td></tr>
+						<tr><td>F</td><td>F</td><td>T</td></tr>
+					</table>
+				</div>
+				<div>
+					<p><b>雙條件句</b></p>
+					<table class="truth double sentence">
+						<tr><td>$x$</td><td>$y$</td><td>$x&harr;y$</td></tr>
+						<tr><td>T</td><td>T</td><td>T</td></tr>
+						<tr><td>T</td><td>F</td><td>F</td></tr>
+						<tr><td>F</td><td>T</td><td>F</td></tr>
+						<tr><td>F</td><td>F</td><td>T</td></tr>
+					</table>
+					<br/>
+				</div>
+			</div>
+		</div>
+		
+		<div class="section">
+			
+		<h2>五大句型的真值條件</h2>
+			
+			<table class="semantics">
+				<tr><td></td><td></td><td>真 (True)</td><td>假 (False)</td></tr>
+				<tr><td>否定句</td><td>$&not;x$</td><td>$x$ 假</td><td>$x$ 真</td></tr>
+				<tr><td>連言句</td><td>$x&and;y$</td><td>$x$,$y$ 皆真</td><td>$x$ 假，或者<br/>$y$ 假</td></tr>
+				<tr><td>選言句</td><td>$x&or;y$</td><td>$x$ 真，或者<br/>$y$ 真</td><td>$x$,$y$ 皆假</td></tr>
+				<tr><td>條件句</td><td>$x&rarr;y$</td><td>$x$ 假，或者<br/>$y$ 真</td><td>$x$ 真 $y$ 假</td></tr>
+				<tr><td>雙條件句</td><td>$x&harr;y$</td><td>$x$,$y$ 皆真，或者<br/>$x$,$y$ 皆假</td><td>$x$ 真 $y$ 假，或者<br/>$x$ 假 $y$ 真</td></tr>
+			</table>
+		</div>
+	</div>
+</body>

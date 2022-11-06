@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.2.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_examstyle_v1.1.css"/><!--docstyle exam supplement-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+
+	<style>
+		h2:before {content:none}
+	</style>
+
+	<title>Rules</title>
+</head>
+
+<body>
+	<div class="section">
+		<h2 style="margin-bottom:1em;">語句邏輯的符號</h2>		
+		<ol class="numd tight local">
+			<li>
+			語句符號：所有的大寫英文字母，以及加上數字下標的大寫英文字母。<br/>
+			如：A、B、C、……、Z。<br/>
+			　　A<sub>1</sub>、A<sub>2</sub>、A<sub>3</sub>、……
+			</li>
+			<li>
+			語句連接詞符號：<br/>
+			否定（$¬$）、連言（$∧$）、選言（$∨$）、條件（$→$）、雙條件（$↔$）
+			</li>
+			<li>
+			分組符號：即左右括號 (﹐)
+			</li>
+		</ol>
+	</div>
+	<div class="section">
+		<h2 style="margin-bottom:1em;">完構式的建構規則</h2>		
+		<ol class="numd tight local">
+			<li>所有原子語句都是合法語句。</li>
+			<li>如果 $x$ 是一個合法語句，則 $&not;x$ 是合法的。</li>
+			<li>如果 $x$, $y$ 都是合法語句，則 $x&and;y$ 是合法的。</li>
+			<li>如果 $x$, $y$ 都是合法語句，則 $x&or;y$ 是合法的。</li>
+			<li>如果 $x$, $y$ 都是合法語句，則 $x&rarr;y$ 是合法的。</li>
+			<li>如果 $x$, $y$ 都是合法語句，則 $x&harr;y$ 是合法的。</li>
+			<li>只有用 1-6 逐步建構出來的表達式才是合法語句。</li>
+		</ol>
+	</div>
+	<div class="section">
+		<h2 style="margin-bottom:1em;">分組符號（即左右括號）的使用規則</h2>		
+		<ol class="numd tight local">
+			<li>每次使用完構式的建構規則 2-6 條都要在最外面加上左右括號。</li>
+			<li>寫好的完整語句可無條件省略最外層的括號。</li>
+			<li>
+			其餘括號的省略方式須依語句連接詞的讀取優先順序執行：<br/>
+			$&not;$ &gt; $&and;$﹐$&or;$ &gt; $&rarr;$﹐$&harr;$
+			</li>
+		</ol>
+	</div>
+</body>
