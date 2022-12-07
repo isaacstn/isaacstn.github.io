@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.2.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_examstyle_v1.1.css"/><!--docstyle exam supplement-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+
+	<style>
+	</style>
+
+	<title>109-2_HW3_Answer</title>
+</head>
+
+<body>
+	<div id="main" class="exam">
+	
+		<h2>用真值表檢查以下論證是否有效</h2>
+		
+		<div class="section">
+			<p>
+			<b>1.</b><br/>
+			前提：$M→N$、$N→R$<br/>
+			結論：$M→R$
+			</p>
+			<table class="truth argue triple">
+				<tr><td>$M$</td><td>$N$</td><td>$R$</td><td>$M→N$</td><td>$N→R$</td><td>$M→R$</td></tr>
+				<tr style="background-color:#DDD;"><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+				<tr><td>T</td><td>T</td><td>F</td><td>T</td><td>F</td><td>F</td></tr>
+				<tr><td>T</td><td>F</td><td>T</td><td>F</td><td>T</td><td>T</td></tr>
+				<tr><td>T</td><td>F</td><td>F</td><td>F</td><td>T</td><td>F</td></tr>
+				<tr style="background-color:#DDD;"><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+				<tr><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td><td>T</td></tr>
+				<tr style="background-color:#DDD;"><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+				<tr style="background-color:#DDD;"><td>F</td><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td></tr>
+			</table>
+			<p>
+			前提只在 $[M,N,R];[¬M,N,R];[¬M,¬N,R];[¬M,¬N,¬R]$ 等條件下全部為真。<br/>
+			在前提全部為真的條件下結論亦皆為真，故論證有效。
+			</p>
+			<p>
+			<b>2.</b><br/>
+			前提：$P∨(Q→S)$、$Q∧¬S$<br/>
+			結論：$P$
+			</p>
+			<table class="truth argue triple">
+				<tr><td>$P$</td><td>$Q$</td><td>$S$</td><td>$P∨(Q→S)$</td><td>$Q∧¬S$</td><td>$P$</td></tr>
+				<tr><td>T</td><td>T</td><td>T</td><td>T&emsp;&ensp;<small>T</small>&ensp;</td><td>&ensp;F&ensp;<small>F</small></td><td>T</td></tr>
+				<tr style="background-color:#DDD;"><td>T</td><td>T</td><td>F</td><td>T&emsp;&ensp;<small>F</small>&ensp;</td><td>&ensp;T&ensp;<small>T</small></td><td>T</td></tr>
+				<tr><td>T</td><td>F</td><td>T</td><td>T&emsp;&ensp;<small>T</small>&ensp;</td><td>&ensp;F&ensp;<small>F</small></td><td>T</td></tr>
+				<tr><td>T</td><td>F</td><td>F</td><td>T&emsp;&ensp;<small>T</small>&ensp;</td><td>&ensp;F&ensp;<small>T</small></td><td>T</td></tr>
+				<tr><td>F</td><td>T</td><td>T</td><td>T&emsp;&ensp;<small>T</small>&ensp;</td><td>&ensp;F&ensp;<small>F</small></td><td>F</td></tr>
+				<tr><td>F</td><td>T</td><td>F</td><td>F&emsp;&ensp;<small>F</small>&ensp;</td><td>&ensp;T&ensp;<small>T</small></td><td>F</td></tr>
+				<tr><td>F</td><td>F</td><td>T</td><td>T&emsp;&ensp;<small>T</small>&ensp;</td><td>&ensp;F&ensp;<small>F</small></td><td>F</td></tr>
+				<tr><td>F</td><td>F</td><td>F</td><td>T&emsp;&ensp;<small>T</small>&ensp;</td><td>&ensp;F&ensp;<small>T</small></td><td>F</td></tr>
+			</table>
+			<p>
+			前提只在 $[P,Q,¬S]$ 的條件下全部為真。<br/>
+			在前提全部為真的條件下結論亦皆為真，故論證有效。
+			</p>
+			<p>
+			<b>3.</b><br/>
+			前提：$A→C$、$B→C$、$A∨B$<br/>
+			結論：$C$
+			</p>
+			<table class="truth argue triple">
+				<tr><td>$A$</td><td>$B$</td><td>$C$</td><td>$(A∧B)↔C$</td><td>$¬A$</td><td>$C$</td></tr>
+				<tr><td>T</td><td>T</td><td>T</td><td><small style="padding:0 2em 0 0.3em">T</small>T</td><td>F</td><td>T</td></tr>
+				<tr><td>T</td><td>T</td><td>F</td><td><small style="padding:0 2em 0 0.3em">T</small>F</td><td>F</td><td>F</td></tr>
+				<tr><td>T</td><td>F</td><td>T</td><td><small style="padding:0 2em 0 0.3em">F</small>F</td><td>F</td><td>T</td></tr>
+				<tr><td>T</td><td>F</td><td>F</td><td><small style="padding:0 2em 0 0.3em">F</small>T</td><td>F</td><td>F</td></tr>
+				<tr><td>F</td><td>T</td><td>T</td><td><small style="padding:0 2em 0 0.3em">F</small>F</td><td>T</td><td>T</td></tr>
+				<tr style="background-color:#DDD;"><td>F</td><td>T</td><td>F</td><td><small style="padding:0 2em 0 0.3em">F</small>T</td><td>T</td><td>F</td></tr>
+				<tr><td>F</td><td>F</td><td>T</td><td><small style="padding:0 2em 0 0.3em">F</small>F</td><td>T</td><td>T</td></tr>
+				<tr style="background-color:#DDD;"><td>F</td><td>F</td><td>F</td><td><small style="padding:0 2em 0 0.3em">F</small>T</td><td>T</td><td>F</td></tr>
+			</table>
+			<p>
+			前提只在 $[¬A,B,¬C];[¬A,¬B,¬C]$ 等條件下全部為真時。<br/>
+			在前提全部為真的條件下結論卻有假，故論證無效。
+			</p>
+		</div>
+	</div>
+</body>
