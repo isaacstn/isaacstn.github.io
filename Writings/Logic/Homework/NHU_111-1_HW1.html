@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.2.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_examstyle_v1.1.css"/><!--docstyle exam supplement-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+
+	<style>
+	</style>
+
+	<title>NHU_111-1_HW1_Answer</title>
+</head>
+
+<body>
+	<div id="main" class="exam">
+	
+		<h2>用真值表分析以下語句的真值條件</h2>
+		
+		<div class="section">
+			<p>
+			<b>1.</b>
+			</p>
+			<table class="truth argue double">
+				<tr><td>$A$</td><td>$B$</td><td>$¬(A∧B)→A$</td></tr>
+				<tr><td>T</td><td>T</td><td><small style="padding-right:1.5em">F</small><small style="padding-right:2em">T</small><span style="padding-right:0.75em">T</span></td></tr>
+				<tr><td>T</td><td>F</td><td><small style="padding-right:1.5em">T</small><small style="padding-right:2em">F</small><span style="padding-right:0.75em">T</span></td></tr>
+				<tr><td>F</td><td>T</td><td><small style="padding-right:1.5em">T</small><small style="padding-right:2em">F</small><span style="padding-right:0.75em">F</span></td></tr>
+				<tr><td>F</td><td>F</td><td><small style="padding-right:1.5em">T</small><small style="padding-right:2em">F</small><span style="padding-right:0.75em">F</span></td></tr>
+			</table>
+			<p>
+			<b>2.</b>
+			</p>
+			<table class="truth argue double">
+				<tr><td>$P$</td><td>$Q$</td><td>$P→(Q∨P)$</td></tr>
+				<tr><td>T</td><td>T</td><td>T<small style="padding:0 0.5em 0 2em">T</small></td></tr>
+				<tr><td>T</td><td>F</td><td>T<small style="padding:0 0.5em 0 2em">T</small></td></tr>
+				<tr><td>F</td><td>T</td><td>T<small style="padding:0 0.5em 0 2em">T</small></td></tr>
+				<tr><td>F</td><td>F</td><td>T<small style="padding:0 0.5em 0 2em">F</small></td></tr>
+			</table>
+			<p>
+			<b>3.</b>
+			</p>
+			<table class="truth argue triple">
+				<tr><td>$S$</td><td>$R$</td><td>$T$</td><td>$(S∧R)→¬T$</td></tr>
+				<tr><td>T</td><td>T</td><td>T</td><td><small style="padding:0 2em 0 1em">T</small>F<small style="padding-left:1em">F</small></td></tr>
+				<tr><td>T</td><td>T</td><td>F</td><td><small style="padding:0 2em 0 1em">T</small>T<small style="padding-left:1em">T</small></td></tr>
+				<tr><td>T</td><td>F</td><td>T</td><td><small style="padding:0 2em 0 1em">F</small>T<small style="padding-left:1em">F</small></td></tr>
+				<tr><td>T</td><td>F</td><td>F</td><td><small style="padding:0 2em 0 1em">F</small>T<small style="padding-left:1em">T</small></td></tr>
+				<tr><td>T</td><td>T</td><td>T</td><td><small style="padding:0 2em 0 1em">F</small>T<small style="padding-left:1em">F</small></td></tr>
+				<tr><td>T</td><td>T</td><td>F</td><td><small style="padding:0 2em 0 1em">F</small>T<small style="padding-left:1em">T</small></td></tr>
+				<tr><td>T</td><td>F</td><td>T</td><td><small style="padding:0 2em 0 1em">F</small>T<small style="padding-left:1em">F</small></td></tr>
+				<tr><td>T</td><td>F</td><td>F</td><td><small style="padding:0 2em 0 1em">F</small>T<small style="padding-left:1em">T</small></td></tr>
+			</table>
+		</div>
+	</div>
+</body>
