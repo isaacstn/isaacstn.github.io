@@ -1,0 +1,247 @@
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	hyphens:auto;
+	-webkit-hyphens:auto;
+	hyphenate-limit-chars:6 3 2;
+	-ms-hyphenate-limit-chars:6 3 2;
+	-moz-hyphenate-limit-chars:6 3 2;
+	-webkit-hyphenate-limit-chars:6 3 2;
+	width:15.92cm;
+	margin: auto;
+	font:normal normal 12pt 'CMU Serif','Noto Serif TC';
+	line-height:1.5em;
+	text-align:justify;
+	text-justify:inter-character;
+	prince-text-justify:prince-cjk;
+}
+div.chapter, div.section, div.subsection, div.portion, div.quiz, div.tree, div.tree2 {
+	display:flow-root;
+	height:max-content
+}
+div.tree, div.tree2, div.quiz {
+	text-align:center;
+	margin-top:1em;
+}
+div.quiz {
+	text-align:left;
+}
+div.tree2 {
+	width:max-content;
+}
+div.tree div {
+	float:left;
+	width:50%;
+}
+div.tree2 div {
+	float:left;
+	width:50%;
+}
+div.tree::after, div.tree2::after, div.quiz::after {
+	content:'';
+	display:block;
+	clear:both;
+}
+div.prf::before {
+	counter-increment:dprf;
+	content:"(" counter(dprf) ")"
+}
+div.prf {
+	float:left;
+	text-align:left;
+	margin-top:1em;
+	margin-right:2em;
+	width:max-content;
+	height:8em
+}
+div.prf ol {
+	display:inline-block;
+	vertical-align:top;
+}
+div.def {
+	border:1px solid black;
+	padding:0 2em 1em 2em;
+	margin-top:1em
+}
+p, p.ind {
+	text-indent:2em;
+	margin-top:1em;
+	clear:both
+} 
+p:first-of-type, 
+p.noind,
+div.tree + p,
+div.tree2 + p,
+blockquote + p,
+blockquote p,
+ol + p, ul + p,
+table + p {
+	text-indent:0;
+}
+a {
+	font-weight:bold;
+}
+a:link {
+	color:#000;
+}
+a:hover {
+	color:#666;
+	text-decoration:none;
+}
+a:active {
+	color:#aaa;
+	text-decoration:none;
+}
+a:visited {
+	color:#aaa;
+}
+q {
+	font-family:'CMU Serif','Adobe FangSong';
+}
+q::before, q::after {
+	content:none;
+}
+em {
+	font-style:normal;
+	font-weight:700;
+}
+blockquote {
+	margin:1em 2em 1em 2em;
+	text-indent:0;
+	font-family:'CMU Serif','Adobe FangSong';
+}
+math.ma-block {
+	max-width:max-content
+}
+svg {
+	display:block;
+	margin:1em 0 0 2em;
+	width:100%;
+}
+svg.back {
+	position:absolute;
+	margin:0;
+	z-index:-1;
+}
+div.tree svg, div.tree2 svg {
+	margin:0;
+	height:1.5em;
+}
+svg * {
+	stroke:black;
+	stroke-width:1;
+	fill:none;
+}
+text, tspan {
+	font-family:'CMU Serif', 'Noto Serif TC', STIXGeneral;
+}
+text, tspan, marker > path {
+	stroke-width:0;
+	fill:black;
+}
+text.ita, tspan.ita {
+	font-style:italic;
+}
+text.bold, tspan.bold {
+	font-weight:bold;
+}
+text.felipa, tspan.felipa {
+	font-family:felipa;
+}
+rect.grey, circle.grey, ellipse.grey {
+	fill:#444;
+}
+rect.lgrey, circle.lgrey, ellipse.lgrey {
+	fill:#aaa;
+}
+rect.white, circle.white, ellipse.white {
+	fill:white;
+}
+rect.black, circle.black, ellipse.black {
+	fill:black;
+}
+rect.opa, circle.opa, ellipse.opa {
+	fill-opacity:0.5;
+}
+#ref p {
+	text-indent:-2em;
+	margin-left:2em;
+}
+.part {
+	counter-reset:page 1;
+}
+.break {
+	page-break-before:always;
+	page-break-after:avoid;
+}
+span.note::before {
+ counter-increment:note;
+ content:"[" counter(note) "]";
+ vertical-align:baseline;
+ position:relative;
+ top:-0.6em;
+ font-size:70%;
+ cursor:pointer;
+ color:#d00;
+ padding-right:0.25em;
+}
+span.note:hover span.box {
+	visibility:visible;
+	opacity:1;
+	text-align:justify;
+}
+.box {
+	width:18em;
+	padding:1em;
+	border-radius: 9px;
+	background-color:#ccc;
+	box-shadow:10px 10px 5px #888;
+	position:absolute;
+	z-index:1;
+	visibility:hidden;
+	opacity:0;
+	transition:visibility 0.5s linear, opacity 0.2s linear;
+	text-indent:0;
+	font-family:'CMU Serif','Noto Serif TC';
+	font-size:10pt;
+	line-height:1.5em;
+}
+.song, .quote {
+	font-family:'CMU Serif','Adobe FangSong';
+}
+.kai {
+	font-family:'CMU Serif','Adobe Kai','標楷體','DFKai-SB';
+}
+.hidden {
+	visibility:hidden
+}
+.noshow {
+	display:none
+}
+.notab {margin-left:0}
+.left {float:left}
+.right {float:right}
+.red {background-color:red}
+.green {background-color:green}
+.blue {background-color:blue}
+.skyblue {background-color:skyblue}
+.pink {background-color:pink}
+.orange {background-color:orange}
+.yellow {background-color:yellow}
+.gold {background-color:gold}
+.aqua {background-color:aqua}
+.cyan {background-color:cyan}
+.salmon {background-color:salmon}
+.silver {background-color:silver}
+.snow {background-color:snow}
+.wheat {background-color:wheat}
+.tomato {background-color:tomato}
+.orchid {background-color:orchid}
+.violet {background-color:violet}
+.lawngreen {background-color:lawngreen}
+.lightgreen {background-color:lightgreen}
+.violet {background-color:violet}
+
+/* move below to doc */
