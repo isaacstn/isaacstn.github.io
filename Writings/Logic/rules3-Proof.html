@@ -27,28 +27,37 @@
 	
 		<h2>蘊涵規則</h2>
 			<ol class="numd tight">
-				<li>肯定前件律（MP）：$p&rarr;q,p&vdash;q$</li>
-				<li>否定後件律（MT）：$p&rarr;q,&not;q&vdash;&not;p$</li>
-				<li>連言律（Conj.）：$p,q&vdash;p&and;q$</li>
-				<li>簡化律（Simp.）：$p&and;q&vdash;p$；$p&and;q&vdash;q$</li>
-				<li>添加律（Add.）：$p&vdash;p&or;q$；$p&vdash;q&or;p$</li>
-				<li>假言三段論（HS）：$p&rarr;q,q&rarr;r&vdash;p&rarr;r$</li>
-				<li>選言三段論（DS）：$p&or;q,&not;p&vdash;q$；$p&or;q,&not;q&vdash;p$</li>
-				<li>建構式兩難論證（CD）：$p&or;q,p&rarr;r,q&rarr;s&vdash;r&or;s$</li>
+				<li>肯定前件律 (MP)：$p&rarr;q,p&vdash;q$</li>
+				<li>否定後件律 (MT)：$p&rarr;q,&not;q&vdash;&not;p$</li>
+				<li>連言律 (Conj.)：$p,q&vdash;p&and;q$</li>
+				<li>簡化律 (Simp.)：$p&and;q&vdash;p$<br/>
+				<span class="hidden">簡化律 (Simp.)</span>$p&and;q&vdash;q$</li>
+				<li>添加律 (Add.)：$p&vdash;p&or;q$<br/>
+				<span class="hidden">添加律 (Add.)</span>$p&vdash;q&or;p$</li>
+				<li>假言三段論 (HS)：$p&rarr;q,q&rarr;r&vdash;p&rarr;r$</li>
+				<li>選言三段論 (DS)：$p&or;q,&not;p&vdash;q$<br/>
+				<span class="hidden">選言三段論 (DS)</span>$p&or;q,&not;q&vdash;p$</li>
+				<li>建構式兩難論證 (CD)：$p&or;q,p&rarr;r,q&rarr;s&vdash;r&or;s$</li>
 			</ol>
 	
 		<h2>等值規則</h2>
 			<ol class="numd tight">
-				<li>雙重否定律（DN）：$p&equiv;&not;&not;p$</li>
-				<li>笛摩根律（DeM.）：$&not;(p&and;q)&equiv;&not;p&or;&not;q$；$&not;(p&or;q)&equiv;&not;p&and;&not;q$</li>
-				<li>恆真律（Taut.)：$p&and;p&equiv;p$；$p&or;p&equiv;p$</li>
-				<li>交換律（Comm.）：$p&and;q&equiv;q&and;p$；$p&or;q&equiv;q&or;p$</li>
-				<li>結合律（Assoc.)：$p&and;(q&and;r)&equiv;(p&and;q)&and;r$；$p&or;(q&or;r)&equiv;(p&or;q)&or;r$</li>
-				<li>分配律（Dist.）：$p&and;(q&or;r)&equiv;(p&and;q)&or;(p&and;r)$；<br><span style="visibility:hidden">分配律（Dist.）：</span>$p&or;(q&and;r)&equiv;(p&or;q)&and;(p&or;r)$</li>
-				<li>移出律（Exp.）：$(p&and;q)&rarr;r&equiv;p&rarr;(q&rarr;r)$</li>
-				<li>異值位換律（Contra.）：$p&rarr;q&equiv;&not;q&rarr;&not;p$</li>
-				<li>實質蘊涵律（Impl.）：$p&rarr;q&equiv;&not;p&or;q$</li>
-				<li>實質等值律（Equiv.）：$p&harr;q&equiv;(p&rarr;q)&and;(q&rarr;p)$；<br><span style="visibility:hidden;">實質等值律（Equiv.）：</span>$p&harr;q&equiv;(p&and;q)&or;(&not;p&and;&not;q)$</li>
+				<li>雙重否定律 (DN)：$p&equiv;&not;&not;p$</li>
+				<li>笛摩根律 (DeM.)：$&not;(p&and;q)&equiv;&not;p&or;&not;q$<br/>
+				<span class="hidden"></span>$&not;(p&or;q)&equiv;&not;p&and;&not;q$</li>
+				<li>恆真律 (Taut.)：$p&and;p&equiv;p$<br/>
+				<span class="hidden">恆真律 (Taut.)</span>$p&or;p&equiv;p$</li>
+				<li>交換律 (Comm.)：$p&and;q&equiv;q&and;p$<br/>
+				<span class="hidden">交換律 (Comm.)</span>$p&or;q&equiv;q&or;p$</li>
+				<li>結合律 (Assoc.)：$p&and;(q&and;r)&equiv;(p&and;q)&and;r$<br/>
+				<span class="hidden">結合律 (Assoc.)</span>$p&or;(q&or;r)&equiv;(p&or;q)&or;r$</li>
+				<li>分配律 (Dist.)：$p&and;(q&or;r)&equiv;(p&and;q)&or;(p&and;r)$<br/>
+				<span class="hidden">分配律 (Dist.)：</span>$p&or;(q&and;r)&equiv;(p&or;q)&and;(p&or;r)$</li>
+				<li>移出律 (Exp.)：$(p&and;q)&rarr;r&equiv;p&rarr;(q&rarr;r)$</li>
+				<li>異值位換律 (Contra.)：$p&rarr;q&equiv;&not;q&rarr;&not;p$</li>
+				<li>實質蘊涵律 (Impl.)：$p&rarr;q&equiv;&not;p&or;q$</li>
+				<li>實質等值律 (Equiv.)：$p&harr;q&equiv;(p&rarr;q)&and;(q&rarr;p)$<br/>
+				<span class="hidden">實質等值律 (Equiv.)：</span>$p&harr;q&equiv;(p&and;q)&or;(&not;p&and;&not;q)$</li>
 			</ol>
 	</div>
 </body>
