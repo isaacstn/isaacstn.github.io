@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.5.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_examstyle_v1.5.css"/><!--docstyle exam supplement-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+
+	<style>
+	div.item::before {
+		position:absolute;
+		left:0;
+		content:counter(num) ".";
+		counter-increment:num
+	}
+	div.item {
+		position:relative;
+		padding-top:0.5em;
+		text-decoration:underline;
+		padding-left:1em
+	}
+	div.item:nth-of-type(n+4) {
+		padding-left:1.5em
+	}
+	.grow {
+		margin-left:1em
+	}
+	div {
+		page-break-inside:auto;
+	}
+	.exam table.truth td {
+		padding-left:0.5em;
+		padding-right:0.5em
+	}
+	.exam table.semantics td {
+		padding-left:0.5em;
+		padding-right:0.5em
+	}
+	.exam .ans {
+		color:#2255CC
+	}
+	.exam .ansbgc {
+		background-color:#2255cc33
+	}
+	.exam .counterexp {
+		color:#FD5522
+	}
+	</style>
+
+	<title>Final Exam</title>
+</head>
+
+<body>
+	<div id="main" class="exam">
+			
+		<div class="section">
+			<h2>一、判斷語句的真假<span>（每題 2 分）<br/>根據題目的設定判斷語句真假。若判斷為真寫 '<b>T</b>'，為假寫 '<b>F</b>'，不能判斷則寫 '<b>N</b>'。</span></h2>	
+			<ol class="numd" style="margin-top:1em;">
+				<li>當 $A$、$B$、$C$ 皆為真時，$A→(B→C)$ 是真或假？<br/>
+				<span class="ans">T：當 $B$、$C$ 為真時，$B&rarr;C$ 為真，當 $A$ 亦為真時，則條件句 $A&rarr;(B&rarr;C)$ 的前件與後件皆為真，故條件句 $A&rarr;(B&rarr;C)$ 為真。</span></li>
+				<li>當 $A$、$B$ 為真而 $C$ 為假時，$A→(B→C)$ 是真或假？<br/>
+				<span class="ans">F：當 $B$ 為真而 $C$ 為假時，$B&rarr;C$ 為假，故當 $A$ 為真時，則條件句 $A&rarr;(B&rarr;C)$ 的前件真但後件為假，故條句 $A&rarr;(B&rarr;C)$ 為假。</span></li>
+				<li>當 $P$ 為真、$Q$ 為假、$R$ 為真時，$R→(P∧Q)$ 是真或假？<br/>
+				<span class="ans">F：當 $Q$ 為假時，無論 $P$ 是真是假，$P&and;Q$ 皆為假，故當 $R$ 為真時，則條件句 $R&rarr;(P&and;Q)$ 的前件為真但後件為假，故條件句 $R&rarr;(P&and;Q)$ 為假。</span></li>
+				<li>當 $P$、$Q$ 皆為真而 $R$ 為假時，$R→(P∧Q)$ 是真或假？<br/>
+				<span class="ans">T：當 $P$、$Q$ 皆為真時，$P&and;Q$ 為真，故無論 $R$ 是真是假，條件句 $R&rarr;(P&and;Q)$ 的後件既然為真，則條件句 &R&rarr;(P&and;Q) 即為真。</span></li>
+				<li>當 $K$、$L$ 皆為真時，$K∧(¬L∨O)$ 是真或假？<br/>
+				<span class="ans">N：當 $L$ 為真時 $&not;L$ 為假，則 $&not;L&or;O$ 可真可假，故即使已知 $K$ 為真，$K&and;(&not;L&or;O)$ 的真假仍會基於 $&not;L&or;O$ 的真假而變動，故無法判斷。</span></li>
+				<li>當 $K∧(¬L∨O)$ 為真時，已知 $K$ 為真，則 $L$ 是真或假？<br/>
+				<span class="ans">N：當 $K&and;(&not;L&or;O)$ 為真時，$K$ 和 $&not;L&or;O$ 皆須為真，則已知的 $K$ 為真是理所當然的資訊，則要判斷 $L$ 是真或假只能依賴 $&not;L&or;O$ 必須為真這一資訊。但要令 $&not;L&or;O$ 為真，只要 $&not;L$ 和 $O$ 之中有一個為真，故在不知道 $O$ 的真假的情況下，$&not;L$ 的真假便無從得知，故 $L$ 的真假亦無法判斷。</span></li>
+				<li>當 $(E∧F)∨(E→F)$ 為真時，已知 $F$ 為假，則 $E$ 是真或假？<br/>
+				<span class="ans">F：當 $(E&and;F)&or;(E&rarr;F)$ 為真時，$E&and;F$ 和 $E&rarr;F$ 中至少必須有一個為真。已知 $F$ 為假，故連言句 $E&and;F$ 為假，則條件句 $E&rarr;F$ 就必須為真。在已知 $F$ 為假的情況下，$E$ 必須為假才能令 $E&rarr;F$ 為假，故 $E$ 為假。</span></li>
+				<li>當 $(E∧F)∨(E→F)$ 為真時，已知 $E$ 為真，則 $F$ 是真或假？<br/>
+				<span class="ans">T：當 $(E&and;F)&or;(E&rarr;F)$ 為真時，$E&and;F$ 和 $E&rarr;F$ 中至少必須有一個為真。在已知 $E$ 為真的情況下，若 $F$ 為假則 $E&and;F$、$E&rarr;F$ 皆為假，故 $F$ 不能為假，則 $F$ 真。</span></li>
+				<li>當 $¬(G→H)∨I$ 為真時，已知 $I$ 為假，則 $H$ 是真或假？<br/>
+				<span class="ans">F：當 $&not;(G&rarr;H)&or;I$ 為真時，$&not;(G&rarr;H)$ 和 $I$ 中至少必須有一個為真。已知 $I$ 為假，則 $&not;(G&rarr;H)$ 必須為真，故 $G&rarr;H$ 為假，則 $G$ 為真且 $H$ 為假。故 $H$ 為假。</span></li>
+				<li>當 $¬(G→H)∨I$ 為假時，已知 $G$ 為真，則 $H$ 是真或假？<br/>
+				<span class="ans">T：當 $&not;(G&rarr;H)&or;I$ 為假時，則 $&not;(G&rarr;H)$ 和 $I$ 皆必須為假；而當 $&not;(G&rarr;H)$ 為假時，$G&rarr;H$ 便必須為真。$G&rarr;H$ 是一條件句，其真值條件是前件 $G$ 為假或後件 $H$ 為真，現已知 $G$ 為真，故 $G$ 不為假，則要使 $G&rarr;H$ 為真便必須令 $H$ 為真。故 $H$ 為真。</span></li>
+			</ol>
+		</div>
+		
+		<div class="section">
+			<h2>二、用真值表判斷論證是否有效<span>（每題 6 分）<br/>必須 (1) 畫出真值表，且 (2) 根據真值表判斷論證有效或無效。</span></h2>
+			<div class="flexr">
+				<ol class="prfq">
+					<li>$A→B$</li>
+					<li>$A→¬B$</li>
+					<li>$¬A$</li>
+				</ol>
+				<ol class="prfq">
+					<li>$¬(A↔B)$</li>
+					<li>$¬A$</li>
+					<li>$¬B$</li>
+				</ol>
+				<ol class="prfq">
+					<li>$P→(Q∨R)$</li>
+					<li>$¬(P→Q)$</li>
+					<li>$R$</li>
+				</ol>
+				<ol class="prfq ">
+					<li>$¬P∨Q$</li>
+					<li>$¬Q∨R$</li>
+					<li>$P∨R$</li>
+				</ol>
+			</div>
+			
+			<div class="flexr ans" style="width:100%">
+				<div style="max-width:45%">
+					(A)
+					<table class="truth double">
+						<tr><td>$A$</td><td>$B$</td><td>$A&rarr;B$</td><td>$A&rarr;&not;B$</td><td>$&not;A$</td></tr>
+						<tr><td>T</td><td>T</td><td>T</td><td>&ensp;F&emsp;<small>F</small></td><td>F</td></tr>
+						<tr><td>T</td><td>F</td><td>F</td><td>&ensp;T&emsp;<small>T</small></td><td>F</td></tr>
+						<tr class="ansbgc"><td>F</td><td>T</td><td>T</td><td>&ensp;T&emsp;<small>F</small></td><td>T</td></tr>
+						<tr class="ansbgc"><td>F</td><td>F</td><td>T</td><td>&ensp;T&emsp;<small>T</small></td><td>T</td></tr>
+					</table>
+					<p>在前提皆真的情況下（真值表的最後兩列）結論亦皆為真，故論證有效。</p>
+				</div>
+				<div style="max-width:45%">
+					(B)
+					<table class="truth double">
+						<tr><td>$A$</td><td>$B$</td><td>$&not;(A&harr;B)$</td><td>$&not;A$</td><td>$&not;B$</td></tr>
+						<tr><td>T</td><td>T</td><td>F&emsp;&ensp;<small>T</small>&emsp;&ensp;</td><td>F</td><td>F</td></tr>
+						<tr><td>T</td><td>F</td><td>T&emsp;&ensp;<small>F</small>&emsp;&ensp;</td><td>F</td><td>T</td></tr>
+						<tr class="ansbgc"><td>F</td><td>T</td><td>T&emsp;&ensp;<small>F</small>&emsp;&ensp;</td><td>T</td><td class="counterexp">F</td></tr>
+						<tr><td>F</td><td>F</td><td>F&emsp;&ensp;<small>T</small>&emsp;&ensp;</td><td>T</td><td>T</td></tr>
+					</table>
+					<p>在前提皆真的情況下（真值表的第三列）結論卻為假，故論證無效。</p>
+				</div>
+				<div style="margin-top:2em;font-size:.85em;max-width:45%">
+					(C)
+					<table class="truth triple">
+						<tr><td>$P$</td><td>$Q$</td><td>$R$</td><td>$P&rarr;(Q&or;R)$</td><td>$&not;(P&rarr;Q)$</td><td>$R$</td></tr>
+						<tr><td>T</td><td>T</td><td>T</td><td>T&emsp;&ensp;<small>T</small>&ensp;</td><td>F&emsp;&ensp;<small>T</small>&emsp;&ensp;</td><td>T</td></tr>
+						<tr><td>T</td><td>T</td><td>F</td><td>T&emsp;&ensp;<small>T</small>&ensp;</td><td>F&emsp;&ensp;<small>T</small>&emsp;&ensp;</td><td>F</td></tr>
+						<tr class="ansbgc"><td>T</td><td>F</td><td>T</td><td>T&emsp;&ensp;<small>T</small>&ensp;</td><td>T&emsp;&ensp;<small>F</small>&emsp;&ensp;</td><td>T</td></tr>
+						<tr><td>T</td><td>F</td><td>F</td><td>F&emsp;&ensp;<small>F</small>&ensp;</td><td>T&emsp;&ensp;<small>F</small>&emsp;&ensp;</td><td>F</td></tr>
+						<tr><td>F</td><td>T</td><td>T</td><td>T&emsp;&ensp;<small>T</small>&ensp;</td><td>F&emsp;&ensp;<small>T</small>&emsp;&ensp;</td><td>T</td></tr>
+						<tr><td>F</td><td>T</td><td>F</td><td>T&emsp;&ensp;<small>T</small>&ensp;</td><td>F&emsp;&ensp;<small>T</small>&emsp;&ensp;</td><td>F</td></tr>
+						<tr><td>F</td><td>F</td><td>T</td><td>T&emsp;&ensp;<small>T</small>&ensp;</td><td>F&emsp;&ensp;<small>T</small>&emsp;&ensp;</td><td>T</td></tr>
+						<tr><td>F</td><td>F</td><td>F</td><td>T&emsp;&ensp;<small>F</small>&ensp;</td><td>F&emsp;&ensp;<small>T</small>&emsp;&ensp;</td><td>F</td></tr>
+					</table>
+					<p>在前提皆真的情況下（真值表的第三列）結論亦為真，故論證有效。</p>
+				</div>
+				<div style="margin-top:2em;font-size:.85em;max-width:45%">
+					(D)
+					<table class="truth triple">
+						<tr><td>$P$</td><td>$Q$</td><td>$R$</td><td>$&not;P&or;Q$</td><td>$&not;Q&or;R$</td><td>$P&or;R$</td></tr>
+						<tr class="ansbgc"><td>T</td><td>T</td><td>T</td><td><small>F</small>&emsp;T&ensp;</td><td><small>F</small>&emsp;T&ensp;</td><td>T</td></tr>
+						<tr><td>T</td><td>T</td><td>F</td><td><small>F</small>&emsp;T&ensp;</td><td><small>F</small>&emsp;F&ensp;</td><td>T</td></tr>
+						<tr><td>T</td><td>F</td><td>T</td><td><small>F</small>&emsp;F&ensp;</td><td><small>T</small>&emsp;T&ensp;</td><td>T</td></tr>
+						<tr><td>T</td><td>F</td><td>F</td><td><small>F</small>&emsp;F&ensp;</td><td><small>T</small>&emsp;T&ensp;</td><td>T</td></tr>
+						<tr class="ansbgc"><td>F</td><td>T</td><td>T</td><td><small>T</small>&emsp;T&ensp;</td><td><small>F</small>&emsp;T&ensp;</td><td>T</td></tr>
+						<tr><td>F</td><td>T</td><td>F</td><td><small>T</small>&emsp;T&ensp;</td><td><small>F</small>&emsp;F&ensp;</td><td>F</td></tr>
+						<tr class="ansbgc"><td>F</td><td>F</td><td>T</td><td><small>T</small>&emsp;T&ensp;</td><td><small>T</small>&emsp;T&ensp;</td><td>T</td></tr>
+						<tr class="ansbgc"><td>F</td><td>F</td><td>F</td><td><small>T</small>&emsp;T&ensp;</td><td><small>T</small>&emsp;T&ensp;</td><td class="counterexp">F</td></tr>
+					</table>
+					<p>在前提皆真的情況下（真值表的第 1,5,7,8 列）結論卻有假（真值表的最後一列），故論證無效。</p>
+				</div>
+			</div>
+		</div>
+			
+		<div class="section">	
+			<h2>三、證明題<span>&emsp;（每題 8 分）<br/>以下論證都可以只用八條蘊涵規則證明，但並不禁用等值規則。</span></h2>
+			<div class="flexr" style="counter-reset:ult">
+				<ol class="prfq">
+					<li>$¬A$</li>
+					<li>$(C∨A)→L$</li>
+					<li>$A∨D$</li>
+					<li>$(D∨U)→C$</li>
+					<li>$L$</li>
+				</ol>
+				<ol class="prfq">
+					<li>$(¬A∧¬B)→(C→B)$</li>
+					<li>$B→A$</li>
+					<li>$¬A$</li>
+					<li>$¬C$</li>
+				</ol>
+				<ol class="prfq">
+					<li>$R→(¬P∨¬M)$</li>
+					<li>$¬R→(¬M∧¬N)$</li>
+					<li>$¬(¬P∨¬M)$</li>
+					<li>$Z∨R$</li>
+					<li>$¬M∧Z$</li>
+				</ol>
+			</div>
+			
+			<div class="flexr ans" style="font-size:.8em;width:100%;line-height:1.5em;counter-reset:ult">
+					<table class="prf">
+						<tr><td></td><td>$A&or;D$</td><td>P3</td></tr>
+						<tr><td></td><td>$&not;A$</td><td>P1</td></tr>
+						<tr><td></td><td>$D$</td><td>1,2 DS</td></tr>
+						<tr><td></td><td>$D&or;U$</td><td>3 Add.</td></tr>
+						<tr><td></td><td>$(D&or;U)&rarr;C$</td><td>P4</td></tr>
+						<tr><td></td><td>$C$</td><td>5,4 MP</td></tr>
+						<tr><td></td><td>$C&or;A$</td><td>6 Add.</td></tr>
+						<tr><td></td><td>$(C&or;A)&rarr;L$</td><td>P2</td></tr>
+						<tr><td></td><td>$L$</td><td>8,7 MP</td></tr>
+					</table>
+					<table class="prf">
+						<tr><td></td><td>$B&rarr;A$</td><td>P2</td></tr>
+						<tr><td></td><td>$&not;A$</td><td>P3</td></tr>
+						<tr><td></td><td>$&not;B$</td><td>1,2 MT</td></tr>
+						<tr><td></td><td>$&not;A&and;&not;B$</td><td>2,3 Conj.</td></tr>
+						<tr><td></td><td>$(&not;A&and;&not;B)&rarr;(C&rarr;B)$</td><td>P1</td></tr>
+						<tr><td></td><td>$C&rarr;B$</td><td>5,4 MP</td></tr>
+						<tr><td></td><td>$&not;C$</td><td>6,3 MT</td></tr>
+					</table>
+					<table class="prf">
+						<tr><td></td><td>$R&rarr;(&not;P&or;M)$</td><td>P1</td></tr>
+						<tr><td></td><td>$&not;(&not;P&or;M)$</td><td>P3</td></tr>
+						<tr><td></td><td>$&not;R$</td><td>1,2 MT</td></tr>
+						<tr><td></td><td>$&not;R&rarr;(&not;M&and;&not;N)$</td><td>P2</td></tr>
+						<tr><td></td><td>$&not;M&and;&not;N$</td><td>4,3 MP</td></tr>
+						<tr><td></td><td>$&not;M$</td><td>5 Simp.</td></tr>
+						<tr><td></td><td>$Z&or;R$</td><td>P4</td></tr>
+						<tr><td></td><td>$Z$</td><td>7,3 DS</td></tr>
+						<tr><td></td><td>$&not;M&and;Z$</td><td>6,8 Conj.</td></tr>
+					</table>
+				</div>
+			</div>
+			
+		<div class="section" style="page-break-before:always">	
+			<h2>四、證明題<span>&emsp;（每題 10 分）<br/>用十八條規則證明以下論證。</span></h2>
+			
+			<div class="flexr" style="counter-reset:ult 3">
+				<ol class="prfq">
+					<li>$D∨¬A$</li>
+					<li>$(A→B)→¬C$</li>
+					<li>$¬D$</li>
+					<li>$¬C$</li>
+				</ol>
+				<ol class="prfq">
+					<li>$P→Q$</li>
+					<li>$¬Q∨(R∧T)$</li>
+					<li>$¬S→¬R$</li>
+					<li>$P→S$</li>
+				</ol>
+				<ol class="prfq">
+					<li>$¬E$</li>
+					<li>$(E∨F)↔G$</li>
+					<li>$¬F$</li>
+					<li>$¬(G∧H)$</li>
+				</ol>
+				<ol class="prfq">
+					<li>$¬(M∨N)$</li>
+					<li>$¬N→(O→¬L)$</li>
+					<li>$O↔L$</li>
+					<li>$¬O$</li>
+				</ol>
+			</div>
+			
+			<div class="flexr ans" style="gap:2em;font-size:.9em;width:100%;line-height:1.5em;counter-reset:ult 3">
+				<table class="prf">
+					<tr><td></td><td>$D&or;&not;A$</td><td>P1</td></tr>
+					<tr><td></td><td>$&not;D$</td><td>P3</td></tr>
+					<tr><td></td><td>$&not;A$</td><td>1,2 DS</td></tr>
+					<tr><td></td><td>$&not;A&or;B$</td><td>3 Add.</td></tr>
+					<tr><td></td><td>$A&rarr;B$</td><td>4 Impl.</td></tr>
+					<tr><td></td><td>$(A&rarr;B)&rarr;&not;C$</td><td>P2</td></tr>
+					<tr><td></td><td>$&not;C$</td><td>5,6 MP</td></tr>
+				</table>
+				<table class="prf">
+					<tr><td></td><td>$P&rarr;Q$</td><td>P1</td></tr>
+					<tr><td></td><td>$&not;Q&or;(R&and;T)$</td><td>P2</td></tr>
+					<tr><td></td><td>$Q&rarr;(R&and;T)$</td><td>2 Impl.</td></tr>
+					<tr><td></td><td>$P&rarr;(R&and;T)$</td><td>1,3 HS</td></tr>
+					<tr><td></td><td>$&not;S&rarr;&not;R$</td><td>P3</td></tr>
+					<tr><td></td><td>$R&rarr;S$</td><td>5 Contra.</td></tr>
+					<tr><td></td><td>$&not;P&or;(R&and;T)$</td><td>4 Impl.</td></tr>
+					<tr><td></td><td>$(&not;P&or;R)&and;(&not;P&or;T)$</td><td>7 Dist.</td></tr>
+					<tr><td></td><td>$&not;P&or;R$</td><td>8 Simp.</td></tr>
+					<tr><td></td><td>$P&rarr;R$</td><td>9 Impl.</td></tr>
+					<tr><td></td><td>$P&rarr;S$</td><td>10,6 HS</td></tr>
+				</table>
+				<table class="prf">
+					<tr><td></td><td>$&not;E$</td><td>P1</td></tr>
+					<tr><td></td><td>$&not;F$</td><td>P2</td></tr>
+					<tr><td></td><td>$&not;E&and;&not;F$</td><td>1,2 Conj.</td></tr>
+					<tr><td></td><td>$&not;(E&or;F)$</td><td>3 Dist.</td></tr>
+					<tr><td></td><td>$(E&or;F)&harr;G$</td><td>P3</td></tr>
+					<tr><td></td><td>$((E&or;F)&rarr;G)&and;(G&rarr;(E&or;F))$</td><td>5 Equiv.</td></tr>
+					<tr><td></td><td>$G&rarr;(E&or;F)$</td><td>6 Simp.</td></tr>
+					<tr><td></td><td>$&not;G$</td><td>7,4 MT</td></tr>
+					<tr><td></td><td>$&not;G&or;&not;H$</td><td>8 Add.</td></tr>
+					<tr><td></td><td>$&not;(G&and;H)$</td><td>9 Dist.</td></tr>
+				</table>
+				<table class="prf">
+					<tr><td></td><td>$&not;(M&or;N)$</td><td>P1</td></tr>
+					<tr><td></td><td>$&not;M&and;&not;N$</td><td>1 Dist.</td></tr>
+					<tr><td></td><td>$&not;N&rarr;(O&rarr;&not;L)$</td><td>P2</td></tr>
+					<tr><td></td><td>$&not;N$</td><td>2 Simp.</td></tr>
+					<tr><td></td><td>$O&rarr;&not;L$</td><td>3,4 MP</td></tr>
+					<tr><td></td><td>$O&harr;L$</td><td>P3</td></tr>
+					<tr><td></td><td>$(O&and;L)&or;(&not;O&and;&not;L)$</td><td>6 Equiv.</td></tr>
+					<tr><td></td><td>$&not;O&or;&not;L$</td><td>5 Impl.</td></tr>
+					<tr><td></td><td>$&not;(O&and;L)$</td><td>8 DeM.</td></tr>
+					<tr><td></td><td>$&not;O&and;&not;L$</td><td>7,9 DS</td></tr>
+					<tr><td></td><td>$&not;O$</td><td>10 Simp.</td></tr>
+				</table>
+			</div>
+		</div> <!--section4-->
+		
+		<div class="section" style="counter-reset:numd">
+
+			<h2>五、可用的規則們</h2>
+			
+			<div class="flexr" id="semantics" style="width:100%;margin-top:1em">
+			
+				<table class="semantics" style="width:47.5%;font-size:0.65em;line-height:1.5em">
+					<tr><td></td><td></td><td>真 (True)</td><td>假 (False)</td></tr>
+					<tr><td>否定句</td><td>$&not;x$</td><td>$x$ 假</td><td>$x$ 真</td></tr>
+					<tr><td>連言句</td><td>$x&and;y$</td><td>$x$,$y$ 皆真</td><td>$x$ 假，或者<br/>$y$ 假</td></tr>
+					<tr><td>選言句</td><td>$x&or;y$</td><td>$x$ 真，或者<br/>$y$ 真</td><td>$x$,$y$ 皆假</td></tr>
+					<tr><td>條件句</td><td>$x&rarr;y$</td><td>$x$ 假，或者<br/>$y$ 真</td><td>$x$ 真 $y$ 假</td></tr>
+					<tr><td>雙條件句</td><td>$x&harr;y$</td><td>$x$,$y$ 皆真，或者<br/>$x$,$y$ 皆假</td><td>$x$ 真 $y$ 假，或者<br/>$x$ 假 $y$ 真</td></tr>
+				</table>
+						
+				<div class="flexr" id="truthtable" style="width:47.5%;font-size:0.75em;line-height:1.5em">
+					<div>
+						<p><b>否定句</b></p>
+						<table class="truth single sentence">
+							<tr><td>$x$</td><td>$&not;x$</td></tr>
+							<tr><td>T</td><td>F</td></tr>
+							<tr><td>F</td><td>T</td></tr>
+						</table>
+					</div>
+					<div>
+						<p><b>連言句</b></p>
+						<table class="truth double sentence">
+							<tr><td>$x$</td><td>$y$</td><td>$x&and;y$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td></tr>
+						</table>
+					</div>
+					<div>
+						<p><b>選言句</b></p>
+						<table class="truth double sentence">
+							<tr><td>$x$</td><td>$y$</td><td>$x&or;y$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td></tr>
+							<tr><td>T</td><td>F</td><td>T</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td></tr>
+							<tr><td>F</td><td>F</td><td>F</td></tr>
+						</table>
+					</div>
+					<div>
+						<p><b>條件句</b></p>
+						<table class="truth double sentence">
+							<tr><td>$x$</td><td>$y$</td><td>$x&rarr;y$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td></tr>
+							<tr><td>F</td><td>T</td><td>T</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td></tr>
+						</table>
+					</div>
+					<div>
+						<p><b>雙條件句</b></p>
+						<table class="truth double sentence">
+							<tr><td>$x$</td><td>$y$</td><td>$x&harr;y$</td></tr>
+							<tr><td>T</td><td>T</td><td>T</td></tr>
+							<tr><td>T</td><td>F</td><td>F</td></tr>
+							<tr><td>F</td><td>T</td><td>F</td></tr>
+							<tr><td>F</td><td>F</td><td>T</td></tr>
+						</table>
+					</div>
+				</div> <!--truth table flexr2-->
+			</div><!--semantics flexr-->
+			
+			<div class="flexr" id="rules" style="width:100%;font-size:.65em;line-height:1.5em;margin-top:1em">
+				<div id="implicational1">
+					<h2 style="font-size:13pt">蘊涵規則</h2>
+					<ul class="tight">
+						<li>肯定前件律 (MP)：<br/>$p&rarr;q&ensp;` ,` p&vdash;q$</li>
+						<li>否定後件律 (MT)：<br/>$p&rarr;q` ,` &not;q&vdash;&not;p$</li>
+						<li>連言律 (Conj.)：<br/>$p` ,` q&vdash;p&and;q$</li>
+						<li>簡化律 (Simp.)：<br/>$p&and;q&vdash;p$<br/>$p&and;q&vdash;q$</li>
+					</ul>
+				</div>
+				
+				<div id="implicational2">
+					<h2 class="hidden" style="font-size:13pt">蘊涵規則</h2>
+					<ul class="tight">
+						<li>添加律 (Add.)：<br/>$p&vdash;p&or;q$<br/>$p&vdash;q&or;p$</li>
+						<li>假言三段論 (HS)：<br/>$p&rarr;q` ,` q&rarr;r&vdash;p&rarr;r$</li>
+						<li>選言三段論 (DS)：<br/>$p&or;q` ,` &not;p&vdash;q$<br/>$p&or;q` ,` &not;q&vdash;p$</li>
+						<li>建構式兩難 (CD)：<br/>$p&or;q` ,` p&rarr;r` ,` q&rarr;s&vdash;r&or;s$</li>
+					</ul>
+				</div>
+				
+				<div id="equivalent">
+					<h2 style="font-size:13pt">等值規則</h2>
+					<ul class="tight">
+						<li>雙重否定律 (DN)：<br/>$p&equiv;&not;&not;p$</li>
+						<li>笛摩根律 (DeM.)：<br/>$&not;(p&and;q)&equiv;&not;p&or;&not;q$<br/>$&not;(p&or;q)&equiv;&not;p&and;&not;q$</li>
+						<li>恆真律 (Taut.)：<br/>$p&and;p&equiv;p$<br/>$p&or;p&equiv;p$</li>
+						<li>交換律 (Comm.)：<br/>$p&and;q&equiv;q&and;p$<br/>$p&or;q&equiv;q&or;p$</li>
+						<li>結合律 (Assoc.)：<br/>$p&and;(q&and;r)&equiv;(p&and;q)&and;r$<br/>$p&or;(q&or;r)&equiv;(p&or;q)&or;r$</li>
+					</ul>
+				</div>
+				
+				<div id="equivalent2">
+					<h2 class="hidden" style="font-size:13pt">等值規則</h2>
+					<ul class="tight">
+						<li>分配律 (Dist.)：<br/>$p&and;(q&or;r)&equiv;(p&and;q)&or;(p&and;r)$<br/>$p&or;(q&and;r)&equiv;(p&or;q)&and;(p&or;r)$</li>
+						<li>移出律 (Exp.)：<br/>$(p&and;q)&rarr;r&equiv;p&rarr;(q&rarr;r)$</li>
+						<li>異值位換律 (Contra.)：<br/>$p&rarr;q&equiv;&not;q&rarr;&not;p$</li>
+						<li>實質蘊涵律 (Impl.)：<br/>$p&rarr;q&equiv;&not;p&or;q$</li>
+						<li>實質等值律 (Equiv.)：<br/>$p&harr;q&equiv;(p&rarr;q)&and;(q&rarr;p)$<br/>$p&harr;q&equiv;(p&and;q)&or;(&not;p&and;&not;q)$</li>
+					</ul>
+				</div>
+			</div> <!--rules-->
+		</div> <!--section5-->
+	</div> <!--main-->
+</body>
