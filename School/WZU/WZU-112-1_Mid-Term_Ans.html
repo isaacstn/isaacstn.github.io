@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.2.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_examstyle_v1.1.css"/><!--docstyle exam supplement-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+
+	<style>
+	.exam div.flex:first-of-type ol.prfq::before {
+		content:"例："
+	}
+	.exam ol.prfq li::before {
+		left:-2em;
+		font-style:italic;
+		content:counter(num) ". ";
+		counter-increment:num
+	}
+	.exam ol.prfq li:last-of-type::before {
+		margin-left:2em;
+		content:"∴"
+	}
+	.exam ol.prfq li:last-of-type {
+		margin-left:-2em;
+		padding-left:2em;
+		border-top:solid 1px black;
+	}
+	div.item::before {
+		position:absolute;
+		left:0;
+		content:counter(num) ".";
+		counter-increment:num
+	}
+	div.item {
+		position:relative;
+		padding-top:0.5em;
+		text-decoration:underline;
+		padding-left:1em
+	}
+	div.item:nth-of-type(n+4) {
+		padding-left:1.5em
+	}
+	.grow {
+		margin-left:1em
+	}
+	div {
+		page-break-inside:auto;
+	}
+	span.uline {
+		text-decoration:underline;
+		font-weight:bold;
+	}
+	span.uline::before {
+		display:inline-block;
+		text-decoration:none;
+		font-weight:normal;
+		counter-increment:num;
+		content:"(" counter(num) ")";
+	}
+        .ans {
+			margin-top:0.5em;
+            color: #aa3333
+        }
+	</style>
+
+	<title>Mid-term Exam</title>
+</head>
+
+<body>
+	<div id="main" class="exam">
+			
+		<div class="section">
+			<h2>一、是非題<span>&emsp;（每題 2 分）<br/>閱讀以下敘述，正確請填 '<b>T</b>'，錯誤請填 '<b>F</b>'，不知道請填 '<b>N</b>'。</span></h2>	
+			<ol class="numd tight">
+					<li>對一個有效論證來說，當前提全部為真時，論證的結論就是<b>真的</b>。
+						<br /><span class="ans"><b>T：</b>這就是有效論證的定義。</span></li>
+					<li>如果論證的前提全部為真，但結論卻是假的，則該論證一定是<b>無效的</b>。
+						<br /><span class="ans"><b>T：</b>只要在前提皆真的情況下，結論仍<b>可能</b>為假，論證就是無效的。因此在已經確定前提皆真而結論為假時，當然可斷定論證無效。</span></li>
+					<li>對一個有效論證來說，論證的結論一定是<b>真的</b>。
+						<br /><span class="ans"><b>F：</b>有效論證只有在確認前提皆真的情況下可以<b>保證</b>結論為真。因此若不先確認前提的真假便無法確認結論是否為真。</span></li>
+					<li>對一個無效論證來說，論證的結論一定是<b>假的</b>。
+						<br /><span class="ans"><b>F：</b>無效論證只是結論在前提皆真的情況下仍<b>可能</b>為假，並不是說只要是無效論證的結論就一定為假。</span></li>
+					<li>對一個無效論證來說，當前提全部為真時，論證的結論仍有可能是<b>真的</b>。
+						<br /><span class="ans"><b>T：</b>無效論證的結論在前提皆真的情況下只是<b>可能</b>為假，因此當然不排除它也<b>可能</b>為真的情況。</span></li>
+					<li>如果論證的前提全部為真，且結論也是真的，則該論證一定是<b>有效的</b>。
+						<br /><span class="ans"><b>F：</b>當論證的前提和結論皆為真時，有兩種可能的情況：一、結論是因為前提皆真而為真，故只要前提皆真則結論必為真；二、結論和前提共同為真只是巧合，兩者間沒有關聯。只有在第一種情況下論證是有效的。但題目只說論證的前提和結論皆為真，卻並未指出是上述兩種情況中的哪一種，故不能判斷論證是有效的。</span></li>
+					<li>在二值的語言中，所有語句都<b>不能</b>既真又假，但有些語句<b>可以</b>不真不假。
+						<br /><span class="ans"><b>F：</b>既然是二值的語言，那麼所有語句都不能既真又假，也不能不真不假。</span></li>
+					<li>即使所有人都不知道一個語句的真假，該語句仍然<b>有真假</b>可言。
+						<br /><span class="ans"><b>T：</b>確實。語句的真假是根據語句表達的內容與事實是否相符來決定，只要語句有表達內容，無論如何都會有相對應的事實可以比對，只要語句表達的內容符合事實即為真、不符合事實即為假，因此無論人們知不知道那個事實是如何，都不影響語句的真假。</span></li>
+					<li>語言的組合性讓我們可以分析語句的句型和結構。
+						<br /><span class="ans"><b>T：</b>正因為語言有組合性，我們才能將不同的語句以特定的方式結合，因此語句才會有複雜的結構，我們也才能從語句的複雜結構中區分出各種句型。</span></li>
+					<li>在<b>自然語言</b>中，語句的意義結構都有被文字結構完整地呈現。
+						<br /><span class="ans"><b>F：</b>邏輯學家之所以要創造出邏輯語言，其中一個主要理由就是要改變自然語言的語句結構常常會因為文字表面結構的多變性給隱藏或誤導，因此語句的意義結構當然沒有被文字結構完整呈現。</span></li>
+					<li>語句邏輯中的<b>二元</b>連接詞<b>可以</b>連接少於二個語句。
+						<br /><span class="ans"><b>F：</b>二元連接詞必須要連接兩個語句，故不能連接<b>少於</b>兩個語句。</span></li>
+					<li>語句邏輯中的<b>一元</b>連接詞<b>不可以</b>連接超過一個語句。</li>
+					<li>簡單語句的意義結構中<b>不能包含</b>任何語句連接詞。
+						<br /><span class="ans"><b>T：</b>任何語句的語意結構中若包含了任何連接詞，就是一個複雜的語句，因此簡單語句當然不能包含任何連接詞。</span></li>
+					<li>只要一個語句的意義結構中<b>包含</b>任何語句連接詞就算是複雜語句。
+						<br /><span class="ans"><b>T：</b>任何語句的意義結構中若包含了任何語句連接詞，就是一個複雜的語句。</span></li>
+					<li>複雜語句一定是由<b>多個</b>原子語句組成的，所以「科科不會邏輯」<b>不是</b>複雜語句。
+						<br /><span class="ans"><b>F：</b>任何語句的意義結構中只要包含了任何語句連接詞就算是複雜的語句了，既然語句連接詞中有一元連接詞，而一元連接詞又只能連接一個語句，因此有些複雜的語句只會由一個原子語句所構成，不一定都是由多個原子語句構成。例如「科科不會邏輯」就是用「科科會邏輯」這個原子語句加上「並非」這個一元連接詞所構成的複雜語句。</span></li>
+			</ol>
+		</div>
+		
+		<div class="section" style="counter-reset:numd">
+			<h2>二、選擇題<span>&emsp;根據語義，判斷語句為何種句型。（每題 3 分）</h2>
+			
+			<div class="flex">
+				<ol class="numd tight" style="width:49%">
+					<li>科科和安安都是大學生。<br />
+						(A)原子語句；(B)連言句；(C)選言句
+						<br/><span class="ans"><b>B：</b>本句應理解為「科科是大學生，而且，安安是大學生」，主要連接詞是「而且」，故為連言句。</span></li>
+					<li>科科讀哲學系但安安不是。<br />
+						(A)連言句；(B)否定句；(C)條件句
+						<br/><span class="ans"><b>A：</b>本句當中的「但是」之意思與「而且」相同，故本句應直接理解為「科科讀哲學系，而且，並非安安讀哲學系」，主要連接詞仍然是「而且」，故為連言句。</span></li>
+					<li>安安讀哲學系或數學系。<br />
+						(A)連言句；(B)選言句；(C)雙條件句
+						<br/><span class="ans"><b>B：</b>本句應理解為「安安讀哲學系，或者，安安讀數學系」，主要連接詞為「或者」，故為選言句。雖然本句亦可理解為「如果安安不是讀哲學系，則安安讀數學系」，那就會是條件句，但選項中並無條件句，因此還是只能選選言句。</span></li>
+					<li>科科和安安是同班同學。<br />
+						(A)連言句；(B)原子語句；(C)條件句
+						<br/><span class="ans"><b>B：</b>「是同班同學」至少需要兩個東西作為主詞，故本句無法被拆解，故為一原子語句。</span></li>
+					<li>科科和安安都不是研究生。<br />
+						(A)連言句；(B)否定句；(C)雙條件句
+						<br/><span class="ans"><b>A or B：</b>本句應理解為「並非科科是研究生，而且，並非安安是研究生」，主要連接詞為「而且」，故為連言句。不過本句亦可理解為「並非：科科或安安是研究生」，如此則主要連接詞會是「並非」，因此會是否定句，故選否定句也算對。</span></li>
+				</ol>
+				<ol class="numd tight" style="width:49%">
+					<li>科科和安安並不是都讀哲學系。<br />
+						(A)連言句；(B)雙條件句；(C)否定句
+						<br/><span class="ans"><b>C：</b>本句應理解為「並非：科科和安安都讀哲學系」，雖然其中的「科科和安安都讀哲學系」如題1一樣是連言句，但因為這個連言句又被最前面的「並非」否定了，所以「並非」才是本句的主要連接詞，故為否定句。誠然，此句亦可被理解為「並非科科讀哲學系，或者，並非安安讀哲學系」，如此一來本句便是選言句，但由於選項中並無選言句可選，因此還是只能選否定句。</span></li>
+					<li>科科或安安修過邏輯。<br />
+						(A)選言句；(B)連言句；(C)原子語句
+						<br/><span class="ans"><b>A：</b>本句應理解為「科科修過邏輯，或者，安安修過邏輯」，主要連接詞為「或者」，故為選言句。當然本句亦可理解為「如果不是科科修過邏輯那就是安安修過邏輯」，如此則本句應為條件句，但由於選項中並無條件句，因此仍只能選選言句。</span></li>
+					<li>安安沒修過邏輯。<br />
+						(A)原子語句；(B)連言句；(C)否定句
+						<br/><span class="ans"><b>C：</b>本句應理解為「並非安安修過邏輯」，主要連接詞為「並非」，故為否定句。</span></li>
+					<li>只要科科出席就會過。<br />
+						(A)雙條件句；(B)選言句；(C)條件句
+						<br/><span class="ans"><b>C：</b>本句應理解為「如果科科出席，則科科會過」，主要連接詞為「如果……則……」，故為條件句。</span></li>
+					<li>$n$&#x202f;是偶數若且唯若&#x202f;$2$&#x202f;是其因數。<br />
+						(A)雙條件句；(B)選言句；(C)連言句
+						<br/><span class="ans"><b>A：</b>本句的主要連接詞很明顯是「若且唯若」，故為雙條件句。</span></li>
+				</ol>
+			</div>
+		</div>
+		
+		<div class="section" style="counter-reset:numd">
+			<h2>三、簡答題<span>&emsp;（每題 3 分）<br>判斷下列組合是充分條件、必要條件還是充要條件的關係。
+			<br/><span class="ans">先分別說明充分條件、必要條件，和充要條件這三種關係：
+			<br/>A是B的充分條件：只要A成立則B也會成立；
+			<br/>A是B的必要條件：只要A不成立則B也不會成立；
+			<br/>A是B的充要條件：只要A成立則B也成立，且只要A不成立則B也不會成立。</span></h2>
+			
+			<div class="flex">
+				<ol class="numd tight" style="width:49.5%">
+					<li>「三角形」之於「有三個邊的多邊形」
+					<br/><span class="ans"><b>充要條件</b>，因為三角形一定是有三個邊的多邊形；而且只要不是三角形就一定不是有三個邊的多邊形。</span></li>
+					<li>「有三個邊的多邊形」之於「三角形」
+					<br/><span class="ans"><b>充要條件</b>，因為只要是有三個邊的多邊形就一定是三角形；而且只要不是有三個邊的多邊形就一定不是三角形。</span></li>
+					<li>「是白馬」之於「是馬」
+					<br/><span class="ans"><b>充分條件</b>，因為白馬一定都是馬，但就算不是白馬也可能是馬。</span></li>
+					<li>「是馬」之於「是白馬」
+					<br/><span class="ans"><b>必要條件</b>，因為不是馬就一定不是白馬，但馬卻不一定都會是白馬。</span></li>
+					<li>「是生物」之於「是動物」
+					<br/><span class="ans"><b>必要條件</b>，因為不是生物就一定不是動物，但生物卻不一定都會是動物。</span></li>
+				</ol>
+				<ol class="numd tight" style="width:48.5%">
+					<li>「是動物」之於「是生物」
+					<br/><span class="ans"><b>充分條件</b>，因為動物一定是生物，但就算不是動物也可能是生物。</span></li>
+					<li>「有顏色」之於「是紅色」
+					<br/><span class="ans"><b>必要條件</b>，因為沒有顏色就不會是紅色，但就算有顏色也不一定是紅色。</span></li>
+					<li>「是單身漢」之於「是男人」
+					<br/><span class="ans"><b>充分條件</b>，因為單身漢一定都是男人，但不是單身漢也可以是男人。</span></li>
+					<li>「能被&#x202f;$2$&#x202f;整除的數」之於「偶數」
+					<br/><span class="ans"><b>充要條件</b>，因為能被&#x202f;$2$&#x202f;整除的數一定都是偶數，而且不能被&#x202f;$2$&#x202f;整除的數都一定不是偶數。</span></li>
+					<li>「偶數」之於「能被&#x202f;$2$&#x202f;整除的數」
+					<br/><span class="ans"><b>充要條件</b>，因為偶數一定都能被&#x202f;$2$&#x202f;整除，而且不是偶數的數一定都不能被&#x202f;$2$&#x202f;整除。</span></li>
+				</ol>
+			</div>
+		</div>
+			
+		<div class="section">
+			<h2>四、問答題<span>&emsp;（每題 5 分）<br/>判斷以下論證是否有效，並說明理由。</span></h2>
+			<div class="flex">
+				<ol class="prfq grow">
+					<li>是人就會犯錯。</li>
+					<li>黃頌竹是人。</li>
+					<li>黃頌竹會犯錯。</li>
+					答：有效。因為當論證前提全為真時，表示所有人都會犯錯，既然黃頌竹也是人，他當然也會犯錯。
+				</ol>
+				<ol class="prfq grow">
+					<li>塑膠不會導電</li>
+					<li>教室裡的花瓶不會導電。</li>
+					<li>教室裡的花瓶是塑膠做的。</li>
+					答：無效。教室裡的花瓶有可能是用塑膠外的不導電材質做的，故當論證前提全真時，結論仍可能假。
+				</ol>
+			</div>
+			<div class="flex" style="counter-reset:ult">
+				<ol class="prfq grow">
+					<li>司機或園丁是犯人。</li>
+					<li>司機不是犯人。</li>
+					<li>園丁是犯人。</li>
+					<span class="ans">答：有效。因為當論證前提全為真時，表示犯人只能是園丁或司機，但司機不是犯人，因此只能是園丁。</span>
+				</ol>
+				<ol class="prfq grow">
+					<li>$(x+y)^2=16$</li>
+					<li>$x=4$</li>
+					<li>$y=0$</li>
+					<p class="ans">答：無效。因為當論證前提全為真時，$(4+y)^2=16$，則&#x202f;$4+y=&pm;4$，因此有可能&#x202f;$y=0$，但也可能&#x202f;$y=-4$。</p>
+				</ol>
+			</div>
+			<div class="flex">
+				<ol class="prfq grow">
+					<li>一年共有十二個月。</li>
+					<li>班上有超過十二個同學。</li>
+					<li>至少有兩個同學在同月出生。</li>
+					<p class="ans">答：有效。一年只有12個月，而班上卻有超過12位同學；假如有12位同學都在不同月份出生，那麼一年內每個月就都有人出生，因此從第13人起就會和前面的12位同學中的某人同月出生，假如那12位同學並非都在不同月份出生，那麼這12位同學內至少就會有2人在同月出生。</p>
+				</ol>
+				<ol class="prfq grow">
+					<li>鴨嘴獸是哺乳類。</li>
+					<li>大部分的哺乳類都是胎生動物。</li>
+					<li>鴨嘴獸是胎生動物。</li>
+					<p class="ans">答：無效。儘管大部分的哺乳類動物都是胎生，而鴨嘴獸又是哺乳類動物，但仍不排除鴨嘴獸可能不是哺乳類動物中大部分的胎生動物。且事實上鴨嘴獸為卵胎生動物，更證明了此論證在前提全為真時結論仍可以為假。</p>
+				</ol>
+			</div>
+			<div class="flex">
+				<ol class="prfq grow">
+					<li>汽車如果沒有燃料就不能發動。</li>
+					<li>汽車不能發動。</li>
+					<li>汽車沒有燃料。</li>
+					<p class="ans">答：無效。確實汽車沒有燃料就不能發動，但若汽車有燃料時卻沒有電，那同樣也不能發動，故不能確定汽車不能發動一定是因為沒有燃料。</p>
+				</ol>
+				<ol class="prfq grow">
+					<li>只要颱風過境，村莊就會淹水。</li>
+					<li>村莊一整年都沒有淹水。</li>
+					<li>颱風一整年都沒有過境。</li>
+					<p class="ans">答：有效。既然只要有颱風過境村莊就一定淹水，那麼當村莊一整年都未淹水時，就表示颱風一整年都未過境，否則這一年內就一定淹過水。</p>
+				</ol>
+			</div>
+		</div>
+	</div>
+</body>
