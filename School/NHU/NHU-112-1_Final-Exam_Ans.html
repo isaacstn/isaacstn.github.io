@@ -75,6 +75,9 @@
 	  margin-top:0.5em;
 	  color:#aa3333;
 	}
+	table.truth {
+	    margin:auto;
+	}
 	table.ans tr td {
 	    border-color:#aa3333;
 	}
@@ -151,9 +154,9 @@
 					<li>$(M∧L)→N$</li>
 				</ol>
     		</div>
-    		<div class="flex">
-    		    <div style="width:45%">
-    				<table class="ans truth double argue">
+    		<div class="flex" style="width:100%">
+                <div style="width:7.5cm">
+    				<table class="ans truth double argue" style="margin:auto">
     				    <tr><td>$A$</td><td>$B$</td><td>$A&rarr;B$</td><td>$A&rarr;&not;B$</td><td>$&not;A$</td></tr>
     				    <tr><td>T</td><td>T</td><td>T</td><td>F</td><td>F</td></tr>
     				    <tr><td>T</td><td>F</td><td>F</td><td>T</td><td>F</td></tr>
@@ -164,7 +167,7 @@
     				    此論證的前提是 $A&rarr;B$ 和 $A&rarr;&not;B$，這兩個前提都為真的情形只有 $(A,B)=(\F,\T)$ 和 $(A,B)=(\F,\F)$ 這兩種。由於論證的結論在這兩種情形下也都為真，因此論證有效。
     				</p>
     			</div>
-    			<div style="width:45%">
+    			<div style="width:7.5cm">
     				<table class="ans truth argue double">
     				    <tr><td>$A$</td><td>$B$</td><td>$&not;(A&harr;B)$</td><td>$&not;A$</td><td>$&not;B$</td></tr>
     				    <tr><td>T</td><td>T</td><td>F&emsp;&ensp;<small>T</small>&emsp;&ensp;</td><td>F</td><td>F</td></tr>
@@ -176,7 +179,7 @@
     				    此論證的前提是 $&not;(A&harr;B)$ 和 $&not;A$，這兩個前提皆為真的情況只有在 $(A,B)=(\F,\T)$ 時。但是論證的結論在此情形下卻是假的，因此不是有效論證，故論證無效。
     				</p>
     			</div>
-    			<div style="width:35%">
+    			<div style="width:5.3cm">
     				<table class="ans truth argue triple">
     				    <tr><td>$P$</td><td>$Q$</td><td>$R$</td><td>$P&rarr;(Q&or;R)$</td><td>$&not;(P&rarr;Q)$</td><td>$R$</td></tr>
     				    <tr><td>T</td><td>T</td><td>T</td><td>T&emsp;&emsp;<small>T</small>&ensp;</td><td>F&emsp;&ensp;<small>T</small>&emsp;&ensp;</td><td>T</td></tr>
@@ -192,7 +195,7 @@
 						論證的兩個前提 $P→(Q∨R)$ 和 $¬(P→Q)$ 皆為真的情況總共只有一個：就是 $(P,Q,R)=$$(\T,\F,\T)$ 的情況。並且在此情況下結論 $R$ 也確實為真，故論證有效。
 					</p>
 				</div>
-				<div style="width:31%">
+				<div style="width:5cm">
 				    <table class="ans truth argue triple">
 				        <tr><td>$P$</td><td>$Q$</td><td>$R$</td><td>$&not;P&or;Q$</td><td>$&not;Q&or;R$</td><td>$P&or;R$</td></tr>
 				        <tr class="lgrey"><td>T</td><td>T</td><td>T</td><td><small>F</small>&emsp;T&emsp;</td><td><small>F</small>&emsp;T&emsp;</td><td>T</td></tr>
@@ -208,7 +211,7 @@
 				        論證的兩個前提 $&not;P&or;Q$ 和 $&not;Q&or;R$ 皆為真的情況共有四個，即 $(P,Q,R)=$$(\T,\T,\T)$、$(\F,\T,\T)$、$(\F,\F,\T)$、和 $(\F,\F,\F)$ 等情況。但論證的結論卻在 $(P,Q,R)=(\F,\F,\F)$ 時為假，故論證無效。
 				    </p>
 				</div>
-				<div style="width:30%">
+				<div style="width:4.5cm">
 				    <table class="ans truth argue triple">
 				        <tr><td>$M$</td><td>$N$</td><td>$L$</td><td>$M&rarr;N$</td><td>$(M&and;L)&rarr;N$</td></tr>
 				        <tr class="lgrey"><td>T</td><td>T</td><td>T</td><td>T</td><td>&ensp;<small>T</small>&emsp;&ensp;T</td></tr>
