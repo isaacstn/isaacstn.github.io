@@ -35,6 +35,9 @@ ul > li {
 .gap > li:first-child {
 	margin-top:0
 }
+.bold > li::before {
+	font-weight:bold;
+}
 
 /* ordered-list style */
 
@@ -65,7 +68,8 @@ ol.prf > li, ol.prfp > li {
 	margin-right:2.5em
 }
 ol.pfs {
-	counter-reset:pfs
+	counter-reset:pfs;
+	width:max-content;
 }
 ol.pfs > li::before {
 	left:-1.5em;
@@ -75,8 +79,15 @@ ol.pfs > li::before {
 	font-style:italic
 }
 ol.pfs > li:last-child::before {
+	left:0.5em;
 	counter-increment:none;
-	content:"C."
+	content:"∴"
+}
+ol.pfs > li:last-child {
+	margin-left:-2em;
+	padding-top:0.25em;
+	padding-left:2em;
+	border-top:black 1px solid;
 }
 ol.cpfs {
 	counter-reset:cpfs nplus
@@ -120,6 +131,7 @@ ol.pfq {
 	float:left;
 	margin-right:1.5em;
 	margin-bottom:0;
+	margin-top:0;
 	counter-reset:pfq
 }
 ol.pfq:last-child {
