@@ -49,16 +49,25 @@ h4::before {
 }
 h4 {
 	margin-top:1em;
-	font-size:12pt;
+	font-size:14pt;
+	counter-reset:subportion;
 }
 h5::before {
-	content:"【";
+	counter-increment:subportion;
+	content:counter(subportion,upper-latin)". ";
 }
 h5 {
 	margin-top:1em;
 	font-size:12pt;
 }
-h5::after {
+h6::before {
+	content:"【";
+}
+h6 {
+	margin-top:1em;
+	font-size:12pt;
+}
+h6::after {
 	content:"】";
 }
 .def h4::before {
