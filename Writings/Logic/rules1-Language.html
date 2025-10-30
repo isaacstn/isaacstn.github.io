@@ -46,21 +46,20 @@
 		<ol class="numd tight local">
 			<li>每一個語句符號都是一個完構式。（原子語句）</li>
 			<li>如果 $x$ 是一個完構式，則 $&not;x$ 也是。（否定句）</li>
-			<li>如果 $x$, $y$ 都是完構式，則 $x&and;y$ 也是。（連言句）</li>
-			<li>如果 $x$, $y$ 都是完構式，則 $x&or;y$ 也是。（選言句）</li>
-			<li>如果 $x$, $y$ 都是完構式，則 $x&rarr;y$ 也是。（條件句）</li>
-			<li>如果 $x$, $y$ 都是完構式，則 $x&harr;y$ 也是。（雙條件句）</li>
+			<li>如果 $x$, $y$ 都是完構式，則 $(x&and;y)$ 也是。（連言句）</li>
+			<li>如果 $x$, $y$ 都是完構式，則 $(x&or;y)$ 也是。（選言句）</li>
+			<li>如果 $x$, $y$ 都是完構式，則 $(x&rarr;y)$ 也是。（條件句）</li>
+			<li>如果 $x$, $y$ 都是完構式，則 $(x&harr;y)$ 也是。（雙條件句）</li>
 			<li>只要不是用規則 1-6 逐步建構出來的表達式都不是完構式。</li>
 		</ol>
 	</div>
 	<div class="section">
 		<h2 style="margin-bottom:1em;">分組符號（即左右括號）的使用規則</h2>		
 		<ol class="numd tight local">
-			<li>每次使用完構式的建構規則 2-6 條都要在最外面加上左右括號。</li>
 			<li>寫好的完整語句可無條件省略最外層的括號。</li>
 			<li>
 			其餘括號的省略方式須依語句連接詞的讀取優先順序執行：<br/>
-			$&not;$ &gt; $&and;$﹐$&or;$ &gt; $&rarr;$﹐$&harr;$
+			$&and;$﹐$&or;$ &gt; $&rarr;$﹐$&harr;$
 			</li>
 		</ol>
 	</div>
