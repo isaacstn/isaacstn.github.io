@@ -15,7 +15,7 @@
 	margin-left:0;
 	text-indent:0;
 }
-.exam ol, .exam ul, .exam blockquote, div.section>ol>li {
+.exam ol, .exam ul, .exam blockquote {
 	margin-top:0.5em;
 	margin-bottom:0.5em;
 }
