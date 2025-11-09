@@ -142,6 +142,9 @@ div.flexc {
 .grow {
 	flex-grow:1
 }
+.grow:nth-of-type(n+2) {
+	margin-left:1em
+}
 .nogrow {
 	flex-grow:0
 }
