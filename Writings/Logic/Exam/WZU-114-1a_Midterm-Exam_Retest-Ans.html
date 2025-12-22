@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xml:lang="en-US" lang="en-US">
+
+<head>
+	<meta charset="utf-8"/>
+
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/Computer-Modern/serif/cmun-serif.css"/><!--CMU Serif-->
+	<link rel='stylesheet' href="https://isaacstn.github.io/fonts/STIXGeneral/STIXGeneral.css"/><!--STIXGeneral-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/FelipaFraktur/FelipaFraktur.css"/><!--Felipa,Unifraktur-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/NotoSerifTC/NotoSerifTC.css"/><!--Noto Serif TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/fonts/AdobeTC/AdobeTC.css"/><!--Adobe TC-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_docstyle_v1.5.1.css"/><!--docstyle-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/Style/Logic/logic_examstyle_v1.5.css"/><!--docstyle exam supplement-->
+	<link rel="stylesheet" href="https://isaacstn.github.io/CSS/jqmath-0.4.3.css"/><!--jqmath-->
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script src="https://isaacstn.github.io/script/jqmath-etc-0.4.6.min.js"></script>
+
+	<style>
+	.exam div.flexr:first-of-type ol.prfq::before {
+		content:"例："
+	}
+	.exam h2 {
+		margin-top:1em;
+	}
+	div.item::before {
+		position:absolute;
+		left:0;
+		content:counter(num) ".";
+		counter-increment:num
+	}
+	div.item {
+		position:relative;
+		padding-top:0.5em;
+		text-decoration:underline;
+		padding-left:1em
+	}
+	div.item:nth-of-type(n+4) {
+		padding-left:1.5em
+	}
+	div {
+		page-break-inside:auto;
+	}
+	span.uline {
+		text-decoration:underline;
+		font-weight:bold;
+	}
+	span.uline::before {
+		display:inline-block;
+		text-decoration:none;
+		font-weight:normal;
+		counter-increment:num;
+		content:"(" counter(num) ")";
+	}
+	ol.cmnl {
+		counter-reset:numd -1;
+	}
+	ol.cmnl > li {
+		counter-increment:numd 1;
+	}
+	ol.cmnr {
+		counter-reset:numd 0;
+	}
+	ol.cmnr > li {
+		counter-increment:numd 1;
+	}
+	.ans {
+	  margin-top:0.5em;
+	  color:#aa3333;
+	}
+	div.section:first-of-type p.ans {
+		margin:0 0 0.5em 1.75em;
+		text-indent:-1.75em;
+	}
+	</style>
+
+	<title>Mid-term Exam</title>
+</head>
+
+<body>
+<div id="main" class="exam">
+		
+	<div class="section">
+		<h2 style="margin-top:0.2em;">一、是非題<span>&emsp;（每題 2 分）<br/>閱讀以下題目之敘述，若認為正確請寫 '<b>T</b>'，錯誤請寫 '<b>F</b>'，不知道則可以寫 '<b>N</b>'。</span></h2>	
+		<ol class="numd tight">
+			<li>對任何推論來說，只要前提都正確，而且推論也合理，那結論就一定會是正確的。</li>
+			<p class="ans"><b>F</b>。不，對演繹推論而言是如此，但對非演繹推論而言，即使前提正確且推論也合理，仍不能保證結論<b>一定</b>正確。</p>
+			<li>一個推論是否合理，取決於推論的前提能否支持結論，若前提支持結論則推論就是合理的。</li>
+			<p class="ans"><b>T</b>。是，推論合理即意謂著前提可以支持結論，只是演繹推論和非演繹推論中的「前提支持結論」之關係的理解略有差異。</p>
+			<li>所有的推論都包含三個部分：推論的前提、推論的假設、推論的結論。</li>
+			<p class="ans"><b>F</b>。不，所有推論都只有兩個部分：前提、結論。所謂「推論的假設」其實就是指前提而言。</p>
+			<li>非演繹推論的特色就是其前提往往不能百分之百地保證結論一定為真。</li>
+			<p class="ans"><b>T</b>。是的，非演繹推論和演繹推論間的主要差異便在於，對一個合理的非演繹推論而言，其前提也不見得能保證結論正確。</p>
+			<li>推論的前提是否支持結論的判準是唯一的：前提必須能保證結論一定成立才算是支持結論。</li>
+			<p class="ans"><b>F</b>。並非如此，非演繹推論的「前提支持結論」之關係就不是如此。</p>
+			<li>推論通常是在無法直接確認問題答案時才會採取的一種解答問題的手段。</li>
+			<p class="ans"><b>T</b>。是，若可直接確認問題的答案通常就不需要做推論了。</p>
+			<li>古人發現太陽每天都東升西落，因此判斷太陽只會東升西落。這是在做歸納推論。</li>
+			<p class="ans"><b>T</b>。用重複的經驗來推論一個規律性就是歸納推論。</p>
+			<li>獵人根據足跡的大小、形狀、深淺等特徵來追蹤野獸的去向。這是在做歸納推論。</li>
+			<p class="ans"><b>F</b>。用野獸行走時留下的結果推論原因 (野獸的去向) 是在做溯因推論而非歸納推論。</p>
+			<li>維修人員根據經驗判斷電腦之所以不能開機是由於記憶體損毀。這是溯因推論的應用。</li>
+			<p class="ans"><b>T</b>。經驗提供零件故障與不能開機之間的因果關係，因此是由結果推論原因的溯因推論沒錯。</p>
+			<li>小明發現每次喝完咖啡晚上都睡不好，故認定咖啡就是妨礙睡眠的原因。這是溯因推論的應用。</li>
+			<p class="ans"><b>F</b>。由重複的經驗 (喝咖啡和睡不著) 去推論出兩者間的規律 (喝咖啡導致睡不著)，因此是在做歸納推論而非溯因推論。</p>
+			<li>在做溯因推論時，必須先對與事件相關的因果關係有所瞭解，否則便無法進行推論。</li>
+			<p class="ans"><b>T</b>。如果不先瞭解與事件相關的因果關係，就算調查出了結果也無法判斷有哪些原因可能導致這些結果，因此也就無法進行溯因推論。</p>
+			<li>在做歸納推論時，如果不能取得超過半數案例的資料，就絕不能將結論推廣到整個群體。</li>
+			<p class="ans"><b>F</b>。不見得，例如藥物測試就不可能取得超過半數人口的資料。重點在於抽樣調查的樣本是否對母群體有足夠的代表性。</p>
+			<li>「塑膠花是<b>假</b>花」、「男人的情話都是<b>假</b>的」，兩個語句中的「假」字意思相同。</li>
+			<p class="ans"><b>F</b>。不相同，前者是區分正品和贗品，而後者則是區分語句的真假。</p>
+			<li>「草船借箭的故事是<b>假</b>的」、「大腳哈利的傳聞也是<b>假</b>的」，兩句話中的「假」字意思相同。</li>
+			<p class="ans"><b>T</b>。是，兩者都是在區分一件事情是否真實發生過，還是被虛構出來的。</p>
+			<li>「演員在台上的表演是<b>假</b>的」、「劇中使用的道具也是<b>假</b>的」，兩句話中的「假」字意思相同。</li>
+			<p class="ans"><b>T</b>。是，兩者都是在一個事物是模仿的，演員的表演和劇中的道具都是在模仿現實。</p>
+		</ol>
+	</div>
+	
+	<div class="section" style="counter-reset:numd">
+		<h2>二、簡答題 (1)<span>&emsp;判斷題目中的兩個語句間的蘊涵關係（每題 2 分）<br/>註1．對任意兩語句$X$和$Y$而言，$X$蘊涵$Y$ $=_{df}$ 只要$X$為真則$Y$就一定為真。<br/>註2．任意兩語句$X$和$Y$之間的蘊涵關係共有四種可能：$X$蘊涵$Y$、$Y$蘊涵$X$、互相蘊涵、互不蘊涵。</span></h2>
+		
+		<div class="flexr">
+			<ol class="numd cmnl" style="margin-top:1em; width:48%;">
+				<li>A：所有人都會死。<br/>B：沒有人不會死。</li>
+				<span class="ans"><b>互相蘊涵。</b><br/>只要所有人都會死，就沒有人不會死；只要沒有人不會死，則所有人就都會死。</span>
+				<li>A：早起的鳥有蟲吃。<br/>B：晚起的鳥沒蟲吃。</li>
+				<span class="ans"><b>互不蘊涵。</b><br/>早起的鳥有蟲吃不代表晚起的鳥就沒蟲吃，可能隨時都有充足的蟲；反之，晚起的鳥沒蟲吃也不表示早起的鳥就有蟲吃，可能正在鬧蟲荒，誰都沒有蟲可以吃。</span>
+				<li>A：我的身高比你高。<br/>B：我的身高不比你矮。</li>
+				<span class="ans"><b>A蘊涵B。</b><br/>我的身高比你高，那就一定不比你矮；但我的身高若只是不比你矮，也可能只跟你一樣高，不見得就會比你高。</span>
+				<li>A：今天小明上課遲到。<br/>B：今天有人上課遲到。</li>
+				<span class="ans"><b>A蘊涵B。</b><br/>小明今天上課遲到，那就一定有人上課遲到（就是小明）；但若有人上課遲到，則不見得就是小明遲到（也可能是別人）。</span>
+				<li>A：我只吃我自己做的食物。<br/>B：我只做我自己吃的食物。</li>
+				<span class="ans"><b>互不蘊涵。</b><br/>我只吃自己做的食物，表示別人做的食物我不吃，但我可以做食物給別人吃；我只做自己吃的食物，表示我不會做食物給別人吃，但別人做的食物我可以吃。</span>
+			</ol>
+			<ol class="numd cmnr" style="margin-top:1em;width:48%;">
+				<li>A：整個八月裡每天都在下雨。<br/>B：整個八月裡沒有一天不下雨。</li>
+				<span class="ans"><b>互相蘊涵。</b><br/>只要每天都在下雨，就沒有一天不下雨；只要沒有一天不下雨，就表示每天都在下雨。</span>
+				<li>A：人必須持續運動才能維持好身材。<br/>B：人只要持續運動就能維持好身材。</li>
+				<span class="ans"><b>互不蘊涵。</b><br/>必須運動才能維持好身材，意思是不運動不行，但運動了也不一定就能維持好身材；只要運動就能維持好身材，意思是運動一定能維持好身材，但也不是非運動不可。</span>
+				<li>A：人的外在美不比內在美更重要。<br/>B：人的內在美比外在美更重要。</li>
+				<span class="ans"><b>B蘊涵A。</b><br/>外在美不比內在美重要，不代內在美就更重要，也可能一樣重要；但內在美若比外在美重要，則外在美一定不比內在美重要。</span>
+				<li>A：有些哺乳類動物是胎生動物。<br/>B：大部分的哺乳類動物都是胎生動物。</li>
+				<span class="ans"><b>B蘊涵A。</b><br/>有些哺乳類是胎生不表示大部分都是，也可能只有少部分是；但若大部分哺乳類是胎生，那一定有些是。</span>
+				<li>A：楊過已經拜了小龍女為師父。<br/>B：小龍女已經收了楊過為徒弟。</li>
+				<span class="ans"><b>互相蘊涵。</b><br/>楊過既已拜了小龍女為師父，就表示小龍女已接受楊過做其徒弟；而小龍女若已收了楊過為徒，就表示楊過一定也已接受小龍女做其師父。</span>
+			</ol>
+		</div>
+	</div>
+	
+	<div class="section" style="counter-reset:numd; page-break-before:always">
+		<h2 style="padding-top:0.2em">三、簡答題 (2)<span>&emsp;判斷題目中的兩個概念間的蘊涵關係（每題 2 分）<br/>註1．對任意兩概念$X$和$Y$而言，$X$蘊涵$Y$ $=_{df}$ 只要「$a$是$X$」為真則「$a$是$Y$」就一定為真。<br/>註2．任意兩概念$X$和$Y$之間的蘊涵關係共有四種可能：$X$蘊涵$Y$、$Y$蘊涵$X$、互相蘊涵、互不蘊涵。</span></h2>
+		
+		<div class="flexr">
+			<ol class="numd tight cmnl" style="width:48%">
+				<li>A：「滑鼠」；B：「老鼠」</li>
+				<span class="ans"><b>互不蘊涵。</b><br/>滑鼠不是老鼠；老鼠也不是滑鼠。</span>
+				<li>A：「正三角形」；B：「等邊三角形」</li>
+				<span class="ans"><b>互相蘊涵。</b><br/>正三角形的三邊相等，故是等邊三角形；等邊三角形既然三邊相等，那就是正三角形。</span>
+				<li>A：「襪子」；B：「過膝襪」</li>
+				<span class="ans"><b>B蘊涵A。</b><br/>襪子不見得都過膝；但過膝襪一定是襪子。</span>
+				<li>A：「鞋子」；B：「長靴」</li>
+				<span class="ans"><b>B蘊涵A。</b><br/>鞋子不見得都是長靴；但長靴一定是鞋子。</span>
+				<li>A：「洋芋」；B：「馬鈴薯」</li>
+				<span class="ans"><b>互相蘊涵。</b><br/>洋芋就是馬鈴薯；馬鈴薯就是洋芋。</span>
+			</ol>
+			<ol class="numd tight cmnr" style="width:48%">
+				<li>A：「火雞」；B：「雞」</li>
+				<span class="ans"><b>互不蘊涵。</b><br/>火雞不是雞；雞也不是火雞。</span>
+				<li>A：「陌生人」；B：「不認識的人」</li>
+				<span class="ans"><b>互相蘊涵。</b><br/>陌生人一定都是不認識的人；而且不認識的人也都是陌生人。</span>
+				<li>A：「動物」；B：「生物」</li>
+				<span class="ans"><b>A蘊涵B。</b><br/>動物都是生物；但生物不見得是動物。</span>
+				<li>A：「杯子」；B：「容器」</li>
+				<span class="ans"><b>A蘊涵B。</b><br/>杯子都是容器；但容器不一定是杯子。</span>
+				<li>A：「魚」；B：「鯨魚」</li>
+				<span class="ans"><b>互不蘊涵。</b><br/>魚不是鯨魚；鯨魚也不是魚 (是哺乳類)。</span>
+			</ol>
+		</div>
+	</div>
+		
+	<div class="section">
+		<h2>四、問答題<span>&emsp;判斷以下推論是不是有效推論，並說明理由。（每題 5 分）<br/>註1．一個推論是有效推論 $=_{df}$ 只要推論的前提皆為真則結論就一定也為真。<br/>註2．判斷方式：先假設前提皆為真，再判斷於前提皆真的假設下結論是否一定為真。</span></h2>
+		<div class="flexr">
+			<ol class="prfq grow">
+				<li>是人就會犯錯。</li>
+				<li>黃頌竹是人。</li>
+				<li>黃頌竹會犯錯。</li>
+				答：有效。因為當前提皆真時，表示所有人都會犯錯，而且黃頌竹也在所有人的範圍內，因此他當然會犯錯。故只要前提皆為真，則結論也一定為真。
+			</ol>
+			<ol class="prfq grow">
+				<li>塑膠不會導電</li>
+				<li>教室裡的花瓶不會導電。</li>
+				<li>教室裡的花瓶是塑膠做的。</li>
+				答：無效。即使塑膠不導電，也不見得是唯一不導電的材料，故教室裡不導電的花瓶也可能是用塑膠以外的不導電材料所製。因此就算前提皆真，結論也不見得真。
+			</ol>
+		</div>
+		<div class="flexr" style="counter-reset:ult">
+			<ol class="prfq grow">
+				<li>小明去過日本或韓國。</li>
+				<li>小明去過日本。</li>
+				<li>小明沒去過韓國。<p class="ans" style="margin:0.5em 2em auto -2em;"><b>答：</b>無效。<br/>「或」的意思是「至少一個成立」，故前提1表示他至少去過其中一國，因此也可能兩國都去過。所以就算他去過一國也不表示沒去過另一國。</p></li>
+				
+			</ol>
+			<ol class="prfq grow">
+				<li>只要下雨地面就會積水。</li>
+				<li>只要地面積水就會增加車禍風險。</li>
+				<li>只要下雨就會增加車禍風險。<p class="ans" style="margin:0.5em 2em auto -2em;"><b>答：</b>有效。<br/>既然有下雨就一定會令地面積水，而地面積水就一定會令車禍風險增加，那麼下雨當然就一定會令車禍的風險增加。</p></li>
+			</ol>
+		</div>
+		<div class="flexr">
+			<ol class="prfq grow">
+				<li>犯人是司機或園丁。</li>
+				<li>如果犯人是司機，那兇手就是小明。</li>
+				<li>如果犯人是園丁，那兇手就是小華。</li>
+				<li>兇手是小明或小華。<p class="ans" style="margin:0.5em 2em auto -2em;"><b>答：</b>有效。<br/>前提2說犯人是司機的話兇手就是小明，前提3又說犯人是園丁的話兇手就是小華，那麼在犯人只能是司機或園丁的情況下，兇手自然只能是小明或小華。</p></li>
+			</ol>
+			<ol class="prfq grow">
+				<li>他只要睡過頭上學就會遲到。</li>
+				<li>他只要上學遲到就會被老師罰站。</li>
+				<li>他今天沒有睡過頭。</li>
+				<li>他今天沒有被老師罰站。<p class="ans" style="margin:0.5em 2em auto -2em;"><b>答：</b>無效。<br/>就算他今天沒睡過頭，也不表示他就不會因其他緣故而遲到；就算他今天沒有遲到，也不表示他就不會因其他緣故而被老師罰站。</p></li>
+			</ol>
+		</div>
+		<div class="flexr">
+			<ol class="prfq grow">
+				<li>有些貓跑得很快。</li>
+				<li>有些貓跳得很高。</li>
+				<li>有些貓跑得很快也跳得很高。<p class="ans" style="margin:0.5em 2em auto -2em;"><b>答：</b>無效。<br/>前提1說有些貓跑得快，前提2說有些貓跳得高，但前提並未表示兩者間一定有重複的，所以根據前提無從得知是否有些貓跑得快又跳得高。</p></li>
+			</ol>
+			<ol class="prfq grow">
+				<li>所有鳥都會飛。</li>
+				<li>我不會飛。</li>
+				<li>我不是鳥。<p class="ans" style="margin:0.5em 2em auto -2em;"><b>答：</b>有效。<br/>既然前提1假定了所有的鳥都會飛，那就沒有不會飛的鳥，因此當前提2又假定我不會飛，我便不可能是一隻鳥，否則就會有不會飛的鳥了。</p></li>
+			</ol>
+		</div>
+	</div>
+</body>
