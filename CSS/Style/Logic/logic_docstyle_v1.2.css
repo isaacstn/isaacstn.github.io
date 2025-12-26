@@ -662,6 +662,12 @@ span.note:hover span.box {
 .hidden {
 	visibility:hidden;
 }
+.grey {
+	color:LightGrey;
+}
+.red {
+	color:FireBrick;
+}
 #front {
 	page:front-matter;
 }
