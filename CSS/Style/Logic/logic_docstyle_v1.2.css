@@ -249,6 +249,9 @@ ol.quiz > li::before {
 ol.quiz > li {
 	margin-top:1.5em;
 }
+ol.prf {
+	width:max-content;
+}
 ol.prf > li::before {
 	counter-increment:prf;
 	content:"P" counter(prf) ". ";
@@ -257,6 +260,12 @@ ol.prf > li::before {
 ol.prf > li:last-child::before {
 	counter-increment:none;
 	content:"C. ";
+	padding-left:2em;
+}
+ol.prf > li:last-child {
+	border-top:1px solid black;
+	margin-left:-2em;
+	padding-left:2em;
 }
 ol.num > li::before {
 	counter-increment:num;
@@ -663,10 +672,16 @@ span.note:hover span.box {
 	visibility:hidden;
 }
 .grey {
-	color:LightGrey;
+	color:LightGray;
+}
+.greyb {
+	background-color:rgba(128,128,128,0.4);
 }
 .red {
 	color:FireBrick;
+}
+.redb {
+	background-color:FireBrick;
 }
 #front {
 	page:front-matter;
